@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock137](/protocol/bedrock137)  /  [play](/protocol/bedrock137/play)  /  initiate-web-socket-connection
 
-# Initiate-web-socket-connection
+# Initiate web socket connection
 
 **Id**: 95
 

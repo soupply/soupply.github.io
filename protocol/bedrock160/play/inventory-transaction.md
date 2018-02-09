@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock160](/protocol/bedrock160)  /  [play](/protocol/bedrock160/play)  /  inventory-transaction
 
-# Inventory-transaction
+# Inventory transaction
 
 **Id**: 30
 
@@ -54,6 +54,7 @@ click position | float&lt;xyz&gt;
 ### action type
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [click block](use-item_action-type_click-block) | 0
@@ -76,6 +77,7 @@ item | [slot](/protocol/bedrock160/types/slot)
 ### action type
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [interact](use-item-on-entity_action-type_interact) | 0
@@ -95,6 +97,7 @@ head position | float&lt;xyz&gt;
 ### action type
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [shoot bow](release-item_action-type_shoot-bow) | 0

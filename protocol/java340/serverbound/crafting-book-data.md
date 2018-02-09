@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java340](/protocol/java340)  /  [serverbound](/protocol/java340/serverbound)  /  crafting-book-data
 
-# Crafting-book-data
+# Crafting book data
 
 **Id**: 23
 

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java338](/protocol/java338)  /  [clientbound](/protocol/java338/clientbound)  /  attach-entity
 
-# Attach-entity
+# Attach entity
 
 **Id**: 61
 

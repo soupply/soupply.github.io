@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket105](/protocol/pocket105)  /  [play](/protocol/pocket105/play)  /  set-entity-link
 
-# Set-entity-link
+# Set entity link
 
 **Id**: 42
 
@@ -27,6 +27,7 @@ to | varlong
 ### action
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [add](action_add) | 0

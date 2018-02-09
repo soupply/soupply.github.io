@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java210](/protocol/java210)  /  [clientbound](/protocol/java210/clientbound)  /  spawn-global-entity
 
-# Spawn-global-entity
+# Spawn global entity
 
 **Id**: 2
 
@@ -27,6 +27,7 @@ position | double&lt;xyz&gt;
 ### type
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [thunderbolt](type_thunderbolt) | 1

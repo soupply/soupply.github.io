@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket100](/protocol/pocket100)  /  [play](/protocol/pocket100/play)  /  block-entity-data
 
-# Block-entity-data
+# Block entity data
 
 **Id**: 56
 

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java316](/protocol/java316)  /  [clientbound](/protocol/java316/clientbound)  /  chunk-data
 
-# Chunk-data
+# Chunk data
 
 **Id**: 32
 

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java315](/protocol/java315)  /  [clientbound](/protocol/java315/clientbound)  /  unload-chunk
 
-# Unload-chunk
+# Unload chunk
 
 **Id**: 29
 

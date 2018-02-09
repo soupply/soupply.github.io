@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock137](/protocol/bedrock137)  /  [types](/protocol/bedrock137/types)  /  player-list
 
-# Player-list
+# Player list
 
 Informations about a player that will be added to the player's list in the pause menu.
 

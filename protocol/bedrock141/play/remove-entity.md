@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock141](/protocol/bedrock141)  /  [play](/protocol/bedrock141/play)  /  remove-entity
 
-# Remove-entity
+# Remove entity
 
 **Id**: 14
 

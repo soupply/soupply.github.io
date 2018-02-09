@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java210](/protocol/java210)  /  [serverbound](/protocol/java210/serverbound)  /  use-item
 
-# Use-item
+# Use item
 
 **Id**: 29
 
@@ -25,6 +25,7 @@ Name | Type
 ### hand
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [main hand](hand_main-hand) | 0

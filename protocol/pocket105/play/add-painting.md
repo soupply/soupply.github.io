@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket105](/protocol/pocket105)  /  [play](/protocol/pocket105/play)  /  add-painting
 
-# Add-painting
+# Add painting
 
 **Id**: 24
 

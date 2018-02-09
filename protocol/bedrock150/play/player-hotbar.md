@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  player-hotbar
 
-# Player-hotbar
+# Player hotbar
 
 **Id**: 48
 

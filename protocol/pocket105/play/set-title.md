@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket105](/protocol/pocket105)  /  [play](/protocol/pocket105/play)  /  set-title
 
-# Set-title
+# Set title
 
 **Id**: 88
 
@@ -29,6 +29,7 @@ fade out | varint
 ### action
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [hide](action_hide) | 0

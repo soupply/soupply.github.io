@@ -8,11 +8,11 @@ layout: default
 
 Packet | Id | Clientbound | Serverbound
 ---|:---:|:---:|:---:
-[Client Connect](encapsulatedclient-connect) | 9 |   | ✓
-[Server Handshake](encapsulatedserver-handshake) | 16 | ✓ |  
-[Client Handshake](encapsulatedclient-handshake) | 19 |   | ✓
-[Client Cancel Connection](encapsulatedclient-cancel-connection) | 21 |   | ✓
-[Ping](encapsulatedping) | 0 |   | ✓
-[Pong](encapsulatedpong) | 3 | ✓ |  
-[Mcpe](encapsulatedmcpe) | 254 | ✓ | ✓
+[Client Connect](encapsulated/client-connect) | 9 |   | ✓
+[Server Handshake](encapsulated/server-handshake) | 16 | ✓ |  
+[Client Handshake](encapsulated/client-handshake) | 19 |   | ✓
+[Client Cancel Connection](encapsulated/client-cancel-connection) | 21 |   | ✓
+[Ping](encapsulated/ping) | 0 |   | ✓
+[Pong](encapsulated/pong) | 3 | ✓ |  
+[Mcpe](encapsulated/mcpe) | 254 | ✓ | ✓
 

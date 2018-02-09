@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock137](/protocol/bedrock137)  /  [play](/protocol/bedrock137/play)  /  item-frame-drop-item
 
-# Item-frame-drop-item
+# Item frame drop item
 
 **Id**: 71
 

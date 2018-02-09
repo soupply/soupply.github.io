@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock137](/protocol/bedrock137)  /  [play](/protocol/bedrock137/play)  /  player-list
 
-# Player-list
+# Player list
 
 **Id**: 63
 

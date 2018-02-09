@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket105](/protocol/pocket105)  /  [play](/protocol/pocket105/play)  /  command-block-update
 
-# Command-block-update
+# Command block update
 
 **Id**: 80
 

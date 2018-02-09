@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  entity-fall
 
-# Entity-fall
+# Entity fall
 
 **Id**: 37
 

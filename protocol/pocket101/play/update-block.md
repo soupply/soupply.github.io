@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket101](/protocol/pocket101)  /  [play](/protocol/pocket101/play)  /  update-block
 
-# Update-block
+# Update block
 
 **Id**: 23
 
@@ -27,6 +27,7 @@ block | varuint
 ### flags and meta
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [neighbors](flags-and-meta_neighbors) | 1

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [raknet8](/protocol/raknet8)  /  [unconnected](/protocol/raknet8/unconnected)  /  open-connection-reply-2
 
-# Open-connection-reply- 2
+# Open connection reply  2
 
 **Id**: 8
 

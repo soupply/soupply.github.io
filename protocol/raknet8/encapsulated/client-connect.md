@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [raknet8](/protocol/raknet8)  /  [encapsulated](/protocol/raknet8/encapsulated)  /  client-connect
 
-# Client-connect
+# Client connect
 
 **Id**: 9
 

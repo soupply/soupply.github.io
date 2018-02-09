@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java315](/protocol/java315)  /  [clientbound](/protocol/java315/clientbound)  /  player-list-item
 
-# Player-list-item
+# Player list item
 
 **Id**: 45
 

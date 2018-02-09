@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket101](/protocol/pocket101)  /  [play](/protocol/pocket101/play)  /  set-spawn-position
 
-# Set-spawn-position
+# Set spawn position
 
 **Id**: 43
 

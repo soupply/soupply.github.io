@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java210](/protocol/java210)  /  [serverbound](/protocol/java210/serverbound)  /  steer-vehicle
 
-# Steer-vehicle
+# Steer vehicle
 
 **Id**: 21
 
@@ -27,6 +27,7 @@ forward | float
 ### flags
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [jump](flags_jump) | 1

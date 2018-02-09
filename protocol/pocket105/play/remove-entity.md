@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket105](/protocol/pocket105)  /  [play](/protocol/pocket105/play)  /  remove-entity
 
-# Remove-entity
+# Remove entity
 
 **Id**: 15
 

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock160](/protocol/bedrock160)  /  [play](/protocol/bedrock160/play)  /  chunk-radius-updated
 
-# Chunk-radius-updated
+# Chunk radius updated
 
 **Id**: 70
 

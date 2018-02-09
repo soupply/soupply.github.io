@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock141](/protocol/bedrock141)  /  [play](/protocol/bedrock141/play)  /  container-close
 
-# Container-close
+# Container close
 
 **Id**: 47
 

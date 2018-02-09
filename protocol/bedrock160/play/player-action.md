@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock160](/protocol/bedrock160)  /  [play](/protocol/bedrock160/play)  /  player-action
 
-# Player-action
+# Player action
 
 **Id**: 36
 
@@ -28,6 +28,7 @@ face | varint
 ### action
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [start break](action_start-break) | 0

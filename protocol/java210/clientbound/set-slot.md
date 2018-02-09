@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java210](/protocol/java210)  /  [clientbound](/protocol/java210/clientbound)  /  set-slot
 
-# Set-slot
+# Set slot
 
 **Id**: 22
 

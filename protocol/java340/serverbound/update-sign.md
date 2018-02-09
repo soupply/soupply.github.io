@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java340](/protocol/java340)  /  [serverbound](/protocol/java340/serverbound)  /  update-sign
 
-# Update-sign
+# Update sign
 
 **Id**: 28
 

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java338](/protocol/java338)  /  [clientbound](/protocol/java338/clientbound)  /  entity-metadata
 
-# Entity-metadata
+# Entity metadata
 
 **Id**: 60
 

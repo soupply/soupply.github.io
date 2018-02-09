@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket101](/protocol/pocket101)  /  [play](/protocol/pocket101/play)  /  game-rules-changed
 
-# Game-rules-changed
+# Game rules changed
 
 **Id**: 72
 

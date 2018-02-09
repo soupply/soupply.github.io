@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket102](/protocol/pocket102)  /  [play](/protocol/pocket102/play)  /  mob-armor-equipment
 
-# Mob-armor-equipment
+# Mob armor equipment
 
 **Id**: 33
 

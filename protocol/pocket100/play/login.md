@@ -27,6 +27,7 @@ body | ubyte[]
 ### edition
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [classic](edition_classic) | 0

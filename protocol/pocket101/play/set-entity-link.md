@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket101](/protocol/pocket101)  /  [play](/protocol/pocket101/play)  /  set-entity-link
 
-# Set-entity-link
+# Set entity link
 
 **Id**: 41
 
@@ -27,6 +27,7 @@ to | varlong
 ### action
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [add](action_add) | 0

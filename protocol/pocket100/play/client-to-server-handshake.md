@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket100](/protocol/pocket100)  /  [play](/protocol/pocket100/play)  /  client-to-server-handshake
 
-# Client-to-server-handshake
+# Client to server handshake
 
 **Id**: 4
 

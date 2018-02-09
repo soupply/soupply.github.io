@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java340](/protocol/java340)  /  [clientbound](/protocol/java340/clientbound)  /  world-border
 
-# World-border
+# World border
 
 **Id**: 56
 

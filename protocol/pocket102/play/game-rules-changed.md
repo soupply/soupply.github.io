@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket102](/protocol/pocket102)  /  [play](/protocol/pocket102/play)  /  game-rules-changed
 
-# Game-rules-changed
+# Game rules changed
 
 **Id**: 72
 

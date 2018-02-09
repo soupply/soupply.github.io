@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java335](/protocol/java335)  /  [clientbound](/protocol/java335/clientbound)  /  time-update
 
-# Time-update
+# Time update
 
 **Id**: 70
 

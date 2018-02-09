@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java316](/protocol/java316)  /  [clientbound](/protocol/java316/clientbound)  /  confirm-transaction
 
-# Confirm-transaction
+# Confirm transaction
 
 **Id**: 17
 

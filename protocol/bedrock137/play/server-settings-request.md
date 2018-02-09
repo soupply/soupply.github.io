@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock137](/protocol/bedrock137)  /  [play](/protocol/bedrock137/play)  /  server-settings-request
 
-# Server-settings-request
+# Server settings request
 
 **Id**: 102
 

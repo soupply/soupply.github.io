@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock160](/protocol/bedrock160)  /  [play](/protocol/bedrock160/play)  /  update-equip
 
-# Update-equip
+# Update equip
 
 **Id**: 81
 

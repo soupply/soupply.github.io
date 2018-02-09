@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  update-attributes
 
-# Update-attributes
+# Update attributes
 
 **Id**: 29
 

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock137](/protocol/bedrock137)  /  [play](/protocol/bedrock137/play)  /  set-entity-motion
 
-# Set-entity-motion
+# Set entity motion
 
 **Id**: 40
 

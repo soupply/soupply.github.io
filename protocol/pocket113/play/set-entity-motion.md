@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket113](/protocol/pocket113)  /  [play](/protocol/pocket113/play)  /  set-entity-motion
 
-# Set-entity-motion
+# Set entity motion
 
 **Id**: 40
 

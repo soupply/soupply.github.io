@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket101](/protocol/pocket101)  /  [play](/protocol/pocket101/play)  /  boss-event
 
-# Boss-event
+# Boss event
 
 **Id**: 75
 
@@ -28,6 +28,7 @@ entity id | varlong
 ### event id
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [add](event-id_add) | 0

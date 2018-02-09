@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java338](/protocol/java338)  /  [serverbound](/protocol/java338/serverbound)  /  entity-action
 
-# Entity-action
+# Entity action
 
 **Id**: 21
 
@@ -27,6 +27,7 @@ jump boost | varuint
 ### action
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [start sneaking](action_start-sneaking) | 0

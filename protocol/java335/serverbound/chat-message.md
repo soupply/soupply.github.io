@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java335](/protocol/java335)  /  [serverbound](/protocol/java335/serverbound)  /  chat-message
 
-# Chat-message
+# Chat message
 
 **Id**: 3
 

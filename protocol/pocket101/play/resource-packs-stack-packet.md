@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket101](/protocol/pocket101)  /  [play](/protocol/pocket101/play)  /  resource-packs-stack-packet
 
-# Resource-packs-stack-packet
+# Resource packs stack packet
 
 **Id**: 8
 

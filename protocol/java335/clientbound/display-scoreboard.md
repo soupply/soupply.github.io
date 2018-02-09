@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java335](/protocol/java335)  /  [clientbound](/protocol/java335/clientbound)  /  display-scoreboard
 
-# Display-scoreboard
+# Display scoreboard
 
 **Id**: 58
 
@@ -26,6 +26,7 @@ score name | string
 ### position
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [list](position_list) | 0

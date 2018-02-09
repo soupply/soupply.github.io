@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket113](/protocol/pocket113)  /  [play](/protocol/pocket113/play)  /  player-list
 
-# Player-list
+# Player list
 
 **Id**: 63
 

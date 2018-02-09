@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket105](/protocol/pocket105)  /  [play](/protocol/pocket105/play)  /  item-frame-drop-item
 
-# Item-frame-drop-item
+# Item frame drop item
 
 **Id**: 71
 

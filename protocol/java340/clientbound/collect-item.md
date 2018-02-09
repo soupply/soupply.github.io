@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java340](/protocol/java340)  /  [clientbound](/protocol/java340/clientbound)  /  collect-item
 
-# Collect-item
+# Collect item
 
 **Id**: 75
 

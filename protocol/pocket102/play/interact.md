@@ -26,6 +26,7 @@ target | varlong
 ### action
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [interact](action_interact) | 1

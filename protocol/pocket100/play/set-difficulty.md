@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket100](/protocol/pocket100)  /  [play](/protocol/pocket100/play)  /  set-difficulty
 
-# Set-difficulty
+# Set difficulty
 
 **Id**: 60
 
@@ -25,6 +25,7 @@ Name | Type
 ### difficulty
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [peaceful](difficulty_peaceful) | 0

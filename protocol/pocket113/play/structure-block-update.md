@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket113](/protocol/pocket113)  /  [play](/protocol/pocket113/play)  /  structure-block-update
 
-# Structure-block-update
+# Structure block update
 
 **Id**: 91
 

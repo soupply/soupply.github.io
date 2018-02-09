@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  resource-pack-chunk-request
 
-# Resource-pack-chunk-request
+# Resource pack chunk request
 
 **Id**: 84
 

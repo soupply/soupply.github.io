@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock141](/protocol/bedrock141)  /  [play](/protocol/bedrock141/play)  /  move-player
 
-# Move-player
+# Move player
 
 **Id**: 19
 
@@ -34,6 +34,7 @@ on ground | bool |
 ### animation
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [full](animation_full) | 0

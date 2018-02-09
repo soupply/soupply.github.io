@@ -35,6 +35,7 @@ Version of the protocol used by the player.
 Edition that the player is using to join the server. The different editions may have different features and servers may block the access from unaccepted editions of the game.
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [classic](edition_classic) | 0

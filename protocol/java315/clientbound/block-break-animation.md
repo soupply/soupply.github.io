@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java315](/protocol/java315)  /  [clientbound](/protocol/java315/clientbound)  /  block-break-animation
 
-# Block-break-animation
+# Block break animation
 
 **Id**: 8
 

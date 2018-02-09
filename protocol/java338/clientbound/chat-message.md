@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java338](/protocol/java338)  /  [clientbound](/protocol/java338/clientbound)  /  chat-message
 
-# Chat-message
+# Chat message
 
 **Id**: 15
 
@@ -26,6 +26,7 @@ message | string
 ### position
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [chat](position_chat) | 0

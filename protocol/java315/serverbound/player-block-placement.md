@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java315](/protocol/java315)  /  [serverbound](/protocol/java315/serverbound)  /  player-block-placement
 
-# Player-block-placement
+# Player block placement
 
 **Id**: 28
 
@@ -28,6 +28,7 @@ cursor position | float&lt;xyz&gt;
 ### hand
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [main hand](hand_main-hand) | 0

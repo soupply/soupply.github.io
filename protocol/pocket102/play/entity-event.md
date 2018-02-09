@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket102](/protocol/pocket102)  /  [play](/protocol/pocket102/play)  /  entity-event
 
-# Entity-event
+# Entity event
 
 **Id**: 29
 
@@ -27,6 +27,7 @@ entity id | varlong
 ### event id
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [hurt animation](event-id_hurt-animation) | 2

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java335](/protocol/java335)  /  [clientbound](/protocol/java335/clientbound)  /  join-game
 
-# Join-game
+# Join game
 
 **Id**: 35
 
@@ -31,6 +31,7 @@ reduced debug | bool
 ### gamemode
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [survival](gamemode_survival) | 0
@@ -41,6 +42,7 @@ Name | Value
 ### dimension
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [nether](dimension_nether) | -1
@@ -50,6 +52,7 @@ Name | Value
 ### difficulty
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [peaceful](difficulty_peaceful) | 0
@@ -60,6 +63,7 @@ Name | Value
 ### level type
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [infinity](level-type_infinity) | default

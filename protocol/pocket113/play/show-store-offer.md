@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket113](/protocol/pocket113)  /  [play](/protocol/pocket113/play)  /  show-store-offer
 
-# Show-store-offer
+# Show store offer
 
 **Id**: 92
 

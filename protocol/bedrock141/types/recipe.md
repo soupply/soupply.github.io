@@ -16,6 +16,7 @@ data | bytes
 ### type
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [shapeless](type_shapeless) | 0

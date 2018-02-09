@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket113](/protocol/pocket113)  /  [play](/protocol/pocket113/play)  /  start-game
 
-# Start-game
+# Start game
 
 **Id**: 11
 
@@ -55,6 +55,7 @@ Player's entity id that uniquely identifies the entity of the server.
 Player's gamemode that may differ from the world's gamemode.
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [survival](gamemode_survival) | 0
@@ -74,6 +75,7 @@ World's seed. It's displayed in the game's world settings and in beta's debug in
 World's dimension. Different dimensions have different sky colours and render distances.
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [overworld](dimension_overworld) | 0
@@ -86,6 +88,7 @@ World's type. It's displayed in the game's world settings.
 In old and infinite world the sky becomes darker at 32 blocks of altitude and in flat worlds it only becomes darker under 0.
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [old](generator_old) | 0
@@ -101,6 +104,7 @@ Default's world gamemode.
 World's difficulty. The value is visible in the client's world settings.
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [peaceful](difficulty_peaceful) | 0
@@ -121,6 +125,7 @@ Time of the day that should be in a range from 0 to 24000. If not the absolute v
 Game's edition. Some behaviours (some entities for example) may only work in a version and not in the other.
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [vanilla](version_vanilla) | 0

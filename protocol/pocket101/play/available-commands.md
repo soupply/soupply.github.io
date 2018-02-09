@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket101](/protocol/pocket101)  /  [play](/protocol/pocket101/play)  /  available-commands
 
-# Available-commands
+# Available commands
 
 **Id**: 77
 

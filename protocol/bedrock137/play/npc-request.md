@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock137](/protocol/bedrock137)  /  [play](/protocol/bedrock137/play)  /  npc-request
 
-# Npc-request
+# Npc request
 
 **Id**: 98
 

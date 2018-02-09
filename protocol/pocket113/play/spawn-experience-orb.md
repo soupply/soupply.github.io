@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket113](/protocol/pocket113)  /  [play](/protocol/pocket113/play)  /  spawn-experience-orb
 
-# Spawn-experience-orb
+# Spawn experience orb
 
 **Id**: 66
 

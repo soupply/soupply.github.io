@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java340](/protocol/java340)  /  [types](/protocol/java340/types)  /  list-update-gamemode
 
-# List-update-gamemode
+# List update gamemode
 
 ## Fields
 
@@ -16,6 +16,7 @@ uuid | uuid
 ### gamemode
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [survival](gamemode_survival) | 0

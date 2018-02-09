@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock160](/protocol/bedrock160)  /  [play](/protocol/bedrock160/play)  /  player-input
 
-# Player-input
+# Player input
 
 **Id**: 57
 

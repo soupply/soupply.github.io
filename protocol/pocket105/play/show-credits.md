@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket105](/protocol/pocket105)  /  [play](/protocol/pocket105/play)  /  show-credits
 
-# Show-credits
+# Show credits
 
 **Id**: 77
 
@@ -26,6 +26,7 @@ entity id | varlong
 ### status
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [start](status_start) | 0

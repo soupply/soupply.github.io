@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java210](/protocol/java210)  /  [serverbound](/protocol/java210/serverbound)  /  resource-pack-status
 
-# Resource-pack-status
+# Resource pack status
 
 **Id**: 22
 
@@ -25,6 +25,7 @@ Name | Type
 ### result
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [loaded](result_loaded) | 0

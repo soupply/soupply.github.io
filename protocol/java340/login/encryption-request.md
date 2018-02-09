@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java340](/protocol/java340)  /  [login](/protocol/java340/login)  /  encryption-request
 
-# Encryption-request
+# Encryption request
 
 **Id**: 1
 

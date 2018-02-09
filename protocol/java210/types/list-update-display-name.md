@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java210](/protocol/java210)  /  [types](/protocol/java210/types)  /  list-update-display-name
 
-# List-update-display-name
+# List update display name
 
 ## Fields
 

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket105](/protocol/pocket105)  /  [types](/protocol/pocket105/types)  /  chunk-data
 
-# Chunk-data
+# Chunk data
 
 ⚠️️ This type is prefixed with its length encoded as **varuint** ⚠️️
 

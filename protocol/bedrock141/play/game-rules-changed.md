@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock141](/protocol/bedrock141)  /  [play](/protocol/bedrock141/play)  /  game-rules-changed
 
-# Game-rules-changed
+# Game rules changed
 
 **Id**: 72
 

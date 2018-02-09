@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock141](/protocol/bedrock141)  /  [play](/protocol/bedrock141/play)  /  set-difficulty
 
-# Set-difficulty
+# Set difficulty
 
 **Id**: 60
 
@@ -27,6 +27,7 @@ Name | Type
 ### difficulty
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [peaceful](difficulty_peaceful) | 0

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket100](/protocol/pocket100)  /  [play](/protocol/pocket100/play)  /  start-game
 
-# Start-game
+# Start game
 
 **Id**: 12
 
@@ -44,6 +44,7 @@ world name | string
 ### dimension
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [overworld](dimension_overworld) | 0
@@ -53,6 +54,7 @@ Name | Value
 ### generator
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [old](generator_old) | 0
@@ -62,6 +64,7 @@ Name | Value
 ### world gamemode
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [survival](world-gamemode_survival) | 0
@@ -70,6 +73,7 @@ Name | Value
 ### difficulty
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [peaceful](difficulty_peaceful) | 0
@@ -80,6 +84,7 @@ Name | Value
 ### edition
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [classic](edition_classic) | 0

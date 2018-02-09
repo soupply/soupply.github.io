@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java316](/protocol/java316)  /  [clientbound](/protocol/java316/clientbound)  /  named-sound-effect
 
-# Named-sound-effect
+# Named sound effect
 
 **Id**: 25
 

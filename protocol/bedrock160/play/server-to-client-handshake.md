@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock160](/protocol/bedrock160)  /  [play](/protocol/bedrock160/play)  /  server-to-client-handshake
 
-# Server-to-client-handshake
+# Server to client handshake
 
 **Id**: 3
 

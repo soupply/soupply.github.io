@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java210](/protocol/java210)  /  [serverbound](/protocol/java210/serverbound)  /  entity-action
 
-# Entity-action
+# Entity action
 
 **Id**: 20
 
@@ -27,6 +27,7 @@ jump boost | varuint
 ### action
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [start sneaking](action_start-sneaking) | 0

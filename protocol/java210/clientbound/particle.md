@@ -31,6 +31,7 @@ additional data | varuint[2]
 ### particle id
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [explode](particle-id_explode) | 0

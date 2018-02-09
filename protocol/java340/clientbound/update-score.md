@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java340](/protocol/java340)  /  [clientbound](/protocol/java340/clientbound)  /  update-score
 
-# Update-score
+# Update score
 
 **Id**: 69
 
@@ -28,6 +28,7 @@ value | varuint | <code>action</code> is equal to <code>0</code>
 ### action
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [update](action_update) | 0

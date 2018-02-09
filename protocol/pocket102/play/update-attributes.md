@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket102](/protocol/pocket102)  /  [play](/protocol/pocket102/play)  /  update-attributes
 
-# Update-attributes
+# Update attributes
 
 **Id**: 31
 

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock160](/protocol/bedrock160)  /  [play](/protocol/bedrock160/play)  /  resource-pack-chunk-data
 
-# Resource-pack-chunk-data
+# Resource pack chunk data
 
 **Id**: 83
 

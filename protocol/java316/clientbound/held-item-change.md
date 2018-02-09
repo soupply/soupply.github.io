@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java316](/protocol/java316)  /  [clientbound](/protocol/java316/clientbound)  /  held-item-change
 
-# Held-item-change
+# Held item change
 
 **Id**: 55
 

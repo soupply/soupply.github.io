@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket100](/protocol/pocket100)  /  [play](/protocol/pocket100/play)  /  add-entity
 
-# Add-entity
+# Add entity
 
 **Id**: 14
 

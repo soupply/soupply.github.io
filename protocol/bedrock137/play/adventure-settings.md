@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock137](/protocol/bedrock137)  /  [play](/protocol/bedrock137/play)  /  adventure-settings
 
-# Adventure-settings
+# Adventure settings
 
 **Id**: 55
 
@@ -32,6 +32,7 @@ entity id | long
 ### flags
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [immutable world](flags_immutable-world) | 1
@@ -48,6 +49,7 @@ Name | Value
 ### permission level
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [level user](permission-level_level-user) | 0
@@ -59,6 +61,7 @@ Name | Value
 ### abilities
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [build and mine](abilities_build-and-mine) | 1
@@ -72,6 +75,7 @@ Name | Value
 ### player rank
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [visitor](player-rank_visitor) | 0

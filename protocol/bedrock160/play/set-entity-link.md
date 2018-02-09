@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock160](/protocol/bedrock160)  /  [play](/protocol/bedrock160/play)  /  set-entity-link
 
-# Set-entity-link
+# Set entity link
 
 **Id**: 41
 
@@ -27,6 +27,7 @@ passenger | varlong
 ### action
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [remove](action_remove) | 0

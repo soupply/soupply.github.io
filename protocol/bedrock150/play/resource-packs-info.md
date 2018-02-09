@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  resource-packs-info
 
-# Resource-packs-info
+# Resource packs info
 
 **Id**: 6
 

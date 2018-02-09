@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java210](/protocol/java210)  /  [clientbound](/protocol/java210/clientbound)  /  plugin-message
 
-# Plugin-message
+# Plugin message
 
 **Id**: 24
 

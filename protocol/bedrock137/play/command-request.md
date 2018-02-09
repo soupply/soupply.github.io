@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock137](/protocol/bedrock137)  /  [play](/protocol/bedrock137/play)  /  command-request
 
-# Command-request
+# Command request
 
 **Id**: 77
 
@@ -28,6 +28,7 @@ player id | varint | <code>type</code> is equal to <code>3</code>
 ### type
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [player](type_player) | 0

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock160](/protocol/bedrock160)  /  [play](/protocol/bedrock160/play)  /  spawn-experience-orb
 
-# Spawn-experience-orb
+# Spawn experience orb
 
 **Id**: 66
 

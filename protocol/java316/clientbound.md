@@ -8,80 +8,80 @@ layout: default
 
 Packet | Id | Clientbound | Serverbound
 ---|:---:|:---:|:---:
-[Spawn Object](clientboundspawn-object) | 0 | ✓ |  
-[Spawn Experience Orb](clientboundspawn-experience-orb) | 1 | ✓ |  
-[Spawn Global Entity](clientboundspawn-global-entity) | 2 | ✓ |  
-[Spawn Mob](clientboundspawn-mob) | 3 | ✓ |  
-[Spawn Painting](clientboundspawn-painting) | 4 | ✓ |  
-[Spawn Player](clientboundspawn-player) | 5 | ✓ |  
-[Animation](clientboundanimation) | 6 | ✓ |  
-[Statistics](clientboundstatistics) | 7 | ✓ |  
-[Block Break Animation](clientboundblock-break-animation) | 8 | ✓ |  
-[Update Block Entity](clientboundupdate-block-entity) | 9 | ✓ |  
-[Block Action](clientboundblock-action) | 10 | ✓ |  
-[Block Change](clientboundblock-change) | 11 | ✓ |  
-[Boss Bar](clientboundboss-bar) | 12 | ✓ |  
-[Server Difficulty](clientboundserver-difficulty) | 13 | ✓ |  
-[Tab Complete](clientboundtab-complete) | 14 | ✓ |  
-[Chat Message](clientboundchat-message) | 15 | ✓ |  
-[Multi Block Change](clientboundmulti-block-change) | 16 | ✓ |  
-[Confirm Transaction](clientboundconfirm-transaction) | 17 | ✓ |  
-[Close Window](clientboundclose-window) | 18 | ✓ |  
-[Open Window](clientboundopen-window) | 19 | ✓ |  
-[Window Items](clientboundwindow-items) | 20 | ✓ |  
-[Window Property](clientboundwindow-property) | 21 | ✓ |  
-[Set Slot](clientboundset-slot) | 22 | ✓ |  
-[Set Cooldown](clientboundset-cooldown) | 23 | ✓ |  
-[Plugin Message](clientboundplugin-message) | 24 | ✓ |  
-[Named Sound Effect](clientboundnamed-sound-effect) | 25 | ✓ |  
-[Disconnect](clientbounddisconnect) | 26 | ✓ |  
-[Entity Status](clientboundentity-status) | 27 | ✓ |  
-[Explosion](clientboundexplosion) | 28 | ✓ |  
-[Unload Chunk](clientboundunload-chunk) | 29 | ✓ |  
-[Change Game State](clientboundchange-game-state) | 30 | ✓ |  
-[Keep Alive](clientboundkeep-alive) | 31 | ✓ |  
-[Chunk Data](clientboundchunk-data) | 32 | ✓ |  
-[Effect](clientboundeffect) | 33 | ✓ |  
-[Particle](clientboundparticle) | 34 | ✓ |  
-[Join Game](clientboundjoin-game) | 35 | ✓ |  
-[Map](clientboundmap) | 36 | ✓ |  
-[Entity Relative Move](clientboundentity-relative-move) | 37 | ✓ |  
-[Entity Look and Relative Move](clientboundentity-look-and-relative-move) | 38 | ✓ |  
-[Entity Look](clientboundentity-look) | 39 | ✓ |  
-[Entity](clientboundentity) | 40 | ✓ |  
-[Vehicle Move](clientboundvehicle-move) | 41 | ✓ |  
-[Open Sign Editor](clientboundopen-sign-editor) | 42 | ✓ |  
-[Player Abilities](clientboundplayer-abilities) | 43 | ✓ |  
-[Combat Event](clientboundcombat-event) | 44 | ✓ |  
-[Player List Item](clientboundplayer-list-item) | 45 | ✓ |  
-[Player Position and Look](clientboundplayer-position-and-look) | 46 | ✓ |  
-[Use Bed](clientbounduse-bed) | 47 | ✓ |  
-[Destroy Entities](clientbounddestroy-entities) | 48 | ✓ |  
-[Remove Entity Effect](clientboundremove-entity-effect) | 49 | ✓ |  
-[Resource Pack Send](clientboundresource-pack-send) | 50 | ✓ |  
-[Respawn](clientboundrespawn) | 51 | ✓ |  
-[Entity Head Look](clientboundentity-head-look) | 52 | ✓ |  
-[World Border](clientboundworld-border) | 53 | ✓ |  
-[Camera](clientboundcamera) | 54 | ✓ |  
-[Held Item Change](clientboundheld-item-change) | 55 | ✓ |  
-[Display Scoreboard](clientbounddisplay-scoreboard) | 56 | ✓ |  
-[Entity Metadata](clientboundentity-metadata) | 57 | ✓ |  
-[Attach Entity](clientboundattach-entity) | 58 | ✓ |  
-[Entity Velocity](clientboundentity-velocity) | 59 | ✓ |  
-[Entity Equipment](clientboundentity-equipment) | 60 | ✓ |  
-[Set Experience](clientboundset-experience) | 61 | ✓ |  
-[Update Health](clientboundupdate-health) | 62 | ✓ |  
-[Scoreboard Objective](clientboundscoreboard-objective) | 63 | ✓ |  
-[Set Passengers](clientboundset-passengers) | 64 | ✓ |  
-[Teams](clientboundteams) | 65 | ✓ |  
-[Update Score](clientboundupdate-score) | 66 | ✓ |  
-[Spawn Position](clientboundspawn-position) | 67 | ✓ |  
-[Time Update](clientboundtime-update) | 68 | ✓ |  
-[Title](clientboundtitle) | 69 | ✓ |  
-[Sound Effect](clientboundsound-effect) | 70 | ✓ |  
-[Player List Header and Footer](clientboundplayer-list-header-and-footer) | 71 | ✓ |  
-[Collect Item](clientboundcollect-item) | 72 | ✓ |  
-[Entity Teleport](clientboundentity-teleport) | 73 | ✓ |  
-[Entity Properties](clientboundentity-properties) | 74 | ✓ |  
-[Entity Effect](clientboundentity-effect) | 75 | ✓ |  
+[Spawn Object](clientbound/spawn-object) | 0 | ✓ |  
+[Spawn Experience Orb](clientbound/spawn-experience-orb) | 1 | ✓ |  
+[Spawn Global Entity](clientbound/spawn-global-entity) | 2 | ✓ |  
+[Spawn Mob](clientbound/spawn-mob) | 3 | ✓ |  
+[Spawn Painting](clientbound/spawn-painting) | 4 | ✓ |  
+[Spawn Player](clientbound/spawn-player) | 5 | ✓ |  
+[Animation](clientbound/animation) | 6 | ✓ |  
+[Statistics](clientbound/statistics) | 7 | ✓ |  
+[Block Break Animation](clientbound/block-break-animation) | 8 | ✓ |  
+[Update Block Entity](clientbound/update-block-entity) | 9 | ✓ |  
+[Block Action](clientbound/block-action) | 10 | ✓ |  
+[Block Change](clientbound/block-change) | 11 | ✓ |  
+[Boss Bar](clientbound/boss-bar) | 12 | ✓ |  
+[Server Difficulty](clientbound/server-difficulty) | 13 | ✓ |  
+[Tab Complete](clientbound/tab-complete) | 14 | ✓ |  
+[Chat Message](clientbound/chat-message) | 15 | ✓ |  
+[Multi Block Change](clientbound/multi-block-change) | 16 | ✓ |  
+[Confirm Transaction](clientbound/confirm-transaction) | 17 | ✓ |  
+[Close Window](clientbound/close-window) | 18 | ✓ |  
+[Open Window](clientbound/open-window) | 19 | ✓ |  
+[Window Items](clientbound/window-items) | 20 | ✓ |  
+[Window Property](clientbound/window-property) | 21 | ✓ |  
+[Set Slot](clientbound/set-slot) | 22 | ✓ |  
+[Set Cooldown](clientbound/set-cooldown) | 23 | ✓ |  
+[Plugin Message](clientbound/plugin-message) | 24 | ✓ |  
+[Named Sound Effect](clientbound/named-sound-effect) | 25 | ✓ |  
+[Disconnect](clientbound/disconnect) | 26 | ✓ |  
+[Entity Status](clientbound/entity-status) | 27 | ✓ |  
+[Explosion](clientbound/explosion) | 28 | ✓ |  
+[Unload Chunk](clientbound/unload-chunk) | 29 | ✓ |  
+[Change Game State](clientbound/change-game-state) | 30 | ✓ |  
+[Keep Alive](clientbound/keep-alive) | 31 | ✓ |  
+[Chunk Data](clientbound/chunk-data) | 32 | ✓ |  
+[Effect](clientbound/effect) | 33 | ✓ |  
+[Particle](clientbound/particle) | 34 | ✓ |  
+[Join Game](clientbound/join-game) | 35 | ✓ |  
+[Map](clientbound/map) | 36 | ✓ |  
+[Entity Relative Move](clientbound/entity-relative-move) | 37 | ✓ |  
+[Entity Look and Relative Move](clientbound/entity-look-and-relative-move) | 38 | ✓ |  
+[Entity Look](clientbound/entity-look) | 39 | ✓ |  
+[Entity](clientbound/entity) | 40 | ✓ |  
+[Vehicle Move](clientbound/vehicle-move) | 41 | ✓ |  
+[Open Sign Editor](clientbound/open-sign-editor) | 42 | ✓ |  
+[Player Abilities](clientbound/player-abilities) | 43 | ✓ |  
+[Combat Event](clientbound/combat-event) | 44 | ✓ |  
+[Player List Item](clientbound/player-list-item) | 45 | ✓ |  
+[Player Position and Look](clientbound/player-position-and-look) | 46 | ✓ |  
+[Use Bed](clientbound/use-bed) | 47 | ✓ |  
+[Destroy Entities](clientbound/destroy-entities) | 48 | ✓ |  
+[Remove Entity Effect](clientbound/remove-entity-effect) | 49 | ✓ |  
+[Resource Pack Send](clientbound/resource-pack-send) | 50 | ✓ |  
+[Respawn](clientbound/respawn) | 51 | ✓ |  
+[Entity Head Look](clientbound/entity-head-look) | 52 | ✓ |  
+[World Border](clientbound/world-border) | 53 | ✓ |  
+[Camera](clientbound/camera) | 54 | ✓ |  
+[Held Item Change](clientbound/held-item-change) | 55 | ✓ |  
+[Display Scoreboard](clientbound/display-scoreboard) | 56 | ✓ |  
+[Entity Metadata](clientbound/entity-metadata) | 57 | ✓ |  
+[Attach Entity](clientbound/attach-entity) | 58 | ✓ |  
+[Entity Velocity](clientbound/entity-velocity) | 59 | ✓ |  
+[Entity Equipment](clientbound/entity-equipment) | 60 | ✓ |  
+[Set Experience](clientbound/set-experience) | 61 | ✓ |  
+[Update Health](clientbound/update-health) | 62 | ✓ |  
+[Scoreboard Objective](clientbound/scoreboard-objective) | 63 | ✓ |  
+[Set Passengers](clientbound/set-passengers) | 64 | ✓ |  
+[Teams](clientbound/teams) | 65 | ✓ |  
+[Update Score](clientbound/update-score) | 66 | ✓ |  
+[Spawn Position](clientbound/spawn-position) | 67 | ✓ |  
+[Time Update](clientbound/time-update) | 68 | ✓ |  
+[Title](clientbound/title) | 69 | ✓ |  
+[Sound Effect](clientbound/sound-effect) | 70 | ✓ |  
+[Player List Header and Footer](clientbound/player-list-header-and-footer) | 71 | ✓ |  
+[Collect Item](clientbound/collect-item) | 72 | ✓ |  
+[Entity Teleport](clientbound/entity-teleport) | 73 | ✓ |  
+[Entity Properties](clientbound/entity-properties) | 74 | ✓ |  
+[Entity Effect](clientbound/entity-effect) | 75 | ✓ |  
 

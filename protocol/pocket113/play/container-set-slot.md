@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket113](/protocol/pocket113)  /  [play](/protocol/pocket113/play)  /  container-set-slot
 
-# Container-set-slot
+# Container set slot
 
 **Id**: 50
 

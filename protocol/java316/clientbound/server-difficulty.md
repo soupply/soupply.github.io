@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java316](/protocol/java316)  /  [clientbound](/protocol/java316/clientbound)  /  server-difficulty
 
-# Server-difficulty
+# Server difficulty
 
 **Id**: 13
 
@@ -25,6 +25,7 @@ Name | Type
 ### difficulty
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [peaceful](difficulty_peaceful) | 0

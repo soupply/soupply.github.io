@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock137](/protocol/bedrock137)  /  [play](/protocol/bedrock137/play)  /  rider-jump
 
-# Rider-jump
+# Rider jump
 
 **Id**: 20
 

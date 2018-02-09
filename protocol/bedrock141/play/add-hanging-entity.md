@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock141](/protocol/bedrock141)  /  [play](/protocol/bedrock141/play)  /  add-hanging-entity
 
-# Add-hanging-entity
+# Add hanging entity
 
 **Id**: 16
 

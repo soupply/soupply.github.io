@@ -22,6 +22,7 @@ Name of the rule. Same of the `gamerule` command's field in Minecraft: Education
 The behaviours indicated in the following constants' descriptions is enabled or disabled.
 
 **Constants**:
+
 Name | Value |  |
 ---|:---:|---
 [drowning damage](name_drowning-damage) | drowningdamage | Damage animation when drowning

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java338](/protocol/java338)  /  [clientbound](/protocol/java338/clientbound)  /  unlock-recipes
 
-# Unlock-recipes
+# Unlock recipes
 
 **Id**: 49
 
@@ -29,6 +29,7 @@ book recipes | varuint[] | <code>action</code> is equal to <code>1 |  | action</
 ### action
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [add](action_add) | 1

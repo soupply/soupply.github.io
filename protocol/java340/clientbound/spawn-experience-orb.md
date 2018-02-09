@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java340](/protocol/java340)  /  [clientbound](/protocol/java340/clientbound)  /  spawn-experience-orb
 
-# Spawn-experience-orb
+# Spawn experience orb
 
 **Id**: 1
 

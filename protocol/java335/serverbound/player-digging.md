@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java335](/protocol/java335)  /  [serverbound](/protocol/java335/serverbound)  /  player-digging
 
-# Player-digging
+# Player digging
 
 **Id**: 20
 
@@ -27,6 +27,7 @@ face | ubyte
 ### status
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [start digging](status_start-digging) | 0

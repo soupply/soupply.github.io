@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java315](/protocol/java315)  /  [login](/protocol/java315/login)  /  encryption-response
 
-# Encryption-response
+# Encryption response
 
 **Id**: 1
 

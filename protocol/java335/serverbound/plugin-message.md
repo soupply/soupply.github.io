@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java335](/protocol/java335)  /  [serverbound](/protocol/java335/serverbound)  /  plugin-message
 
-# Plugin-message
+# Plugin message
 
 **Id**: 10
 

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket101](/protocol/pocket101)  /  [play](/protocol/pocket101/play)  /  rider-jump
 
-# Rider-jump
+# Rider jump
 
 **Id**: 21
 

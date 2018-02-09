@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket105](/protocol/pocket105)  /  [play](/protocol/pocket105/play)  /  block-pick-request
 
-# Block-pick-request
+# Block pick request
 
 **Id**: 35
 

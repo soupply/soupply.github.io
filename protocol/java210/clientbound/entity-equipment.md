@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java210](/protocol/java210)  /  [clientbound](/protocol/java210/clientbound)  /  entity-equipment
 
-# Entity-equipment
+# Entity equipment
 
 **Id**: 60
 

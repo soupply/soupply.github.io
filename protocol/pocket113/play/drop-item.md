@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket113](/protocol/pocket113)  /  [play](/protocol/pocket113/play)  /  drop-item
 
-# Drop-item
+# Drop item
 
 **Id**: 46
 
@@ -26,6 +26,7 @@ item | [slot](/protocol/pocket113/types/slot)
 ### action
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [drop](action_drop) | 0

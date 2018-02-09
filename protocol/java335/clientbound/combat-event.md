@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java335](/protocol/java335)  /  [clientbound](/protocol/java335/clientbound)  /  combat-event
 
-# Combat-event
+# Combat event
 
 **Id**: 44
 

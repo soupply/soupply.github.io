@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket102](/protocol/pocket102)  /  [play](/protocol/pocket102/play)  /  resource-pack-client-response
 
-# Resource-pack-client-response
+# Resource pack client response
 
 **Id**: 9
 
@@ -26,6 +26,7 @@ pack ids | [packIds](/protocol/pocket102/arrays)
 ### status
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [refused](status_refused) | 1

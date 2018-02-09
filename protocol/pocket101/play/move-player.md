@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket101](/protocol/pocket101)  /  [play](/protocol/pocket101/play)  /  move-player
 
-# Move-player
+# Move player
 
 **Id**: 20
 
@@ -31,6 +31,7 @@ on ground | bool
 ### animation
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [full](animation_full) | 0

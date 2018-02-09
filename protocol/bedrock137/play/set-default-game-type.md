@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock137](/protocol/bedrock137)  /  [play](/protocol/bedrock137/play)  /  set-default-game-type
 
-# Set-default-game-type
+# Set default game type
 
 **Id**: 105
 
@@ -25,6 +25,7 @@ Name | Type
 ### game type
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [survival](game-type_survival) | 0

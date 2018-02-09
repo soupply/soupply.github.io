@@ -8,8 +8,8 @@ layout: default
 
 Packet | Id | Clientbound | Serverbound
 ---|:---:|:---:|:---:
-[Handshake](statushandshake) | 0 |   | ✓
-[Request](statusrequest) | 0 |   | ✓
-[Response](statusresponse) | 0 | ✓ |  
-[Latency](statuslatency) | 1 | ✓ | ✓
+[Handshake](status/handshake) | 0 |   | ✓
+[Request](status/request) | 0 |   | ✓
+[Response](status/response) | 0 | ✓ |  
+[Latency](status/latency) | 1 | ✓ | ✓
 

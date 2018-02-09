@@ -26,6 +26,7 @@ entity id | varuint
 ### animation
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [swing main arm](animation_swing-main-arm) | 0

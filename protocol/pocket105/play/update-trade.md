@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket105](/protocol/pocket105)  /  [play](/protocol/pocket105/play)  /  update-trade
 
-# Update-trade
+# Update trade
 
 **Id**: 81
 

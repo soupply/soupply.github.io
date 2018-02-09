@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket105](/protocol/pocket105)  /  [play](/protocol/pocket105/play)  /  resource-pack-data-info
 
-# Resource-pack-data-info
+# Resource pack data info
 
 **Id**: 82
 

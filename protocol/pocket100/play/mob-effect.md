@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket100](/protocol/pocket100)  /  [play](/protocol/pocket100/play)  /  mob-effect
 
-# Mob-effect
+# Mob effect
 
 **Id**: 30
 
@@ -30,6 +30,7 @@ duration | varint
 ### event id
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [add](event-id_add) | 1

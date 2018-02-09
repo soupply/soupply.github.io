@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock141](/protocol/bedrock141)  /  [play](/protocol/bedrock141/play)  /  entity-pick-request
 
-# Entity-pick-request
+# Entity pick request
 
 **Id**: 35
 

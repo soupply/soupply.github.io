@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket113](/protocol/pocket113)  /  [play](/protocol/pocket113/play)  /  level-sound-event
 
-# Level-sound-event
+# Level sound event
 
 **Id**: 25
 
@@ -31,6 +31,7 @@ pitch | varint
 ### sound
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [item use on](sound_item-use-on) | 0

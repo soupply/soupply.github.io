@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock137](/protocol/bedrock137)  /  [play](/protocol/bedrock137/play)  /  resource-pack-client-response
 
-# Resource-pack-client-response
+# Resource pack client response
 
 **Id**: 8
 
@@ -26,6 +26,7 @@ pack ids | [packIds](/protocol/bedrock137/arrays)
 ### status
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [refused](status_refused) | 1

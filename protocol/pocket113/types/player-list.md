@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket113](/protocol/pocket113)  /  [types](/protocol/pocket113/types)  /  player-list
 
-# Player-list
+# Player list
 
 Informations about a player that will be added to the player's list in the pause menu.
 

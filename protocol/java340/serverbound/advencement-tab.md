@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java340](/protocol/java340)  /  [serverbound](/protocol/java340/serverbound)  /  advencement-tab
 
-# Advencement-tab
+# Advencement tab
 
 **Id**: 25
 
@@ -26,6 +26,7 @@ tab | string | <code>action</code> is equal to <code>0</code>
 ### action
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [open tab](action_open-tab) | 0

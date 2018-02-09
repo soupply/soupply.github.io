@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock141](/protocol/bedrock141)  /  [types](/protocol/bedrock141/types)  /  chunk-data
 
-# Chunk-data
+# Chunk data
 
 ⚠️️ This type is prefixed with its length encoded as **varuint** ⚠️️
 

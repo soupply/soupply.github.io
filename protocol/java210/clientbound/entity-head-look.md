@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java210](/protocol/java210)  /  [clientbound](/protocol/java210/clientbound)  /  entity-head-look
 
-# Entity-head-look
+# Entity head look
 
 **Id**: 52
 

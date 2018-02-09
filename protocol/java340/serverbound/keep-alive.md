@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java340](/protocol/java340)  /  [serverbound](/protocol/java340/serverbound)  /  keep-alive
 
-# Keep-alive
+# Keep alive
 
 **Id**: 11
 

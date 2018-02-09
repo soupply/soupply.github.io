@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java340](/protocol/java340)  /  [clientbound](/protocol/java340/clientbound)  /  change-game-state
 
-# Change-game-state
+# Change game state
 
 **Id**: 30
 
@@ -26,6 +26,7 @@ Name | Type
 ### reason
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [invalid bed](reason_invalid-bed) | 0
@@ -42,6 +43,7 @@ Name | Value
 ### value
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [survival](value_survival) | 0

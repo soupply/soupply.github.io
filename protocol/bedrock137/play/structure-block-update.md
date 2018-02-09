@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock137](/protocol/bedrock137)  /  [play](/protocol/bedrock137/play)  /  structure-block-update
 
-# Structure-block-update
+# Structure block update
 
 **Id**: 90
 

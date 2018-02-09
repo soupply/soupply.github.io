@@ -26,6 +26,7 @@ entity id | varlong
 ### action
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [breaking](action_breaking) | 1

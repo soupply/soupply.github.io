@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java210](/protocol/java210)  /  [clientbound](/protocol/java210/clientbound)  /  block-change
 
-# Block-change
+# Block change
 
 **Id**: 11
 

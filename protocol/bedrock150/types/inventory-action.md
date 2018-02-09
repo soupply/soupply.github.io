@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock150](/protocol/bedrock150)  /  [types](/protocol/bedrock150/types)  /  inventory-action
 
-# Inventory-action
+# Inventory action
 
 ## Fields
 
@@ -20,6 +20,7 @@ new item | [slot](/protocol/bedrock150/types/slot) |  |
 ### source
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [container](source_container) | 0

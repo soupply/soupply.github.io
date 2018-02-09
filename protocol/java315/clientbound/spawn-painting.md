@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java315](/protocol/java315)  /  [clientbound](/protocol/java315/clientbound)  /  spawn-painting
 
-# Spawn-painting
+# Spawn painting
 
 **Id**: 4
 
@@ -29,6 +29,7 @@ position | ulong
 ### direction
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [south](direction_south) | 0

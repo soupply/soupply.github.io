@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java340](/protocol/java340)  /  [clientbound](/protocol/java340/clientbound)  /  window-items
 
-# Window-items
+# Window items
 
 **Id**: 20
 

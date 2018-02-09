@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  inventory-content
 
-# Inventory-content
+# Inventory content
 
 **Id**: 49
 

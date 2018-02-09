@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java338](/protocol/java338)  /  [clientbound](/protocol/java338/clientbound)  /  tab-complete
 
-# Tab-complete
+# Tab complete
 
 **Id**: 14
 

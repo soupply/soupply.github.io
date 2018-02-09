@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket113](/protocol/pocket113)  /  [play](/protocol/pocket113/play)  /  request-chunk-radius
 
-# Request-chunk-radius
+# Request chunk radius
 
 **Id**: 69
 

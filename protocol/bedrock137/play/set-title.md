@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock137](/protocol/bedrock137)  /  [play](/protocol/bedrock137/play)  /  set-title
 
-# Set-title
+# Set title
 
 **Id**: 88
 
@@ -31,6 +31,7 @@ fade out | varint
 ### action
 
 **Constants**:
+
 Name | Value |  |
 ---|:---:|---
 [hide](action_hide) | 0 | Hides the title and the subtitle

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock141](/protocol/bedrock141)  /  [play](/protocol/bedrock141/play)  /  purchase-receipt
 
-# Purchase-receipt
+# Purchase receipt
 
 **Id**: 92
 

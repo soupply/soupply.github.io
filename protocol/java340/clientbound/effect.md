@@ -28,6 +28,7 @@ disable volume | bool
 ### effect id
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [dispenser dispense](effect-id_dispenser-dispense) | 1000

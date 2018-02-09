@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java340](/protocol/java340)  /  [clientbound](/protocol/java340/clientbound)  /  player-abilities
 
-# Player-abilities
+# Player abilities
 
 **Id**: 44
 
@@ -27,6 +27,7 @@ fov modifier | float
 ### flags
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [invulnerable](flags_invulnerable) | 1

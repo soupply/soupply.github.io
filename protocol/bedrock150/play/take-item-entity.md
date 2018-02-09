@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  take-item-entity
 
-# Take-item-entity
+# Take item entity
 
 **Id**: 17
 

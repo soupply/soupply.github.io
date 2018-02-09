@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket102](/protocol/pocket102)  /  [play](/protocol/pocket102/play)  /  resource-pack-chunk-request
 
-# Resource-pack-chunk-request
+# Resource pack chunk request
 
 **Id**: 82
 

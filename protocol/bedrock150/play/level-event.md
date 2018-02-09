@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  level-event
 
-# Level-event
+# Level event
 
 **Id**: 25
 
@@ -27,6 +27,7 @@ data | varint
 ### event id
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [start rain](event-id_start-rain) | 3001

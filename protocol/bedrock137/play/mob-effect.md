@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock137](/protocol/bedrock137)  /  [play](/protocol/bedrock137/play)  /  mob-effect
 
-# Mob-effect
+# Mob effect
 
 **Id**: 28
 
@@ -30,6 +30,7 @@ duration | varint
 ### event id
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [add](event-id_add) | 1

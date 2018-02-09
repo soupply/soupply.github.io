@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java210](/protocol/java210)  /  [clientbound](/protocol/java210/clientbound)  /  entity-look-and-relative-move
 
-# Entity-look-and-relative-move
+# Entity look and relative move
 
 **Id**: 38
 

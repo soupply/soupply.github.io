@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java210](/protocol/java210)  /  [serverbound](/protocol/java210/serverbound)  /  teleport-confirm
 
-# Teleport-confirm
+# Teleport confirm
 
 **Id**: 0
 

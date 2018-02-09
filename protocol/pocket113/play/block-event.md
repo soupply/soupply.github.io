@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket113](/protocol/pocket113)  /  [play](/protocol/pocket113/play)  /  block-event
 
-# Block-event
+# Block event
 
 **Id**: 27
 

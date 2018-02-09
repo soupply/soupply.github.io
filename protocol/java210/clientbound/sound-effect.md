@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java210](/protocol/java210)  /  [clientbound](/protocol/java210/clientbound)  /  sound-effect
 
-# Sound-effect
+# Sound effect
 
 **Id**: 70
 

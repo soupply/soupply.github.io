@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock160](/protocol/bedrock160)  /  [play](/protocol/bedrock160/play)  /  play-status
 
-# Play-status
+# Play status
 
 **Id**: 2
 
@@ -27,6 +27,7 @@ Name | Type | Endianness
 ### status
 
 **Constants**:
+
 Name | Value |  |
 ---|:---:|---
 [ok](status_ok) | 0 | Keep the connection alive

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket102](/protocol/pocket102)  /  [play](/protocol/pocket102/play)  /  move-entity
 
-# Move-entity
+# Move entity
 
 **Id**: 19
 

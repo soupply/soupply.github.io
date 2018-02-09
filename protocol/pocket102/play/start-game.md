@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket102](/protocol/pocket102)  /  [play](/protocol/pocket102/play)  /  start-game
 
-# Start-game
+# Start game
 
 **Id**: 12
 
@@ -58,6 +58,7 @@ World's seed. It's displayed in the game's world settings and in beta's debug in
 World's dimension. Different dimensions have different sky colours and render distances.
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [overworld](dimension_overworld) | 0
@@ -70,6 +71,7 @@ World's type. It's displayed in the game's world settings.
 In old and infinite world the sky becomes darker at 32 blocks of altitude and in flat worlds it only becomes darker under 0.
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [old](generator_old) | 0
@@ -81,6 +83,7 @@ Name | Value
 Default's world gamemode. If the player's gamemode is different from the default's one a [SetPlayerGameType](#play_set-player-game-type) should be sent after this.
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [survival](world-gamemode_survival) | 0
@@ -91,6 +94,7 @@ Name | Value
 World's difficulty. The value is visible in the client's world settings.
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [peaceful](difficulty_peaceful) | 0
@@ -112,6 +116,7 @@ If the world's time is stopped a [SetTime](#play_set-time) packet should be sent
 Game's edition. Some behaviours (some entities for example) may only work in a version and not in the other.
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [classic](edition_classic) | 0

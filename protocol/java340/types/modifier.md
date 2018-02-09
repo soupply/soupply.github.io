@@ -17,6 +17,7 @@ amount | double
 ### operation
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [add substract amount](operation_add-substract-amount) | 0

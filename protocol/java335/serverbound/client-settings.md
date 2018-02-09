@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java335](/protocol/java335)  /  [serverbound](/protocol/java335/serverbound)  /  client-settings
 
-# Client-settings
+# Client settings
 
 **Id**: 5
 
@@ -30,6 +30,7 @@ chat colors | bool
 ### chat mode
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [enabled](chat-mode_enabled) | 0
@@ -39,6 +40,7 @@ Name | Value
 ### displayed skin parts
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [cape](displayed-skin-parts_cape) | 1
@@ -52,6 +54,7 @@ Name | Value
 ### main hand
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [right](main-hand_right) | 0

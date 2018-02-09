@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  command-request
 
-# Command-request
+# Command request
 
 **Id**: 77
 
@@ -30,6 +30,7 @@ internal | bool |
 ### type
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [player](type_player) | 0

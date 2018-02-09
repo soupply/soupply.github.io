@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket101](/protocol/pocket101)  /  [play](/protocol/pocket101/play)  /  change-dimension
 
-# Change-dimension
+# Change dimension
 
 **Id**: 61
 
@@ -27,6 +27,7 @@ position | float&lt;xyz&gt;
 ### dimension
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [overworld](dimension_overworld) | 0

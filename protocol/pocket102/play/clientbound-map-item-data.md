@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket102](/protocol/pocket102)  /  [play](/protocol/pocket102/play)  /  clientbound-map-item-data
 
-# Clientbound-map-item-data
+# Clientbound map item data
 
 **Id**: 66
 
@@ -31,6 +31,7 @@ decorations | [decoration](/protocol/pocket102/types/decoration)[] | <code>updat
 ### update
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [texture](update_texture) | 2

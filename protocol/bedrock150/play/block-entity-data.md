@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  block-entity-data
 
-# Block-entity-data
+# Block entity data
 
 **Id**: 56
 

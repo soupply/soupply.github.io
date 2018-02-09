@@ -28,6 +28,7 @@ server port | ushort
 ### next
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [status](next_status) | 1

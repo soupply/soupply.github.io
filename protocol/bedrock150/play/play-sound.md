@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  play-sound
 
-# Play-sound
+# Play sound
 
 **Id**: 86
 

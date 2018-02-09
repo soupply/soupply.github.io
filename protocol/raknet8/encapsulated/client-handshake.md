@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [raknet8](/protocol/raknet8)  /  [encapsulated](/protocol/raknet8/encapsulated)  /  client-handshake
 
-# Client-handshake
+# Client handshake
 
 **Id**: 19
 

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  change-dimension
 
-# Change-dimension
+# Change dimension
 
 **Id**: 61
 
@@ -27,6 +27,7 @@ position | float&lt;xyz&gt;
 ### dimension
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [overworld](dimension_overworld) | 0

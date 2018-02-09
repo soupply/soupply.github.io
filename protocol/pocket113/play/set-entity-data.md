@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket113](/protocol/pocket113)  /  [play](/protocol/pocket113/play)  /  set-entity-data
 
-# Set-entity-data
+# Set entity data
 
 **Id**: 39
 

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock160](/protocol/bedrock160)  /  [play](/protocol/bedrock160/play)  /  map-info-request
 
-# Map-info-request
+# Map info request
 
 **Id**: 68
 

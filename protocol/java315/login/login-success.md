@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java315](/protocol/java315)  /  [login](/protocol/java315/login)  /  login-success
 
-# Login-success
+# Login success
 
 **Id**: 2
 

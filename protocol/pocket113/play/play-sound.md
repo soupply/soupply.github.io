@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket113](/protocol/pocket113)  /  [play](/protocol/pocket113/play)  /  play-sound
 
-# Play-sound
+# Play sound
 
 **Id**: 87
 

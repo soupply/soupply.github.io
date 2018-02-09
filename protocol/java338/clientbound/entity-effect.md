@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java338](/protocol/java338)  /  [clientbound](/protocol/java338/clientbound)  /  entity-effect
 
-# Entity-effect
+# Entity effect
 
 **Id**: 79
 
@@ -29,6 +29,7 @@ duration | varuint
 ### flags
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [ambient](flags_ambient) | 1

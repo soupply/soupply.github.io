@@ -25,6 +25,7 @@ Name | Type
 ### hand
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [main hand](hand_main-hand) | 0

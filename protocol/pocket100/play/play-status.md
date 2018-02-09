@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket100](/protocol/pocket100)  /  [play](/protocol/pocket100/play)  /  play-status
 
-# Play-status
+# Play status
 
 **Id**: 2
 
@@ -25,6 +25,7 @@ Name | Type
 ### status
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [ok](status_ok) | 0

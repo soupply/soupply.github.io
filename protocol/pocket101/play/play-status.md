@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket101](/protocol/pocket101)  /  [play](/protocol/pocket101/play)  /  play-status
 
-# Play-status
+# Play status
 
 **Id**: 2
 
@@ -27,6 +27,7 @@ Name | Type
 ### status
 
 **Constants**:
+
 Name | Value |  |
 ---|:---:|---
 [ok](status_ok) | 0 | Keep the connection alive

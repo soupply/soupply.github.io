@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java335](/protocol/java335)  /  [clientbound](/protocol/java335/clientbound)  /  boss-bar
 
-# Boss-bar
+# Boss bar
 
 **Id**: 12
 
@@ -49,6 +49,7 @@ health | float
 ### color
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [pink](add_color_pink) | 0
@@ -62,6 +63,7 @@ Name | Value
 ### division
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [no division](add_division_no-division) | 0
@@ -73,6 +75,7 @@ Name | Value
 ### flags
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [dark sky](add_flags_dark-sky) | 1
@@ -108,6 +111,7 @@ Name | Type
 ### color
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [pink](update-style_color_pink) | 0
@@ -121,6 +125,7 @@ Name | Value
 ### division
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [no division](update-style_division_no-division) | 0
@@ -140,6 +145,7 @@ Name | Type
 ### flags
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [dark sky](update-flags_flags_dark-sky) | 1

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock141](/protocol/bedrock141)  /  [play](/protocol/bedrock141/play)  /  clientbound-map-item-data
 
-# Clientbound-map-item-data
+# Clientbound map item data
 
 **Id**: 67
 
@@ -31,6 +31,7 @@ decorations | [decoration](/protocol/bedrock141/types/decoration)[] | <code>upda
 ### update
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [texture](update_texture) | 2

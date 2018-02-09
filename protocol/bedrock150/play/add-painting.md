@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  add-painting
 
-# Add-painting
+# Add painting
 
 **Id**: 22
 

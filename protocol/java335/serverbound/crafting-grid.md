@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java335](/protocol/java335)  /  [serverbound](/protocol/java335/serverbound)  /  crafting-grid
 
-# Crafting-grid
+# Crafting grid
 
 **Id**: 1
 

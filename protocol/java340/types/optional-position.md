@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java340](/protocol/java340)  /  [types](/protocol/java340/types)  /  optional-position
 
-# Optional-position
+# Optional position
 
 ## Fields
 

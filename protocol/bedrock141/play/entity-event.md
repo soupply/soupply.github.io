@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock141](/protocol/bedrock141)  /  [play](/protocol/bedrock141/play)  /  entity-event
 
-# Entity-event
+# Entity event
 
 **Id**: 27
 
@@ -27,6 +27,7 @@ data | varint
 ### event id
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [hurt animation](event-id_hurt-animation) | 2

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket102](/protocol/pocket102)  /  [play](/protocol/pocket102/play)  /  chunk-radius-updated
 
-# Chunk-radius-updated
+# Chunk radius updated
 
 **Id**: 69
 

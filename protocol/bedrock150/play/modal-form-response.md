@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  modal-form-response
 
-# Modal-form-response
+# Modal form response
 
 **Id**: 101
 

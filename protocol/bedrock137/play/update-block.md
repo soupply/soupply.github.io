@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock137](/protocol/bedrock137)  /  [play](/protocol/bedrock137/play)  /  update-block
 
-# Update-block
+# Update block
 
 **Id**: 21
 
@@ -27,6 +27,7 @@ block | varuint
 ### flags and meta
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [neighbors](flags-and-meta_neighbors) | 1

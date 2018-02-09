@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java335](/protocol/java335)  /  [serverbound](/protocol/java335/serverbound)  /  player-position-and-look
 
-# Player-position-and-look
+# Player position and look
 
 **Id**: 15
 

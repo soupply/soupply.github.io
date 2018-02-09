@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java340](/protocol/java340)  /  [clientbound](/protocol/java340/clientbound)  /  set-cooldown
 
-# Set-cooldown
+# Set cooldown
 
 **Id**: 23
 

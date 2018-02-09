@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket100](/protocol/pocket100)  /  [play](/protocol/pocket100/play)  /  player-action
 
-# Player-action
+# Player action
 
 **Id**: 36
 
@@ -28,6 +28,7 @@ face | varint
 ### action
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [start break](action_start-break) | 0

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket113](/protocol/pocket113)  /  [types](/protocol/pocket113/types)  /  login-body
 
-# Login-body
+# Login body
 
 ⚠️️ This type is prefixed with its length encoded as **varuint** ⚠️️
 

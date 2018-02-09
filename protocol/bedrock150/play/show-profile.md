@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  show-profile
 
-# Show-profile
+# Show profile
 
 **Id**: 104
 

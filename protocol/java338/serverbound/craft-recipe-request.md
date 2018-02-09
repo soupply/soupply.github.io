@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java338](/protocol/java338)  /  [serverbound](/protocol/java338/serverbound)  /  craft-recipe-request
 
-# Craft-recipe-request
+# Craft recipe request
 
 **Id**: 18
 

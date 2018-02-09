@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket102](/protocol/pocket102)  /  [play](/protocol/pocket102/play)  /  add-hanging-entity
 
-# Add-hanging-entity
+# Add hanging entity
 
 **Id**: 17
 

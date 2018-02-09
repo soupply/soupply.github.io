@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java340](/protocol/java340)  /  [clientbound](/protocol/java340/clientbound)  /  entity-properties
 
-# Entity-properties
+# Entity properties
 
 **Id**: 78
 

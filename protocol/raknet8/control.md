@@ -8,7 +8,7 @@ layout: default
 
 Packet | Id | Clientbound | Serverbound
 ---|:---:|:---:|:---:
-[Ack](controlack) | 192 | ✓ | ✓
-[Nack](controlnack) | 160 | ✓ | ✓
-[Encapsulated](controlencapsulated) | 132 | ✓ | ✓
+[Ack](control/ack) | 192 | ✓ | ✓
+[Nack](control/nack) | 160 | ✓ | ✓
+[Encapsulated](control/encapsulated) | 132 | ✓ | ✓
 

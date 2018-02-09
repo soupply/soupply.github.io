@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java315](/protocol/java315)  /  [clientbound](/protocol/java315/clientbound)  /  open-window
 
-# Open-window
+# Open window
 
 **Id**: 19
 

@@ -8,34 +8,34 @@ layout: default
 
 Packet | Id | Clientbound | Serverbound
 ---|:---:|:---:|:---:
-[Teleport Confirm](serverboundteleport-confirm) | 0 |   | ✓
-[Tab Complete](serverboundtab-complete) | 1 |   | ✓
-[Chat Message](serverboundchat-message) | 2 |   | ✓
-[Client Status](serverboundclient-status) | 3 |   | ✓
-[Client Settings](serverboundclient-settings) | 4 |   | ✓
-[Confirm Transaction](serverboundconfirm-transaction) | 5 |   | ✓
-[Enchant Item](serverboundenchant-item) | 6 |   | ✓
-[Click Window](serverboundclick-window) | 7 |   | ✓
-[Close Window](serverboundclose-window) | 8 |   | ✓
-[Plugin Message](serverboundplugin-message) | 9 |   | ✓
-[Use Entity](serverbounduse-entity) | 10 |   | ✓
-[Keep Alive](serverboundkeep-alive) | 11 |   | ✓
-[Player Position](serverboundplayer-position) | 12 |   | ✓
-[Player Position and Look](serverboundplayer-position-and-look) | 13 |   | ✓
-[Player Look](serverboundplayer-look) | 14 |   | ✓
-[Player](serverboundplayer) | 15 |   | ✓
-[Vehicle Move](serverboundvehicle-move) | 16 |   | ✓
-[Steer Boat](serverboundsteer-boat) | 17 |   | ✓
-[Player Abilities](serverboundplayer-abilities) | 18 |   | ✓
-[Player Digging](serverboundplayer-digging) | 19 |   | ✓
-[Entity Action](serverboundentity-action) | 20 |   | ✓
-[Steer Vehicle](serverboundsteer-vehicle) | 21 |   | ✓
-[Resource Pack Status](serverboundresource-pack-status) | 22 |   | ✓
-[Held Item Change](serverboundheld-item-change) | 23 |   | ✓
-[Creative Inventory Action](serverboundcreative-inventory-action) | 24 |   | ✓
-[Update Sign](serverboundupdate-sign) | 25 |   | ✓
-[Animation](serverboundanimation) | 26 |   | ✓
-[Spectate](serverboundspectate) | 27 |   | ✓
-[Player Block Placement](serverboundplayer-block-placement) | 28 |   | ✓
-[Use Item](serverbounduse-item) | 29 |   | ✓
+[Teleport Confirm](serverbound/teleport-confirm) | 0 |   | ✓
+[Tab Complete](serverbound/tab-complete) | 1 |   | ✓
+[Chat Message](serverbound/chat-message) | 2 |   | ✓
+[Client Status](serverbound/client-status) | 3 |   | ✓
+[Client Settings](serverbound/client-settings) | 4 |   | ✓
+[Confirm Transaction](serverbound/confirm-transaction) | 5 |   | ✓
+[Enchant Item](serverbound/enchant-item) | 6 |   | ✓
+[Click Window](serverbound/click-window) | 7 |   | ✓
+[Close Window](serverbound/close-window) | 8 |   | ✓
+[Plugin Message](serverbound/plugin-message) | 9 |   | ✓
+[Use Entity](serverbound/use-entity) | 10 |   | ✓
+[Keep Alive](serverbound/keep-alive) | 11 |   | ✓
+[Player Position](serverbound/player-position) | 12 |   | ✓
+[Player Position and Look](serverbound/player-position-and-look) | 13 |   | ✓
+[Player Look](serverbound/player-look) | 14 |   | ✓
+[Player](serverbound/player) | 15 |   | ✓
+[Vehicle Move](serverbound/vehicle-move) | 16 |   | ✓
+[Steer Boat](serverbound/steer-boat) | 17 |   | ✓
+[Player Abilities](serverbound/player-abilities) | 18 |   | ✓
+[Player Digging](serverbound/player-digging) | 19 |   | ✓
+[Entity Action](serverbound/entity-action) | 20 |   | ✓
+[Steer Vehicle](serverbound/steer-vehicle) | 21 |   | ✓
+[Resource Pack Status](serverbound/resource-pack-status) | 22 |   | ✓
+[Held Item Change](serverbound/held-item-change) | 23 |   | ✓
+[Creative Inventory Action](serverbound/creative-inventory-action) | 24 |   | ✓
+[Update Sign](serverbound/update-sign) | 25 |   | ✓
+[Animation](serverbound/animation) | 26 |   | ✓
+[Spectate](serverbound/spectate) | 27 |   | ✓
+[Player Block Placement](serverbound/player-block-placement) | 28 |   | ✓
+[Use Item](serverbound/use-item) | 29 |   | ✓
 

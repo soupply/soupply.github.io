@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java338](/protocol/java338)  /  [serverbound](/protocol/java338/serverbound)  /  use-entity
 
-# Use-entity
+# Use entity
 
 **Id**: 10
 
@@ -28,6 +28,7 @@ target position | float&lt;xyz&gt; | <code>type</code> is equal to <code>2</code
 ### type
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [interact](type_interact) | 0
@@ -37,6 +38,7 @@ Name | Value
 ### hand
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [main hand](hand_main-hand) | 0

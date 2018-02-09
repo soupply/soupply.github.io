@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock141](/protocol/bedrock141)  /  [play](/protocol/bedrock141/play)  /  update-trade
 
-# Update-trade
+# Update trade
 
 **Id**: 80
 

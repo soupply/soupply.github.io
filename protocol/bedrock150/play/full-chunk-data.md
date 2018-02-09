@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  full-chunk-data
 
-# Full-chunk-data
+# Full chunk data
 
 **Id**: 58
 

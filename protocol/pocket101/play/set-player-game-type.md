@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket101](/protocol/pocket101)  /  [play](/protocol/pocket101/play)  /  set-player-game-type
 
-# Set-player-game-type
+# Set player game type
 
 **Id**: 62
 
@@ -27,6 +27,7 @@ Name | Type
 ### gamemode
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [survival](gamemode_survival) | 0

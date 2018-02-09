@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java316](/protocol/java316)  /  [serverbound](/protocol/java316/serverbound)  /  client-status
 
-# Client-status
+# Client status
 
 **Id**: 3
 
@@ -25,6 +25,7 @@ Name | Type
 ### action
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [respawn](action_respawn) | 0

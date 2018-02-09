@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java335](/protocol/java335)  /  [login](/protocol/java335/login)  /  encryption-request
 
-# Encryption-request
+# Encryption request
 
 **Id**: 1
 

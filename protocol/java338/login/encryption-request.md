@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java338](/protocol/java338)  /  [login](/protocol/java338/login)  /  encryption-request
 
-# Encryption-request
+# Encryption request
 
 **Id**: 1
 

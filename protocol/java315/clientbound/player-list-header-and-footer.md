@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java315](/protocol/java315)  /  [clientbound](/protocol/java315/clientbound)  /  player-list-header-and-footer
 
-# Player-list-header-and-footer
+# Player list header and footer
 
 **Id**: 71
 

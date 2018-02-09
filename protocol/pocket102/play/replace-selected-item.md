@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket102](/protocol/pocket102)  /  [play](/protocol/pocket102/play)  /  replace-selected-item
 
-# Replace-selected-item
+# Replace selected item
 
 **Id**: 71
 

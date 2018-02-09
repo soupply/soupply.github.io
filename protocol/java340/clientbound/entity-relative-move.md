@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java340](/protocol/java340)  /  [clientbound](/protocol/java340/clientbound)  /  entity-relative-move
 
-# Entity-relative-move
+# Entity relative move
 
 **Id**: 38
 

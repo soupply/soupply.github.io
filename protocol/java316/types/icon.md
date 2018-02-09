@@ -16,6 +16,7 @@ position | ubyte&lt;xz&gt;
 ### direction and type
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [white arrow](direction-and-type_white-arrow) | 0

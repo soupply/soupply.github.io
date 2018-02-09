@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock141](/protocol/bedrock141)  /  [play](/protocol/bedrock141/play)  /  request-chunk-radius
 
-# Request-chunk-radius
+# Request chunk radius
 
 **Id**: 69
 

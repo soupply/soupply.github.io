@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock160](/protocol/bedrock160)  /  [play](/protocol/bedrock160/play)  /  set-spawn-position
 
-# Set-spawn-position
+# Set spawn position
 
 **Id**: 43
 
@@ -27,6 +27,7 @@ forced | bool
 ### type
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [player spawn](type_player-spawn) | 0

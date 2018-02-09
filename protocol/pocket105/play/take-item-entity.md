@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket105](/protocol/pocket105)  /  [play](/protocol/pocket105/play)  /  take-item-entity
 
-# Take-item-entity
+# Take item entity
 
 **Id**: 18
 

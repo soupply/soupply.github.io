@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock141](/protocol/bedrock141)  /  [play](/protocol/bedrock141/play)  /  gui-data-pick-item
 
-# Gui-data-pick-item
+# Gui data pick item
 
 **Id**: 54
 

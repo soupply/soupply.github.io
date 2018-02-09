@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket101](/protocol/pocket101)  /  [play](/protocol/pocket101/play)  /  request-chunk-radius
 
-# Request-chunk-radius
+# Request chunk radius
 
 **Id**: 68
 

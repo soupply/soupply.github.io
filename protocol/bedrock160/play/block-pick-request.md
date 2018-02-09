@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock160](/protocol/bedrock160)  /  [play](/protocol/bedrock160/play)  /  block-pick-request
 
-# Block-pick-request
+# Block pick request
 
 **Id**: 34
 

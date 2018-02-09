@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  level-sound-event
 
-# Level-sound-event
+# Level sound event
 
 **Id**: 24
 
@@ -32,6 +32,7 @@ disable relative volume | bool
 ### sound
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [item use on](sound_item-use-on) | 0

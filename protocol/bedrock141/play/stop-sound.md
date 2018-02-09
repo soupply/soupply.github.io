@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock141](/protocol/bedrock141)  /  [play](/protocol/bedrock141/play)  /  stop-sound
 
-# Stop-sound
+# Stop sound
 
 **Id**: 87
 

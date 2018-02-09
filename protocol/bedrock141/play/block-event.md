@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock141](/protocol/bedrock141)  /  [play](/protocol/bedrock141/play)  /  block-event
 
-# Block-event
+# Block event
 
 **Id**: 26
 

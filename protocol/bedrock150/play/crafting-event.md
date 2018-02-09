@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  crafting-event
 
-# Crafting-event
+# Crafting event
 
 **Id**: 53
 

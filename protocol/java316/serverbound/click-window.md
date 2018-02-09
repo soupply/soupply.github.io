@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java316](/protocol/java316)  /  [serverbound](/protocol/java316/serverbound)  /  click-window
 
-# Click-window
+# Click window
 
 **Id**: 7
 

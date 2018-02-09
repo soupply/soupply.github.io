@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java315](/protocol/java315)  /  [clientbound](/protocol/java315/clientbound)  /  player-position-and-look
 
-# Player-position-and-look
+# Player position and look
 
 **Id**: 46
 
@@ -29,6 +29,7 @@ teleport id | varuint
 ### flags
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [x](flags_x) | 1

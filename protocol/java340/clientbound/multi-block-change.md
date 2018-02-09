@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java340](/protocol/java340)  /  [clientbound](/protocol/java340/clientbound)  /  multi-block-change
 
-# Multi-block-change
+# Multi block change
 
 **Id**: 16
 

@@ -4,7 +4,7 @@ layout: default
 
 # Minecraft (Bedrock Engine) 160
 
-**Other protocols**: [137](./bedrock160), [141](./bedrock160), [150](./bedrock160)
+**Other protocols**: [137](./bedrock160), [141](./bedrock160), [150](./bedrock160), [201](./bedrock160)
 
 **Jump to**: [Encoding](#encoding), [Packets](#packets), [Types](bedrock160/types), [Arrays](bedrock160/arrays), [Metadata](bedrock160/metadata)
 

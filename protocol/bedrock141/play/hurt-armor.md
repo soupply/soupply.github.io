@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock141](/protocol/bedrock141)  /  [play](/protocol/bedrock141/play)  /  hurt-armor
 
-# Hurt-armor
+# Hurt armor
 
 **Id**: 38
 

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket113](/protocol/pocket113)  /  [play](/protocol/pocket113/play)  /  set-title
 
-# Set-title
+# Set title
 
 **Id**: 89
 
@@ -31,6 +31,7 @@ fade out | varint
 ### action
 
 **Constants**:
+
 Name | Value |  |
 ---|:---:|---
 [hide](action_hide) | 0 | Hides the title and the subtitle

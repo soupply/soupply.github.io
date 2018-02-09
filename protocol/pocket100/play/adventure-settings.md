@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket100](/protocol/pocket100)  /  [play](/protocol/pocket100/play)  /  adventure-settings
 
-# Adventure-settings
+# Adventure settings
 
 **Id**: 55
 
@@ -26,6 +26,7 @@ Name | Type
 ### flags
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [immutable world](flags_immutable-world) | 1
@@ -41,6 +42,7 @@ Name | Value
 ### permissions
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [user](permissions_user) | 0

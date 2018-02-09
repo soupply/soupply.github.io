@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java210](/protocol/java210)  /  [clientbound](/protocol/java210/clientbound)  /  scoreboard-objective
 
-# Scoreboard-objective
+# Scoreboard objective
 
 **Id**: 63
 
@@ -28,6 +28,7 @@ value | string | <code>mode</code> is not equal to <code>1</code>
 ### mode
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [create](mode_create) | 0
@@ -37,6 +38,7 @@ Name | Value
 ### type
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [numeric](type_numeric) | integer

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java340](/protocol/java340)  /  [types](/protocol/java340/types)  /  list-add-player
 
-# List-add-player
+# List add player
 
 ## Fields
 
@@ -21,6 +21,7 @@ display name | string | <code>has display name</code> is <code><span style="colo
 ### gamemode
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [survival](gamemode_survival) | 0

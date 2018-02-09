@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock141](/protocol/bedrock141)  /  [play](/protocol/bedrock141/play)  /  show-store-offer
 
-# Show-store-offer
+# Show store offer
 
 **Id**: 91
 

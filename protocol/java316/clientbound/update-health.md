@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java316](/protocol/java316)  /  [clientbound](/protocol/java316/clientbound)  /  update-health
 
-# Update-health
+# Update health
 
 **Id**: 62
 

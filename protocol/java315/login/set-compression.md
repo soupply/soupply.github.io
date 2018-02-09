@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java315](/protocol/java315)  /  [login](/protocol/java315/login)  /  set-compression
 
-# Set-compression
+# Set compression
 
 **Id**: 3
 

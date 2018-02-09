@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java340](/protocol/java340)  /  [clientbound](/protocol/java340/clientbound)  /  resource-pack-send
 
-# Resource-pack-send
+# Resource pack send
 
 **Id**: 52
 

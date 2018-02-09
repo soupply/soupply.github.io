@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java338](/protocol/java338)  /  [login](/protocol/java338/login)  /  login-success
 
-# Login-success
+# Login success
 
 **Id**: 2
 

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java210](/protocol/java210)  /  [clientbound](/protocol/java210/clientbound)  /  named-sound-effect
 
-# Named-sound-effect
+# Named sound effect
 
 **Id**: 25
 

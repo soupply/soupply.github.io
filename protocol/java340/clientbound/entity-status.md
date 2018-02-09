@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java340](/protocol/java340)  /  [clientbound](/protocol/java340/clientbound)  /  entity-status
 
-# Entity-status
+# Entity status
 
 **Id**: 27
 
@@ -26,6 +26,7 @@ entity id | uint
 ### status
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [spawn tipped arrow particle effects](status_spawn-tipped-arrow-particle-effects) | 0

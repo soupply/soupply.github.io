@@ -24,6 +24,7 @@ Name of the rule. Same of the `gamerule` command's field in the game.
 The behaviours indicated in the following constants' descriptions is enabled or disabled.
 
 **Constants**:
+
 Name | Value |  |
 ---|:---:|---
 [command block output](name_command-block-output) | commandblockoutput | Command's block output in the chat
@@ -45,6 +46,7 @@ Name | Value |  |
 ### type
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [boolean](type_boolean) | 1

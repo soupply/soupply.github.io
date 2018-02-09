@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java316](/protocol/java316)  /  [clientbound](/protocol/java316/clientbound)  /  destroy-entities
 
-# Destroy-entities
+# Destroy entities
 
 **Id**: 48
 

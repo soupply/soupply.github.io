@@ -51,6 +51,7 @@ players | string[]
 ### friendly flags
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [friendly fire](create-team_friendly-flags_friendly-fire) | 1
@@ -59,6 +60,7 @@ Name | Value
 ### nametag visibility
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [always hide](create-team_nametag-visibility_always-hide) | always
@@ -69,6 +71,7 @@ Name | Value
 ### collision rule
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [always push](create-team_collision-rule_always-push) | always
@@ -95,6 +98,7 @@ color | ubyte
 ### friendly flags
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [friendly fire](update-team-info_friendly-flags_friendly-fire) | 1
@@ -103,6 +107,7 @@ Name | Value
 ### nametag visibility
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [always hide](update-team-info_nametag-visibility_always-hide) | always
@@ -113,6 +118,7 @@ Name | Value
 ### collision rule
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [always push](update-team-info_collision-rule_always-push) | always

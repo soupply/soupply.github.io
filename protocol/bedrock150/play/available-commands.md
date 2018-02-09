@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  available-commands
 
-# Available-commands
+# Available commands
 
 **Id**: 76
 

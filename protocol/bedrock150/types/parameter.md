@@ -17,6 +17,7 @@ optional | bool
 ### type
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [valid](type_valid) | 1048576

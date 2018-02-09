@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java338](/protocol/java338)  /  [serverbound](/protocol/java338/serverbound)  /  vehicle-move
 
-# Vehicle-move
+# Vehicle move
 
 **Id**: 16
 

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java315](/protocol/java315)  /  [serverbound](/protocol/java315/serverbound)  /  creative-inventory-action
 
-# Creative-inventory-action
+# Creative inventory action
 
 **Id**: 24
 

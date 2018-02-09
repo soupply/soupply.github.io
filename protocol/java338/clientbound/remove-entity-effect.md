@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java338](/protocol/java338)  /  [clientbound](/protocol/java338/clientbound)  /  remove-entity-effect
 
-# Remove-entity-effect
+# Remove entity effect
 
 **Id**: 51
 

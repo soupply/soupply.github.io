@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java210](/protocol/java210)  /  [clientbound](/protocol/java210/clientbound)  /  block-action
 
-# Block-action
+# Block action
 
 **Id**: 10
 
@@ -28,6 +28,7 @@ block type | varuint
 ### action
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [note block harp](action_note-block-harp) | 0
@@ -46,6 +47,7 @@ Name | Value
 ### parameter
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [piston down](parameter_piston-down) | 0

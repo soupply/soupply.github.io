@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock137](/protocol/bedrock137)  /  [play](/protocol/bedrock137/play)  /  set-entity-data
 
-# Set-entity-data
+# Set entity data
 
 **Id**: 39
 

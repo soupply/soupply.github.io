@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock141](/protocol/bedrock141)  /  [play](/protocol/bedrock141/play)  /  book-edit
 
-# Book-edit
+# Book edit
 
 **Id**: 97
 

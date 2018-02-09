@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  command-block-update
 
-# Command-block-update
+# Command block update
 
 **Id**: 78
 

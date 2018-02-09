@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock137](/protocol/bedrock137)  /  [play](/protocol/bedrock137/play)  /  add-behavior-tree
 
-# Add-behavior-tree
+# Add behavior tree
 
 **Id**: 89
 

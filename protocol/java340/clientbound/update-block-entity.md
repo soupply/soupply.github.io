@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java340](/protocol/java340)  /  [clientbound](/protocol/java340/clientbound)  /  update-block-entity
 
-# Update-block-entity
+# Update block entity
 
 **Id**: 9
 
@@ -27,6 +27,7 @@ nbt | bytes
 ### action
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [mob spawner data](action_mob-spawner-data) | 1

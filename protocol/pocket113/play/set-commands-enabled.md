@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket113](/protocol/pocket113)  /  [play](/protocol/pocket113/play)  /  set-commands-enabled
 
-# Set-commands-enabled
+# Set commands enabled
 
 **Id**: 59
 

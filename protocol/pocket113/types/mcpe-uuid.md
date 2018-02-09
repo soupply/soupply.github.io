@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket113](/protocol/pocket113)  /  [types](/protocol/pocket113/types)  /  mcpe-uuid
 
-# Mcpe-uuid
+# Mcpe uuid
 
 ## Fields
 

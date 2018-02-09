@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java338](/protocol/java338)  /  [clientbound](/protocol/java338/clientbound)  /  window-property
 
-# Window-property
+# Window property
 
 **Id**: 21
 
@@ -27,6 +27,7 @@ value | short
 ### property
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [furnance fire icon](property_furnance-fire-icon) | 0

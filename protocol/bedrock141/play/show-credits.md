@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock141](/protocol/bedrock141)  /  [play](/protocol/bedrock141/play)  /  show-credits
 
-# Show-credits
+# Show credits
 
 **Id**: 75
 
@@ -26,6 +26,7 @@ entity id | varlong
 ### status
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [start](status_start) | 0

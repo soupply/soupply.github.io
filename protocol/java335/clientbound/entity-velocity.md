@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java335](/protocol/java335)  /  [clientbound](/protocol/java335/clientbound)  /  entity-velocity
 
-# Entity-velocity
+# Entity velocity
 
 **Id**: 61
 

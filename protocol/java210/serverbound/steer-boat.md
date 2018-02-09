@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java210](/protocol/java210)  /  [serverbound](/protocol/java210/serverbound)  /  steer-boat
 
-# Steer-boat
+# Steer boat
 
 **Id**: 17
 

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket102](/protocol/pocket102)  /  [play](/protocol/pocket102/play)  /  use-item
 
-# Use-item
+# Use item
 
 **Id**: 35
 

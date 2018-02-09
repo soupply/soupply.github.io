@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java210](/protocol/java210)  /  [clientbound](/protocol/java210/clientbound)  /  open-sign-editor
 
-# Open-sign-editor
+# Open sign editor
 
 **Id**: 42
 

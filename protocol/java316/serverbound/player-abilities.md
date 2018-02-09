@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java316](/protocol/java316)  /  [serverbound](/protocol/java316/serverbound)  /  player-abilities
 
-# Player-abilities
+# Player abilities
 
 **Id**: 18
 
@@ -27,6 +27,7 @@ walking speed | float
 ### flags
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [creative mode](flags_creative-mode) | 1

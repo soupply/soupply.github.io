@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket100](/protocol/pocket100)  /  [types](/protocol/pocket100/types)  /  player-list
 
-# Player-list
+# Player list
 
 ## Fields
 

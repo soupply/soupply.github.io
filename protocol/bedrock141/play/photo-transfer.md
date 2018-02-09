@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock141](/protocol/bedrock141)  /  [play](/protocol/bedrock141/play)  /  photo-transfer
 
-# Photo-transfer
+# Photo transfer
 
 **Id**: 99
 

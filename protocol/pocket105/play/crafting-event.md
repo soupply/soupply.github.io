@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [pocket105](/protocol/pocket105)  /  [play](/protocol/pocket105/play)  /  crafting-event
 
-# Crafting-event
+# Crafting event
 
 **Id**: 55
 

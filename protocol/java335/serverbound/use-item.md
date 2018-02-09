@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java335](/protocol/java335)  /  [serverbound](/protocol/java335/serverbound)  /  use-item
 
-# Use-item
+# Use item
 
 **Id**: 32
 
@@ -25,6 +25,7 @@ Name | Type
 ### hand
 
 **Constants**:
+
 Name | Value
 ---|:---:
 [main hand](hand_main-hand) | 0

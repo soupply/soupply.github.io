@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [bedrock160](/protocol/bedrock160)  /  [play](/protocol/bedrock160/play)  /  player-skin
 
-# Player-skin
+# Player skin
 
 **Id**: 93
 

@@ -4,7 +4,7 @@ layout: default
 
 [home](/)  /  [java316](/protocol/java316)  /  [types](/protocol/java316/types)  /  list-update-display-name
 
-# List-update-display-name
+# List update display name
 
 ## Fields
 
