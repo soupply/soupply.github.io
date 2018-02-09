@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+[home](/) ➡ [java340](/protocol/java340) ➡ [clientbound](/protocol/java340/clientbound) ➡ use-bed
+
+# Use-bed
+
+**Id**: 48
+
+**Id** (hex): 30
+
+**Id** (bin): 00110000
+
+✔️
+
+✔️
+
+## Fields
+
+Name | Type
+---|---
+entity id | varuint
+position | ulong
+

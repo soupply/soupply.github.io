@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+[home](/) ➡ [bedrock150](/protocol/bedrock150) ➡ [play](/protocol/bedrock150/play) ➡ server-settings-response
+
+# Server-settings-response
+
+**Id**: 103
+
+**Id** (hex): 67
+
+**Id** (bin): 01100111
+
+✔️
+
+✔️
+
+## Fields
+
+Name | Type
+---|---
+form id | varuint
+data | string
+

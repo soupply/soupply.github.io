@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+[home](/) ➡ [bedrock141](/protocol/bedrock141) ➡ [play](/protocol/bedrock141/play) ➡ container-open
+
+# Container-open
+
+**Id**: 46
+
+**Id** (hex): 2E
+
+**Id** (bin): 00101110
+
+✔️
+
+✔️
+
+## Fields
+
+Name | Type
+---|---
+window | ubyte
+type | ubyte
+position | [blockPosition](/protocol/bedrock141/types/block-position)
+entity id | varlong
+

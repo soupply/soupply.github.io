@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+[home](/) ➡ [java315](/protocol/java315) ➡ [clientbound](/protocol/java315/clientbound) ➡ spawn-position
+
+# Spawn-position
+
+**Id**: 67
+
+**Id** (hex): 43
+
+**Id** (bin): 01000011
+
+✔️
+
+✔️
+
+## Fields
+
+Name | Type
+---|---
+position | ulong
+

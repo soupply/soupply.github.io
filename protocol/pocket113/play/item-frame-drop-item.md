@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+[home](/) ➡ [pocket113](/protocol/pocket113) ➡ [play](/protocol/pocket113/play) ➡ item-frame-drop-item
+
+# Item-frame-drop-item
+
+**Id**: 71
+
+**Id** (hex): 47
+
+**Id** (bin): 01000111
+
+✔️
+
+✔️
+
+## Fields
+
+Name | Type
+---|---
+position | [blockPosition](/protocol/pocket113/types/block-position)
+item | [slot](/protocol/pocket113/types/slot)
+

@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+[home](/) ➡ [pocket102](/protocol/pocket102) ➡ [play](/protocol/pocket102/play) ➡ add-hanging-entity
+
+# Add-hanging-entity
+
+**Id**: 17
+
+**Id** (hex): 11
+
+**Id** (bin): 00010001
+
+✔️
+
+✔️
+
+## Fields
+
+Name | Type
+---|---
+entity id | varlong
+runtime id | varlong
+position | [blockPosition](/protocol/pocket102/types/block-position)
+? | varint
+

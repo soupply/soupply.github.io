@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+[home](/) ➡ [java316](/protocol/java316) ➡ [login](/protocol/java316/login) ➡ disconnect
+
+# Disconnect
+
+**Id**: 0
+
+**Id** (hex): 00
+
+**Id** (bin): 00000000
+
+✔️
+
+✔️
+
+## Fields
+
+Name | Type
+---|---
+reason | string
+

@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+[home](/) ➡ [bedrock160](/protocol/bedrock160) ➡ [play](/protocol/bedrock160/play) ➡ set-entity-link
+
+# Set-entity-link
+
+**Id**: 41
+
+**Id** (hex): 29
+
+**Id** (bin): 00101001
+
+✔️
+
+✔️
+
+## Fields
+
+Name | Type
+---|---
+vehicle | varlong
+passenger | varlong
+[action](#action) | ubyte
+
+### action
+
+**Constants**:
+Name | Value
+---|:---:
+[remove](action_remove) | 0
+[add](action_add) | 1
+

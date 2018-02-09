@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+[home](/) ➡ [java340](/protocol/java340) ➡ [clientbound](/protocol/java340/clientbound) ➡ block-change
+
+# Block-change
+
+**Id**: 11
+
+**Id** (hex): 0B
+
+**Id** (bin): 00001011
+
+✔️
+
+✔️
+
+## Fields
+
+Name | Type
+---|---
+position | ulong
+block | varuint
+

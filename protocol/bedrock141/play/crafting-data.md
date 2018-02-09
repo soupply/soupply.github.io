@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+[home](/) ➡ [bedrock141](/protocol/bedrock141) ➡ [play](/protocol/bedrock141/play) ➡ crafting-data
+
+# Crafting-data
+
+**Id**: 52
+
+**Id** (hex): 34
+
+**Id** (bin): 00110100
+
+✔️
+
+✔️
+
+## Fields
+
+Name | Type
+---|---
+recipes | [recipe](/protocol/bedrock141/types/recipe)[]
+

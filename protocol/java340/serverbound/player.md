@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+[home](/) ➡ [java340](/protocol/java340) ➡ [serverbound](/protocol/java340/serverbound) ➡ player
+
+# Player
+
+**Id**: 12
+
+**Id** (hex): 0C
+
+**Id** (bin): 00001100
+
+✔️
+
+✔️
+
+## Fields
+
+Name | Type
+---|---
+on ground | bool
+

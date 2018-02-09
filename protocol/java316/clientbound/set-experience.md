@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+[home](/) ➡ [java316](/protocol/java316) ➡ [clientbound](/protocol/java316/clientbound) ➡ set-experience
+
+# Set-experience
+
+**Id**: 61
+
+**Id** (hex): 3D
+
+**Id** (bin): 00111101
+
+✔️
+
+✔️
+
+## Fields
+
+Name | Type
+---|---
+experience | float
+level | varuint
+total experience | varuint
+

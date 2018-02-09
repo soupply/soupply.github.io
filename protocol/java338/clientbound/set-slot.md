@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+[home](/) ➡ [java338](/protocol/java338) ➡ [clientbound](/protocol/java338/clientbound) ➡ set-slot
+
+# Set-slot
+
+**Id**: 22
+
+**Id** (hex): 16
+
+**Id** (bin): 00010110
+
+✔️
+
+✔️
+
+## Fields
+
+Name | Type
+---|---
+window | ubyte
+slot | ushort
+item | [slot](/protocol/java338/types/slot)
+

@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+[home](/) ➡ [java210](/protocol/java210) ➡ [clientbound](/protocol/java210/clientbound) ➡ window-items
+
+# Window-items
+
+**Id**: 20
+
+**Id** (hex): 14
+
+**Id** (bin): 00010100
+
+✔️
+
+✔️
+
+## Fields
+
+Name | Type
+---|---
+window | ubyte
+slots | [slots](/protocol/java210/arrays)
+

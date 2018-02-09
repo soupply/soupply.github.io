@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+[home](/) ➡ [java340](/protocol/java340) ➡ [clientbound](/protocol/java340/clientbound) ➡ player-position-and-look
+
+# Player-position-and-look
+
+**Id**: 47
+
+**Id** (hex): 2F
+
+**Id** (bin): 00101111
+
+✔️
+
+✔️
+
+## Fields
+
+Name | Type
+---|---
+position | double&lt;xyz&gt;
+yaw | float
+pitch | float
+[flags](#flags) | ubyte
+teleport id | varuint
+
+### flags
+
+**Constants**:
+Name | Value
+---|:---:
+[x](flags_x) | 1
+[y](flags_y) | 2
+[z](flags_z) | 4
+[y rotation](flags_y-rotation) | 8
+[x rotation](flags_x-rotation) | 16
+

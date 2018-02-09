@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+[home](/) ➡ [java315](/protocol/java315) ➡ [clientbound](/protocol/java315/clientbound) ➡ collect-item
+
+# Collect-item
+
+**Id**: 72
+
+**Id** (hex): 48
+
+**Id** (bin): 01001000
+
+✔️
+
+✔️
+
+## Fields
+
+Name | Type
+---|---
+collected | varuint
+collector | varuint
+count | varuint
+

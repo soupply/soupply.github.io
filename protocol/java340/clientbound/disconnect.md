@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+[home](/) ➡ [java340](/protocol/java340) ➡ [clientbound](/protocol/java340/clientbound) ➡ disconnect
+
+# Disconnect
+
+**Id**: 26
+
+**Id** (hex): 1A
+
+**Id** (bin): 00011010
+
+✔️
+
+✔️
+
+## Fields
+
+Name | Type
+---|---
+reason | string
+

@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+# Minecraft: Java Edition 340
+
+Other protocols: [210](./java340), [315](./java340), [316](./java340), [335](./java340), [338](./java340)
+
+**Jump to**: [Encoding](#encoding), [Packets](#packets), [Arrays](java340/arrays), [Metadata](java340/metadata)
+
+**Released**: September 18th, 2017
+
+In use since version **1.12.2**
+
+-----
+## Encoding
+
+**Endianness**:
+
+big endian | little endian
+---|---
+short, ushort, int, uint, long, ulong, float, double | 
+**Ids**: varuint
+**Array's length**: varuint
+-----
+## Packets
+
+Section | Packets
+---|:---:
+[Status](java340/status) | 4
+[Login](java340/login) | 6
+[Clientbound](java340/clientbound) | 80
+[Serverbound](java340/serverbound) | 33

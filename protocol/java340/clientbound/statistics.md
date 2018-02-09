@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+[home](/) ➡ [java340](/protocol/java340) ➡ [clientbound](/protocol/java340/clientbound) ➡ statistics
+
+# Statistics
+
+**Id**: 7
+
+**Id** (hex): 07
+
+**Id** (bin): 00000111
+
+✔️
+
+✔️
+
+## Fields
+
+Name | Type
+---|---
+statistics | [statistic](/protocol/java340/types/statistic)[]
+

@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+[home](/) ➡ [java316](/protocol/java316) ➡ [clientbound](/protocol/java316/clientbound) ➡ named-sound-effect
+
+# Named-sound-effect
+
+**Id**: 25
+
+**Id** (hex): 19
+
+**Id** (bin): 00011001
+
+✔️
+
+✔️
+
+## Fields
+
+Name | Type
+---|---
+name | string
+category | varuint
+position | int&lt;xyz&gt;
+volume | float
+pitch | float
+

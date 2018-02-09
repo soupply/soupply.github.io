@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+[home](/) ➡ [bedrock160](/protocol/bedrock160) ➡ [play](/protocol/bedrock160/play) ➡ resource-pack-chunk-data
+
+# Resource-pack-chunk-data
+
+**Id**: 83
+
+**Id** (hex): 53
+
+**Id** (bin): 01010011
+
+✔️
+
+✔️
+
+## Fields
+
+Name | Type
+---|---
+id | string
+chunk index | uint
+progress | ulong
+data | [uintLeBytes](/protocol/bedrock160/arrays)
+

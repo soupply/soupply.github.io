@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+[home](/) ➡ [pocket113](/protocol/pocket113) ➡ [play](/protocol/pocket113/play) ➡ resource-pack-chunk-data
+
+# Resource-pack-chunk-data
+
+**Id**: 84
+
+**Id** (hex): 54
+
+**Id** (bin): 01010100
+
+✔️
+
+✔️
+
+## Fields
+
+Name | Type | Endianness
+---|---|:---:
+id | string | 
+chunk index | uint | little endian
+progress | ulong | little endian
+data | [uintLeBytes](/protocol/pocket113/arrays) | 
+

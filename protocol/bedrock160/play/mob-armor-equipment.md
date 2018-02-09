@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+[home](/) ➡ [bedrock160](/protocol/bedrock160) ➡ [play](/protocol/bedrock160/play) ➡ mob-armor-equipment
+
+# Mob-armor-equipment
+
+**Id**: 32
+
+**Id** (hex): 20
+
+**Id** (bin): 00100000
+
+✔️
+
+✔️
+
+## Fields
+
+Name | Type
+---|---
+entity id | varlong
+armor | [slot](/protocol/bedrock160/types/slot)[4]
+

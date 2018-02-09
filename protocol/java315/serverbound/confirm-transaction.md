@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+[home](/) ➡ [java315](/protocol/java315) ➡ [serverbound](/protocol/java315/serverbound) ➡ confirm-transaction
+
+# Confirm-transaction
+
+**Id**: 5
+
+**Id** (hex): 05
+
+**Id** (bin): 00000101
+
+✔️
+
+✔️
+
+## Fields
+
+Name | Type
+---|---
+window | ubyte
+action | ushort
+accepted | bool
+

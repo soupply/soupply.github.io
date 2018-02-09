@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+[home](/) ➡ [java210](/protocol/java210) ➡ [clientbound](/protocol/java210/clientbound) ➡ time-update
+
+# Time-update
+
+**Id**: 68
+
+**Id** (hex): 44
+
+**Id** (bin): 01000100
+
+✔️
+
+✔️
+
+## Fields
+
+Name | Type
+---|---
+world age | ulong
+time | long
+
