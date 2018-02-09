@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java340](/protocol/java340) ➡ [clientbound](/protocol/java340/clientbound) ➡ spawn-global-entity
+[home](/)  /  [java340](/protocol/java340)  /  [clientbound](/protocol/java340/clientbound)  /  spawn-global-entity
 
 # Spawn-global-entity
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00000010
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

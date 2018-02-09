@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [raknet8](/protocol/raknet8) ➡ [unconnected](/protocol/raknet8/unconnected) ➡ ping
+[home](/)  /  [raknet8](/protocol/raknet8)  /  [unconnected](/protocol/raknet8/unconnected)  /  ping
 
 # Ping
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00000001
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

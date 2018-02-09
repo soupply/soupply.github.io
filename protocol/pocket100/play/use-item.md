@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket100](/protocol/pocket100) ➡ [play](/protocol/pocket100/play) ➡ use-item
+[home](/)  /  [pocket100](/protocol/pocket100)  /  [play](/protocol/pocket100/play)  /  use-item
 
 # Use-item
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00100011
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java335](/protocol/java335) ➡ [serverbound](/protocol/java335/serverbound) ➡ player-digging
+[home](/)  /  [java335](/protocol/java335)  /  [serverbound](/protocol/java335/serverbound)  /  player-digging
 
 # Player-digging
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00010100
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

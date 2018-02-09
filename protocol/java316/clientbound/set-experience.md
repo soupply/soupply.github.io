@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java316](/protocol/java316) ➡ [clientbound](/protocol/java316/clientbound) ➡ set-experience
+[home](/)  /  [java316](/protocol/java316)  /  [clientbound](/protocol/java316/clientbound)  /  set-experience
 
 # Set-experience
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00111101
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

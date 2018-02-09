@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java340](/protocol/java340) ➡ [clientbound](/protocol/java340/clientbound) ➡ entity-effect
+[home](/)  /  [java340](/protocol/java340)  /  [clientbound](/protocol/java340/clientbound)  /  entity-effect
 
 # Entity-effect
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 01001111
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

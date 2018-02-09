@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java315](/protocol/java315) ➡ [serverbound](/protocol/java315/serverbound) ➡ player-block-placement
+[home](/)  /  [java315](/protocol/java315)  /  [serverbound](/protocol/java315/serverbound)  /  player-block-placement
 
 # Player-block-placement
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00011100
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

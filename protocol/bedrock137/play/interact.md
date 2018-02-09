@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock137](/protocol/bedrock137) ➡ [play](/protocol/bedrock137/play) ➡ interact
+[home](/)  /  [bedrock137](/protocol/bedrock137)  /  [play](/protocol/bedrock137/play)  /  interact
 
 # Interact
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00100001
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

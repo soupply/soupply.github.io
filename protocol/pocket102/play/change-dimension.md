@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket102](/protocol/pocket102) ➡ [play](/protocol/pocket102/play) ➡ change-dimension
+[home](/)  /  [pocket102](/protocol/pocket102)  /  [play](/protocol/pocket102/play)  /  change-dimension
 
 # Change-dimension
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00111101
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket100](/protocol/pocket100) ➡ [play](/protocol/pocket100/play) ➡ player-input
+[home](/)  /  [pocket100](/protocol/pocket100)  /  [play](/protocol/pocket100/play)  /  player-input
 
 # Player-input
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00111001
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java315](/protocol/java315) ➡ [clientbound](/protocol/java315/clientbound) ➡ entity-metadata
+[home](/)  /  [java315](/protocol/java315)  /  [clientbound](/protocol/java315/clientbound)  /  entity-metadata
 
 # Entity-metadata
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00111001
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

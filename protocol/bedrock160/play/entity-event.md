@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock160](/protocol/bedrock160) ➡ [play](/protocol/bedrock160/play) ➡ entity-event
+[home](/)  /  [bedrock160](/protocol/bedrock160)  /  [play](/protocol/bedrock160/play)  /  entity-event
 
 # Entity-event
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00011011
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

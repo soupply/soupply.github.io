@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket113](/protocol/pocket113) ➡ [play](/protocol/pocket113/play) ➡ set-time
+[home](/)  /  [pocket113](/protocol/pocket113)  /  [play](/protocol/pocket113/play)  /  set-time
 
 # Set-time
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00001010
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 Sets the [time](http://minecraft.gamepedia.com/Day-night_cycle).
 

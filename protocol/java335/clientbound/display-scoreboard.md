@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java335](/protocol/java335) ➡ [clientbound](/protocol/java335/clientbound) ➡ display-scoreboard
+[home](/)  /  [java335](/protocol/java335)  /  [clientbound](/protocol/java335/clientbound)  /  display-scoreboard
 
 # Display-scoreboard
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00111010
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

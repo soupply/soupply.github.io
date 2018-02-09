@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock160](/protocol/bedrock160) ➡ [play](/protocol/bedrock160/play) ➡ modal-form-request
+[home](/)  /  [bedrock160](/protocol/bedrock160)  /  [play](/protocol/bedrock160/play)  /  modal-form-request
 
 # Modal-form-request
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 01100100
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

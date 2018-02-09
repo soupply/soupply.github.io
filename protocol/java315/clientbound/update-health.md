@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java315](/protocol/java315) ➡ [clientbound](/protocol/java315/clientbound) ➡ update-health
+[home](/)  /  [java315](/protocol/java315)  /  [clientbound](/protocol/java315/clientbound)  /  update-health
 
 # Update-health
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00111110
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java338](/protocol/java338) ➡ [clientbound](/protocol/java338/clientbound) ➡ window-items
+[home](/)  /  [java338](/protocol/java338)  /  [clientbound](/protocol/java338/clientbound)  /  window-items
 
 # Window-items
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00010100
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

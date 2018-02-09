@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java338](/protocol/java338) ➡ [clientbound](/protocol/java338/clientbound) ➡ entity-relative-move
+[home](/)  /  [java338](/protocol/java338)  /  [clientbound](/protocol/java338/clientbound)  /  entity-relative-move
 
 # Entity-relative-move
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00100110
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

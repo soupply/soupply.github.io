@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java338](/protocol/java338) ➡ [clientbound](/protocol/java338/clientbound) ➡ entity-status
+[home](/)  /  [java338](/protocol/java338)  /  [clientbound](/protocol/java338/clientbound)  /  entity-status
 
 # Entity-status
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00011011
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

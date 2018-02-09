@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java316](/protocol/java316) ➡ [clientbound](/protocol/java316/clientbound) ➡ particle
+[home](/)  /  [java316](/protocol/java316)  /  [clientbound](/protocol/java316/clientbound)  /  particle
 
 # Particle
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00100010
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

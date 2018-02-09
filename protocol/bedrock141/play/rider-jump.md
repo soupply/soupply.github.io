@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock141](/protocol/bedrock141) ➡ [play](/protocol/bedrock141/play) ➡ rider-jump
+[home](/)  /  [bedrock141](/protocol/bedrock141)  /  [play](/protocol/bedrock141/play)  /  rider-jump
 
 # Rider-jump
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00010100
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

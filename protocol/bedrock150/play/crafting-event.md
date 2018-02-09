@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock150](/protocol/bedrock150) ➡ [play](/protocol/bedrock150/play) ➡ crafting-event
+[home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  crafting-event
 
 # Crafting-event
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00110101
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

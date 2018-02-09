@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket102](/protocol/pocket102) ➡ [play](/protocol/pocket102/play) ➡ drop-item
+[home](/)  /  [pocket102](/protocol/pocket102)  /  [play](/protocol/pocket102/play)  /  drop-item
 
 # Drop-item
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00101110
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

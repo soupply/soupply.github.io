@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket113](/protocol/pocket113) ➡ [play](/protocol/pocket113/play) ➡ move-player
+[home](/)  /  [pocket113](/protocol/pocket113)  /  [play](/protocol/pocket113/play)  /  move-player
 
 # Move-player
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00010011
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket101](/protocol/pocket101) ➡ [types](/protocol/pocket101/types) ➡ slot
+[home](/)  /  [pocket101](/protocol/pocket101)  /  [types](/protocol/pocket101/types)  /  slot
 
 # Slot
 

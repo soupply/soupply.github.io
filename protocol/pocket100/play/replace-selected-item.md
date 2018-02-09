@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket100](/protocol/pocket100) ➡ [play](/protocol/pocket100/play) ➡ replace-selected-item
+[home](/)  /  [pocket100](/protocol/pocket100)  /  [play](/protocol/pocket100/play)  /  replace-selected-item
 
 # Replace-selected-item
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 01000111
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

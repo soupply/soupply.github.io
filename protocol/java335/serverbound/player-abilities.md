@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java335](/protocol/java335) ➡ [serverbound](/protocol/java335/serverbound) ➡ player-abilities
+[home](/)  /  [java335](/protocol/java335)  /  [serverbound](/protocol/java335/serverbound)  /  player-abilities
 
 # Player-abilities
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00010011
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

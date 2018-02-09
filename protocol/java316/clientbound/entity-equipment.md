@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java316](/protocol/java316) ➡ [clientbound](/protocol/java316/clientbound) ➡ entity-equipment
+[home](/)  /  [java316](/protocol/java316)  /  [clientbound](/protocol/java316/clientbound)  /  entity-equipment
 
 # Entity-equipment
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00111100
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

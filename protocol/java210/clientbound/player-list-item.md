@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java210](/protocol/java210) ➡ [clientbound](/protocol/java210/clientbound) ➡ player-list-item
+[home](/)  /  [java210](/protocol/java210)  /  [clientbound](/protocol/java210/clientbound)  /  player-list-item
 
 # Player-list-item
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00101101
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

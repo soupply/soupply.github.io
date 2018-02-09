@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket102](/protocol/pocket102) ➡ [play](/protocol/pocket102/play) ➡ set-entity-link
+[home](/)  /  [pocket102](/protocol/pocket102)  /  [play](/protocol/pocket102/play)  /  set-entity-link
 
 # Set-entity-link
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00101001
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

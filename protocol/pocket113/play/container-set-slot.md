@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket113](/protocol/pocket113) ➡ [play](/protocol/pocket113/play) ➡ container-set-slot
+[home](/)  /  [pocket113](/protocol/pocket113)  /  [play](/protocol/pocket113/play)  /  container-set-slot
 
 # Container-set-slot
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00110010
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

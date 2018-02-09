@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket105](/protocol/pocket105) ➡ [play](/protocol/pocket105/play) ➡ add-entity
+[home](/)  /  [pocket105](/protocol/pocket105)  /  [play](/protocol/pocket105/play)  /  add-entity
 
 # Add-entity
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00001110
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

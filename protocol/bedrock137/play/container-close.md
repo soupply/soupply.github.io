@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock137](/protocol/bedrock137) ➡ [play](/protocol/bedrock137/play) ➡ container-close
+[home](/)  /  [bedrock137](/protocol/bedrock137)  /  [play](/protocol/bedrock137/play)  /  container-close
 
 # Container-close
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00101111
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

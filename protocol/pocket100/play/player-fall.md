@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket100](/protocol/pocket100) ➡ [play](/protocol/pocket100/play) ➡ player-fall
+[home](/)  /  [pocket100](/protocol/pocket100)  /  [play](/protocol/pocket100/play)  /  player-fall
 
 # Player-fall
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00100101
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket105](/protocol/pocket105) ➡ [play](/protocol/pocket105/play) ➡ text
+[home](/)  /  [pocket105](/protocol/pocket105)  /  [play](/protocol/pocket105/play)  /  text
 
 # Text
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00001010
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✔️
 
 Sends or receives a message from the player. Every variant's field can contain Minecraft's formatting codes.
 

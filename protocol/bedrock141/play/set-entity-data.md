@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock141](/protocol/bedrock141) ➡ [play](/protocol/bedrock141/play) ➡ set-entity-data
+[home](/)  /  [bedrock141](/protocol/bedrock141)  /  [play](/protocol/bedrock141/play)  /  set-entity-data
 
 # Set-entity-data
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00100111
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 Updates an entity's metadata.
 

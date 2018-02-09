@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java316](/protocol/java316) ➡ [clientbound](/protocol/java316/clientbound) ➡ entity-teleport
+[home](/)  /  [java316](/protocol/java316)  /  [clientbound](/protocol/java316/clientbound)  /  entity-teleport
 
 # Entity-teleport
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 01001001
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

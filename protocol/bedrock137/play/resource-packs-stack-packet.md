@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock137](/protocol/bedrock137) ➡ [play](/protocol/bedrock137/play) ➡ resource-packs-stack-packet
+[home](/)  /  [bedrock137](/protocol/bedrock137)  /  [play](/protocol/bedrock137/play)  /  resource-packs-stack-packet
 
 # Resource-packs-stack-packet
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00000111
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

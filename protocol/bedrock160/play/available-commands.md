@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock160](/protocol/bedrock160) ➡ [play](/protocol/bedrock160/play) ➡ available-commands
+[home](/)  /  [bedrock160](/protocol/bedrock160)  /  [play](/protocol/bedrock160/play)  /  available-commands
 
 # Available-commands
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 01001100
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 Sends a list of the commands that the player can use through the [CommandStep](#play_command-step) packet.
 

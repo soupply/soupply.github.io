@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock160](/protocol/bedrock160) ➡ [types](/protocol/bedrock160/types) ➡ block-position
+[home](/)  /  [bedrock160](/protocol/bedrock160)  /  [types](/protocol/bedrock160/types)  /  block-position
 
 # Block-position
 

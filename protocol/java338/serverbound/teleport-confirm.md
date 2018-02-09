@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java338](/protocol/java338) ➡ [serverbound](/protocol/java338/serverbound) ➡ teleport-confirm
+[home](/)  /  [java338](/protocol/java338)  /  [serverbound](/protocol/java338/serverbound)  /  teleport-confirm
 
 # Teleport-confirm
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00000000
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

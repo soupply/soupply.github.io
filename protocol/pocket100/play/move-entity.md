@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket100](/protocol/pocket100) ➡ [play](/protocol/pocket100/play) ➡ move-entity
+[home](/)  /  [pocket100](/protocol/pocket100)  /  [play](/protocol/pocket100/play)  /  move-entity
 
 # Move-entity
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00010011
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

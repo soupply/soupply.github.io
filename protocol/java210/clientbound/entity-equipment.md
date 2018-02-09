@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java210](/protocol/java210) ➡ [clientbound](/protocol/java210/clientbound) ➡ entity-equipment
+[home](/)  /  [java210](/protocol/java210)  /  [clientbound](/protocol/java210/clientbound)  /  entity-equipment
 
 # Entity-equipment
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00111100
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket113](/protocol/pocket113) ➡ [play](/protocol/pocket113/play) ➡ container-set-content
+[home](/)  /  [pocket113](/protocol/pocket113)  /  [play](/protocol/pocket113/play)  /  container-set-content
 
 # Container-set-content
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00110100
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

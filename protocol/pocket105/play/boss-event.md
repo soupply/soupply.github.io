@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket105](/protocol/pocket105) ➡ [play](/protocol/pocket105/play) ➡ boss-event
+[home](/)  /  [pocket105](/protocol/pocket105)  /  [play](/protocol/pocket105/play)  /  boss-event
 
 # Boss-event
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 01001100
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 Adds, removes or modifies an entity's boss bar. The percentage of the bar is calculated using the entity's attributes for the health and the max health, updated with [UpdateAttributes](play_update-attributes).
 

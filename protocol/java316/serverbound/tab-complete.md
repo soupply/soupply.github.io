@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java316](/protocol/java316) ➡ [serverbound](/protocol/java316/serverbound) ➡ tab-complete
+[home](/)  /  [java316](/protocol/java316)  /  [serverbound](/protocol/java316/serverbound)  /  tab-complete
 
 # Tab-complete
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00000001
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket105](/protocol/pocket105) ➡ [play](/protocol/pocket105/play) ➡ add-painting
+[home](/)  /  [pocket105](/protocol/pocket105)  /  [play](/protocol/pocket105/play)  /  add-painting
 
 # Add-painting
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00011000
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 Spawns a painting entity in the world.
 

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock141](/protocol/bedrock141) ➡ [play](/protocol/bedrock141/play) ➡ clientbound-map-item-data
+[home](/)  /  [bedrock141](/protocol/bedrock141)  /  [play](/protocol/bedrock141/play)  /  clientbound-map-item-data
 
 # Clientbound-map-item-data
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 01000011
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

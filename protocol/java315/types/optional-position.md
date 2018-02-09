@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java315](/protocol/java315) ➡ [types](/protocol/java315/types) ➡ optional-position
+[home](/)  /  [java315](/protocol/java315)  /  [types](/protocol/java315/types)  /  optional-position
 
 # Optional-position
 

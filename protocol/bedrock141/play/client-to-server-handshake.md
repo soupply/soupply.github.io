@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock141](/protocol/bedrock141) ➡ [play](/protocol/bedrock141/play) ➡ client-to-server-handshake
+[home](/)  /  [bedrock141](/protocol/bedrock141)  /  [play](/protocol/bedrock141/play)  /  client-to-server-handshake
 
 # Client-to-server-handshake
 
@@ -12,7 +12,7 @@ layout: default
 
 **Id** (bin): 00000100
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 

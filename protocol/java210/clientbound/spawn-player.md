@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java210](/protocol/java210) ➡ [clientbound](/protocol/java210/clientbound) ➡ spawn-player
+[home](/)  /  [java210](/protocol/java210)  /  [clientbound](/protocol/java210/clientbound)  /  spawn-player
 
 # Spawn-player
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00000101
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

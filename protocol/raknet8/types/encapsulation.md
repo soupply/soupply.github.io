@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [raknet8](/protocol/raknet8) ➡ [types](/protocol/raknet8/types) ➡ encapsulation
+[home](/)  /  [raknet8](/protocol/raknet8)  /  [types](/protocol/raknet8/types)  /  encapsulation
 
 # Encapsulation
 

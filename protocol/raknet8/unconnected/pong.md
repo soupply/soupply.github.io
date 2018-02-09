@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [raknet8](/protocol/raknet8) ➡ [unconnected](/protocol/raknet8/unconnected) ➡ pong
+[home](/)  /  [raknet8](/protocol/raknet8)  /  [unconnected](/protocol/raknet8/unconnected)  /  pong
 
 # Pong
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00011100
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java316](/protocol/java316) ➡ [status](/protocol/java316/status) ➡ response
+[home](/)  /  [java316](/protocol/java316)  /  [status](/protocol/java316/status)  /  response
 
 # Response
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00000000
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

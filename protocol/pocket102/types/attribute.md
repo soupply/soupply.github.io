@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket102](/protocol/pocket102) ➡ [types](/protocol/pocket102/types) ➡ attribute
+[home](/)  /  [pocket102](/protocol/pocket102)  /  [types](/protocol/pocket102/types)  /  attribute
 
 # Attribute
 

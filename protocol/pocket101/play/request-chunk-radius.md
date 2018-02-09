@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket101](/protocol/pocket101) ➡ [play](/protocol/pocket101/play) ➡ request-chunk-radius
+[home](/)  /  [pocket101](/protocol/pocket101)  /  [play](/protocol/pocket101/play)  /  request-chunk-radius
 
 # Request-chunk-radius
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 01000100
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 Packet sent by the client when its view-distance is updated and when it spawns for the first time a world. A [ChunkRadiusUpdate](#play_chunk-radius_update) should always be sent in response, otherwise the player will not update its view distance.
 

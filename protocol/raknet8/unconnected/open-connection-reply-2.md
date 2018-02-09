@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [raknet8](/protocol/raknet8) ➡ [unconnected](/protocol/raknet8/unconnected) ➡ open-connection-reply-2
+[home](/)  /  [raknet8](/protocol/raknet8)  /  [unconnected](/protocol/raknet8/unconnected)  /  open-connection-reply-2
 
 # Open-connection-reply- 2
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00001000
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

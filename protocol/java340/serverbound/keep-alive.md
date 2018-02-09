@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java340](/protocol/java340) ➡ [serverbound](/protocol/java340/serverbound) ➡ keep-alive
+[home](/)  /  [java340](/protocol/java340)  /  [serverbound](/protocol/java340/serverbound)  /  keep-alive
 
 # Keep-alive
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00001011
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

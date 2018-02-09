@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock150](/protocol/bedrock150) ➡ [play](/protocol/bedrock150/play) ➡ spawn-experience-orb
+[home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  spawn-experience-orb
 
 # Spawn-experience-orb
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 01000010
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

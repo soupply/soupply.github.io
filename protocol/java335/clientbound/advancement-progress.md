@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java335](/protocol/java335) ➡ [clientbound](/protocol/java335/clientbound) ➡ advancement-progress
+[home](/)  /  [java335](/protocol/java335)  /  [clientbound](/protocol/java335/clientbound)  /  advancement-progress
 
 # Advancement-progress
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00110110
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

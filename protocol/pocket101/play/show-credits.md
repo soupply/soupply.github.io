@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket101](/protocol/pocket101) ➡ [play](/protocol/pocket101/play) ➡ show-credits
+[home](/)  /  [pocket101](/protocol/pocket101)  /  [play](/protocol/pocket101/play)  /  show-credits
 
 # Show-credits
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 01001100
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

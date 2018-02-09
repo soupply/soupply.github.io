@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java315](/protocol/java315) ➡ [clientbound](/protocol/java315/clientbound) ➡ combat-event
+[home](/)  /  [java315](/protocol/java315)  /  [clientbound](/protocol/java315/clientbound)  /  combat-event
 
 # Combat-event
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00101100
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

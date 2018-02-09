@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket101](/protocol/pocket101) ➡ [play](/protocol/pocket101/play) ➡ container-close
+[home](/)  /  [pocket101](/protocol/pocket101)  /  [play](/protocol/pocket101/play)  /  container-close
 
 # Container-close
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00110001
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

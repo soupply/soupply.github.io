@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock150](/protocol/bedrock150) ➡ [play](/protocol/bedrock150/play) ➡ disconnect
+[home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  disconnect
 
 # Disconnect
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00000101
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 Disconnects the player from the server.
 

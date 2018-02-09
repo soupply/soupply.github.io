@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket105](/protocol/pocket105) ➡ [play](/protocol/pocket105/play) ➡ start-game
+[home](/)  /  [pocket105](/protocol/pocket105)  /  [play](/protocol/pocket105/play)  /  start-game
 
 # Start-game
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00001100
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

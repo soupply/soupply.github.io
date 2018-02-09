@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java315](/protocol/java315) ➡ [serverbound](/protocol/java315/serverbound) ➡ use-entity
+[home](/)  /  [java315](/protocol/java315)  /  [serverbound](/protocol/java315/serverbound)  /  use-entity
 
 # Use-entity
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00001010
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

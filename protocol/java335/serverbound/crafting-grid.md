@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java335](/protocol/java335) ➡ [serverbound](/protocol/java335/serverbound) ➡ crafting-grid
+[home](/)  /  [java335](/protocol/java335)  /  [serverbound](/protocol/java335/serverbound)  /  crafting-grid
 
 # Crafting-grid
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00000001
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

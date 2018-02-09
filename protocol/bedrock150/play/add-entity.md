@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock150](/protocol/bedrock150) ➡ [play](/protocol/bedrock150/play) ➡ add-entity
+[home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  add-entity
 
 # Add-entity
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00001101
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

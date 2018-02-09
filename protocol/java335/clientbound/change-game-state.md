@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java335](/protocol/java335) ➡ [clientbound](/protocol/java335/clientbound) ➡ change-game-state
+[home](/)  /  [java335](/protocol/java335)  /  [clientbound](/protocol/java335/clientbound)  /  change-game-state
 
 # Change-game-state
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00011110
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

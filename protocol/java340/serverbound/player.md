@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java340](/protocol/java340) ➡ [serverbound](/protocol/java340/serverbound) ➡ player
+[home](/)  /  [java340](/protocol/java340)  /  [serverbound](/protocol/java340/serverbound)  /  player
 
 # Player
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00001100
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

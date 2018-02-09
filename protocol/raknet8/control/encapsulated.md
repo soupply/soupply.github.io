@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [raknet8](/protocol/raknet8) ➡ [control](/protocol/raknet8/control) ➡ encapsulated
+[home](/)  /  [raknet8](/protocol/raknet8)  /  [control](/protocol/raknet8/control)  /  encapsulated
 
 # Encapsulated
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 10000100
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

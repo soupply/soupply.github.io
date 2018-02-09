@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java315](/protocol/java315) ➡ [serverbound](/protocol/java315/serverbound) ➡ creative-inventory-action
+[home](/)  /  [java315](/protocol/java315)  /  [serverbound](/protocol/java315/serverbound)  /  creative-inventory-action
 
 # Creative-inventory-action
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00011000
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock137](/protocol/bedrock137) ➡ [play](/protocol/bedrock137/play) ➡ set-time
+[home](/)  /  [bedrock137](/protocol/bedrock137)  /  [play](/protocol/bedrock137/play)  /  set-time
 
 # Set-time
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00001010
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 Sets the [time](http://minecraft.gamepedia.com/Day-night_cycle).
 

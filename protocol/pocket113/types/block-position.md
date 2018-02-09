@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket113](/protocol/pocket113) ➡ [types](/protocol/pocket113/types) ➡ block-position
+[home](/)  /  [pocket113](/protocol/pocket113)  /  [types](/protocol/pocket113/types)  /  block-position
 
 # Block-position
 

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java315](/protocol/java315) ➡ [serverbound](/protocol/java315/serverbound) ➡ vehicle-move
+[home](/)  /  [java315](/protocol/java315)  /  [serverbound](/protocol/java315/serverbound)  /  vehicle-move
 
 # Vehicle-move
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00010000
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

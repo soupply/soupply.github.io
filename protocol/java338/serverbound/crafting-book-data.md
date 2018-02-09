@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java338](/protocol/java338) ➡ [serverbound](/protocol/java338/serverbound) ➡ crafting-book-data
+[home](/)  /  [java338](/protocol/java338)  /  [serverbound](/protocol/java338/serverbound)  /  crafting-book-data
 
 # Crafting-book-data
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00010111
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

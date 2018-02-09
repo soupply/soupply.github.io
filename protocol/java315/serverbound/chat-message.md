@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java315](/protocol/java315) ➡ [serverbound](/protocol/java315/serverbound) ➡ chat-message
+[home](/)  /  [java315](/protocol/java315)  /  [serverbound](/protocol/java315/serverbound)  /  chat-message
 
 # Chat-message
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00000010
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock150](/protocol/bedrock150) ➡ [types](/protocol/bedrock150/types) ➡ pack-with-size
+[home](/)  /  [bedrock150](/protocol/bedrock150)  /  [types](/protocol/bedrock150/types)  /  pack-with-size
 
 # Pack-with-size
 

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [raknet8](/protocol/raknet8) ➡ [encapsulated](/protocol/raknet8/encapsulated) ➡ mcpe
+[home](/)  /  [raknet8](/protocol/raknet8)  /  [encapsulated](/protocol/raknet8/encapsulated)  /  mcpe
 
 # Mcpe
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 11111110
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

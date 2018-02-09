@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java316](/protocol/java316) ➡ [status](/protocol/java316/status) ➡ latency
+[home](/)  /  [java316](/protocol/java316)  /  [status](/protocol/java316/status)  /  latency
 
 # Latency
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00000001
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket101](/protocol/pocket101) ➡ metadata
+[home](/)  /  [pocket101](/protocol/pocket101)  /  metadata
 
 # Metadata
 
@@ -23,6 +23,7 @@ slot | [slot](/protocol/pocket101/types/slot) | 5 |
 blockPosition | varint&lt;xyz&gt; | 6 | 
 long | varlong | 7 | 
 entityPosition | float&lt;xyz&gt; | 8 | 
+
 ## Data
 Name | Type | Id | Default | Required
 ---|---|---|---|---
@@ -47,6 +48,7 @@ Mark Variant | int | 45 |  |
 Bounding Box Width | float | 54 |  |  
 Bounding Box Height | float | 55 |  |  
 Fuse Length | int | 56 |  |  
+
 ### Entity Flags
 
 Flag | Bit

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java340](/protocol/java340) ➡ [serverbound](/protocol/java340/serverbound) ➡ advencement-tab
+[home](/)  /  [java340](/protocol/java340)  /  [serverbound](/protocol/java340/serverbound)  /  advencement-tab
 
 # Advencement-tab
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00011001
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

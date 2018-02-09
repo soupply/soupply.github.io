@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [raknet8](/protocol/raknet8) ➡ [encapsulated](/protocol/raknet8/encapsulated) ➡ server-handshake
+[home](/)  /  [raknet8](/protocol/raknet8)  /  [encapsulated](/protocol/raknet8/encapsulated)  /  server-handshake
 
 # Server-handshake
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00010000
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket101](/protocol/pocket101) ➡ [play](/protocol/pocket101/play) ➡ resource-packs-stack-packet
+[home](/)  /  [pocket101](/protocol/pocket101)  /  [play](/protocol/pocket101/play)  /  resource-packs-stack-packet
 
 # Resource-packs-stack-packet
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00001000
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

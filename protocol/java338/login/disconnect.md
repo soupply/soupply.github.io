@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java338](/protocol/java338) ➡ [login](/protocol/java338/login) ➡ disconnect
+[home](/)  /  [java338](/protocol/java338)  /  [login](/protocol/java338/login)  /  disconnect
 
 # Disconnect
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00000000
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

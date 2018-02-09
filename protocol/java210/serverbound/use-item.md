@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java210](/protocol/java210) ➡ [serverbound](/protocol/java210/serverbound) ➡ use-item
+[home](/)  /  [java210](/protocol/java210)  /  [serverbound](/protocol/java210/serverbound)  /  use-item
 
 # Use-item
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00011101
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

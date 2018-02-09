@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java340](/protocol/java340) ➡ [login](/protocol/java340/login) ➡ login-start
+[home](/)  /  [java340](/protocol/java340)  /  [login](/protocol/java340/login)  /  login-start
 
 # Login-start
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00000000
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

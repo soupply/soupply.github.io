@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket113](/protocol/pocket113) ➡ [play](/protocol/pocket113/play) ➡ set-entity-motion
+[home](/)  /  [pocket113](/protocol/pocket113)  /  [play](/protocol/pocket113/play)  /  set-entity-motion
 
 # Set-entity-motion
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00101000
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 Updates an entity's motion.
 

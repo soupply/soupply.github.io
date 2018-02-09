@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock150](/protocol/bedrock150) ➡ [play](/protocol/bedrock150/play) ➡ take-item-entity
+[home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  take-item-entity
 
 # Take-item-entity
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00010001
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 Plays the collection animation and despawns the entity that has been collected.
 

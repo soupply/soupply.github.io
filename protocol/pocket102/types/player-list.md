@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket102](/protocol/pocket102) ➡ [types](/protocol/pocket102/types) ➡ player-list
+[home](/)  /  [pocket102](/protocol/pocket102)  /  [types](/protocol/pocket102/types)  /  player-list
 
 # Player-list
 

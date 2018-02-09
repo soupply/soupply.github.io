@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [raknet8](/protocol/raknet8) ➡ [encapsulated](/protocol/raknet8/encapsulated) ➡ ping
+[home](/)  /  [raknet8](/protocol/raknet8)  /  [encapsulated](/protocol/raknet8/encapsulated)  /  ping
 
 # Ping
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00000000
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java316](/protocol/java316) ➡ [status](/protocol/java316/status) ➡ handshake
+[home](/)  /  [java316](/protocol/java316)  /  [status](/protocol/java316/status)  /  handshake
 
 # Handshake
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00000000
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

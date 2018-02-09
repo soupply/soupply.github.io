@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket113](/protocol/pocket113) ➡ [play](/protocol/pocket113/play) ➡ chunk-radius-updated
+[home](/)  /  [pocket113](/protocol/pocket113)  /  [play](/protocol/pocket113/play)  /  chunk-radius-updated
 
 # Chunk-radius-updated
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 01000110
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 Packet sent always and only in response to [RequestChunkRadius](#play_request-chunk-radius) to change the client's view distance.
 

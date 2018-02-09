@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java315](/protocol/java315) ➡ status
+[home](/)  /  [java315](/protocol/java315)  /  status
 
 # Status
 

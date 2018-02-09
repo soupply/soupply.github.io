@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock150](/protocol/bedrock150) ➡ [play](/protocol/bedrock150/play) ➡ chunk-radius-updated
+[home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  chunk-radius-updated
 
 # Chunk-radius-updated
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 01000110
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 Packet sent always and only in response to [RequestChunkRadius](#play_request-chunk-radius) to change the client's view distance.
 

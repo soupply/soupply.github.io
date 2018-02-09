@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java335](/protocol/java335) ➡ [types](/protocol/java335/types) ➡ block-change
+[home](/)  /  [java335](/protocol/java335)  /  [types](/protocol/java335/types)  /  block-change
 
 # Block-change
 

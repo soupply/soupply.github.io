@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock150](/protocol/bedrock150) ➡ [types](/protocol/bedrock150/types) ➡ slot
+[home](/)  /  [bedrock150](/protocol/bedrock150)  /  [types](/protocol/bedrock150/types)  /  slot
 
 # Slot
 

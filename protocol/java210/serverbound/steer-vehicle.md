@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java210](/protocol/java210) ➡ [serverbound](/protocol/java210/serverbound) ➡ steer-vehicle
+[home](/)  /  [java210](/protocol/java210)  /  [serverbound](/protocol/java210/serverbound)  /  steer-vehicle
 
 # Steer-vehicle
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00010101
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

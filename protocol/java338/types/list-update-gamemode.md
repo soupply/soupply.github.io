@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java338](/protocol/java338) ➡ [types](/protocol/java338/types) ➡ list-update-gamemode
+[home](/)  /  [java338](/protocol/java338)  /  [types](/protocol/java338/types)  /  list-update-gamemode
 
 # List-update-gamemode
 

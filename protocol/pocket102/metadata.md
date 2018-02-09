@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket102](/protocol/pocket102) ➡ metadata
+[home](/)  /  [pocket102](/protocol/pocket102)  /  metadata
 
 # Metadata
 
@@ -23,6 +23,7 @@ slot | [slot](/protocol/pocket102/types/slot) | 5 |
 blockPosition | varint&lt;xyz&gt; | 6 | 
 long | varlong | 7 | 
 entityPosition | float&lt;xyz&gt; | 8 | 
+
 ## Data
 Name | Type | Id | Default | Required
 ---|---|---|---|---
@@ -51,6 +52,7 @@ Area Effect Cloud Radius | float | 61 |  |
 Area Effect Cloud Waiting | int | 62 |  |  
 Area Effect Cloud Particle | int | 63 |  |  
 Trading Player | long | 68 |  |  
+
 ### Entity Flags
 
 Flag | Bit

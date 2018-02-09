@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java210](/protocol/java210) ➡ [serverbound](/protocol/java210/serverbound) ➡ client-settings
+[home](/)  /  [java210](/protocol/java210)  /  [serverbound](/protocol/java210/serverbound)  /  client-settings
 
 # Client-settings
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00000100
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

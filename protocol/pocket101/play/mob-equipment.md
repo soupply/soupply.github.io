@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket101](/protocol/pocket101) ➡ [play](/protocol/pocket101/play) ➡ mob-equipment
+[home](/)  /  [pocket101](/protocol/pocket101)  /  [play](/protocol/pocket101/play)  /  mob-equipment
 
 # Mob-equipment
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00100000
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✔️
 
 Sent when the client puts an item in its hotbar or selects a new hotbar slot.
 

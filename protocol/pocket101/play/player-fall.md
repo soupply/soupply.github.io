@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket101](/protocol/pocket101) ➡ [play](/protocol/pocket101/play) ➡ player-fall
+[home](/)  /  [pocket101](/protocol/pocket101)  /  [play](/protocol/pocket101/play)  /  player-fall
 
 # Player-fall
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00100101
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 Sent by the player when it falls from a distance that causes damage, that can be influenced by its armour and its effects.
 

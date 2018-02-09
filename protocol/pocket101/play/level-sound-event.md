@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket101](/protocol/pocket101) ➡ [play](/protocol/pocket101/play) ➡ level-sound-event
+[home](/)  /  [pocket101](/protocol/pocket101)  /  [play](/protocol/pocket101/play)  /  level-sound-event
 
 # Level-sound-event
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00011010
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✔️
 
 Plays a sound at a certain position.
 

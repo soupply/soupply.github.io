@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [raknet8](/protocol/raknet8) ➡ [control](/protocol/raknet8/control) ➡ ack
+[home](/)  /  [raknet8](/protocol/raknet8)  /  [control](/protocol/raknet8/control)  /  ack
 
 # Ack
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 11000000
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

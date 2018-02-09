@@ -4,15 +4,14 @@ layout: default
 
 # Minecraft: Java Edition 335
 
-Other protocols: [210](./java335), [315](./java335), [316](./java335), [338](./java335), [340](./java335)
+**Other protocols**: [210](./java335), [315](./java335), [316](./java335), [338](./java335), [340](./java335)
 
-**Jump to**: [Encoding](#encoding), [Packets](#packets), [Arrays](java335/arrays), [Metadata](java335/metadata)
+**Jump to**: [Encoding](#encoding), [Packets](#packets), [Types](java335/types), [Arrays](java335/arrays), [Metadata](java335/metadata)
 
 **Released**:  June 7th, 2017
 
 Used in version **1.12**
 
------
 ## Encoding
 
 **Endianness**:
@@ -20,8 +19,11 @@ Used in version **1.12**
 big endian | little endian
 ---|---
 short, ushort, int, uint, long, ulong, float, double | 
+
 **Ids**: varuint
+
 **Array's length**: varuint
+
 -----
 ## Packets
 

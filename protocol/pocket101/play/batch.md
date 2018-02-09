@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket101](/protocol/pocket101) ➡ [play](/protocol/pocket101/play) ➡ batch
+[home](/)  /  [pocket101](/protocol/pocket101)  /  [play](/protocol/pocket101/play)  /  batch
 
 # Batch
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00000110
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✔️
 
 One ore more packet, each prefixed with their varuint-encoded length, compressed with zlib's deflate algorithm.
 

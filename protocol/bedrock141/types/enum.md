@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock141](/protocol/bedrock141) ➡ [types](/protocol/bedrock141/types) ➡ enum
+[home](/)  /  [bedrock141](/protocol/bedrock141)  /  [types](/protocol/bedrock141/types)  /  enum
 
 # Enum
 

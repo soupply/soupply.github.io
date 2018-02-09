@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java340](/protocol/java340) ➡ metadata
+[home](/)  /  [java340](/protocol/java340)  /  metadata
 
 # Metadata
 
@@ -28,6 +28,7 @@ direction | varuint | 10
 uuid | [optionalUuid](/protocol/java340/types/optional-uuid) | 11
 block | varuint | 12
 nbt | bytes | 13
+
 ## Data
 Name | Type | Id | Default | Required
 ---|---|---|---|---
@@ -138,6 +139,7 @@ Furnace Powered | bool | 12 |  |
 Command | string | 12 |  |  
 Last Output | [chat](/protocol/java340/types/chat) | 13 |  |  
 Fuse Time | int | 6 |  |  
+
 ### Entity Flags
 
 Flag | Bit

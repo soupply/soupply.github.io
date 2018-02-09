@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock160](/protocol/bedrock160) ➡ [play](/protocol/bedrock160/play) ➡ adventure-settings
+[home](/)  /  [bedrock160](/protocol/bedrock160)  /  [play](/protocol/bedrock160/play)  /  adventure-settings
 
 # Adventure-settings
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00110111
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✔️
 
 Updates the world's settings and client's permissions.
 

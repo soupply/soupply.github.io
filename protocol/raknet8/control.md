@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [raknet8](/protocol/raknet8) ➡ control
+[home](/)  /  [raknet8](/protocol/raknet8)  /  control
 
 # Control
 

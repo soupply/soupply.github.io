@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java338](/protocol/java338) ➡ [types](/protocol/java338/types) ➡ attribute
+[home](/)  /  [java338](/protocol/java338)  /  [types](/protocol/java338/types)  /  attribute
 
 # Attribute
 

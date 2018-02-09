@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock160](/protocol/bedrock160) ➡ [play](/protocol/bedrock160/play) ➡ text
+[home](/)  /  [bedrock160](/protocol/bedrock160)  /  [play](/protocol/bedrock160/play)  /  text
 
 # Text
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00001001
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✔️
 
 Sends or receives a message from the player. Every variant's field can contain Minecraft's formatting codes.
 

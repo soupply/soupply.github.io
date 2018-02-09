@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java316](/protocol/java316) ➡ [serverbound](/protocol/java316/serverbound) ➡ player-position-and-look
+[home](/)  /  [java316](/protocol/java316)  /  [serverbound](/protocol/java316/serverbound)  /  player-position-and-look
 
 # Player-position-and-look
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00001101
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

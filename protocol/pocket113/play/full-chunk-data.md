@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket113](/protocol/pocket113) ➡ [play](/protocol/pocket113/play) ➡ full-chunk-data
+[home](/)  /  [pocket113](/protocol/pocket113)  /  [play](/protocol/pocket113/play)  /  full-chunk-data
 
 # Full-chunk-data
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00111010
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 Sends a 16x16 chunk to the client with its blocks, lights and block entities (tiles).
 

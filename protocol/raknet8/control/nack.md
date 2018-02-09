@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [raknet8](/protocol/raknet8) ➡ [control](/protocol/raknet8/control) ➡ nack
+[home](/)  /  [raknet8](/protocol/raknet8)  /  [control](/protocol/raknet8/control)  /  nack
 
 # Nack
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 10100000
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

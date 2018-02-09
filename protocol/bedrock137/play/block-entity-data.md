@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock137](/protocol/bedrock137) ➡ [play](/protocol/bedrock137/play) ➡ block-entity-data
+[home](/)  /  [bedrock137](/protocol/bedrock137)  /  [play](/protocol/bedrock137/play)  /  block-entity-data
 
 # Block-entity-data
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00111000
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✔️
 
 Sets a block entity's nbt tag, block's additional data that cannot be indicated in the block's meta. More informations about block entities and their tag format can be found on [Minecraft Wiki](http://minecraft.gamepedia.com/Block_entity).
 The client sends this packet when it writes a sign.

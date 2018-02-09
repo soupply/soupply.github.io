@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java338](/protocol/java338) ➡ [types](/protocol/java338/types) ➡ entry
+[home](/)  /  [java338](/protocol/java338)  /  [types](/protocol/java338/types)  /  entry
 
 # Entry
 

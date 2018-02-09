@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java316](/protocol/java316) ➡ [login](/protocol/java316/login) ➡ login-success
+[home](/)  /  [java316](/protocol/java316)  /  [login](/protocol/java316/login)  /  login-success
 
 # Login-success
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00000010
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

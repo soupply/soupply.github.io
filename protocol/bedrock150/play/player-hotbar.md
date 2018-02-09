@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock150](/protocol/bedrock150) ➡ [play](/protocol/bedrock150/play) ➡ player-hotbar
+[home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  player-hotbar
 
 # Player-hotbar
 
@@ -12,7 +12,7 @@ layout: default
 
 **Id** (bin): 00110000
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✖️
 

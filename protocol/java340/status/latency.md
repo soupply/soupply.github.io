@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java340](/protocol/java340) ➡ [status](/protocol/java340/status) ➡ latency
+[home](/)  /  [java340](/protocol/java340)  /  [status](/protocol/java340/status)  /  latency
 
 # Latency
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00000001
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

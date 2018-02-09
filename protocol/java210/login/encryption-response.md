@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java210](/protocol/java210) ➡ [login](/protocol/java210/login) ➡ encryption-response
+[home](/)  /  [java210](/protocol/java210)  /  [login](/protocol/java210/login)  /  encryption-response
 
 # Encryption-response
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00000001
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

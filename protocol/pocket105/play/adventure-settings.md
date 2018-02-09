@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket105](/protocol/pocket105) ➡ [play](/protocol/pocket105/play) ➡ adventure-settings
+[home](/)  /  [pocket105](/protocol/pocket105)  /  [play](/protocol/pocket105/play)  /  adventure-settings
 
 # Adventure-settings
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00111000
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✔️
 
 Updates the world's settings and client's permissions.
 

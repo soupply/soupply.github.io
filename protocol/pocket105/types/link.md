@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket105](/protocol/pocket105) ➡ [types](/protocol/pocket105/types) ➡ link
+[home](/)  /  [pocket105](/protocol/pocket105)  /  [types](/protocol/pocket105/types)  /  link
 
 # Link
 

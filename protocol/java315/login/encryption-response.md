@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java315](/protocol/java315) ➡ [login](/protocol/java315/login) ➡ encryption-response
+[home](/)  /  [java315](/protocol/java315)  /  [login](/protocol/java315/login)  /  encryption-response
 
 # Encryption-response
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00000001
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 
 ## Fields
 

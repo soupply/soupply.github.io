@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock150](/protocol/bedrock150) ➡ [play](/protocol/bedrock150/play) ➡ initiate-web-socket-connection
+[home](/)  /  [bedrock150](/protocol/bedrock150)  /  [play](/protocol/bedrock150/play)  /  initiate-web-socket-connection
 
 # Initiate-web-socket-connection
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 01011111
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

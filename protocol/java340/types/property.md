@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java340](/protocol/java340) ➡ [types](/protocol/java340/types) ➡ property
+[home](/)  /  [java340](/protocol/java340)  /  [types](/protocol/java340/types)  /  property
 
 # Property
 

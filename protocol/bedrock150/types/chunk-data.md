@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock150](/protocol/bedrock150) ➡ [types](/protocol/bedrock150/types) ➡ chunk-data
+[home](/)  /  [bedrock150](/protocol/bedrock150)  /  [types](/protocol/bedrock150/types)  /  chunk-data
 
 # Chunk-data
 

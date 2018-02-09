@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java210](/protocol/java210) ➡ login
+[home](/)  /  [java210](/protocol/java210)  /  login
 
 # Login
 

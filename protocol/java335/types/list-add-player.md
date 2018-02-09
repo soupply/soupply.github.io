@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java335](/protocol/java335) ➡ [types](/protocol/java335/types) ➡ list-add-player
+[home](/)  /  [java335](/protocol/java335)  /  [types](/protocol/java335/types)  /  list-add-player
 
 # List-add-player
 

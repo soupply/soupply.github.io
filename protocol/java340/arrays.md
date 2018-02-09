@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java340](/protocol/java340) ➡ arrays
+[home](/)  /  [java340](/protocol/java340)  /  arrays
 
 # Arrays
 

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java210](/protocol/java210) ➡ [types](/protocol/java210/types) ➡ list-update-gamemode
+[home](/)  /  [java210](/protocol/java210)  /  [types](/protocol/java210/types)  /  list-update-gamemode
 
 # List-update-gamemode
 

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock150](/protocol/bedrock150) ➡ metadata
+[home](/)  /  [bedrock150](/protocol/bedrock150)  /  metadata
 
 # Metadata
 
@@ -23,6 +23,7 @@ slot | [slot](/protocol/bedrock150/types/slot) | 5
 blockPosition | varint&lt;xyz&gt; | 6
 long | varlong | 7
 entityPosition | float&lt;xyz&gt; | 8
+
 ## Data
 Name | Type | Id | Default | Required
 ---|---|---|---|---
@@ -86,6 +87,7 @@ Command Block Track Output | string | 73 |  |
 Controlling Rider Seat Number | byte | 74 |  |  
 Strength | int | 75 |  |  
 Max Strength | int | 76 |  |  
+
 ### Entity Flags
 
 Flag | Bit

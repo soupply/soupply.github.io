@@ -4,14 +4,15 @@ layout: default
 
 # Minecraft: Pocket Edition 105
 
-Other protocols: [100](./pocket105), [101](./pocket105), [102](./pocket105), [113](./pocket105)
+**Other protocols**: [100](./pocket105), [101](./pocket105), [102](./pocket105), [113](./pocket105)
 
-**Jump to**: [Encoding](#encoding), [Packets](#packets), [Arrays](pocket105/arrays), [Metadata](pocket105/metadata)
+**Jump to**: [Encoding](#encoding), [Packets](#packets), [Types](pocket105/types), [Arrays](pocket105/arrays), [Metadata](pocket105/metadata)
 
 **Released**: March 28th, 2017
 
 Used in version **1.0.5**
 
+-----
 Protocol used in Minecraft: Pocket Edition and variants. The network part of the protocol is managed by [RakNet](../raknet/8.html).
 
 #### Login sequence
@@ -38,8 +39,11 @@ Everything written in the documentation has been tested on [sel-server](https://
 big endian | little endian
 ---|---
 ushort, uint, ulong | float
+
 **Ids**: ubyte
+
 **Array's length**: varuint
+
 -----
 ## Packets
 

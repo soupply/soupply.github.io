@@ -4,14 +4,15 @@ layout: default
 
 # Minecraft (Bedrock Engine) 141
 
-Other protocols: [137](./bedrock141), [150](./bedrock141), [160](./bedrock141)
+**Other protocols**: [137](./bedrock141), [150](./bedrock141), [160](./bedrock141)
 
-**Jump to**: [Encoding](#encoding), [Packets](#packets), [Arrays](bedrock141/arrays), [Metadata](bedrock141/metadata)
+**Jump to**: [Encoding](#encoding), [Packets](#packets), [Types](bedrock141/types), [Arrays](bedrock141/arrays), [Metadata](bedrock141/metadata)
 
 **Released**: November 21st, 2017
 
 Used in version **1.2.5**
 
+-----
 Protocol used in Minecraft: Pocket Edition and variants. The network part of the protocol is managed by [RakNet](../raknet/8.html).
 
 ⚠ Every packet is encoded as id (byte), padding (2 bytes) and body ⚠
@@ -40,8 +41,11 @@ Everything written in the documentation has been tested on [sel-server](https://
 big endian | little endian
 ---|---
 ushort, int, uint, long, ulong, float | 
+
 **Ids**: varuint
+
 **Array's length**: varuint
+
 -----
 ## Packets
 

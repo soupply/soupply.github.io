@@ -2,9 +2,7 @@
 layout: default
 ---
 
-Automatically generated libraries for encoding and decoding Minecraft protocols
-
-## [Minecraft: Java Edition](java)
+## [Minecraft: Java Edition](protocol/java)
 
 Protocol | Packets | Released | From | To
 :---:|:---:|:---:|:---:|:---:
@@ -15,7 +13,7 @@ Protocol | Packets | Released | From | To
 [315](java315) | 116 | 2016/11/14 | 1.11 | 1.11
 [210](java210) | 116 | 2016/6/8 | 1.10 | 1.10.2
 
-## [Minecraft (Bedrock Engine)](bedrock)
+## [Minecraft (Bedrock Engine)](protocol/bedrock)
 
 Protocol | Packets | Released | From | To
 :---:|:---:|:---:|:---:|:---:
@@ -24,7 +22,7 @@ Protocol | Packets | Released | From | To
 [141](bedrock141) | 104 | 2017/11/21 | 1.2.5 | 1.2.5
 [137](bedrock137) | 104 | 2017/9/20 | 1.2.0 | 1.2.3
 
-## [Minecraft: Pocket Edition](pocket)
+## [Minecraft: Pocket Edition](protocol/pocket)
 
 Protocol | Packets | Released | From | To
 :---:|:---:|:---:|:---:|:---:
@@ -34,7 +32,7 @@ Protocol | Packets | Released | From | To
 [101](pocket101) | 82 | 2017/2/8 | 1.0.3 | 1.0.3
 [100](pocket100) | 81 | 2016/12/19 | 1.0.0 | 1.0.2
 
-## [Raknet](raknet)
+## [Raknet](protocol/raknet)
 
 Protocol | Packets | Released | From | To
 :---:|:---:|:---:|:---:|:---:

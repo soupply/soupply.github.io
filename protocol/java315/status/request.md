@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java315](/protocol/java315) ➡ [status](/protocol/java315/status) ➡ request
+[home](/)  /  [java315](/protocol/java315)  /  [status](/protocol/java315/status)  /  request
 
 # Request
 
@@ -12,7 +12,7 @@ layout: default
 
 **Id** (bin): 00000000
 
-✔️
+**Clientbound**: ✖️
 
-✔️
+**Serverbound**: ✔️
 

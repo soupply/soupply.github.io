@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java315](/protocol/java315) ➡ [types](/protocol/java315/types) ➡ list-update-display-name
+[home](/)  /  [java315](/protocol/java315)  /  [types](/protocol/java315/types)  /  list-update-display-name
 
 # List-update-display-name
 

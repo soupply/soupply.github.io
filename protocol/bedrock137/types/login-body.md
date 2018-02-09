@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock137](/protocol/bedrock137) ➡ [types](/protocol/bedrock137/types) ➡ login-body
+[home](/)  /  [bedrock137](/protocol/bedrock137)  /  [types](/protocol/bedrock137/types)  /  login-body
 
 # Login-body
 

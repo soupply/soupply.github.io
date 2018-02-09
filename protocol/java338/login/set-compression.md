@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java338](/protocol/java338) ➡ [login](/protocol/java338/login) ➡ set-compression
+[home](/)  /  [java338](/protocol/java338)  /  [login](/protocol/java338/login)  /  set-compression
 
 # Set-compression
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00000011
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

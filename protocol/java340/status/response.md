@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java340](/protocol/java340) ➡ [status](/protocol/java340/status) ➡ response
+[home](/)  /  [java340](/protocol/java340)  /  [status](/protocol/java340/status)  /  response
 
 # Response
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00000000
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket100](/protocol/pocket100) ➡ play
+[home](/)  /  [pocket100](/protocol/pocket100)  /  play
 
 # Play
 

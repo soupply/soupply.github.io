@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java316](/protocol/java316) ➡ [login](/protocol/java316/login) ➡ encryption-request
+[home](/)  /  [java316](/protocol/java316)  /  [login](/protocol/java316/login)  /  encryption-request
 
 # Encryption-request
 
@@ -12,9 +12,9 @@ layout: default
 
 **Id** (bin): 00000001
 
-✔️
+**Clientbound**: ✔️
 
-✔️
+**Serverbound**: ✖️
 
 ## Fields
 

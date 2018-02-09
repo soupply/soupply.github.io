@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock141](/protocol/bedrock141) ➡ play
+[home](/)  /  [bedrock141](/protocol/bedrock141)  /  play
 
 # Play
 

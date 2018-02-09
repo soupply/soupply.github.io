@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket101](/protocol/pocket101) ➡ arrays
+[home](/)  /  [pocket101](/protocol/pocket101)  /  arrays
 
 # Arrays
 

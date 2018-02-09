@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java210](/protocol/java210) ➡ metadata
+[home](/)  /  [java210](/protocol/java210)  /  metadata
 
 # Metadata
 
@@ -27,6 +27,7 @@ optionalPosition | [optionalPosition](/protocol/java210/types/optional-position)
 direction | varuint | 10
 uuid | [optionalUuid](/protocol/java210/types/optional-uuid) | 11
 block | varuint | 12
+
 ## Data
 Name | Type | Id | Default | Required
 ---|---|---|---|---
@@ -127,6 +128,7 @@ Furnace Powered | bool | 12 |  |
 Command | string | 12 |  |  
 Last Output | [chat](/protocol/java210/types/chat) | 13 |  |  
 Fuse Time | int | 6 |  |  
+
 ### Entity Flags
 
 Flag | Bit

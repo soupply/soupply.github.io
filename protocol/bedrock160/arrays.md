@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock160](/protocol/bedrock160) ➡ arrays
+[home](/)  /  [bedrock160](/protocol/bedrock160)  /  arrays
 
 # Arrays
 

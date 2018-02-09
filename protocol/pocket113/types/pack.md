@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [pocket113](/protocol/pocket113) ➡ [types](/protocol/pocket113/types) ➡ pack
+[home](/)  /  [pocket113](/protocol/pocket113)  /  [types](/protocol/pocket113/types)  /  pack
 
 # Pack
 

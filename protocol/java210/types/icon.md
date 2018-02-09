@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java210](/protocol/java210) ➡ [types](/protocol/java210/types) ➡ icon
+[home](/)  /  [java210](/protocol/java210)  /  [types](/protocol/java210/types)  /  icon
 
 # Icon
 

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock137](/protocol/bedrock137) ➡ [types](/protocol/bedrock137/types) ➡ rule
+[home](/)  /  [bedrock137](/protocol/bedrock137)  /  [types](/protocol/bedrock137/types)  /  rule
 
 # Rule
 

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [bedrock160](/protocol/bedrock160) ➡ [types](/protocol/bedrock160/types) ➡ inventory-action
+[home](/)  /  [bedrock160](/protocol/bedrock160)  /  [types](/protocol/bedrock160/types)  /  inventory-action
 
 # Inventory-action
 

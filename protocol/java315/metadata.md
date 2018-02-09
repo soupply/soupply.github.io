@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java315](/protocol/java315) ➡ metadata
+[home](/)  /  [java315](/protocol/java315)  /  metadata
 
 # Metadata
 
@@ -27,6 +27,7 @@ optionalPosition | [optionalPosition](/protocol/java315/types/optional-position)
 direction | varuint | 10
 uuid | [optionalUuid](/protocol/java315/types/optional-uuid) | 11
 block | varuint | 12
+
 ## Data
 Name | Type | Id | Default | Required
 ---|---|---|---|---
@@ -132,6 +133,7 @@ Furnace Powered | bool | 12 |  |
 Command | string | 12 |  |  
 Last Output | [chat](/protocol/java315/types/chat) | 13 |  |  
 Fuse Time | int | 6 |  |  
+
 ### Entity Flags
 
 Flag | Bit

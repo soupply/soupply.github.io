@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[home](/) ➡ [java316](/protocol/java316) ➡ clientbound
+[home](/)  /  [java316](/protocol/java316)  /  clientbound
 
 # Clientbound
 
