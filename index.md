@@ -33,9 +33,3 @@ Protocol | Packets | Released | From | To
 [101](protocol/pocket101) | 82 | 2017/2/8 | 1.0.3 | 1.0.3
 [100](protocol/pocket100) | 81 | 2016/12/19 | 1.0.0 | 1.0.2
 
-## [Raknet](protocol/raknet8)
-
-Protocol | Packets | Released | From | To
-:---:|:---:|:---:|:---:|:---:
-[8](protocol/raknet8) | 16 | 2011/8/16 | Alpha 0.1.0
-

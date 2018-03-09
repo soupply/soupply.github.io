@@ -22,7 +22,7 @@ First MCPE packet sent after the establishment of the connection through raknet.
 
 Name | Type | Endianness | Default
 ---|---|:---:|:---:
-[protocol](#protocol) | uint | big endian | 160
+[protocol](#protocol) | uint | big endian | 201
 [body](#body) | [loginBody](/protocol/bedrock201/types/login-body) |  | 
 
 ### protocol
