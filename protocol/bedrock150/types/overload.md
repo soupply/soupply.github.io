@@ -11,4 +11,3 @@ layout: default
 Name | Type
 ---|---
 parameters | [parameter](/protocol/bedrock150/types/parameter)[]
-

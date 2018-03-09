@@ -39,4 +39,3 @@ Name | Value
 [structure data](action_structure-data) | 7
 [end gateway destination](action_end-gateway-destination) | 8
 [sign text](action_sign-text) | 9
-

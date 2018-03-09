@@ -18,4 +18,3 @@ biomes | ubyte[256]
 borders | ubyte[]
 extra data | [extraData](/protocol/pocket100/types/extra-data)[]
 block entities | bytes
-

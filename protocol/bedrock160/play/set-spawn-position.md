@@ -32,4 +32,3 @@ Name | Value
 ---|:---:
 [player spawn](type_player-spawn) | 0
 [world spawn](type_world-spawn) | 1
-

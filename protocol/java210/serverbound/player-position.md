@@ -22,4 +22,3 @@ Name | Type
 ---|---
 position | double&lt;xyz&gt;
 on ground | bool
-

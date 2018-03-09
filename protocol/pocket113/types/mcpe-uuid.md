@@ -12,4 +12,3 @@ Name | Type | Endianness
 ---|---|:---:
 most significant bits | long | little endian
 least significant bits | long | little endian
-

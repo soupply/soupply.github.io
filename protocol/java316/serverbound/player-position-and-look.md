@@ -24,4 +24,3 @@ position | double&lt;xyz&gt;
 yaw | float
 pitch | float
 on ground | bool
-

@@ -22,4 +22,3 @@ Name | Type
 ---|---
 entity id | varuint
 velocity | short&lt;xyz&gt;
-

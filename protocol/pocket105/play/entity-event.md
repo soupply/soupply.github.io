@@ -44,4 +44,3 @@ Name | Value
 [squid ink cloud](event-id_squid-ink-cloud) | 15
 [ambient sound](event-id_ambient-sound) | 16
 [respawn](event-id_respawn) | 17
-

@@ -58,4 +58,3 @@ Name | Value
 [tell inventory controls](value_tell-inventory-controls) | 103
 [bright](value_bright) | 0
 [dark](value_dark) | 1
-

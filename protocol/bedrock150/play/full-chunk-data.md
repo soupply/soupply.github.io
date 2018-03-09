@@ -28,4 +28,3 @@ data | [chunkData](/protocol/bedrock150/types/chunk-data)
 ### position
 
 Coordinates of the chunk.
-

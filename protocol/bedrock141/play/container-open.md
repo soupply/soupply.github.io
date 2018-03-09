@@ -24,4 +24,3 @@ window | ubyte
 type | ubyte
 position | [blockPosition](/protocol/bedrock141/types/block-position)
 entity id | varlong
-

@@ -22,4 +22,3 @@ Name | Type
 ---|---
 uuid | string
 username | string
-

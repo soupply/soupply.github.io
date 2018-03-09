@@ -25,4 +25,3 @@ Name | Value
 [fire damage](name_fire-damage) | firedamage
 [immutable world](name_immutable-world) | immutableworld
 [pvp](name_pvp) | pvp
-

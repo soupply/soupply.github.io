@@ -24,4 +24,3 @@ Name | Type
 ---|---
 entity id | varlong
 attributes | [attribute](/protocol/bedrock201/types/attribute)[]
-

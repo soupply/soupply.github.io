@@ -32,4 +32,3 @@ Name | Value
 [chat](position_chat) | 0
 [system message](position_system-message) | 1
 [above hotbar](position_above-hotbar) | 2
-

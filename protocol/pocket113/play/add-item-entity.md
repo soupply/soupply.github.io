@@ -28,4 +28,3 @@ item | [slot](/protocol/pocket113/types/slot)
 position | float&lt;xyz&gt;
 motion | float&lt;xyz&gt;
 metadata | [metadata](/protocol/pocket113/metadata)
-

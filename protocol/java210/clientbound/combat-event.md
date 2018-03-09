@@ -50,4 +50,3 @@ Name | Type
 player id | varuint
 entity id | uint
 message | string
-

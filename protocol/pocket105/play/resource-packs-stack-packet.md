@@ -23,4 +23,3 @@ Name | Type
 must accept | bool
 behaviour packs | [packArray](/protocol/pocket105/arrays)
 resource packs | [packArray](/protocol/pocket105/arrays)
-

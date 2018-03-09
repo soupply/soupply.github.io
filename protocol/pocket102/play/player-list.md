@@ -46,4 +46,3 @@ players | [playerList](/protocol/pocket102/types/player-list)[]
 Name | Type
 ---|---
 players | uuid[]
-

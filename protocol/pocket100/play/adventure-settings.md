@@ -50,4 +50,3 @@ Name | Value
 [host](permissions_host) | 2
 [automation](permissions_automation) | 3
 [admin](permissions_admin) | 4
-

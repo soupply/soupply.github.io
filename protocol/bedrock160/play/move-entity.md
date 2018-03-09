@@ -27,4 +27,3 @@ head yaw | ubyte
 yaw | ubyte
 on ground | bool
 teleported | bool
-

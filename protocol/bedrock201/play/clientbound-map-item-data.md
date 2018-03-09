@@ -45,4 +45,3 @@ Colums and rows.
 ### data
 
 ARGB colours encoded as unsigned varints.
-

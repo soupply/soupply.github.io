@@ -33,4 +33,3 @@ Name | Value
 [command](type_command) | 29
 [enum](type_enum) | 2097152
 [template](type_template) | 16777216
-

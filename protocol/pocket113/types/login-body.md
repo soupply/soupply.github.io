@@ -14,4 +14,3 @@ Name | Type
 ---|---
 chain | [loginPayload](/protocol/pocket113/arrays)
 client data | [loginPayload](/protocol/pocket113/arrays)
-

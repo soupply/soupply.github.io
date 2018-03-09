@@ -23,4 +23,3 @@ Name | Type
 entity id | varuint
 position | double&lt;xyz&gt;
 count | ushort
-

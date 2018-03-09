@@ -200,4 +200,3 @@ Name | Value
 ### position
 
 Position where the sound was generated. The closer to the player the more intense will be on the client.
-

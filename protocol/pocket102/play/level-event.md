@@ -78,4 +78,3 @@ Name | Value
 [dragon breath](event-id_dragon-breath) | 16425
 [shoot](event-id_shoot) | 2000
 [destroy](event-id_destroy) | 2001
-

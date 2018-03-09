@@ -31,4 +31,3 @@ head yaw | float
 yaw | float
 held item | [slot](/protocol/pocket100/types/slot)
 metadata | [metadata](/protocol/pocket100/metadata)
-

@@ -23,4 +23,3 @@ Name | Type
 ? | varint
 position | [blockPosition](/protocol/pocket100/types/block-position)
 ? | bool
-

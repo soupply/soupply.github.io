@@ -36,5 +36,4 @@ Name | Value |  |
 [spawned](status_spawned) | 3 | Spawn in a world
 [invalid tenant](status_invalid-tenant) | 4 | 
 [edition mismatch edu to vanilla](status_edition-mismatch-edu-to-vanilla) | 5 | 
-[edition mismatch vanilla to edu](status_edition-mismatch-vanilla-to-edu) | 6 | 
-
+[edition mismatch vanilla to edu](status_edition-mismatch-vanilla-to-edu) | 6 |

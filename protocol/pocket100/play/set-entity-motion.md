@@ -22,4 +22,3 @@ Name | Type
 ---|---
 entity id | varlong
 motion | float&lt;xyz&gt;
-

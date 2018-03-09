@@ -22,4 +22,3 @@ Name | Type
 ---|---
 item | varuint
 cooldown | varuint
-

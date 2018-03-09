@@ -32,4 +32,3 @@ Name | Value
 ---|:---:
 [remove](action_remove) | 0
 [add](action_add) | 1
-

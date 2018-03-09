@@ -22,4 +22,3 @@ Name | Type
 ---|---
 position | [blockPosition](/protocol/bedrock150/types/block-position)
 item | [slot](/protocol/bedrock150/types/slot)
-

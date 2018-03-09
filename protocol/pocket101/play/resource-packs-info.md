@@ -23,4 +23,3 @@ Name | Type
 must accept | bool
 behaviour packs | [packWithSizeArray](/protocol/pocket101/arrays)
 resource packs | [packWithSizeArray](/protocol/pocket101/arrays)
-

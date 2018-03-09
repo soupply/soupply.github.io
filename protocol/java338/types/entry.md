@@ -13,4 +13,3 @@ Name | Type
 item | [slot](/protocol/java338/types/slot)
 crafting slot | ubyte
 player slot | ubyte
-

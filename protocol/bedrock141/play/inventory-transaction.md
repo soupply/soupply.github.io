@@ -102,4 +102,3 @@ Name | Value
 ---|:---:
 [shoot bow](release-item_action-type_shoot-bow) | 0
 [consume](release-item_action-type_consume) | 1
-

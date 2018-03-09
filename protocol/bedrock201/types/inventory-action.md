@@ -26,4 +26,3 @@ Name | Value
 [container](source_container) | 0
 [world](source_world) | 2
 [creative](source_creative) | 3
-

@@ -13,4 +13,3 @@ Name | Type | When
 id | varint | 
 meta and count | varint | <code>id</code> is greater than <code>0</code>
 nbt | [nbt](/protocol/pocket100/arrays) | <code>id</code> is greater than <code>0</code>
-

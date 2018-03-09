@@ -27,4 +27,3 @@ Name | Type
 ### radius
 
 View distance that may be different from the client's one if the server sets a limit on the view distance.
-

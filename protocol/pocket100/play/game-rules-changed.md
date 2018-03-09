@@ -21,4 +21,3 @@ layout: default
 Name | Type
 ---|---
 rules | [rules](/protocol/pocket100/arrays)
-

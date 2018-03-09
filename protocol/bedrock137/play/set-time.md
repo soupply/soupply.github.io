@@ -27,4 +27,3 @@ Name | Type
 ### time
 
 Time of the day in a range from 0 to 24000. If higher or lower it will be moduled to 24000.
-

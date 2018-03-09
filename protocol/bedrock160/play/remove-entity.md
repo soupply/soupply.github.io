@@ -23,4 +23,3 @@ Despawns an entity or a player.
 Name | Type
 ---|---
 entity id | varlong
-

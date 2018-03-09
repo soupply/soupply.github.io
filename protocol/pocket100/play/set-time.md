@@ -22,4 +22,3 @@ Name | Type
 ---|---
 time | varint
 daylight cycle | bool
-

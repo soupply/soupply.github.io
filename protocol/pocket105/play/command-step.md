@@ -28,4 +28,3 @@ done | bool
 client id | varulong
 input | string
 output | string
-

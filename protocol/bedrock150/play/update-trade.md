@@ -28,5 +28,4 @@ willing | bool |
 trader | varlong | 
 player | varlong | 
 display name | string | 
-offers | bytes | 
-
+offers | bytes |

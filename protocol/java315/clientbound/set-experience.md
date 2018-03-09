@@ -23,4 +23,3 @@ Name | Type
 experience | float
 level | varuint
 total experience | varuint
-

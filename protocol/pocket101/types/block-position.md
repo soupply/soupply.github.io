@@ -15,4 +15,3 @@ Name | Type
 x | varint
 y | varuint
 z | varint
-

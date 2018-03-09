@@ -22,4 +22,3 @@ Name | Type
 ---|---
 entity id | varuint
 attributes | [attributes](/protocol/java335/arrays)
-

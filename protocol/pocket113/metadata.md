@@ -163,4 +163,3 @@ Wither's left (or right?) head.
 ### Right Head Target
 
 Wither's right (or left?) head.
-

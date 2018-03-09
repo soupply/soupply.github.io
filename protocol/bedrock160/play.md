@@ -113,5 +113,4 @@ Packet | Id | Clientbound | Serverbound
 [Server Settings Request](play/server-settings-request) | 102 |   | ✓
 [Server Settings Response](play/server-settings-response) | 103 | ✓ |  
 [Show Profile](play/show-profile) | 104 | ✓ |  
-[Set Default Game Type](play/set-default-game-type) | 105 | ✓ |  
-
+[Set Default Game Type](play/set-default-game-type) | 105 | ✓ |

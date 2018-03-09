@@ -70,4 +70,3 @@ Name | Value
 [flat](level-type_flat) | flat
 [amplified](level-type_amplified) | amplified
 [large biomes](level-type_large-biomes) | largeBiomes
-

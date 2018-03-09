@@ -26,4 +26,3 @@ position | double&lt;xyz&gt;
 yaw | ubyte
 pitch | ubyte
 metadata | [metadata](/protocol/java335/metadata)
-

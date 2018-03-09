@@ -22,4 +22,3 @@ Name | Type
 ---|---
 entity id | varlong
 armor | [slot](/protocol/bedrock141/types/slot)[4]
-

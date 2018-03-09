@@ -150,4 +150,3 @@ Name | Value
 ---|:---:
 [dark sky](update-flags_flags_dark-sky) | 1
 [is dragon bar](update-flags_flags_is-dragon-bar) | 2
-

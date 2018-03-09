@@ -24,4 +24,3 @@ name | string
 position | [blockPosition](/protocol/bedrock160/types/block-position)
 volume | float
 pitch | float
-

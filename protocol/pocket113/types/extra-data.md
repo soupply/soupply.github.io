@@ -12,4 +12,3 @@ Name | Type | Endianness
 ---|---|:---:
 key | varuint | 
 value | ushort | little endian
-

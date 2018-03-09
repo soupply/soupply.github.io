@@ -31,4 +31,3 @@ Name | Value
 ---|:---:
 [start](status_start) | 0
 [end](status_end) | 1
-

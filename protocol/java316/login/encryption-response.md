@@ -22,4 +22,3 @@ Name | Type
 ---|---
 shared secret | ubyte[]
 verify token | ubyte[]
-

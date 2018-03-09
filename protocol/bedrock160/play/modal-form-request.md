@@ -22,4 +22,3 @@ Name | Type
 ---|---
 form id | varuint
 data | string
-

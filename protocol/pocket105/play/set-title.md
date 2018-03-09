@@ -38,4 +38,3 @@ Name | Value
 [set subtitle](action_set-subtitle) | 3
 [set action bar](action_set-action-bar) | 4
 [set timings](action_set-timings) | 5
-

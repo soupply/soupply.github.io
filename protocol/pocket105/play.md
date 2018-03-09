@@ -97,5 +97,4 @@ Packet | Id | Clientbound | Serverbound
 [Transfer](play/transfer) | 85 | ✓ |  
 [Play Sound](play/play-sound) | 86 | ✓ |  
 [Stop Sound](play/stop-sound) | 87 | ✓ |  
-[Set Title](play/set-title) | 88 | ✓ |  
-
+[Set Title](play/set-title) | 88 | ✓ |

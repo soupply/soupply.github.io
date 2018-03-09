@@ -83,4 +83,3 @@ Name | Value
 [particle splash](event-id_particle-splash) | 2002
 [particle eye despawn](event-id_particle-eye-despawn) | 2003
 [particle spawn](event-id_particle-spawn) | 2004
-

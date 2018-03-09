@@ -30,4 +30,3 @@ yaw | float
 attributes | [attribute](/protocol/pocket100/types/attribute)[]
 metadata | [metadata](/protocol/pocket100/metadata)
 links | [link](/protocol/pocket100/types/link)[]
-

@@ -22,4 +22,3 @@ Name | Type
 ---|---
 entity id | varlong
 armor | [slot](/protocol/pocket113/types/slot)[4]
-

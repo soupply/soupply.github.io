@@ -37,4 +37,3 @@ Name | Value
 [z](flags_z) | 4
 [y rotation](flags_y-rotation) | 8
 [x rotation](flags_x-rotation) | 16
-

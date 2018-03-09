@@ -22,4 +22,3 @@ Name | Type
 ---|---
 position | [blockPosition](/protocol/pocket102/types/block-position)
 item | [slot](/protocol/pocket102/types/slot)
-

@@ -44,4 +44,3 @@ Name | Value
 ### body
 
 Payload that contains 2 JWTs (with each length indicated by an unsigned little-endian 32-bits integer) with more informations about the player and its account.
-

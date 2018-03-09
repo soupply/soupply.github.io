@@ -29,4 +29,3 @@ trader | varlong
 player | varlong
 ? | string
 offers | bytes
-

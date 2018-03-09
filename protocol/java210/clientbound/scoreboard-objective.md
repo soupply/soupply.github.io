@@ -43,4 +43,3 @@ Name | Value
 ---|:---:
 [numeric](type_numeric) | integer
 [graphic](type_graphic) | hearts
-

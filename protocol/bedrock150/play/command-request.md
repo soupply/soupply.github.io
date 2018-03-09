@@ -37,4 +37,3 @@ Name | Value
 [command block](type_command-block) | 1
 [minecart command block](type_minecart-command-block) | 2
 [dev console](type_dev-console) | 3
-

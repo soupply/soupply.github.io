@@ -28,4 +28,3 @@ colums | ubyte
 rows | ubyte
 offset | ubyte&lt;xz&gt;
 data | ubyte[]
-

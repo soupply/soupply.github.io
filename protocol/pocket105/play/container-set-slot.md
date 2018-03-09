@@ -25,4 +25,3 @@ slot | varint
 hotbar slot | varint
 item | [slot](/protocol/pocket105/types/slot)
 ? | ubyte
-

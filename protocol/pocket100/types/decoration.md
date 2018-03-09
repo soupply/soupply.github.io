@@ -14,4 +14,3 @@ rotation and icon | varint |
 position | ubyte&lt;xz&gt; | 
 label | string | 
 color | uint | little endian
-

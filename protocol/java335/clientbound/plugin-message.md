@@ -22,4 +22,3 @@ Name | Type
 ---|---
 channel | string
 data | bytes
-

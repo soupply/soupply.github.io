@@ -22,4 +22,3 @@ Name | Type
 ---|---
 header | string
 footer | string
-

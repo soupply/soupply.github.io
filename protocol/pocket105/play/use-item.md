@@ -27,4 +27,3 @@ face position | float&lt;xyz&gt;
 position | float&lt;xyz&gt;
 slot | varint
 item | [slot](/protocol/pocket105/types/slot)
-

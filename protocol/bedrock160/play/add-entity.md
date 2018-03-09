@@ -30,4 +30,3 @@ yaw | float
 attributes | [attribute](/protocol/bedrock160/types/attribute)[]
 metadata | [metadata](/protocol/bedrock160/metadata)
 links | [link](/protocol/bedrock160/types/link)[]
-

@@ -25,4 +25,3 @@ category | varuint
 position | int&lt;xyz&gt;
 volume | float
 pitch | float
-

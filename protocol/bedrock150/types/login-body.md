@@ -14,4 +14,3 @@ Name | Type
 ---|---
 chain | [loginPayload](/protocol/bedrock150/arrays)
 client data | [loginPayload](/protocol/bedrock150/arrays)
-

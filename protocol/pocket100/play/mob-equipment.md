@@ -25,4 +25,3 @@ item | [slot](/protocol/pocket100/types/slot)
 inventory slot | ubyte
 hotbar slot | ubyte
 ? | ubyte
-

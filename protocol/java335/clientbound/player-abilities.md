@@ -34,4 +34,3 @@ Name | Value
 [flying](flags_flying) | 2
 [allow flying](flags_allow-flying) | 4
 [creative mode](flags_creative-mode) | 8
-

@@ -23,4 +23,3 @@ Name | Type
 must accept | bool
 behaviour packs | [pack](/protocol/bedrock137/types/pack)[]
 resource packs | [pack](/protocol/bedrock137/types/pack)[]
-

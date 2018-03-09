@@ -22,4 +22,3 @@ Name | Type
 ---|---
 entity id | varuint
 metadata | [metadata](/protocol/java338/metadata)
-

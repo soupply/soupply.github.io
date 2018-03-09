@@ -23,4 +23,3 @@ Name | Type
 position | float&lt;xyz&gt;
 radius | float
 destroyed blocks | [blockPosition](/protocol/bedrock201/types/block-position)[]
-

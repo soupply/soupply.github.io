@@ -44,4 +44,3 @@ Name | Value
 [stop sneak](action_stop-sneak) | 12
 [start gliding](action_start-gliding) | 15
 [stop gliding](action_stop-gliding) | 16
-

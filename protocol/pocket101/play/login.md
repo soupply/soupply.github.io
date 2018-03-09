@@ -44,4 +44,3 @@ Name | Value
 ### body
 
 Zlib-compressed bytes that contains 2 JWTs with more informations about the player and its account. Once uncompressed the resulting payload will contain 2 JWTs which length is indicated by a little-endian unsigned integer each.
-

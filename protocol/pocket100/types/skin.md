@@ -12,4 +12,3 @@ Name | Type
 ---|---
 name | string
 data | ubyte[]
-

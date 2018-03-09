@@ -23,4 +23,3 @@ Name | Value
 [creative](gamemode_creative) | 1
 [adventure](gamemode_adventure) | 2
 [spectator](gamemode_spectator) | 3
-

@@ -45,4 +45,3 @@ Name | Value
 [ambient sound](event-id_ambient-sound) | 16
 [respawn](event-id_respawn) | 17
 [unleash](event-id_unleash) | 63
-

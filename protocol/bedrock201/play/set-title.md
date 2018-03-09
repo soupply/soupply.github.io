@@ -44,4 +44,3 @@ Name | Value |  |
 ### text
 
 Text that will be displayed in the place specified in the action field.
-

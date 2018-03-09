@@ -22,4 +22,3 @@ Name | Type
 ---|---
 target | uint
 holder | uint
-

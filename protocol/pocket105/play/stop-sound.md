@@ -22,4 +22,3 @@ Name | Type
 ---|---
 ? | string
 ? | bool
-

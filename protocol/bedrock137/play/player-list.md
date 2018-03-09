@@ -46,4 +46,3 @@ players | [playerList](/protocol/bedrock137/types/player-list)[]
 Name | Type
 ---|---
 players | [mcpeUuid](/protocol/bedrock137/types/mcpe-uuid)[]
-

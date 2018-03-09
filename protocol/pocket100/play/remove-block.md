@@ -21,4 +21,3 @@ layout: default
 Name | Type
 ---|---
 position | [blockPosition](/protocol/pocket100/types/block-position)
-

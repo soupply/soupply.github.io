@@ -32,4 +32,3 @@ Player's display name, that can contain Minecraft's formatting codes. It shouldn
 ### skin
 
 Player's skin usually given in the [Login](#play_login)'s packet body.
-

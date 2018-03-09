@@ -24,4 +24,3 @@ window | ubyte
 action | ushort
 return entry | [entriesArray](/protocol/java335/arrays)
 prepare entry | [entriesArray](/protocol/java335/arrays)
-

@@ -23,4 +23,3 @@ Name | Type
 server id | string
 public key | ubyte[]
 verify token | ubyte[]
-

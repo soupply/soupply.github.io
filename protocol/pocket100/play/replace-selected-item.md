@@ -21,4 +21,3 @@ layout: default
 Name | Type
 ---|---
 item | [slot](/protocol/pocket100/types/slot)
-

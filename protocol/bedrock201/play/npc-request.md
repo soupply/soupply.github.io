@@ -24,4 +24,3 @@ entity id | varlong
 request type | ubyte
 command | string
 action type | ubyte
-

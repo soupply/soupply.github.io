@@ -32,4 +32,3 @@ Name | Value
 ---|:---:
 [jump](flags_jump) | 1
 [unmount](flags_unmount) | 2
-

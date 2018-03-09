@@ -12,4 +12,3 @@ Packet | Id | Clientbound | Serverbound
 [Request](status/request) | 0 |   | ✓
 [Response](status/response) | 0 | ✓ |  
 [Latency](status/latency) | 1 | ✓ | ✓
-

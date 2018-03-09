@@ -25,4 +25,3 @@ delta | short&lt;xyz&gt;
 yaw | ubyte
 pitch | ubyte
 on ground | bool
-

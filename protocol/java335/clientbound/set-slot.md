@@ -23,4 +23,3 @@ Name | Type
 window | ubyte
 slot | ushort
 item | [slot](/protocol/java335/types/slot)
-

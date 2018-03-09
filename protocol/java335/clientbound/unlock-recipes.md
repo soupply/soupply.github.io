@@ -35,4 +35,3 @@ Name | Value
 [add](action_add) | 1
 [remove](action_remove) | 2
 [add without notification](action_add-without-notification) | 3
-

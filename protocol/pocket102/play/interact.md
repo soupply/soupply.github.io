@@ -33,4 +33,3 @@ Name | Value
 [attack](action_attack) | 2
 [leave vehicle](action_leave-vehicle) | 3
 [hover](action_hover) | 4
-

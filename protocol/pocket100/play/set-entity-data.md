@@ -22,4 +22,3 @@ Name | Type
 ---|---
 entity id | varlong
 metadata | [metadata](/protocol/pocket100/metadata)
-

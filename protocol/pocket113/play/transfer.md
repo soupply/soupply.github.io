@@ -32,4 +32,3 @@ Address of the new server. It can be an dotted ip (for example `127.0.0.1`) or a
 ### port
 
 Port of the new server. If 0 the server will try to connect to the default port.
-

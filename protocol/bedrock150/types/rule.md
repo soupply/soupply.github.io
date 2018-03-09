@@ -52,4 +52,3 @@ Name | Value
 [boolean](type_boolean) | 1
 [integer](type_integer) | 2
 [floating](type_floating) | 3
-

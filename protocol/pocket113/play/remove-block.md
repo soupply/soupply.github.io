@@ -23,4 +23,3 @@ Instantly removes a block, either because the player is in creative mode or beca
 Name | Type
 ---|---
 position | [blockPosition](/protocol/pocket113/types/block-position)
-

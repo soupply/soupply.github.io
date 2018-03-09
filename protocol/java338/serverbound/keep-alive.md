@@ -21,4 +21,3 @@ layout: default
 Name | Type
 ---|---
 id | varuint
-

@@ -28,4 +28,3 @@ item | [slot](/protocol/bedrock150/types/slot)
 position | float&lt;xyz&gt;
 motion | float&lt;xyz&gt;
 metadata | [metadata](/protocol/bedrock150/metadata)
-

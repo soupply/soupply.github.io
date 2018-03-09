@@ -87,5 +87,4 @@ Packet | Id | Clientbound | Serverbound
 [Entity Teleport](clientbound/entity-teleport) | 76 | ✓ |  
 [Advencements](clientbound/advencements) | 77 | ✓ |  
 [Entity Properties](clientbound/entity-properties) | 78 | ✓ |  
-[Entity Effect](clientbound/entity-effect) | 79 | ✓ |  
-
+[Entity Effect](clientbound/entity-effect) | 79 | ✓ |

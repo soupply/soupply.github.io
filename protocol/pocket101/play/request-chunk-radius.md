@@ -27,4 +27,3 @@ Name | Type
 ### radius
 
 Number of chunks before the fog starts to appear in the client's view. The value of this field is usually between 8 and 14.
-

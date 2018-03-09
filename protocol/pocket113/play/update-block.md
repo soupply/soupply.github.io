@@ -34,4 +34,3 @@ Name | Value
 [network](flags-and-meta_network) | 2
 [no graphic](flags-and-meta_no-graphic) | 4
 [priority](flags-and-meta_priority) | 8
-

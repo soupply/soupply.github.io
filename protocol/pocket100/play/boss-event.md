@@ -32,4 +32,3 @@ Name | Value
 [add](event-id_add) | 0
 [update](event-id_update) | 1
 [remove](event-id_remove) | 2
-

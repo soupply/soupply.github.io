@@ -37,4 +37,3 @@ Name | Value
 [full](animation_full) | 0
 [none](animation_none) | 1
 [rotation](animation_rotation) | 2
-

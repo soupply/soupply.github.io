@@ -22,4 +22,3 @@ Name | Type | Endianness
 ---|---|:---:
 id | string | 
 chunk index | uint | little endian
-

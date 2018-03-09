@@ -23,5 +23,4 @@ Name | Type | Endianness
 id | string | 
 chunk index | uint | little endian
 progress | ulong | little endian
-data | [uintLeBytes](/protocol/pocket113/arrays) | 
-
+data | [uintLeBytes](/protocol/pocket113/arrays) |

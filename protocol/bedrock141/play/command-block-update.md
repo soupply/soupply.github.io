@@ -29,5 +29,4 @@ minecart | varlong | <code>update block</code> is <code><span style="color:#0096
 command | string | 
 last output | string | 
 hover | string | 
-track output | bool | 
-
+track output | bool |

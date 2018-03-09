@@ -22,4 +22,3 @@ Name | Type
 ---|---
 slot | ushort
 clicked item | [slot](/protocol/java315/types/slot)
-

@@ -33,4 +33,3 @@ Name | Value
 [send packs](status_send-packs) | 2
 [have all packs](status_have-all-packs) | 3
 [completed](status_completed) | 4
-

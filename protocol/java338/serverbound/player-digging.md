@@ -38,4 +38,3 @@ Name | Value
 [shoot arrow](status_shoot-arrow) | 5
 [finish eating](status_finish-eating) | 5
 [swap item in hand](status_swap-item-in-hand) | 6
-

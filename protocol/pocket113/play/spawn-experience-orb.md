@@ -22,4 +22,3 @@ Name | Type
 ---|---
 position | float&lt;xyz&gt;
 count | varint
-

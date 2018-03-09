@@ -24,4 +24,3 @@ window | varuint
 entity id | varlong
 slots | [slot](/protocol/pocket113/types/slot)[]
 hotbar | varint[]
-

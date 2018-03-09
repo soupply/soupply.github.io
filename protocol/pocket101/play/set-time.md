@@ -32,4 +32,3 @@ Time of the day in a range from 0 to 24000. If higher or lower it will be module
 ### daylight cycle
 
 Indicates whether the daylight cycle is active. If not, the time will be stopped at the value given in the previous field.
-

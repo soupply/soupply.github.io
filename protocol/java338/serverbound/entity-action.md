@@ -39,4 +39,3 @@ Name | Value
 [stop horse jump](action_stop-horse-jump) | 6
 [open horse inventory](action_open-horse-inventory) | 7
 [start elytra flying](action_start-elytra-flying) | 8
-

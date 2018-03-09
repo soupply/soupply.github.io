@@ -83,5 +83,4 @@ Packet | Id | Clientbound | Serverbound
 [Collect Item](clientbound/collect-item) | 72 | ✓ |  
 [Entity Teleport](clientbound/entity-teleport) | 73 | ✓ |  
 [Entity Properties](clientbound/entity-properties) | 74 | ✓ |  
-[Entity Effect](clientbound/entity-effect) | 75 | ✓ |  
-
+[Entity Effect](clientbound/entity-effect) | 75 | ✓ |

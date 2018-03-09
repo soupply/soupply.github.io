@@ -24,4 +24,3 @@ entity id | varuint
 yaw | ubyte
 pitch | ubyte
 on ground | bool
-

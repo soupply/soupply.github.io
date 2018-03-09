@@ -25,4 +25,3 @@ runtime id | varlong
 item | [slot](/protocol/pocket100/types/slot)
 position | float&lt;xyz&gt;
 motion | float&lt;xyz&gt;
-

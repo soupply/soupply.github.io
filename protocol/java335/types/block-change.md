@@ -13,4 +13,3 @@ Name | Type
 xz | ubyte
 y | ubyte
 block | varuint
-

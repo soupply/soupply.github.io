@@ -23,4 +23,3 @@ Name | Type
 window | ubyte
 recipe | varuint
 make all | bool
-

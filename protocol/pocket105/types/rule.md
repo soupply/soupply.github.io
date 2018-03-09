@@ -35,4 +35,3 @@ Name | Value |  |
 ### value
 
 Indicates whether the game rule is enabled.
-

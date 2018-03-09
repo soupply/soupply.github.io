@@ -22,4 +22,3 @@ Name | Type
 ---|---
 right paddle turning | bool
 left paddle turning | bool
-

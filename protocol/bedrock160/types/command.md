@@ -15,5 +15,4 @@ description | string |
 ? | ubyte | 
 permission level | ubyte | 
 aliases enum | int | -1
-overloads | [overload](/protocol/bedrock160/types/overload)[] | 
-
+overloads | [overload](/protocol/bedrock160/types/overload)[] |

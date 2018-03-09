@@ -22,4 +22,3 @@ Name | Type
 ---|---
 window | ubyte
 enchantment | ubyte
-

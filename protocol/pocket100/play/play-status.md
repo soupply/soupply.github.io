@@ -34,4 +34,3 @@ Name | Value
 [spawned](status_spawned) | 3
 [invalid tenant](status_invalid-tenant) | 4
 [edition mismatch](status_edition-mismatch) | 5
-

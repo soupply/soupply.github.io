@@ -32,4 +32,3 @@ Name | Value
 [declined](result_declined) | 1
 [failed](result_failed) | 2
 [accepted](result_accepted) | 3
-

@@ -22,4 +22,3 @@ Name | Type
 ---|---
 entity id | varlong
 event id | varint
-

@@ -12,4 +12,3 @@ Name | Type
 ---|---
 uuid | uuid
 latency | varuint
-

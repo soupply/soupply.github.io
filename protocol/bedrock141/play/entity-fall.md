@@ -29,4 +29,3 @@ entity id | varlong
 ### distance
 
 Number of blocks the player has been in free falling before hitting the ground.
-

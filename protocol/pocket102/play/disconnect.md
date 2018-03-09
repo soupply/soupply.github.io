@@ -32,4 +32,3 @@ Indicates whether to display the main menu screen or a disconnection message.
 ### message
 
 The message to display in the disconnection screen. If the message is in the game's language file it will be translated client-side.
-

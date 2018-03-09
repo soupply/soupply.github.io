@@ -42,4 +42,3 @@ Player's UUID, should match an UUID of a player in the list added through [Playe
 ### username
 
 Player's username and text displayed on the nametag if something else is not specified in the metadata.
-

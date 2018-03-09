@@ -22,4 +22,3 @@ Name | Type
 ---|---
 world age | ulong
 time | long
-

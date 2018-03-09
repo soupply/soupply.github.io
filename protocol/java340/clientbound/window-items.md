@@ -22,4 +22,3 @@ Name | Type
 ---|---
 window | ubyte
 slots | [slots](/protocol/java340/arrays)
-

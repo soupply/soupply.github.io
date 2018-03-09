@@ -22,4 +22,3 @@ Name | Type
 ---|---
 position | varint&lt;xyz&gt;
 slot | ubyte
-

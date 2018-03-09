@@ -26,4 +26,3 @@ enum values | string[]
 ? | string[]
 enums | [enum](/protocol/bedrock141/types/enum)[]
 commands | [command](/protocol/bedrock141/types/command)[]
-

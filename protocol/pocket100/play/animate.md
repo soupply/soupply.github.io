@@ -31,4 +31,3 @@ Name | Value
 ---|:---:
 [breaking](action_breaking) | 1
 [wake up](action_wake-up) | 3
-

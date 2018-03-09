@@ -24,4 +24,3 @@ entity id | varlong
 runtime id | varulong
 position | [blockPosition](/protocol/bedrock201/types/block-position)
 ? | varint
-

@@ -103,4 +103,3 @@ Packet | Id | Clientbound | Serverbound
 [Structure Block Update](play/structure-block-update) | 91 | ✓ |  
 [Show Store Offer](play/show-store-offer) | 92 | ✓ |  
 [Purchase Receipt](play/purchase-receipt) | 93 |   | ✓
-

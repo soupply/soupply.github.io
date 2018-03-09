@@ -23,4 +23,3 @@ Name | Type
 window | ubyte
 action | ushort
 accepted | bool
-

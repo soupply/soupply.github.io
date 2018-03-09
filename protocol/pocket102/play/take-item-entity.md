@@ -32,4 +32,3 @@ Collected entity, usually an item entity or an arrow, that will float toward the
 ### collector
 
 Entity that collects, usually a player or another entity with an inventory.
-

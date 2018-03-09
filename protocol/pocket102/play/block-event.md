@@ -22,4 +22,3 @@ Name | Type
 ---|---
 position | [blockPosition](/protocol/pocket102/types/block-position)
 data | varint[2]
-

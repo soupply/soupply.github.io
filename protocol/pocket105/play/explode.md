@@ -23,4 +23,3 @@ Name | Type
 position | float&lt;xyz&gt;
 radius | float
 destroyed blocks | [blockPosition](/protocol/pocket105/types/block-position)[]
-

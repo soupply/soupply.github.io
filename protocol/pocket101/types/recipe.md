@@ -24,4 +24,3 @@ Name | Value
 [furnace](type_furnace) | 2
 [furnace data](type_furnace-data) | 3
 [multi](type_multi) | 4
-

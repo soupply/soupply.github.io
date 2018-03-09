@@ -28,4 +28,3 @@ data | [chunkData](/protocol/pocket102/types/chunk-data)
 ### position
 
 Coordinates of the chunk.
-

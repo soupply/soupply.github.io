@@ -24,4 +24,3 @@ Name | Type
 position | [blockPosition](/protocol/pocket105/types/block-position)
 ? | float
 ? | float
-

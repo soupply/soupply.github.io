@@ -28,4 +28,3 @@ skin data | ubyte[]
 cape data | ubyte[]
 geometry model | string
 geometry data | ubyte[]
-

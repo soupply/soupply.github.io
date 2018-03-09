@@ -32,4 +32,3 @@ Name | Value
 ---|:---:
 [classic](edition_classic) | 0
 [education](edition_education) | 1
-

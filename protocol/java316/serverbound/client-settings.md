@@ -59,4 +59,3 @@ Name | Value
 ---|:---:
 [right](main-hand_right) | 0
 [left](main-hand_left) | 1
-

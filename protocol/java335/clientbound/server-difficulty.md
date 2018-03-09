@@ -32,4 +32,3 @@ Name | Value
 [easy](difficulty_easy) | 1
 [normal](difficulty_normal) | 2
 [hard](difficulty_hard) | 3
-

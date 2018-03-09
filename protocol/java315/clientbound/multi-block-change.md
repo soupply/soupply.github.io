@@ -22,4 +22,3 @@ Name | Type
 ---|---
 chunk | int&lt;xz&gt;
 changes | [blockChange](/protocol/java315/types/block-change)[]
-

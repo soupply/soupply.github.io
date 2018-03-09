@@ -68,4 +68,3 @@ Name | Value
 [entity spawn](event-id_entity-spawn) | 67
 [dragon puke](event-id_dragon-puke) | 68
 [item entity merge](event-id_item-entity-merge) | 69
-

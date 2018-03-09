@@ -22,4 +22,3 @@ Name | Type
 ---|---
 action | varint
 item | [slot](/protocol/pocket100/types/slot)
-

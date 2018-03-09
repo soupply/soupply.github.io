@@ -35,4 +35,3 @@ Slot of the inventory where the item is. The hotbat slots (0-8) are not counted.
 ### hotbar slot
 
 Slot of the hotbar where the item is being moved.
-

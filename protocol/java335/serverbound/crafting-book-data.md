@@ -45,4 +45,3 @@ Name | Type
 ---|---
 book opened | bool
 filtering | bool
-

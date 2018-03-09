@@ -13,4 +13,3 @@ Name | Type
 key | string
 value | double
 modifiers | [modifier](/protocol/java335/types/modifier)[]
-

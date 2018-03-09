@@ -26,4 +26,3 @@ button | ubyte
 action | ushort
 mode | varuint
 clicked item | [slot](/protocol/java335/types/slot)
-

@@ -25,4 +25,3 @@ position | float&lt;xyz&gt;
 pitch | ubyte
 head yaw | ubyte
 yaw | ubyte
-

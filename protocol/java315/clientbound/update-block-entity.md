@@ -40,4 +40,3 @@ Name | Value
 [end gateway destination](action_end-gateway-destination) | 8
 [sign text](action_sign-text) | 9
 [shulker box declaration](action_shulker-box-declaration) | 10
-

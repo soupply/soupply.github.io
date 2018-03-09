@@ -23,4 +23,3 @@ Updates client's game rules. This packet is ignored if the game is not launched 
 Name | Type
 ---|---
 rules | [rule](/protocol/bedrock160/types/rule)[]
-

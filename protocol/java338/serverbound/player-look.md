@@ -23,4 +23,3 @@ Name | Type
 yaw | float
 pitch | float
 on ground | bool
-

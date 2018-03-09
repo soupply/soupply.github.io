@@ -31,4 +31,3 @@ position | double&lt;xyz&gt;
 Name | Value
 ---|:---:
 [thunderbolt](type_thunderbolt) | 1
-

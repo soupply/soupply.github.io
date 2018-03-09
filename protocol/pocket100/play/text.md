@@ -93,4 +93,3 @@ Name | Type
 ---|---
 sender | string
 message | string
-

@@ -21,4 +21,3 @@ layout: default
 Name | Type
 ---|---
 recipes | [recipe](/protocol/bedrock150/types/recipe)[]
-

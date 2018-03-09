@@ -22,4 +22,3 @@ Name | Type
 ---|---
 entity type | long
 slot | ubyte
-

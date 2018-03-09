@@ -36,4 +36,3 @@ Name | Value
 [west](direction_west) | 1
 [north](direction_north) | 2
 [east](direction_east) | 3
-

@@ -49,4 +49,3 @@ Name | Value
 [build denied](action_build-denied) | 17
 [continue break](action_continue-break) | 18
 [change skin](action_change-skin) | 19
-

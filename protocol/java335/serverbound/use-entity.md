@@ -43,4 +43,3 @@ Name | Value
 ---|:---:
 [main hand](hand_main-hand) | 0
 [off hand](hand_off-hand) | 1
-

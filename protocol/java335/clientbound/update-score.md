@@ -33,4 +33,3 @@ Name | Value
 ---|:---:
 [update](action_update) | 0
 [remove](action_remove) | 1
-

@@ -23,4 +23,3 @@ Name | Type
 entity id | varuint
 position | ulong
 stage | ubyte
-

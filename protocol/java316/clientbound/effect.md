@@ -78,4 +78,3 @@ Name | Value
 [dragon breath](effect-id_dragon-breath) | 2006
 [end gateway spawn](effect-id_end-gateway-spawn) | 3000
 [enderdragon growl](effect-id_enderdragon-growl) | 3001
-

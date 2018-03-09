@@ -24,4 +24,3 @@ window | ubyte
 type | ubyte
 position | [blockPosition](/protocol/pocket113/types/block-position)
 entity id | varlong
-

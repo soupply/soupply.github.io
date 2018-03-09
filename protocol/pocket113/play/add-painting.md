@@ -27,4 +27,3 @@ runtime id | varlong
 position | [blockPosition](/protocol/pocket113/types/block-position)
 direction | varint
 title | string
-

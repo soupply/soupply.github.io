@@ -23,4 +23,3 @@ Name | Type
 health | float
 hunger | varuint
 saturation | float
-

@@ -88,4 +88,3 @@ warning time | varuint
 Name | Type
 ---|---
 warning blocks | varuint
-

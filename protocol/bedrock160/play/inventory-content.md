@@ -22,4 +22,3 @@ Name | Type
 ---|---
 window | varuint
 slots | [slot](/protocol/bedrock160/types/slot)[]
-

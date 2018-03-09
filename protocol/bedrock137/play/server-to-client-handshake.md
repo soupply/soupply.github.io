@@ -22,4 +22,3 @@ Name | Type
 ---|---
 server public key | string
 token | ubyte[]
-

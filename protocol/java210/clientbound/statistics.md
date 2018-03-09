@@ -21,4 +21,3 @@ layout: default
 Name | Type
 ---|---
 statistics | [statistic](/protocol/java210/types/statistic)[]
-

@@ -28,4 +28,3 @@ pitch | ubyte
 yaw | ubyte
 data | int
 velocity | short&lt;xyz&gt;
-

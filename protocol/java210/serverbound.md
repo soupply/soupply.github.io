@@ -38,4 +38,3 @@ Packet | Id | Clientbound | Serverbound
 [Spectate](serverbound/spectate) | 27 |   | ✓
 [Player Block Placement](serverbound/player-block-placement) | 28 |   | ✓
 [Use Item](serverbound/use-item) | 29 |   | ✓
-

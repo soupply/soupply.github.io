@@ -30,4 +30,3 @@ item | [slot](/protocol/pocket101/types/slot)
 Name | Value
 ---|:---:
 [drop](action_drop) | 0
-

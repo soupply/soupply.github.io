@@ -21,4 +21,3 @@ layout: default
 Name | Type
 ---|---
 position | int&lt;xz&gt;
-

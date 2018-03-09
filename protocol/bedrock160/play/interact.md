@@ -33,4 +33,3 @@ Name | Value
 [leave vehicle](action_leave-vehicle) | 3
 [hover](action_hover) | 4
 [open inventory](action_open-inventory) | 6
-

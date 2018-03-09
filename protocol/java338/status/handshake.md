@@ -33,4 +33,3 @@ Name | Value
 ---|:---:
 [status](next_status) | 1
 [login](next_login) | 2
-

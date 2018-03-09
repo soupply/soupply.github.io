@@ -22,4 +22,3 @@ Name | Type
 ---|---
 url | string
 hash | string
-

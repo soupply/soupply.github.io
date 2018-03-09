@@ -24,4 +24,3 @@ action | varint
 item | [slot](/protocol/pocket113/types/slot)
 ? | varint
 ? | varint
-

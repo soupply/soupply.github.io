@@ -37,4 +37,3 @@ Name | Value
 [texture](update_texture) | 2
 [decorations](update_decorations) | 4
 [entities](update_entities) | 8
-

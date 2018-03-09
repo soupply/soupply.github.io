@@ -33,4 +33,3 @@ Name | Value
 [overworld](dimension_overworld) | 0
 [nether](dimension_nether) | 1
 [end](dimension_end) | 2
-

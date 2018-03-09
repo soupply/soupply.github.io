@@ -12,4 +12,3 @@ Name | Type
 ---|---
 most significant bits | long
 least significant bits | long
-

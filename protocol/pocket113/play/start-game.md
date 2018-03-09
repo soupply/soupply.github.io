@@ -142,4 +142,3 @@ Indicates whether the cheats are enabled. If the cheats are disabled the player 
 ### world name
 
 World's name that will be displayed in the game's world settings. It can contain formatting codes.
-

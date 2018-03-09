@@ -35,5 +35,4 @@ Name | Value |  |
 [outdated server](status_outdated-server) | 2 | Disconnect with outdated server message
 [spawned](status_spawned) | 3 | Spawn in a world
 [invalid tenant](status_invalid-tenant) | 4 | 
-[edition mismatch](status_edition-mismatch) | 5 | 
-
+[edition mismatch](status_edition-mismatch) | 5 |

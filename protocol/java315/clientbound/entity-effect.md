@@ -34,4 +34,3 @@ Name | Value
 ---|:---:
 [ambient](flags_ambient) | 1
 [show particles](flags_show-particles) | 2
-

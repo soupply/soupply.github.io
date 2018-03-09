@@ -22,4 +22,3 @@ Name | Type | When
 ---|---|:---:
 hide disconnection screen | bool | 
 message | string | <code>hide disconnection screen</code> is <code><span style="color:#009688">false</span></code>
-

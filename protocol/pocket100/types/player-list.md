@@ -14,4 +14,3 @@ uuid | uuid
 entity id | varlong
 display name | string
 skin | [skin](/protocol/pocket100/types/skin)
-

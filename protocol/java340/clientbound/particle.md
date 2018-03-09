@@ -81,4 +81,3 @@ Name | Value
 [damage indicator](particle-id_damage-indicator) | 44
 [sweep attack](particle-id_sweep-attack) | 45
 [falling dust](particle-id_falling-dust) | 46
-

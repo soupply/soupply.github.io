@@ -25,4 +25,3 @@ type | varint
 uuid | [mcpeUuid](/protocol/pocket113/types/mcpe-uuid)
 input | [slot](/protocol/pocket113/types/slot)[]
 output | [slot](/protocol/pocket113/types/slot)[]
-

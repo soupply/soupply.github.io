@@ -22,4 +22,3 @@ Name | Type
 ---|---
 entity id | varlong
 attributes | [attribute](/protocol/pocket100/types/attribute)[]
-

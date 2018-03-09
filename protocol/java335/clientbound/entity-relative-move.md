@@ -23,4 +23,3 @@ Name | Type
 entity id | varuint
 delta | short&lt;xyz&gt;
 on ground | bool
-

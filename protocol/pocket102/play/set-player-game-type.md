@@ -32,4 +32,3 @@ Name | Value
 ---|:---:
 [survival](gamemode_survival) | 0
 [creative](gamemode_creative) | 1
-

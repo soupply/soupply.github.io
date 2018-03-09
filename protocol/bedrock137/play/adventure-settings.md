@@ -82,4 +82,3 @@ Name | Value
 [member](player-rank_member) | 1
 [operator](player-rank_operator) | 2
 [custom](player-rank_custom) | 3
-

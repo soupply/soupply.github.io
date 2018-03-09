@@ -45,4 +45,3 @@ Name | Value
 [start gliding](action_start-gliding) | 15
 [stop gliding](action_stop-gliding) | 16
 [continue break](action_continue-break) | 18
-

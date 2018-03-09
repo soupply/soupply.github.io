@@ -31,4 +31,3 @@ Name | Value
 [respawn](action_respawn) | 0
 [request stats](action_request-stats) | 1
 [open inventory](action_open-inventory) | 2
-

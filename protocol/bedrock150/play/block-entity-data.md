@@ -36,4 +36,3 @@ Position of the block that will be associated with tag.
 + The tag `Int` is encoded as a signed varint instead of a simple signed 32-bits integer
 + The length of the `ByteArray` and the `IntArray` is encoded as an unsigned varint instead of a 32-bits integer
 + The length of the `String` tag and the named tag's name length are encoded as an unisgned varint instead of a 16-bits integer
-

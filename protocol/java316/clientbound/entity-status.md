@@ -66,4 +66,3 @@ Name | Value
 [play thorns hurt animation and sound](status_play-thorns-hurt-animation-and-sound) | 33
 [remove poppy](status_remove-poppy) | 34
 [play totem undying animation](status_play-totem-undying-animation) | 35
-

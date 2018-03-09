@@ -12,4 +12,4 @@ nbt | ubyte | ushort |
 packWithSizeArray | [packWithSize](/protocol/bedrock141/types/pack-with-size) | ushort | big endian
 uintLeBytes | ubyte | uint | little endian
 packIds | string | ushort | 
-loginPayload | ubyte | uint | 
+loginPayload | ubyte | uint |

@@ -22,4 +22,3 @@ Name | Type
 ---|---
 id | string
 chunk index | uint
-

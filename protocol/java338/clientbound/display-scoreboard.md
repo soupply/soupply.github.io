@@ -32,4 +32,3 @@ Name | Value
 [list](position_list) | 0
 [sidebar](position_sidebar) | 1
 [below name](position_below-name) | 2
-

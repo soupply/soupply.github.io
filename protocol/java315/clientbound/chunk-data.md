@@ -26,4 +26,3 @@ sections | varuint
 data | ubyte[]
 tiles count | varuint
 tiles | bytes
-

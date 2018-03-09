@@ -24,4 +24,3 @@ position | float&lt;xyz&gt;
 radius | float
 records | [explosionRecords](/protocol/java338/arrays)
 motion | float&lt;xyz&gt;
-

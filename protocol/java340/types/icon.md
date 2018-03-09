@@ -29,4 +29,3 @@ Name | Value
 [small white circle](direction-and-type_small-white-circle) | 7
 [mansion](direction-and-type_mansion) | 8
 [temple](direction-and-type_temple) | 9
-

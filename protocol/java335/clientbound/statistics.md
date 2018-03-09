@@ -21,4 +21,3 @@ layout: default
 Name | Type
 ---|---
 statistics | [statistic](/protocol/java335/types/statistic)[]
-

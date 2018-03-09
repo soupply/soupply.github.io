@@ -50,4 +50,3 @@ foreach(ubyte[] packet ; packets) {
 }
 Batch batch = new Batch(compress(payload, Zlib.DEFLATE));
 ```
-

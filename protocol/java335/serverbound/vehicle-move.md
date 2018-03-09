@@ -23,4 +23,3 @@ Name | Type
 position | double&lt;xyz&gt;
 yaw | float
 pitch | float
-

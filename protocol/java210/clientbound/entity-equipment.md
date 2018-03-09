@@ -23,4 +23,3 @@ Name | Type
 entity id | varuint
 slot | varuint
 item | [slot](/protocol/java210/types/slot)
-

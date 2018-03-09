@@ -71,4 +71,3 @@ players | [listUpdateDisplayName](/protocol/java340/types/list-update-display-na
 Name | Type
 ---|---
 players | uuid[]
-

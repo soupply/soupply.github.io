@@ -41,4 +41,3 @@ Name | Value
 [sign text](action_sign-text) | 9
 [shulker box declaration](action_shulker-box-declaration) | 10
 [bed color](action_bed-color) | 11
-

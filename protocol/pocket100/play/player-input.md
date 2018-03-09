@@ -23,4 +23,3 @@ Name | Type
 motion | float&lt;xyz&gt;
 flags | ubyte
 ? | bool
-

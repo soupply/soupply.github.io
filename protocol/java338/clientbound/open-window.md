@@ -24,4 +24,3 @@ window | ubyte
 type | string
 title | string
 slots | ubyte
-

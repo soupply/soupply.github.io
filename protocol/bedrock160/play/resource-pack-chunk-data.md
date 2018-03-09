@@ -24,4 +24,3 @@ id | string
 chunk index | uint
 progress | ulong
 data | [uintLeBytes](/protocol/bedrock160/arrays)
-

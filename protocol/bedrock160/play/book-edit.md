@@ -78,4 +78,3 @@ Name | Type
 ---|---
 title | string
 author | string
-

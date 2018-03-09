@@ -24,4 +24,3 @@ Name | Type
 ---|---
 entity id | varlong
 metadata | [metadata](/protocol/bedrock137/metadata)
-

@@ -141,4 +141,3 @@ players | string[]
 Name | Type
 ---|---
 players | string[]
-

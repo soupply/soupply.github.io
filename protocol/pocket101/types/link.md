@@ -23,4 +23,3 @@ Name | Value
 [add](action_add) | 0
 [ride](action_ride) | 1
 [remove](action_remove) | 2
-

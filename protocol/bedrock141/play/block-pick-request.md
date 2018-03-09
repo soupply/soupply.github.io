@@ -23,4 +23,3 @@ Name | Type
 position | varint&lt;xyz&gt;
 ? | bool
 slot | ubyte
-

@@ -46,4 +46,3 @@ players | [playerList](/protocol/pocket113/types/player-list)[]
 Name | Type
 ---|---
 players | [mcpeUuid](/protocol/pocket113/types/mcpe-uuid)[]
-

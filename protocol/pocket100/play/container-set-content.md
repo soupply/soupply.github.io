@@ -23,4 +23,3 @@ Name | Type
 window | ubyte
 slots | [slot](/protocol/pocket100/types/slot)[]
 hotbar | varint[]
-

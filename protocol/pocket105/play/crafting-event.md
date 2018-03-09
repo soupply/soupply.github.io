@@ -25,4 +25,3 @@ type | varint
 uuid | uuid
 input | [slot](/protocol/pocket105/types/slot)[]
 output | [slot](/protocol/pocket105/types/slot)[]
-

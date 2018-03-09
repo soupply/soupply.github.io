@@ -22,4 +22,3 @@ Name | Type
 ---|---
 position | ulong
 lines | string[4]
-

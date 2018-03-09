@@ -41,4 +41,3 @@ Name | Value
 [none](animation_none) | 1
 [teleport](animation_teleport) | 2
 [pitch](animation_pitch) | 3
-

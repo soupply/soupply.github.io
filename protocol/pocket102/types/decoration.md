@@ -18,4 +18,3 @@ label | string |
 ### color
 
 ARGB colour.
-

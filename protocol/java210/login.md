@@ -13,5 +13,4 @@ Packet | Id | Clientbound | Serverbound
 [Encryption Request](login/encryption-request) | 1 | ✓ |  
 [Encryption Response](login/encryption-response) | 1 |   | ✓
 [Login Success](login/login-success) | 2 | ✓ |  
-[Set Compression](login/set-compression) | 3 | ✓ |  
-
+[Set Compression](login/set-compression) | 3 | ✓ |

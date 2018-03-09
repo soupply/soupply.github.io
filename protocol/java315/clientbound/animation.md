@@ -35,4 +35,3 @@ Name | Value
 [swing offhand](animation_swing-offhand) | 3
 [critical effect](animation_critical-effect) | 4
 [magical critical effect](animation_magical-critical-effect) | 5
-

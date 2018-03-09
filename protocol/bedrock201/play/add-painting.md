@@ -27,4 +27,3 @@ runtime id | varulong
 position | [blockPosition](/protocol/bedrock201/types/block-position)
 direction | varint
 title | string
-

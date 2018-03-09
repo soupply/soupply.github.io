@@ -22,4 +22,3 @@ Name | Type
 ---|---
 position | varint&lt;xz&gt;
 data | [chunkData](/protocol/pocket100/types/chunk-data)
-

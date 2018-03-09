@@ -35,4 +35,3 @@ var count = count & 255
 ### nbt
 
 Optional nbt data encoded as a nameless little-endian compound tag.
-

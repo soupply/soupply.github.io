@@ -26,4 +26,3 @@ Name | Value
 [white cross](direction-and-type_white-cross) | 4
 [red pointer](direction-and-type_red-pointer) | 5
 [white circle](direction-and-type_white-circle) | 6
-

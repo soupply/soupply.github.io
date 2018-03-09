@@ -22,4 +22,3 @@ Name | Type | When
 ---|---|:---:
 not empty | bool | 
 identifier | string | <code>not empty</code> is <code><span style="color:#009688">true</span></code>
-

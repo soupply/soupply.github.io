@@ -12,4 +12,3 @@ Name | Type
 ---|---
 has uuid | bool
 uuid | uuid
-

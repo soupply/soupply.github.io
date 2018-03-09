@@ -32,4 +32,3 @@ Protocol | Packets | Released | From | To
 [102](protocol/pocket102) | 83 | 2017/3/9 | 1.0.4 | 1.0.4
 [101](protocol/pocket101) | 82 | 2017/2/8 | 1.0.3 | 1.0.3
 [100](protocol/pocket100) | 81 | 2016/12/19 | 1.0.0 | 1.0.2
-

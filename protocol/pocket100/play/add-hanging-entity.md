@@ -24,4 +24,3 @@ entity id | varlong
 runtime id | varlong
 position | [blockPosition](/protocol/pocket100/types/block-position)
 ? | varint
-

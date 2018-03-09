@@ -92,5 +92,4 @@ Packet | Id | Clientbound | Serverbound
 [Resource Pack Data Info](play/resource-pack-data-info) | 80 | ✓ |  
 [Resource Pack Chunk Data](play/resource-pack-chunk-data) | 81 | ✓ |  
 [Resource Pack Chunk Request](play/resource-pack-chunk-request) | 82 |   | ✓
-[Transfer](play/transfer) | 83 | ✓ |  
-
+[Transfer](play/transfer) | 83 | ✓ |

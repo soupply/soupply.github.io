@@ -28,4 +28,3 @@ Name | Type
 ### commands
 
 JSON object with the commands.
-

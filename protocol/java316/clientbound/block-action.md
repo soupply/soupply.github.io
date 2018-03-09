@@ -56,4 +56,3 @@ Name | Value
 [piston west](parameter_piston-west) | 3
 [piston north](parameter_piston-north) | 4
 [piston east](parameter_piston-east) | 5
-

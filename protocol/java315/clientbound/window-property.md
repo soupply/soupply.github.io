@@ -49,4 +49,3 @@ Name | Value
 [beacon second effect](property_beacon-second-effect) | 2
 [anvil repair cost](property_anvil-repair-cost) | 0
 [brewing stand brew time](property_brewing-stand-brew-time) | 0
-

@@ -25,4 +25,3 @@ type | varint
 uuid | [mcpeUuid](/protocol/bedrock150/types/mcpe-uuid)
 input | [slot](/protocol/bedrock150/types/slot)[]
 output | [slot](/protocol/bedrock150/types/slot)[]
-

@@ -25,4 +25,3 @@ type | ubyte
 slot count | varint
 position | [blockPosition](/protocol/pocket101/types/block-position)
 entity id | varlong
-

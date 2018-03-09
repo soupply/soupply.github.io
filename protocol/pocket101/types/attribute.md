@@ -15,4 +15,3 @@ max | float
 value | float
 default | float
 name | string
-

@@ -23,4 +23,3 @@ Indicates whether the cheats are enabled. If not the client cannot send commands
 Name | Type
 ---|---
 enabled | bool
-

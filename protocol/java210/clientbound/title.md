@@ -61,4 +61,3 @@ fade out | uint
 ### Hide
 
 ### Reset
-

@@ -25,4 +25,3 @@ max chunk size | uint
 chunk count | uint
 compressed pack size | ulong
 sha256 | string
-

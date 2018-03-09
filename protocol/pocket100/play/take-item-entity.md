@@ -22,4 +22,3 @@ Name | Type
 ---|---
 collected | varlong
 collector | varlong
-

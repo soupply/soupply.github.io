@@ -29,4 +29,3 @@ pitch | ubyte
 head pitch | ubyte
 velocity | short&lt;xyz&gt;
 metadata | [metadata](/protocol/java316/metadata)
-

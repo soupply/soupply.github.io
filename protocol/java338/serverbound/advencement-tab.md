@@ -31,4 +31,3 @@ Name | Value
 ---|:---:
 [open tab](action_open-tab) | 0
 [close screen](action_close-screen) | 1
-

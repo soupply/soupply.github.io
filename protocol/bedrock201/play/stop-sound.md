@@ -22,4 +22,3 @@ Name | Type
 ---|---
 name | string
 stop all | bool
-

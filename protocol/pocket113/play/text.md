@@ -133,4 +133,3 @@ Name | Type
 ---|---
 announcer | string
 message | string
-
