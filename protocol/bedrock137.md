@@ -46,6 +46,8 @@ ushort, int, uint, long, ulong, float |
 
 **Array's length**: varuint
 
+**Padding**: 2 bytes
+
 -----
 ## Packets
 

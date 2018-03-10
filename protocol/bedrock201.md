@@ -10,7 +10,7 @@ layout: default
 
 **Released**: February 7th, 2018
 
-In use since version **1.2.10**
+Used in version **1.2.10**
 
 -----
 Protocol used in Minecraft: Pocket Edition and variants. The network part of the protocol is managed by [RakNet](../raknet/8.html).
@@ -45,6 +45,8 @@ ushort, int, uint, long, ulong, float |
 **Ids**: varuint
 
 **Array's length**: varuint
+
+**Padding**: 2 bytes
 
 -----
 ## Packets
