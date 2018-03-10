@@ -17,7 +17,7 @@ Protocol | Packets | Released | From | To
 
 Protocol | Packets | Released | From | To
 :---:|:---:|:---:|:---:|:---:
-[201](protocol/bedrock201) | 104 | 2018/2/7 | 1.2.10 | 1.2.10
+[201](protocol/bedrock201) | 104 | 2018/2/7 | 1.2.10 | 1.2.11
 [160](protocol/bedrock160) | 104 | 2017/12/14 | 1.2.7 | 1.2.9
 [150](protocol/bedrock150) | 104 | 2017/12/6 | 1.2.6 | 1.2.6
 [141](protocol/bedrock141) | 104 | 2017/11/21 | 1.2.5 | 1.2.5

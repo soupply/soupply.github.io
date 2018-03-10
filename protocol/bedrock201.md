@@ -10,7 +10,7 @@ layout: default
 
 **Released**: February 7th, 2018
 
-Used in version **1.2.10**
+Used from version **1.2.10** to **1.2.11**
 
 -----
 Protocol used in Minecraft: Pocket Edition and variants. The network part of the protocol is managed by [RakNet](../raknet/8.html).
