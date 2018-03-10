@@ -10,7 +10,7 @@ layout: default
 
 **Released**: September 18th, 2017
 
-In use since version **1.12.2**
+Used in version **1.12.2**
 
 ## Encoding
 
