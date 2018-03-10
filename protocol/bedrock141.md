@@ -6,6 +6,8 @@ layout: default
 
 **Other protocols**: [137](./bedrock141), [150](./bedrock141), [160](./bedrock141), [201](./bedrock141)
 
+**Compare changes**: [137](../diff/bedrock/137-141), [150](../diff/bedrock/141-150), [160](../diff/bedrock/141-160), [201](../diff/bedrock/141-201)
+
 **Jump to**: [Encoding](#encoding), [Packets](#packets), [Types](bedrock141/types), [Arrays](bedrock141/arrays), [Metadata](bedrock141/metadata)
 
 **Released**: November 21st, 2017

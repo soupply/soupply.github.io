@@ -6,6 +6,8 @@ layout: default
 
 **Other protocols**: [100](./pocket101), [102](./pocket101), [105](./pocket101), [113](./pocket101)
 
+**Compare changes**: [100](../diff/pocket/100-101), [102](../diff/pocket/101-102), [105](../diff/pocket/101-105), [113](../diff/pocket/101-113)
+
 **Jump to**: [Encoding](#encoding), [Packets](#packets), [Types](pocket101/types), [Arrays](pocket101/arrays), [Metadata](pocket101/metadata)
 
 **Released**: February 8th, 2017

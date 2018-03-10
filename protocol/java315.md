@@ -6,6 +6,8 @@ layout: default
 
 **Other protocols**: [210](./java315), [316](./java315), [335](./java315), [338](./java315), [340](./java315)
 
+**Compare changes**: [210](../diff/java/210-315), [316](../diff/java/315-316), [335](../diff/java/315-335), [338](../diff/java/315-338), [340](../diff/java/315-340)
+
 **Jump to**: [Encoding](#encoding), [Packets](#packets), [Types](java315/types), [Arrays](java315/arrays), [Metadata](java315/metadata)
 
 **Released**: November 14th, 2016
