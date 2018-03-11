@@ -6,7 +6,7 @@ layout: default
 
 # Player position and look
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java338#clientbound.player_position_and_look)
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#Clientbound.PlayerPositionAndLook)
 
 **Id**: 47
 

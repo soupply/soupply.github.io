@@ -6,7 +6,7 @@ layout: default
 
 # Player hotbar
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.player_hotbar)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#Play.PlayerHotbar)
 
 **Id**: 48
 

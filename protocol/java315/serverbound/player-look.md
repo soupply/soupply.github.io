@@ -6,7 +6,7 @@ layout: default
 
 # Player look
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java315#serverbound.player_look)
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#Serverbound.PlayerLook)
 
 **Id**: 14
 

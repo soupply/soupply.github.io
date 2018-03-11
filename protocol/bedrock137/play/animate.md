@@ -6,7 +6,7 @@ layout: default
 
 # Animate
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.animate)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#Play.Animate)
 
 **Id**: 44
 

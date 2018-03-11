@@ -6,7 +6,7 @@ layout: default
 
 # Clientbound map item data
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.clientbound_map_item_data)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#Play.ClientboundMapItemData)
 
 **Id**: 67
 

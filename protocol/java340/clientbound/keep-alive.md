@@ -6,7 +6,7 @@ layout: default
 
 # Keep alive
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java340#clientbound.keep_alive)
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#Clientbound.KeepAlive)
 
 **Id**: 31
 

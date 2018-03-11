@@ -6,7 +6,7 @@ layout: default
 
 # Update score
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java335#clientbound.update_score)
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#Clientbound.UpdateScore)
 
 **Id**: 68
 

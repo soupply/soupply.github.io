@@ -6,7 +6,7 @@ layout: default
 
 # Set difficulty
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#play.set_difficulty)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#Play.SetDifficulty)
 
 **Id**: 60
 

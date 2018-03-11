@@ -6,7 +6,7 @@ layout: default
 
 # Scoreboard objective
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java338#clientbound.scoreboard_objective)
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#Clientbound.ScoreboardObjective)
 
 **Id**: 66
 

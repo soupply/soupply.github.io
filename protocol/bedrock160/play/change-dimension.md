@@ -6,7 +6,7 @@ layout: default
 
 # Change dimension
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.change_dimension)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#Play.ChangeDimension)
 
 **Id**: 61
 

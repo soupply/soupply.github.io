@@ -6,7 +6,7 @@ layout: default
 
 # Resource pack chunk data
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.resource_pack_chunk_data)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#Play.ResourcePackChunkData)
 
 **Id**: 83
 

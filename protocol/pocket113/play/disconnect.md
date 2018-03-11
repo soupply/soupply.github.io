@@ -6,7 +6,7 @@ layout: default
 
 # Disconnect
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.disconnect)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#Play.Disconnect)
 
 **Id**: 5
 

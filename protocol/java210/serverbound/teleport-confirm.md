@@ -6,7 +6,7 @@ layout: default
 
 # Teleport confirm
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java210#serverbound.teleport_confirm)
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#Serverbound.TeleportConfirm)
 
 **Id**: 0
 

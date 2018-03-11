@@ -6,7 +6,7 @@ layout: default
 
 # Structure block update
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.structure_block_update)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#Play.StructureBlockUpdate)
 
 **Id**: 90
 

@@ -6,7 +6,7 @@ layout: default
 
 # Entity
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java340#clientbound.entity)
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#Clientbound.Entity)
 
 **Id**: 37
 

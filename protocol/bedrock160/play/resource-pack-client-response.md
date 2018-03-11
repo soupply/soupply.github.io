@@ -6,7 +6,7 @@ layout: default
 
 # Resource pack client response
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.resource_pack_client_response)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#Play.ResourcePackClientResponse)
 
 **Id**: 8
 

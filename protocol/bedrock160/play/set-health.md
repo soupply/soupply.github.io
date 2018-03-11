@@ -6,7 +6,7 @@ layout: default
 
 # Set health
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.set_health)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#Play.SetHealth)
 
 **Id**: 42
 

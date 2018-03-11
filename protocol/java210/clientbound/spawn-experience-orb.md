@@ -6,7 +6,7 @@ layout: default
 
 # Spawn experience orb
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java210#clientbound.spawn_experience_orb)
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#Clientbound.SpawnExperienceOrb)
 
 **Id**: 1
 

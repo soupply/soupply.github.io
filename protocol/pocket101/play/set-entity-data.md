@@ -6,7 +6,7 @@ layout: default
 
 # Set entity data
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#play.set_entity_data)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#Play.SetEntityData)
 
 **Id**: 39
 

@@ -6,7 +6,7 @@ layout: default
 
 # Player abilities
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java338#serverbound.player_abilities)
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#Serverbound.PlayerAbilities)
 
 **Id**: 19
 

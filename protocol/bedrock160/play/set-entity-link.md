@@ -6,7 +6,7 @@ layout: default
 
 # Set entity link
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.set_entity_link)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#Play.SetEntityLink)
 
 **Id**: 41
 

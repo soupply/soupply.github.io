@@ -6,7 +6,7 @@ layout: default
 
 # Set commands enabled
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#play.set_commands_enabled)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#Play.SetCommandsEnabled)
 
 **Id**: 59
 

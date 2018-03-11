@@ -6,7 +6,7 @@ layout: default
 
 # Drop item
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.drop_item)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#Play.DropItem)
 
 **Id**: 46
 

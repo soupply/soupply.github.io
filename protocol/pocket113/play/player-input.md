@@ -6,7 +6,7 @@ layout: default
 
 # Player input
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.player_input)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#Play.PlayerInput)
 
 **Id**: 57
 

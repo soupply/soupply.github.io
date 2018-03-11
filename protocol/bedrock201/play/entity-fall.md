@@ -6,7 +6,7 @@ layout: default
 
 # Entity fall
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#play.entity_fall)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#Play.EntityFall)
 
 **Id**: 37
 

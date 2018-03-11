@@ -6,7 +6,7 @@ layout: default
 
 # Sound effect
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java210#clientbound.sound_effect)
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#Clientbound.SoundEffect)
 
 **Id**: 70
 

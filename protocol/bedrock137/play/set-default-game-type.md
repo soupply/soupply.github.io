@@ -6,7 +6,7 @@ layout: default
 
 # Set default game type
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.set_default_game_type)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#Play.SetDefaultGameType)
 
 **Id**: 105
 

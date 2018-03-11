@@ -6,7 +6,7 @@ layout: default
 
 # Level sound event
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.level_sound_event)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#Play.LevelSoundEvent)
 
 **Id**: 24
 

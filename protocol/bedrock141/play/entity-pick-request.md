@@ -6,7 +6,7 @@ layout: default
 
 # Entity pick request
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#play.entity_pick_request)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#Play.EntityPickRequest)
 
 **Id**: 35
 

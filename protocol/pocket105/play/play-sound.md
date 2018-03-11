@@ -6,7 +6,7 @@ layout: default
 
 # Play sound
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.play_sound)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#Play.PlaySound)
 
 **Id**: 86
 

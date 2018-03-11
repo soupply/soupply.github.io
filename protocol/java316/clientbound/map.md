@@ -6,7 +6,7 @@ layout: default
 
 # Map
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java316#clientbound.map)
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#Clientbound.Map)
 
 **Id**: 36
 

@@ -6,7 +6,7 @@ layout: default
 
 # Add item
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.add_item)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#Play.AddItem)
 
 **Id**: 75
 

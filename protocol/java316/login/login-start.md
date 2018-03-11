@@ -6,7 +6,7 @@ layout: default
 
 # Login start
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java316#login.login_start)
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#Login.LoginStart)
 
 **Id**: 0
 

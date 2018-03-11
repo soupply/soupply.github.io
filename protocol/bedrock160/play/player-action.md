@@ -6,7 +6,7 @@ layout: default
 
 # Player action
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.player_action)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#Play.PlayerAction)
 
 **Id**: 36
 

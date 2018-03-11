@@ -6,7 +6,7 @@ layout: default
 
 # Container open
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#play.container_open)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#Play.ContainerOpen)
 
 **Id**: 48
 

@@ -6,7 +6,7 @@ layout: default
 
 # Camera
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java210#clientbound.camera)
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#Clientbound.Camera)
 
 **Id**: 54
 

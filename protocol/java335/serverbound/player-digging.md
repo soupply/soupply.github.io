@@ -6,7 +6,7 @@ layout: default
 
 # Player digging
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java335#serverbound.player_digging)
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#Serverbound.PlayerDigging)
 
 **Id**: 20
 

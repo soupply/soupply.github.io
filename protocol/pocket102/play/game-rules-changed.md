@@ -6,7 +6,7 @@ layout: default
 
 # Game rules changed
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#play.game_rules_changed)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#Play.GameRulesChanged)
 
 **Id**: 72
 

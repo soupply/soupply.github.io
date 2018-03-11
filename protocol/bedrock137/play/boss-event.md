@@ -6,7 +6,7 @@ layout: default
 
 # Boss event
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.boss_event)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#Play.BossEvent)
 
 **Id**: 74
 

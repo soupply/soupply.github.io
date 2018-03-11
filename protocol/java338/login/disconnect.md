@@ -6,7 +6,7 @@ layout: default
 
 # Disconnect
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java338#login.disconnect)
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#Login.Disconnect)
 
 **Id**: 0
 

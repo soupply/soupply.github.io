@@ -6,7 +6,7 @@ layout: default
 
 # Mob equipment
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.mob_equipment)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#Play.MobEquipment)
 
 **Id**: 31
 

@@ -6,7 +6,7 @@ layout: default
 
 # Map info request
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.map_info_request)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#Play.MapInfoRequest)
 
 **Id**: 68
 

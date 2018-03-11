@@ -6,7 +6,7 @@ layout: default
 
 # Player list
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#play.player_list)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#Play.PlayerList)
 
 **Id**: 63
 

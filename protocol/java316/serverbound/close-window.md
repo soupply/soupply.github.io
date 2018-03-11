@@ -6,7 +6,7 @@ layout: default
 
 # Close window
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java316#serverbound.close_window)
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#Serverbound.CloseWindow)
 
 **Id**: 8
 

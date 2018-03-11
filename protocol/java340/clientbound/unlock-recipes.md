@@ -6,7 +6,7 @@ layout: default
 
 # Unlock recipes
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java340#clientbound.unlock_recipes)
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#Clientbound.UnlockRecipes)
 
 **Id**: 49
 

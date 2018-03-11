@@ -6,7 +6,7 @@ layout: default
 
 # Remove block
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.remove_block)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#Play.RemoveBlock)
 
 **Id**: 21
 

@@ -6,7 +6,7 @@ layout: default
 
 # Text
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#play.text)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#Play.Text)
 
 **Id**: 10
 

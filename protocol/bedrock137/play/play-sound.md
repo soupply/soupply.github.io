@@ -6,7 +6,7 @@ layout: default
 
 # Play sound
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.play_sound)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#Play.PlaySound)
 
 **Id**: 86
 

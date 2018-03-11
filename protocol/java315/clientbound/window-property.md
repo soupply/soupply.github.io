@@ -6,7 +6,7 @@ layout: default
 
 # Window property
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java315#clientbound.window_property)
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#Clientbound.WindowProperty)
 
 **Id**: 21
 

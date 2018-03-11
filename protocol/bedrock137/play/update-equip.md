@@ -6,7 +6,7 @@ layout: default
 
 # Update equip
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.update_equip)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#Play.UpdateEquip)
 
 **Id**: 81
 

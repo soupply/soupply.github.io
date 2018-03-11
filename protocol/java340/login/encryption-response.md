@@ -6,7 +6,7 @@ layout: default
 
 # Encryption response
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java340#login.encryption_response)
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#Login.EncryptionResponse)
 
 **Id**: 1
 

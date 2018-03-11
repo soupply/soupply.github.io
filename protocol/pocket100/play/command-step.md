@@ -6,7 +6,7 @@ layout: default
 
 # Command step
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#play.command_step)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#Play.CommandStep)
 
 **Id**: 78
 

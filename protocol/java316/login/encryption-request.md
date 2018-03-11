@@ -6,7 +6,7 @@ layout: default
 
 # Encryption request
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java316#login.encryption_request)
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#Login.EncryptionRequest)
 
 **Id**: 1
 

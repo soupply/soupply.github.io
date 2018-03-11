@@ -6,7 +6,7 @@ layout: default
 
 # Entity metadata
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java335#clientbound.entity_metadata)
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#Clientbound.EntityMetadata)
 
 **Id**: 59
 

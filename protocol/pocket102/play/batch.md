@@ -6,7 +6,7 @@ layout: default
 
 # Batch
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#play.batch)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#Play.Batch)
 
 **Id**: 6
 

@@ -6,7 +6,7 @@ layout: default
 
 # Crafting data
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.crafting_data)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#Play.CraftingData)
 
 **Id**: 52
 

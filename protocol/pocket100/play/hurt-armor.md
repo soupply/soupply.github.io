@@ -6,7 +6,7 @@ layout: default
 
 # Hurt armor
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#play.hurt_armor)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#Play.HurtArmor)
 
 **Id**: 38
 

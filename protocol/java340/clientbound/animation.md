@@ -6,7 +6,7 @@ layout: default
 
 # Animation
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java340#clientbound.animation)
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#Clientbound.Animation)
 
 **Id**: 6
 

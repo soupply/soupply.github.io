@@ -6,7 +6,7 @@ layout: default
 
 # Effect
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java340#clientbound.effect)
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#Clientbound.Effect)
 
 **Id**: 33
 

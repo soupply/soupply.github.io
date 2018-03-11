@@ -6,7 +6,7 @@ layout: default
 
 # Stop sound
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.stop_sound)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#Play.StopSound)
 
 **Id**: 88
 

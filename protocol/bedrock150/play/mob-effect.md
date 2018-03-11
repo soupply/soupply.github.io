@@ -6,7 +6,7 @@ layout: default
 
 # Mob effect
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.mob_effect)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#Play.MobEffect)
 
 **Id**: 28
 

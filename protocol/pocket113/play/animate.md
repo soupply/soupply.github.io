@@ -6,7 +6,7 @@ layout: default
 
 # Animate
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.animate)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#Play.Animate)
 
 **Id**: 44
 

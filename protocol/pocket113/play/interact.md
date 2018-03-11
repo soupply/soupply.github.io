@@ -6,7 +6,7 @@ layout: default
 
 # Interact
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.interact)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#Play.Interact)
 
 **Id**: 33
 

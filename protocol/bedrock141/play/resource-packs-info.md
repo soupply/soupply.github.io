@@ -6,7 +6,7 @@ layout: default
 
 # Resource packs info
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#play.resource_packs_info)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#Play.ResourcePacksInfo)
 
 **Id**: 6
 

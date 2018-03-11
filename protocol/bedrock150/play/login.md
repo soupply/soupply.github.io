@@ -6,7 +6,7 @@ layout: default
 
 # Login
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.login)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#Play.Login)
 
 **Id**: 1
 

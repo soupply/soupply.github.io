@@ -6,7 +6,7 @@ layout: default
 
 # Set entity data
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#play.set_entity_data)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#Play.SetEntityData)
 
 **Id**: 39
 

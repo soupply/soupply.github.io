@@ -6,7 +6,7 @@ layout: default
 
 # Client status
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java340#serverbound.client_status)
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#Serverbound.ClientStatus)
 
 **Id**: 3
 

@@ -6,7 +6,7 @@ layout: default
 
 # Player abilities
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java340#clientbound.player_abilities)
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#Clientbound.PlayerAbilities)
 
 **Id**: 44
 

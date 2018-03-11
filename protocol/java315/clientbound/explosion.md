@@ -6,7 +6,7 @@ layout: default
 
 # Explosion
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java315#clientbound.explosion)
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#Clientbound.Explosion)
 
 **Id**: 28
 

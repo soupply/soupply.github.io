@@ -6,7 +6,7 @@ layout: default
 
 # Spawn global entity
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java338#clientbound.spawn_global_entity)
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#Clientbound.SpawnGlobalEntity)
 
 **Id**: 2
 

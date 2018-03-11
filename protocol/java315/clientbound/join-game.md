@@ -6,7 +6,7 @@ layout: default
 
 # Join game
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java315#clientbound.join_game)
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#Clientbound.JoinGame)
 
 **Id**: 35
 

@@ -6,7 +6,7 @@ layout: default
 
 # Player block placement
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java340#serverbound.player_block_placement)
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#Serverbound.PlayerBlockPlacement)
 
 **Id**: 31
 

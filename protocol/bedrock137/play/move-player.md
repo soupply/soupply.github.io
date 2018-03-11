@@ -6,7 +6,7 @@ layout: default
 
 # Move player
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.move_player)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#Play.MovePlayer)
 
 **Id**: 19
 

@@ -6,7 +6,7 @@ layout: default
 
 # Add player
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#play.add_player)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#Play.AddPlayer)
 
 **Id**: 13
 

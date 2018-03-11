@@ -6,7 +6,7 @@ layout: default
 
 # Entity relative move
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java335#clientbound.entity_relative_move)
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#Clientbound.EntityRelativeMove)
 
 **Id**: 38
 

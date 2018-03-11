@@ -6,7 +6,7 @@ layout: default
 
 # Disconnect
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java210#clientbound.disconnect)
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#Clientbound.Disconnect)
 
 **Id**: 26
 

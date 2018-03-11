@@ -6,7 +6,7 @@ layout: default
 
 # Spectate
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java315#serverbound.spectate)
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#Serverbound.Spectate)
 
 **Id**: 27
 

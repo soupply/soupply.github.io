@@ -6,7 +6,7 @@ layout: default
 
 # Replace selected item
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#play.replace_selected_item)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#Play.ReplaceSelectedItem)
 
 **Id**: 71
 

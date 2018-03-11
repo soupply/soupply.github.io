@@ -6,7 +6,7 @@ layout: default
 
 # Spawn experience orb
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#play.spawn_experience_orb)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#Play.SpawnExperienceOrb)
 
 **Id**: 65
 

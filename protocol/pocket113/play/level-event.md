@@ -6,7 +6,7 @@ layout: default
 
 # Level event
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.level_event)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#Play.LevelEvent)
 
 **Id**: 26
 

@@ -6,7 +6,7 @@ layout: default
 
 # Entity effect
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java316#clientbound.entity_effect)
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#Clientbound.EntityEffect)
 
 **Id**: 75
 

@@ -6,7 +6,7 @@ layout: default
 
 # Block entity data
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.block_entity_data)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#Play.BlockEntityData)
 
 **Id**: 56
 

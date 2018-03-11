@@ -6,7 +6,7 @@ layout: default
 
 # Clientbound map item data
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#play.clientbound_map_item_data)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#Play.ClientboundMapItemData)
 
 **Id**: 67
 

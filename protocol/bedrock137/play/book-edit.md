@@ -6,7 +6,7 @@ layout: default
 
 # Book edit
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.book_edit)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#Play.BookEdit)
 
 **Id**: 97
 

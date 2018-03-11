@@ -6,7 +6,7 @@ layout: default
 
 # Respawn
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#play.respawn)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#Play.Respawn)
 
 **Id**: 45
 

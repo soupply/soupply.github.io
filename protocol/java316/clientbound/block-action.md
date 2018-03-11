@@ -6,7 +6,7 @@ layout: default
 
 # Block action
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java316#clientbound.block_action)
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#Clientbound.BlockAction)
 
 **Id**: 10
 

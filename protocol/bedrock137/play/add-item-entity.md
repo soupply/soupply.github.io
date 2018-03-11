@@ -6,7 +6,7 @@ layout: default
 
 # Add item entity
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.add_item_entity)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#Play.AddItemEntity)
 
 **Id**: 15
 

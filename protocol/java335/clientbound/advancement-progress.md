@@ -6,7 +6,7 @@ layout: default
 
 # Advancement progress
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java335#clientbound.advancement_progress)
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#Clientbound.AdvancementProgress)
 
 **Id**: 54
 

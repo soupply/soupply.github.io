@@ -6,7 +6,7 @@ layout: default
 
 # Set passengers
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java315#clientbound.set_passengers)
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#Clientbound.SetPassengers)
 
 **Id**: 64
 

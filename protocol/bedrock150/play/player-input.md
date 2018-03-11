@@ -6,7 +6,7 @@ layout: default
 
 # Player input
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.player_input)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#Play.PlayerInput)
 
 **Id**: 57
 

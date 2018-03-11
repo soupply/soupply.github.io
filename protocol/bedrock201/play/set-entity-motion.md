@@ -6,7 +6,7 @@ layout: default
 
 # Set entity motion
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#play.set_entity_motion)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#Play.SetEntityMotion)
 
 **Id**: 40
 

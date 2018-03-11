@@ -6,7 +6,7 @@ layout: default
 
 # Block event
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.block_event)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#Play.BlockEvent)
 
 **Id**: 27
 

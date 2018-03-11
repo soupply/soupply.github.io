@@ -6,7 +6,7 @@ layout: default
 
 # Transfer
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#play.transfer)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#Play.Transfer)
 
 **Id**: 83
 

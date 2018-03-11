@@ -6,7 +6,7 @@ layout: default
 
 # Request chunk radius
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#play.request_chunk_radius)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#Play.RequestChunkRadius)
 
 **Id**: 68
 

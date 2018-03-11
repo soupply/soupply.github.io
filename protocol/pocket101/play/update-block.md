@@ -6,7 +6,7 @@ layout: default
 
 # Update block
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#play.update_block)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#Play.UpdateBlock)
 
 **Id**: 23
 

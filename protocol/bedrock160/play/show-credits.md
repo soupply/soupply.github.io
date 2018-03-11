@@ -6,7 +6,7 @@ layout: default
 
 # Show credits
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.show_credits)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#Play.ShowCredits)
 
 **Id**: 75
 

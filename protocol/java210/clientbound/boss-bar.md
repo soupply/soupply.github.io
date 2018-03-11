@@ -6,7 +6,7 @@ layout: default
 
 # Boss bar
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java210#clientbound.boss_bar)
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#Clientbound.BossBar)
 
 **Id**: 12
 

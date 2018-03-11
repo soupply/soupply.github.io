@@ -6,7 +6,7 @@ layout: default
 
 # Handshake
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java335#status.handshake)
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#Status.Handshake)
 
 **Id**: 0
 

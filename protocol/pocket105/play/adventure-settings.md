@@ -6,7 +6,7 @@ layout: default
 
 # Adventure settings
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.adventure_settings)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#Play.AdventureSettings)
 
 **Id**: 56
 

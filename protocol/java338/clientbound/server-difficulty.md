@@ -6,7 +6,7 @@ layout: default
 
 # Server difficulty
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java338#clientbound.server_difficulty)
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#Clientbound.ServerDifficulty)
 
 **Id**: 13
 

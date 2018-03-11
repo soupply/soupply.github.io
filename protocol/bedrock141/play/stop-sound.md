@@ -6,7 +6,7 @@ layout: default
 
 # Stop sound
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#play.stop_sound)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#Play.StopSound)
 
 **Id**: 87
 

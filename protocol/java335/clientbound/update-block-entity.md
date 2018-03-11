@@ -6,7 +6,7 @@ layout: default
 
 # Update block entity
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java335#clientbound.update_block_entity)
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#Clientbound.UpdateBlockEntity)
 
 **Id**: 9
 

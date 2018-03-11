@@ -6,7 +6,7 @@ layout: default
 
 # Login
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.login)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#Play.Login)
 
 **Id**: 1
 

@@ -6,7 +6,7 @@ layout: default
 
 # Move entity
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.move_entity)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#Play.MoveEntity)
 
 **Id**: 18
 

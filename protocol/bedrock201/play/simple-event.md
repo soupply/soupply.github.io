@@ -6,7 +6,7 @@ layout: default
 
 # Simple event
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#play.simple_event)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#Play.SimpleEvent)
 
 **Id**: 64
 

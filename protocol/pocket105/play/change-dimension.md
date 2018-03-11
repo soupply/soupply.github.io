@@ -6,7 +6,7 @@ layout: default
 
 # Change dimension
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.change_dimension)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#Play.ChangeDimension)
 
 **Id**: 62
 

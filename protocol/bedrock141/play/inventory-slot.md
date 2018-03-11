@@ -6,7 +6,7 @@ layout: default
 
 # Inventory slot
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#play.inventory_slot)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#Play.InventorySlot)
 
 **Id**: 50
 

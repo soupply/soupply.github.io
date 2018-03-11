@@ -6,7 +6,7 @@ layout: default
 
 # Command block update
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.command_block_update)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#Play.CommandBlockUpdate)
 
 **Id**: 80
 

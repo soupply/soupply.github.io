@@ -6,7 +6,7 @@ layout: default
 
 # Photo transfer
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.photo_transfer)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#Play.PhotoTransfer)
 
 **Id**: 99
 

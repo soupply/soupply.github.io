@@ -6,7 +6,7 @@ layout: default
 
 # Player position
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java316#serverbound.player_position)
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#Serverbound.PlayerPosition)
 
 **Id**: 12
 

@@ -6,7 +6,7 @@ layout: default
 
 # Player fall
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#play.player_fall)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#Play.PlayerFall)
 
 **Id**: 37
 

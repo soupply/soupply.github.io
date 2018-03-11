@@ -6,7 +6,7 @@ layout: default
 
 # Open window
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java340#clientbound.open_window)
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#Clientbound.OpenWindow)
 
 **Id**: 19
 

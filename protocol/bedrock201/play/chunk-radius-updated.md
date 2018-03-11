@@ -6,7 +6,7 @@ layout: default
 
 # Chunk radius updated
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#play.chunk_radius_updated)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#Play.ChunkRadiusUpdated)
 
 **Id**: 70
 

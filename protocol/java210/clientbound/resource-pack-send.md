@@ -6,7 +6,7 @@ layout: default
 
 # Resource pack send
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java210#clientbound.resource_pack_send)
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#Clientbound.ResourcePackSend)
 
 **Id**: 50
 

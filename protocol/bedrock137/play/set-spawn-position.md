@@ -6,7 +6,7 @@ layout: default
 
 # Set spawn position
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.set_spawn_position)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#Play.SetSpawnPosition)
 
 **Id**: 43
 

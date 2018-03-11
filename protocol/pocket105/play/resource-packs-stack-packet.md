@@ -6,7 +6,7 @@ layout: default
 
 # Resource packs stack packet
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.resource_packs_stack_packet)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#Play.ResourcePacksStackPacket)
 
 **Id**: 8
 

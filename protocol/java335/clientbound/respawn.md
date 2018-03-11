@@ -6,7 +6,7 @@ layout: default
 
 # Respawn
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java335#clientbound.respawn)
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#Clientbound.Respawn)
 
 **Id**: 52
 

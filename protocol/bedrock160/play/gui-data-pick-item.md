@@ -6,7 +6,7 @@ layout: default
 
 # Gui data pick item
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.gui_data_pick_item)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#Play.GuiDataPickItem)
 
 **Id**: 54
 

@@ -6,7 +6,7 @@ layout: default
 
 # Take item entity
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#play.take_item_entity)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#Play.TakeItemEntity)
 
 **Id**: 17
 

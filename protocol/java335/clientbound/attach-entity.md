@@ -6,7 +6,7 @@ layout: default
 
 # Attach entity
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java335#clientbound.attach_entity)
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#Clientbound.AttachEntity)
 
 **Id**: 60
 

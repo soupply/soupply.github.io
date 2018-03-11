@@ -6,7 +6,7 @@ layout: default
 
 # Click window
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java338#serverbound.click_window)
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#Serverbound.ClickWindow)
 
 **Id**: 7
 

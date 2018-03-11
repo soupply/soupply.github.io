@@ -6,7 +6,7 @@ layout: default
 
 # Start game
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.start_game)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#Play.StartGame)
 
 **Id**: 11
 

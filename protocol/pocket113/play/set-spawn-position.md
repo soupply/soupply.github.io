@@ -6,7 +6,7 @@ layout: default
 
 # Set spawn position
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.set_spawn_position)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#Play.SetSpawnPosition)
 
 **Id**: 43
 

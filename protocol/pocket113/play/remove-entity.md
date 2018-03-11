@@ -6,7 +6,7 @@ layout: default
 
 # Remove entity
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.remove_entity)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#Play.RemoveEntity)
 
 **Id**: 14
 

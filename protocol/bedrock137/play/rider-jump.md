@@ -6,7 +6,7 @@ layout: default
 
 # Rider jump
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.rider_jump)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#Play.RiderJump)
 
 **Id**: 20
 

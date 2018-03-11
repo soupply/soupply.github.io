@@ -6,7 +6,7 @@ layout: default
 
 # Statistics
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java316#clientbound.statistics)
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#Clientbound.Statistics)
 
 **Id**: 7
 

@@ -6,7 +6,7 @@ layout: default
 
 # Add painting
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.add_painting)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#Play.AddPainting)
 
 **Id**: 24
 

@@ -6,7 +6,7 @@ layout: default
 
 # Set entity motion
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.set_entity_motion)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#Play.SetEntityMotion)
 
 **Id**: 41
 

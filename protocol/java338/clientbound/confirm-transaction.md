@@ -6,7 +6,7 @@ layout: default
 
 # Confirm transaction
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java338#clientbound.confirm_transaction)
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#Clientbound.ConfirmTransaction)
 
 **Id**: 17
 

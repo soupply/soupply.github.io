@@ -6,7 +6,7 @@ layout: default
 
 # World border
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java210#clientbound.world_border)
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#Clientbound.WorldBorder)
 
 **Id**: 53
 

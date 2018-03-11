@@ -6,7 +6,7 @@ layout: default
 
 # Use bed
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java315#clientbound.use_bed)
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#Clientbound.UseBed)
 
 **Id**: 47
 

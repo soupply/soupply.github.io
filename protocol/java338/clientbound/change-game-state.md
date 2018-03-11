@@ -6,7 +6,7 @@ layout: default
 
 # Change game state
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java338#clientbound.change_game_state)
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#Clientbound.ChangeGameState)
 
 **Id**: 30
 

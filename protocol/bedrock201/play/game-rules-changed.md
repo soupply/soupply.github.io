@@ -6,7 +6,7 @@ layout: default
 
 # Game rules changed
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#play.game_rules_changed)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#Play.GameRulesChanged)
 
 **Id**: 72
 

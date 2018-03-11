@@ -6,7 +6,7 @@ layout: default
 
 # Entity event
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#play.entity_event)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#Play.EntityEvent)
 
 **Id**: 27
 

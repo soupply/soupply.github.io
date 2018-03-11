@@ -6,7 +6,7 @@ layout: default
 
 # Explode
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#play.explode)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#Play.Explode)
 
 **Id**: 23
 

@@ -6,7 +6,7 @@ layout: default
 
 # Sub client login
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.sub_client_login)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#Play.SubClientLogin)
 
 **Id**: 94
 

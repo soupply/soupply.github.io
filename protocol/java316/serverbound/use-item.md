@@ -6,7 +6,7 @@ layout: default
 
 # Use item
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java316#serverbound.use_item)
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#Serverbound.UseItem)
 
 **Id**: 29
 

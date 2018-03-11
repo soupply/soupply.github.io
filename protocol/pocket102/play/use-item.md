@@ -6,7 +6,7 @@ layout: default
 
 # Use item
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#play.use_item)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#Play.UseItem)
 
 **Id**: 35
 

@@ -6,7 +6,7 @@ layout: default
 
 # Mob effect
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.mob_effect)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#Play.MobEffect)
 
 **Id**: 29
 

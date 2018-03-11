@@ -6,7 +6,7 @@ layout: default
 
 # Chat message
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java335#serverbound.chat_message)
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#Serverbound.ChatMessage)
 
 **Id**: 3
 

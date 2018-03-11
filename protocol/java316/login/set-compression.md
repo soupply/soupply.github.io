@@ -6,7 +6,7 @@ layout: default
 
 # Set compression
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java316#login.set_compression)
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#Login.SetCompression)
 
 **Id**: 3
 

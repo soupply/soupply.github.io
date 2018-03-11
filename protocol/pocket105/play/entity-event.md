@@ -6,7 +6,7 @@ layout: default
 
 # Entity event
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.entity_event)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#Play.EntityEvent)
 
 **Id**: 29
 

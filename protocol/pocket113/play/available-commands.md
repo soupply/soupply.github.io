@@ -6,7 +6,7 @@ layout: default
 
 # Available commands
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.available_commands)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#Play.AvailableCommands)
 
 **Id**: 78
 

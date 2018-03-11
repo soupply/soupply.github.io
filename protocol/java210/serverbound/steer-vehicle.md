@@ -6,7 +6,7 @@ layout: default
 
 # Steer vehicle
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java210#serverbound.steer_vehicle)
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#Serverbound.SteerVehicle)
 
 **Id**: 21
 

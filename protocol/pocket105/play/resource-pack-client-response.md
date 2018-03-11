@@ -6,7 +6,7 @@ layout: default
 
 # Resource pack client response
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.resource_pack_client_response)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#Play.ResourcePackClientResponse)
 
 **Id**: 9
 

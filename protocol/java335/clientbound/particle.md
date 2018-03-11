@@ -6,7 +6,7 @@ layout: default
 
 # Particle
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java335#clientbound.particle)
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#Clientbound.Particle)
 
 **Id**: 34
 

@@ -6,7 +6,7 @@ layout: default
 
 # Display scoreboard
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java338#clientbound.display_scoreboard)
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#Clientbound.DisplayScoreboard)
 
 **Id**: 59
 

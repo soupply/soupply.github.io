@@ -6,7 +6,7 @@ layout: default
 
 # Combat event
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java210#clientbound.combat_event)
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#Clientbound.CombatEvent)
 
 **Id**: 44
 

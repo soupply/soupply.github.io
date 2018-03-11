@@ -6,7 +6,7 @@ layout: default
 
 # Full chunk data
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#play.full_chunk_data)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#Play.FullChunkData)
 
 **Id**: 58
 

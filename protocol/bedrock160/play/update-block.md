@@ -6,7 +6,7 @@ layout: default
 
 # Update block
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.update_block)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#Play.UpdateBlock)
 
 **Id**: 21
 

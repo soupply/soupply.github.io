@@ -6,7 +6,7 @@ layout: default
 
 # Telemetry event
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.telemetry_event)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#Play.TelemetryEvent)
 
 **Id**: 65
 

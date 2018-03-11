@@ -6,7 +6,7 @@ layout: default
 
 # Set time
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#play.set_time)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#Play.SetTime)
 
 **Id**: 11
 

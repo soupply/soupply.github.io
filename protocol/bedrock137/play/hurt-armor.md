@@ -6,7 +6,7 @@ layout: default
 
 # Hurt armor
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.hurt_armor)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#Play.HurtArmor)
 
 **Id**: 38
 

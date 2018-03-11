@@ -6,7 +6,7 @@ layout: default
 
 # Play status
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.play_status)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#Play.PlayStatus)
 
 **Id**: 2
 

@@ -6,7 +6,7 @@ layout: default
 
 # Inventory transaction
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.inventory_transaction)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#Play.InventoryTransaction)
 
 **Id**: 30
 

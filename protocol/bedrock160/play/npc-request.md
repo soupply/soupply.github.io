@@ -6,7 +6,7 @@ layout: default
 
 # Npc request
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.npc_request)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#Play.NpcRequest)
 
 **Id**: 98
 

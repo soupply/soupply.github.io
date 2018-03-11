@@ -6,7 +6,7 @@ layout: default
 
 # Update sign
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java315#serverbound.update_sign)
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#Serverbound.UpdateSign)
 
 **Id**: 25
 

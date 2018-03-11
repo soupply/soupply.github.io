@@ -6,7 +6,7 @@ layout: default
 
 # Add painting
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#play.add_painting)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#Play.AddPainting)
 
 **Id**: 22
 

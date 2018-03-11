@@ -6,7 +6,7 @@ layout: default
 
 # Item frame drop item
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.item_frame_drop_item)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#Play.ItemFrameDropItem)
 
 **Id**: 71
 

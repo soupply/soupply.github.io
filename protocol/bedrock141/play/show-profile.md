@@ -6,7 +6,7 @@ layout: default
 
 # Show profile
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#play.show_profile)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#Play.ShowProfile)
 
 **Id**: 104
 

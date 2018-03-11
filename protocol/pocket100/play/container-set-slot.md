@@ -6,7 +6,7 @@ layout: default
 
 # Container set slot
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#play.container_set_slot)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#Play.ContainerSetSlot)
 
 **Id**: 50
 

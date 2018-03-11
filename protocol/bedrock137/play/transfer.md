@@ -6,7 +6,7 @@ layout: default
 
 # Transfer
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.transfer)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#Play.Transfer)
 
 **Id**: 85
 

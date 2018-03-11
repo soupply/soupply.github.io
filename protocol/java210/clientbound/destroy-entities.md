@@ -6,7 +6,7 @@ layout: default
 
 # Destroy entities
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java210#clientbound.destroy_entities)
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#Clientbound.DestroyEntities)
 
 **Id**: 48
 

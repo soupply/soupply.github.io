@@ -6,7 +6,7 @@ layout: default
 
 # Entity action
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java338#serverbound.entity_action)
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#Serverbound.EntityAction)
 
 **Id**: 21
 

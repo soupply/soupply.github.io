@@ -6,7 +6,7 @@ layout: default
 
 # Chunk data
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java338#clientbound.chunk_data)
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#Clientbound.ChunkData)
 
 **Id**: 32
 

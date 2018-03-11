@@ -6,7 +6,7 @@ layout: default
 
 # Spawn player
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java338#clientbound.spawn_player)
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#Clientbound.SpawnPlayer)
 
 **Id**: 5
 

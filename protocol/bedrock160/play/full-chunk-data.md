@@ -6,7 +6,7 @@ layout: default
 
 # Full chunk data
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.full_chunk_data)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#Play.FullChunkData)
 
 **Id**: 58
 

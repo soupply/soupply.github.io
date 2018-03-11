@@ -6,7 +6,7 @@ layout: default
 
 # Available commands
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#play.available_commands)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#Play.AvailableCommands)
 
 **Id**: 76
 

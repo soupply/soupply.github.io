@@ -6,7 +6,7 @@ layout: default
 
 # Update attributes
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#play.update_attributes)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#Play.UpdateAttributes)
 
 **Id**: 31
 

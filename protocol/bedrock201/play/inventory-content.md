@@ -6,7 +6,7 @@ layout: default
 
 # Inventory content
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#play.inventory_content)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#Play.InventoryContent)
 
 **Id**: 49
 

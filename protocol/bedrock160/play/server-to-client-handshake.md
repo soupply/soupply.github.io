@@ -6,7 +6,7 @@ layout: default
 
 # Server to client handshake
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.server_to_client_handshake)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#Play.ServerToClientHandshake)
 
 **Id**: 3
 

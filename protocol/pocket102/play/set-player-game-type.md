@@ -6,7 +6,7 @@ layout: default
 
 # Set player game type
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#play.set_player_game_type)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#Play.SetPlayerGameType)
 
 **Id**: 62
 

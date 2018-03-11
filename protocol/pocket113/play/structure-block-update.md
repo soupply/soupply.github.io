@@ -6,7 +6,7 @@ layout: default
 
 # Structure block update
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.structure_block_update)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#Play.StructureBlockUpdate)
 
 **Id**: 91
 

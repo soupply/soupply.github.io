@@ -6,7 +6,7 @@ layout: default
 
 # Modal form response
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#play.modal_form_response)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#Play.ModalFormResponse)
 
 **Id**: 101
 

@@ -6,7 +6,7 @@ layout: default
 
 # Set slot
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java315#clientbound.set_slot)
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#Clientbound.SetSlot)
 
 **Id**: 22
 

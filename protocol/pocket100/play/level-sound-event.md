@@ -6,7 +6,7 @@ layout: default
 
 # Level sound event
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#play.level_sound_event)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#Play.LevelSoundEvent)
 
 **Id**: 26
 

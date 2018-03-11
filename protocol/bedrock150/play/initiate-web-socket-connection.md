@@ -6,7 +6,7 @@ layout: default
 
 # Initiate web socket connection
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.initiate_web_socket_connection)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#Play.InitiateWebSocketConnection)
 
 **Id**: 95
 

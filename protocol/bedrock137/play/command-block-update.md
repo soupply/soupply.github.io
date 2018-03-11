@@ -6,7 +6,7 @@ layout: default
 
 # Command block update
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.command_block_update)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#Play.CommandBlockUpdate)
 
 **Id**: 78
 

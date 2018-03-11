@@ -6,7 +6,7 @@ layout: default
 
 # Remove entity effect
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java315#clientbound.remove_entity_effect)
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#Clientbound.RemoveEntityEffect)
 
 **Id**: 49
 

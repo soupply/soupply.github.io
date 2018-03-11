@@ -6,7 +6,7 @@ layout: default
 
 # Advencement tab
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java340#serverbound.advencement_tab)
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#Serverbound.AdvencementTab)
 
 **Id**: 25
 

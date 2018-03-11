@@ -6,7 +6,7 @@ layout: default
 
 # Command request
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.command_request)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#Play.CommandRequest)
 
 **Id**: 77
 

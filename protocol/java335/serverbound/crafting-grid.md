@@ -6,7 +6,7 @@ layout: default
 
 # Crafting grid
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java335#serverbound.crafting_grid)
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#Serverbound.CraftingGrid)
 
 **Id**: 1
 

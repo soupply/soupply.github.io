@@ -6,7 +6,7 @@ layout: default
 
 # Advencements
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java338#clientbound.advencements)
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#Clientbound.Advencements)
 
 **Id**: 77
 

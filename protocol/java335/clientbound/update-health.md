@@ -6,7 +6,7 @@ layout: default
 
 # Update health
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java335#clientbound.update_health)
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#Clientbound.UpdateHealth)
 
 **Id**: 64
 

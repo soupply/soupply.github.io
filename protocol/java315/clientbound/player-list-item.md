@@ -6,7 +6,7 @@ layout: default
 
 # Player list item
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java315#clientbound.player_list_item)
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#Clientbound.PlayerListItem)
 
 **Id**: 45
 

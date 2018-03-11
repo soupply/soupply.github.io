@@ -6,7 +6,7 @@ layout: default
 
 # Tab complete
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java316#clientbound.tab_complete)
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#Clientbound.TabComplete)
 
 **Id**: 14
 

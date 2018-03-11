@@ -6,7 +6,7 @@ layout: default
 
 # Interact
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#play.interact)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#Play.Interact)
 
 **Id**: 33
 

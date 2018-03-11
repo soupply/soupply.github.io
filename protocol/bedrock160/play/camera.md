@@ -6,7 +6,7 @@ layout: default
 
 # Camera
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.camera)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#Play.Camera)
 
 **Id**: 73
 

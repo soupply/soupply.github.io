@@ -6,7 +6,7 @@ layout: default
 
 # Client settings
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java340#serverbound.client_settings)
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#Serverbound.ClientSettings)
 
 **Id**: 4
 

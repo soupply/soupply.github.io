@@ -6,7 +6,7 @@ layout: default
 
 # Take item entity
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.take_item_entity)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#Play.TakeItemEntity)
 
 **Id**: 17
 

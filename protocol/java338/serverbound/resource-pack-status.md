@@ -6,7 +6,7 @@ layout: default
 
 # Resource pack status
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java338#serverbound.resource_pack_status)
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#Serverbound.ResourcePackStatus)
 
 **Id**: 24
 

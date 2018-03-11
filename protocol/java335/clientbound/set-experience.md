@@ -6,7 +6,7 @@ layout: default
 
 # Set experience
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java335#clientbound.set_experience)
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#Clientbound.SetExperience)
 
 **Id**: 63
 

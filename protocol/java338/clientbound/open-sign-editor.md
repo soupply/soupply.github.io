@@ -6,7 +6,7 @@ layout: default
 
 # Open sign editor
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java338#clientbound.open_sign_editor)
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#Clientbound.OpenSignEditor)
 
 **Id**: 42
 

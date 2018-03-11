@@ -6,7 +6,7 @@ layout: default
 
 # Add hanging entity
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.add_hanging_entity)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#Play.AddHangingEntity)
 
 **Id**: 17
 

@@ -6,7 +6,7 @@ layout: default
 
 # Set title
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.set_title)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#Play.SetTitle)
 
 **Id**: 88
 

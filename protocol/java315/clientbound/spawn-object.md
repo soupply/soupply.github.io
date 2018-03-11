@@ -6,7 +6,7 @@ layout: default
 
 # Spawn object
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java315#clientbound.spawn_object)
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#Clientbound.SpawnObject)
 
 **Id**: 0
 

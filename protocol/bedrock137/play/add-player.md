@@ -6,7 +6,7 @@ layout: default
 
 # Add player
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.add_player)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#Play.AddPlayer)
 
 **Id**: 12
 

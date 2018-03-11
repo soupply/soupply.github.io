@@ -6,7 +6,7 @@ layout: default
 
 # Move player
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#play.move_player)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#Play.MovePlayer)
 
 **Id**: 20
 

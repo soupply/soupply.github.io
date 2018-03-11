@@ -6,7 +6,7 @@ layout: default
 
 # Move entity
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.move_entity)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#Play.MoveEntity)
 
 **Id**: 19
 

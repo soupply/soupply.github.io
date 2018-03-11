@@ -6,7 +6,7 @@ layout: default
 
 # Block break animation
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java315#clientbound.block_break_animation)
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#Clientbound.BlockBreakAnimation)
 
 **Id**: 8
 

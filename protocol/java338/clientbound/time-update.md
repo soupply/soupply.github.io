@@ -6,7 +6,7 @@ layout: default
 
 # Time update
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java338#clientbound.time_update)
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#Clientbound.TimeUpdate)
 
 **Id**: 71
 

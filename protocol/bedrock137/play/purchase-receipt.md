@@ -6,7 +6,7 @@ layout: default
 
 # Purchase receipt
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.purchase_receipt)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#Play.PurchaseReceipt)
 
 **Id**: 92
 

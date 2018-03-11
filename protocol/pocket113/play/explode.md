@@ -6,7 +6,7 @@ layout: default
 
 # Explode
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.explode)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#Play.Explode)
 
 **Id**: 24
 

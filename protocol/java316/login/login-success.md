@@ -6,7 +6,7 @@ layout: default
 
 # Login success
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java316#login.login_success)
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#Login.LoginSuccess)
 
 **Id**: 2
 

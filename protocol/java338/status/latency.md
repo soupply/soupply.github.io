@@ -6,7 +6,7 @@ layout: default
 
 # Latency
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java338#status.latency)
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#Status.Latency)
 
 **Id**: 1
 

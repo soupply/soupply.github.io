@@ -6,7 +6,7 @@ layout: default
 
 # Entity look and relative move
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java340#clientbound.entity_look_and_relative_move)
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#Clientbound.EntityLookAndRelativeMove)
 
 **Id**: 39
 

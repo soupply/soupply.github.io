@@ -6,7 +6,7 @@ layout: default
 
 # Level event
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.level_event)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#Play.LevelEvent)
 
 **Id**: 25
 

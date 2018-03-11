@@ -6,7 +6,7 @@ layout: default
 
 # Request
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java340#status.request)
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#Status.Request)
 
 **Id**: 0
 

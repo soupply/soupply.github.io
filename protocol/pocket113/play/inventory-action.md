@@ -6,7 +6,7 @@ layout: default
 
 # Inventory action
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.inventory_action)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#Play.InventoryAction)
 
 **Id**: 47
 

@@ -6,7 +6,7 @@ layout: default
 
 # Player list
 
-Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#play.player_list)
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#Play.PlayerList)
 
 **Id**: 63
 

@@ -6,7 +6,7 @@ layout: default
 
 # Title
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java210#clientbound.title)
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#Clientbound.Title)
 
 **Id**: 69
 

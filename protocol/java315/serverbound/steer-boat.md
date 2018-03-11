@@ -6,7 +6,7 @@ layout: default
 
 # Steer boat
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java315#serverbound.steer_boat)
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#Serverbound.SteerBoat)
 
 **Id**: 17
 

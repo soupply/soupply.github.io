@@ -6,7 +6,7 @@ layout: default
 
 # Window items
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java210#clientbound.window_items)
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#Clientbound.WindowItems)
 
 **Id**: 20
 

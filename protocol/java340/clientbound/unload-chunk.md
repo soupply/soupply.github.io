@@ -6,7 +6,7 @@ layout: default
 
 # Unload chunk
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java340#clientbound.unload_chunk)
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#Clientbound.UnloadChunk)
 
 **Id**: 29
 

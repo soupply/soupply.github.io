@@ -6,7 +6,7 @@ layout: default
 
 # Collect item
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java315#clientbound.collect_item)
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#Clientbound.CollectItem)
 
 **Id**: 72
 

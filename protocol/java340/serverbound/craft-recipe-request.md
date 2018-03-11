@@ -6,7 +6,7 @@ layout: default
 
 # Craft recipe request
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java340#serverbound.craft_recipe_request)
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#Serverbound.CraftRecipeRequest)
 
 **Id**: 18
 

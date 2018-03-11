@@ -6,7 +6,7 @@ layout: default
 
 # Block event
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.block_event)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#Play.BlockEvent)
 
 **Id**: 26
 

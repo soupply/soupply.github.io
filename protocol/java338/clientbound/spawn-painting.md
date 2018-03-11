@@ -6,7 +6,7 @@ layout: default
 
 # Spawn painting
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java338#clientbound.spawn_painting)
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#Clientbound.SpawnPainting)
 
 **Id**: 4
 

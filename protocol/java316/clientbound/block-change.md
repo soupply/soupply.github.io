@@ -6,7 +6,7 @@ layout: default
 
 # Block change
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java316#clientbound.block_change)
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#Clientbound.BlockChange)
 
 **Id**: 11
 

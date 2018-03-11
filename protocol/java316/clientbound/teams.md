@@ -6,7 +6,7 @@ layout: default
 
 # Teams
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java316#clientbound.teams)
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#Clientbound.Teams)
 
 **Id**: 65
 

@@ -6,7 +6,7 @@ layout: default
 
 # Block pick request
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.block_pick_request)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#Play.BlockPickRequest)
 
 **Id**: 34
 

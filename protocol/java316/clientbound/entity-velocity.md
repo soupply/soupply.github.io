@@ -6,7 +6,7 @@ layout: default
 
 # Entity velocity
 
-Encode/decode this packet in [Sandbox](../../../sandbox/java316#clientbound.entity_velocity)
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#Clientbound.EntityVelocity)
 
 **Id**: 59
 

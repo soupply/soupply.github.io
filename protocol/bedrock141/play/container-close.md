@@ -6,7 +6,7 @@ layout: default
 
 # Container close
 
-Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#play.container_close)
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#Play.ContainerClose)
 
 **Id**: 47
 
