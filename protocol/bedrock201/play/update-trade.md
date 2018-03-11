@@ -6,6 +6,8 @@ layout: default
 
 # Update trade
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#play.update_trade)
+
 **Id**: 80
 
 **Id** (hex): 50

@@ -6,6 +6,8 @@ layout: default
 
 # Crafting grid
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#serverbound.crafting_grid)
+
 **Id**: 1
 
 **Id** (hex): 01

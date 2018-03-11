@@ -6,6 +6,8 @@ layout: default
 
 # Command block update
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#play.command_block_update)
+
 **Id**: 78
 
 **Id** (hex): 4E

@@ -6,6 +6,8 @@ layout: default
 
 # Adventure settings
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.adventure_settings)
+
 **Id**: 55
 
 **Id** (hex): 37
@@ -35,16 +37,16 @@ entity id | long
 
 Name | Value
 ---|:---:
-[immutable world](flags_immutable-world) | 1
-[pvp disabled](flags_pvp-disabled) | 2
-[pvm disabled](flags_pvm-disabled) | 4
-[mvp disbaled](flags_mvp-disbaled) | 8
-[evp disabled](flags_evp-disabled) | 16
-[auto jump](flags_auto-jump) | 32
-[allow flight](flags_allow-flight) | 64
-[no clip](flags_no-clip) | 128
-[flying](flags_flying) | 512
-[muted](flags_muted) | 1024
+immutable world | 1
+pvp disabled | 2
+pvm disabled | 4
+mvp disbaled | 8
+evp disabled | 16
+auto jump | 32
+allow flight | 64
+no clip | 128
+flying | 512
+muted | 1024
 
 ### permission level
 
@@ -52,11 +54,11 @@ Name | Value
 
 Name | Value
 ---|:---:
-[level user](permission-level_level-user) | 0
-[level operator](permission-level_level-operator) | 1
-[level host](permission-level_level-host) | 2
-[level automation](permission-level_level-automation) | 3
-[level admin](permission-level_level-admin) | 4
+level user | 0
+level operator | 1
+level host | 2
+level automation | 3
+level admin | 4
 
 ### abilities
 
@@ -64,13 +66,13 @@ Name | Value
 
 Name | Value
 ---|:---:
-[build and mine](abilities_build-and-mine) | 1
-[doors and switches](abilities_doors-and-switches) | 2
-[open containers](abilities_open-containers) | 4
-[attack players](abilities_attack-players) | 8
-[attack mobs](abilities_attack-mobs) | 16
-[op](abilities_op) | 32
-[teleport](abilities_teleport) | 64
+build and mine | 1
+doors and switches | 2
+open containers | 4
+attack players | 8
+attack mobs | 16
+op | 32
+teleport | 64
 
 ### player rank
 
@@ -78,7 +80,7 @@ Name | Value
 
 Name | Value
 ---|:---:
-[visitor](player-rank_visitor) | 0
-[member](player-rank_member) | 1
-[operator](player-rank_operator) | 2
-[custom](player-rank_custom) | 3
+visitor | 0
+member | 1
+operator | 2
+custom | 3

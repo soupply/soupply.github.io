@@ -27,21 +27,21 @@ The behaviours indicated in the following constants' descriptions is enabled or 
 
 Name | Value |  |
 ---|:---:|---
-[command block output](name_command-block-output) | commandblockoutput | Command's block output in the chat
-[do daylight cycle](name_do-daylight-cycle) | dodaylightcycle | 
-[do entity drops](name_do-entity-drops) | doentitydrops | 
-[do fire tick](name_do-fire-tick) | dofiretick | 
-[do mob loot](name_do-mob-loot) | domobloot | 
-[do mob spawning](name_do-mob-spawning) | domobspawning | 
-[do tile drops](name_do-tile-drops) | dotiledrops | 
-[do weather cycle](name_do-weather-cycle) | doweathercycle | 
-[drowning damage](name_drowning-damage) | drowningdamage | Damage animation when drowning
-[fall damage](name_fall-damage) | falldamage | Damage animation when falling
-[fire damage](name_fire-damage) | firedamage | Damage animation when burning
-[keep inventory](name_keep-inventory) | keepinventory | 
-[mob griefing](name_mob-griefing) | mobgriefing | 
-[pvp](name_pvp) | pvp | Damage animation and related packets
-[send command feedback](name_send-command-feedback) | sendcommandfeedback | 
+command block output | commandblockoutput | Command's block output in the chat
+do daylight cycle | dodaylightcycle | 
+do entity drops | doentitydrops | 
+do fire tick | dofiretick | 
+do mob loot | domobloot | 
+do mob spawning | domobspawning | 
+do tile drops | dotiledrops | 
+do weather cycle | doweathercycle | 
+drowning damage | drowningdamage | Damage animation when drowning
+fall damage | falldamage | Damage animation when falling
+fire damage | firedamage | Damage animation when burning
+keep inventory | keepinventory | 
+mob griefing | mobgriefing | 
+pvp | pvp | Damage animation and related packets
+send command feedback | sendcommandfeedback | 
 
 ### type
 
@@ -49,6 +49,6 @@ Name | Value |  |
 
 Name | Value
 ---|:---:
-[boolean](type_boolean) | 1
-[integer](type_integer) | 2
-[floating](type_floating) | 3
+boolean | 1
+integer | 2
+floating | 3

@@ -6,6 +6,8 @@ layout: default
 
 # Use bed
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#clientbound.use_bed)
+
 **Id**: 48
 
 **Id** (hex): 30

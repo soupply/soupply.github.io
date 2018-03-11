@@ -19,8 +19,8 @@ data | bytes
 
 Name | Value
 ---|:---:
-[shapeless](type_shapeless) | 0
-[shaped](type_shaped) | 1
-[furnace](type_furnace) | 2
-[furnace data](type_furnace-data) | 3
-[multi](type_multi) | 4
+shapeless | 0
+shaped | 1
+furnace | 2
+furnace data | 3
+multi | 4

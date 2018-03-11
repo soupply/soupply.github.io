@@ -6,6 +6,8 @@ layout: default
 
 # Container set data
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.container_set_data)
+
 **Id**: 51
 
 **Id** (hex): 33

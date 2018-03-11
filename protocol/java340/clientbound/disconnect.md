@@ -6,6 +6,8 @@ layout: default
 
 # Disconnect
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#clientbound.disconnect)
+
 **Id**: 26
 
 **Id** (hex): 1A

@@ -6,6 +6,8 @@ layout: default
 
 # Server settings response
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.server_settings_response)
+
 **Id**: 103
 
 **Id** (hex): 67

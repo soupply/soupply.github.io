@@ -6,6 +6,8 @@ layout: default
 
 # Crafting data
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#play.crafting_data)
+
 **Id**: 52
 
 **Id** (hex): 34

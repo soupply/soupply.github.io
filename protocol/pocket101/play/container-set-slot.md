@@ -6,6 +6,8 @@ layout: default
 
 # Container set slot
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#play.container_set_slot)
+
 **Id**: 50
 
 **Id** (hex): 32

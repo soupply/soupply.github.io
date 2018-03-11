@@ -6,6 +6,8 @@ layout: default
 
 # Full chunk data
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.full_chunk_data)
+
 **Id**: 59
 
 **Id** (hex): 3B

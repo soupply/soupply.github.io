@@ -6,6 +6,8 @@ layout: default
 
 # Update attributes
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.update_attributes)
+
 **Id**: 29
 
 **Id** (hex): 1D

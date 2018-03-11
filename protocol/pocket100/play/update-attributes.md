@@ -6,6 +6,8 @@ layout: default
 
 # Update attributes
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#play.update_attributes)
+
 **Id**: 31
 
 **Id** (hex): 1F

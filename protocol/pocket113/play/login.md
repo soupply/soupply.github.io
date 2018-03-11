@@ -6,6 +6,8 @@ layout: default
 
 # Login
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.login)
+
 **Id**: 1
 
 **Id** (hex): 01
@@ -38,8 +40,8 @@ Edition that the player is using to join the server. The different editions may 
 
 Name | Value
 ---|:---:
-[vanilla](version_vanilla) | 0
-[education](version_education) | 1
+vanilla | 0
+education | 1
 
 ### body
 

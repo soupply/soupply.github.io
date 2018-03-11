@@ -25,12 +25,12 @@ The behaviours indicated in the following constants' descriptions is enabled or 
 
 Name | Value |  |
 ---|:---:|---
-[command block output](name_command-block-output) | commandblockoutput | Command's block output in the chat
-[drowning damage](name_drowning-damage) | drowningdamage | Damage animation when drowning
-[fall damage](name_fall-damage) | falldamage | Damage animation when falling
-[fire damage](name_fire-damage) | firedamage | Damage animation when burning
-[pvp](name_pvp) | pvp | Damage animation and related packets
-[send command feedback](name_send-command-feedback) | sendcommandfeedback | 
+command block output | commandblockoutput | Command's block output in the chat
+drowning damage | drowningdamage | Damage animation when drowning
+fall damage | falldamage | Damage animation when falling
+fire damage | firedamage | Damage animation when burning
+pvp | pvp | Damage animation and related packets
+send command feedback | sendcommandfeedback | 
 
 ### value
 

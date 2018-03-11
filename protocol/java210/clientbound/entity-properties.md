@@ -6,6 +6,8 @@ layout: default
 
 # Entity properties
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#clientbound.entity_properties)
+
 **Id**: 74
 
 **Id** (hex): 4A

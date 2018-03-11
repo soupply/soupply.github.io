@@ -6,6 +6,8 @@ layout: default
 
 # Set default game type
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.set_default_game_type)
+
 **Id**: 105
 
 **Id** (hex): 69
@@ -28,6 +30,6 @@ Name | Type
 
 Name | Value
 ---|:---:
-[survival](game-type_survival) | 0
-[creative](game-type_creative) | 1
-[adventure](game-type_adventure) | 2
+survival | 0
+creative | 1
+adventure | 2

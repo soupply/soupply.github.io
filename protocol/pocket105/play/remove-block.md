@@ -6,6 +6,8 @@ layout: default
 
 # Remove block
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.remove_block)
+
 **Id**: 22
 
 **Id** (hex): 16

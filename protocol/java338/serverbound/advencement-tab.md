@@ -6,6 +6,8 @@ layout: default
 
 # Advencement tab
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#serverbound.advencement_tab)
+
 **Id**: 25
 
 **Id** (hex): 19
@@ -29,5 +31,5 @@ tab | string | <code>action</code> is equal to <code>0</code>
 
 Name | Value
 ---|:---:
-[open tab](action_open-tab) | 0
-[close screen](action_close-screen) | 1
+open tab | 0
+close screen | 1

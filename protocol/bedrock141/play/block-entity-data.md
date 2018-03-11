@@ -6,6 +6,8 @@ layout: default
 
 # Block entity data
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#play.block_entity_data)
+
 **Id**: 56
 
 **Id** (hex): 38

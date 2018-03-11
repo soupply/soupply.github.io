@@ -6,6 +6,8 @@ layout: default
 
 # Craft recipe response
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#clientbound.craft_recipe_response)
+
 **Id**: 43
 
 **Id** (hex): 2B

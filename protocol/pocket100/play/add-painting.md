@@ -6,6 +6,8 @@ layout: default
 
 # Add painting
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#play.add_painting)
+
 **Id**: 24
 
 **Id** (hex): 18

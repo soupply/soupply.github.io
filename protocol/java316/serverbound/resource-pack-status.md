@@ -6,6 +6,8 @@ layout: default
 
 # Resource pack status
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#serverbound.resource_pack_status)
+
 **Id**: 22
 
 **Id** (hex): 16
@@ -28,7 +30,7 @@ Name | Type
 
 Name | Value
 ---|:---:
-[loaded](result_loaded) | 0
-[declined](result_declined) | 1
-[failed](result_failed) | 2
-[accepted](result_accepted) | 3
+loaded | 0
+declined | 1
+failed | 2
+accepted | 3

@@ -6,6 +6,8 @@ layout: default
 
 # Collect item
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#clientbound.collect_item)
+
 **Id**: 75
 
 **Id** (hex): 4B

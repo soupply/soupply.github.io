@@ -6,6 +6,8 @@ layout: default
 
 # Steer vehicle
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#serverbound.steer_vehicle)
+
 **Id**: 22
 
 **Id** (hex): 16
@@ -30,5 +32,5 @@ forward | float
 
 Name | Value
 ---|:---:
-[jump](flags_jump) | 1
-[unmount](flags_unmount) | 2
+jump | 1
+unmount | 2

@@ -6,6 +6,8 @@ layout: default
 
 # Player action
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#play.player_action)
+
 **Id**: 36
 
 **Id** (hex): 24
@@ -31,21 +33,21 @@ face | varint
 
 Name | Value
 ---|:---:
-[start break](action_start-break) | 0
-[abort break](action_abort-break) | 1
-[stop break](action_stop-break) | 2
-[get updated block](action_get-updated-block) | 3
-[drop item](action_drop-item) | 4
-[start sleeping](action_start-sleeping) | 5
-[stop sleeping](action_stop-sleeping) | 6
-[respawn](action_respawn) | 7
-[jump](action_jump) | 8
-[start sprint](action_start-sprint) | 9
-[stop sprint](action_stop-sprint) | 10
-[start sneak](action_start-sneak) | 11
-[stop sneak](action_stop-sneak) | 12
-[start gliding](action_start-gliding) | 15
-[stop gliding](action_stop-gliding) | 16
-[build denied](action_build-denied) | 17
-[continue break](action_continue-break) | 18
-[change skin](action_change-skin) | 19
+start break | 0
+abort break | 1
+stop break | 2
+get updated block | 3
+drop item | 4
+start sleeping | 5
+stop sleeping | 6
+respawn | 7
+jump | 8
+start sprint | 9
+stop sprint | 10
+start sneak | 11
+stop sneak | 12
+start gliding | 15
+stop gliding | 16
+build denied | 17
+continue break | 18
+change skin | 19

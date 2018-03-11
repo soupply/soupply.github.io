@@ -6,6 +6,8 @@ layout: default
 
 # Simple event
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#play.simple_event)
+
 **Id**: 64
 
 **Id** (hex): 40

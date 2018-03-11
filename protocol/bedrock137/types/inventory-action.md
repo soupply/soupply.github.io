@@ -23,6 +23,6 @@ new item | [slot](/protocol/bedrock137/types/slot) |  |
 
 Name | Value
 ---|:---:
-[container](source_container) | 0
-[world](source_world) | 2
-[creative](source_creative) | 3
+container | 0
+world | 2
+creative | 3

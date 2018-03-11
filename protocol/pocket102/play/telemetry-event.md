@@ -6,6 +6,8 @@ layout: default
 
 # Telemetry event
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#play.telemetry_event)
+
 **Id**: 64
 
 **Id** (hex): 40

@@ -6,6 +6,8 @@ layout: default
 
 # Close window
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#serverbound.close_window)
+
 **Id**: 8
 
 **Id** (hex): 08

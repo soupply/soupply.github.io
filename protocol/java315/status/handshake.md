@@ -6,6 +6,8 @@ layout: default
 
 # Handshake
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#status.handshake)
+
 **Id**: 0
 
 **Id** (hex): 00
@@ -31,5 +33,5 @@ server port | ushort
 
 Name | Value
 ---|:---:
-[status](next_status) | 1
-[login](next_login) | 2
+status | 1
+login | 2

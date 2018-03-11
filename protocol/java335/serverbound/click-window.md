@@ -6,6 +6,8 @@ layout: default
 
 # Click window
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#serverbound.click_window)
+
 **Id**: 8
 
 **Id** (hex): 08

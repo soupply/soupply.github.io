@@ -6,6 +6,8 @@ layout: default
 
 # Play sound
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.play_sound)
+
 **Id**: 86
 
 **Id** (hex): 56

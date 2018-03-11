@@ -6,6 +6,8 @@ layout: default
 
 # Explosion
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#clientbound.explosion)
+
 **Id**: 28
 
 **Id** (hex): 1C

@@ -6,6 +6,8 @@ layout: default
 
 # Block pick request
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.block_pick_request)
+
 **Id**: 35
 
 **Id** (hex): 23

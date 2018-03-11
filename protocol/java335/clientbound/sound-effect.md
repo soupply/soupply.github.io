@@ -6,6 +6,8 @@ layout: default
 
 # Sound effect
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#clientbound.sound_effect)
+
 **Id**: 72
 
 **Id** (hex): 48

@@ -6,6 +6,8 @@ layout: default
 
 # Clientbound map item data
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#play.clientbound_map_item_data)
+
 **Id**: 66
 
 **Id** (hex): 42
@@ -34,6 +36,6 @@ decorations | [decoration](/protocol/pocket100/types/decoration)[] | <code>updat
 
 Name | Value
 ---|:---:
-[texture](update_texture) | 2
-[decorations](update_decorations) | 4
-[entities](update_entities) | 8
+texture | 2
+decorations | 4
+entities | 8

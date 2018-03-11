@@ -6,6 +6,8 @@ layout: default
 
 # Stop sound
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.stop_sound)
+
 **Id**: 88
 
 **Id** (hex): 58

@@ -6,6 +6,8 @@ layout: default
 
 # Play status
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#play.play_status)
+
 **Id**: 2
 
 **Id** (hex): 02
@@ -30,9 +32,9 @@ Name | Type
 
 Name | Value |  |
 ---|:---:|---
-[ok](status_ok) | 0 | Keep the connection alive
-[outdated client](status_outdated-client) | 1 | Disconnect with outdated client message
-[outdated server](status_outdated-server) | 2 | Disconnect with outdated server message
-[spawned](status_spawned) | 3 | Spawn in a world
-[invalid tenant](status_invalid-tenant) | 4 | 
-[edition mismatch](status_edition-mismatch) | 5 |
+ok | 0 | Keep the connection alive
+outdated client | 1 | Disconnect with outdated client message
+outdated server | 2 | Disconnect with outdated server message
+spawned | 3 | Spawn in a world
+invalid tenant | 4 | 
+edition mismatch | 5 |

@@ -19,10 +19,10 @@ position | ubyte&lt;xz&gt;
 
 Name | Value
 ---|:---:
-[white arrow](direction-and-type_white-arrow) | 0
-[green arrow](direction-and-type_green-arrow) | 1
-[red arrow](direction-and-type_red-arrow) | 2
-[blue arrow](direction-and-type_blue-arrow) | 3
-[white cross](direction-and-type_white-cross) | 4
-[red pointer](direction-and-type_red-pointer) | 5
-[white circle](direction-and-type_white-circle) | 6
+white arrow | 0
+green arrow | 1
+red arrow | 2
+blue arrow | 3
+white cross | 4
+red pointer | 5
+white circle | 6

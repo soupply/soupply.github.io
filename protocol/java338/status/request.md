@@ -6,6 +6,8 @@ layout: default
 
 # Request
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#status.request)
+
 **Id**: 0
 
 **Id** (hex): 00

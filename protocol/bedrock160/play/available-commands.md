@@ -6,6 +6,8 @@ layout: default
 
 # Available commands
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.available_commands)
+
 **Id**: 76
 
 **Id** (hex): 4C

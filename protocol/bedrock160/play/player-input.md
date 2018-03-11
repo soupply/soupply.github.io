@@ -6,6 +6,8 @@ layout: default
 
 # Player input
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.player_input)
+
 **Id**: 57
 
 **Id** (hex): 39

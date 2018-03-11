@@ -6,6 +6,8 @@ layout: default
 
 # Set spawn position
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#play.set_spawn_position)
+
 **Id**: 43
 
 **Id** (hex): 2B

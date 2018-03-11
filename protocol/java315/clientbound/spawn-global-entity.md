@@ -6,6 +6,8 @@ layout: default
 
 # Spawn global entity
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#clientbound.spawn_global_entity)
+
 **Id**: 2
 
 **Id** (hex): 02
@@ -30,4 +32,4 @@ position | double&lt;xyz&gt;
 
 Name | Value
 ---|:---:
-[thunderbolt](type_thunderbolt) | 1
+thunderbolt | 1

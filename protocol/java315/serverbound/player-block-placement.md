@@ -6,6 +6,8 @@ layout: default
 
 # Player block placement
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#serverbound.player_block_placement)
+
 **Id**: 28
 
 **Id** (hex): 1C
@@ -31,5 +33,5 @@ cursor position | float&lt;xyz&gt;
 
 Name | Value
 ---|:---:
-[main hand](hand_main-hand) | 0
-[off hand](hand_off-hand) | 1
+main hand | 0
+off hand | 1

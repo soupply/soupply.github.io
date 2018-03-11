@@ -6,6 +6,8 @@ layout: default
 
 # Update equip
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.update_equip)
+
 **Id**: 82
 
 **Id** (hex): 52

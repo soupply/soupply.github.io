@@ -6,6 +6,8 @@ layout: default
 
 # Inventory content
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.inventory_content)
+
 **Id**: 49
 
 **Id** (hex): 31

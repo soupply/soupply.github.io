@@ -6,6 +6,8 @@ layout: default
 
 # Map info request
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#play.map_info_request)
+
 **Id**: 67
 
 **Id** (hex): 43

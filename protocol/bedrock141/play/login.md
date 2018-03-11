@@ -6,6 +6,8 @@ layout: default
 
 # Login
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#play.login)
+
 **Id**: 1
 
 **Id** (hex): 01

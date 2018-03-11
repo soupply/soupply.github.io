@@ -6,6 +6,8 @@ layout: default
 
 # Set cooldown
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#clientbound.set_cooldown)
+
 **Id**: 23
 
 **Id** (hex): 17

@@ -6,6 +6,8 @@ layout: default
 
 # Encryption request
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#login.encryption_request)
+
 **Id**: 1
 
 **Id** (hex): 01

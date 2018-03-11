@@ -6,6 +6,8 @@ layout: default
 
 # Set entity link
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#play.set_entity_link)
+
 **Id**: 41
 
 **Id** (hex): 29
@@ -30,6 +32,6 @@ to | varlong
 
 Name | Value
 ---|:---:
-[add](action_add) | 0
-[ride](action_ride) | 1
-[remove](action_remove) | 2
+add | 0
+ride | 1
+remove | 2

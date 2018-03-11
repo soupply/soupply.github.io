@@ -6,6 +6,8 @@ layout: default
 
 # Interact
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#play.interact)
+
 **Id**: 33
 
 **Id** (hex): 21
@@ -30,6 +32,6 @@ target position | float&lt;xyz&gt; | <code>action</code> is equal to <code>4</co
 
 Name | Value
 ---|:---:
-[leave vehicle](action_leave-vehicle) | 3
-[hover](action_hover) | 4
-[open inventory](action_open-inventory) | 6
+leave vehicle | 3
+hover | 4
+open inventory | 6

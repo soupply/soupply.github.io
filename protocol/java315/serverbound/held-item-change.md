@@ -6,6 +6,8 @@ layout: default
 
 # Held item change
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#serverbound.held_item_change)
+
 **Id**: 23
 
 **Id** (hex): 17

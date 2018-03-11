@@ -6,6 +6,8 @@ layout: default
 
 # Crafting event
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.crafting_event)
+
 **Id**: 53
 
 **Id** (hex): 35

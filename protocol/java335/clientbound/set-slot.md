@@ -6,6 +6,8 @@ layout: default
 
 # Set slot
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#clientbound.set_slot)
+
 **Id**: 22
 
 **Id** (hex): 16

@@ -6,6 +6,8 @@ layout: default
 
 # Resource pack chunk request
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.resource_pack_chunk_request)
+
 **Id**: 84
 
 **Id** (hex): 54

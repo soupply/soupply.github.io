@@ -6,6 +6,8 @@ layout: default
 
 # Player position and look
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#clientbound.player_position_and_look)
+
 **Id**: 47
 
 **Id** (hex): 2F
@@ -32,8 +34,8 @@ teleport id | varuint
 
 Name | Value
 ---|:---:
-[x](flags_x) | 1
-[y](flags_y) | 2
-[z](flags_z) | 4
-[y rotation](flags_y-rotation) | 8
-[x rotation](flags_x-rotation) | 16
+x | 1
+y | 2
+z | 4
+y rotation | 8
+x rotation | 16

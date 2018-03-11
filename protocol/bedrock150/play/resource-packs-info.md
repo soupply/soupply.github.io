@@ -6,6 +6,8 @@ layout: default
 
 # Resource packs info
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.resource_packs_info)
+
 **Id**: 6
 
 **Id** (hex): 06

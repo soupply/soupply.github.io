@@ -6,6 +6,8 @@ layout: default
 
 # Container open
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#play.container_open)
+
 **Id**: 48
 
 **Id** (hex): 30

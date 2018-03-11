@@ -6,6 +6,8 @@ layout: default
 
 # Use item
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.use_item)
+
 **Id**: 36
 
 **Id** (hex): 24

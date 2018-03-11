@@ -6,6 +6,8 @@ layout: default
 
 # Add behavior tree
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.add_behavior_tree)
+
 **Id**: 90
 
 **Id** (hex): 5A

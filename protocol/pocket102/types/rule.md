@@ -25,11 +25,11 @@ The behaviours indicated in the following constants' descriptions is enabled or 
 
 Name | Value |  |
 ---|:---:|---
-[drowning damage](name_drowning-damage) | drowningdamage | Damage animation when drowning
-[fall damage](name_fall-damage) | falldamage | Damage animation when falling
-[fire damage](name_fire-damage) | firedamage | Damage animation when burning
-[immutable world](name_immutable-world) | immutableworld | Breaking animation and related packets
-[pvp](name_pvp) | pvp | Damage animation and related packets
+drowning damage | drowningdamage | Damage animation when drowning
+fall damage | falldamage | Damage animation when falling
+fire damage | firedamage | Damage animation when burning
+immutable world | immutableworld | Breaking animation and related packets
+pvp | pvp | Damage animation and related packets
 
 ### value
 

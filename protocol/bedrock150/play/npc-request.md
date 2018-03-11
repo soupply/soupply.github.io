@@ -6,6 +6,8 @@ layout: default
 
 # Npc request
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.npc_request)
+
 **Id**: 98
 
 **Id** (hex): 62

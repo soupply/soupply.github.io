@@ -6,6 +6,8 @@ layout: default
 
 # Client status
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#serverbound.client_status)
+
 **Id**: 3
 
 **Id** (hex): 03
@@ -28,6 +30,6 @@ Name | Type
 
 Name | Value
 ---|:---:
-[respawn](action_respawn) | 0
-[request stats](action_request-stats) | 1
-[open inventory](action_open-inventory) | 2
+respawn | 0
+request stats | 1
+open inventory | 2

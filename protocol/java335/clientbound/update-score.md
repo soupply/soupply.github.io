@@ -6,6 +6,8 @@ layout: default
 
 # Update score
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#clientbound.update_score)
+
 **Id**: 68
 
 **Id** (hex): 44
@@ -31,5 +33,5 @@ value | varuint | <code>action</code> is equal to <code>0</code>
 
 Name | Value
 ---|:---:
-[update](action_update) | 0
-[remove](action_remove) | 1
+update | 0
+remove | 1

@@ -6,6 +6,8 @@ layout: default
 
 # Block pick request
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.block_pick_request)
+
 **Id**: 34
 
 **Id** (hex): 22

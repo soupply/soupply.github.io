@@ -6,6 +6,8 @@ layout: default
 
 # Remove entity effect
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#clientbound.remove_entity_effect)
+
 **Id**: 49
 
 **Id** (hex): 31

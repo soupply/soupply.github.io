@@ -6,6 +6,8 @@ layout: default
 
 # Animate
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.animate)
+
 **Id**: 45
 
 **Id** (hex): 2D
@@ -29,5 +31,5 @@ entity id | varlong
 
 Name | Value
 ---|:---:
-[breaking](action_breaking) | 1
-[wake up](action_wake-up) | 3
+breaking | 1
+wake up | 3

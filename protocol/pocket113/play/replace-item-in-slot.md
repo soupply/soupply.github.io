@@ -6,6 +6,8 @@ layout: default
 
 # Replace item in slot
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.replace_item_in_slot)
+
 **Id**: 72
 
 **Id** (hex): 48

@@ -6,6 +6,8 @@ layout: default
 
 # Disconnect
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.disconnect)
+
 **Id**: 5
 
 **Id** (hex): 05

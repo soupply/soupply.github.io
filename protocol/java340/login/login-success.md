@@ -6,6 +6,8 @@ layout: default
 
 # Login success
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#login.login_success)
+
 **Id**: 2
 
 **Id** (hex): 02

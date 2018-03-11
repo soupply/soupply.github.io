@@ -6,6 +6,8 @@ layout: default
 
 # Confirm transaction
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#serverbound.confirm_transaction)
+
 **Id**: 5
 
 **Id** (hex): 05

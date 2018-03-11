@@ -6,6 +6,8 @@ layout: default
 
 # Animation
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#clientbound.animation)
+
 **Id**: 6
 
 **Id** (hex): 06
@@ -29,9 +31,9 @@ entity id | varuint
 
 Name | Value
 ---|:---:
-[swing main arm](animation_swing-main-arm) | 0
-[take damage](animation_take-damage) | 1
-[leave bed](animation_leave-bed) | 2
-[swing offhand](animation_swing-offhand) | 3
-[critical effect](animation_critical-effect) | 4
-[magical critical effect](animation_magical-critical-effect) | 5
+swing main arm | 0
+take damage | 1
+leave bed | 2
+swing offhand | 3
+critical effect | 4
+magical critical effect | 5

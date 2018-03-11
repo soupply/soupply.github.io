@@ -6,6 +6,8 @@ layout: default
 
 # Take item entity
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#play.take_item_entity)
+
 **Id**: 18
 
 **Id** (hex): 12

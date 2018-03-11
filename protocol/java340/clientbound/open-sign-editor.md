@@ -6,6 +6,8 @@ layout: default
 
 # Open sign editor
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#clientbound.open_sign_editor)
+
 **Id**: 42
 
 **Id** (hex): 2A

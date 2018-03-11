@@ -6,6 +6,8 @@ layout: default
 
 # Set compression
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#login.set_compression)
+
 **Id**: 3
 
 **Id** (hex): 03

@@ -6,6 +6,8 @@ layout: default
 
 # Set player game type
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.set_player_game_type)
+
 **Id**: 63
 
 **Id** (hex): 3F
@@ -30,5 +32,5 @@ Name | Type
 
 Name | Value
 ---|:---:
-[survival](gamemode_survival) | 0
-[creative](gamemode_creative) | 1
+survival | 0
+creative | 1

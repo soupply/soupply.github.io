@@ -6,6 +6,8 @@ layout: default
 
 # Block action
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#clientbound.block_action)
+
 **Id**: 10
 
 **Id** (hex): 0A
@@ -31,18 +33,18 @@ block type | varuint
 
 Name | Value
 ---|:---:
-[note block harp](action_note-block-harp) | 0
-[note block bass drum](action_note-block-bass-drum) | 1
-[note block snare drum](action_note-block-snare-drum) | 2
-[note block clicks](action_note-block-clicks) | 3
-[note block sticks](action_note-block-sticks) | 3
-[note block bass guitar](action_note-block-bass-guitar) | 4
-[piston extend](action_piston-extend) | 0
-[piston retract](action_piston-retract) | 1
-[chest watchers](action_chest-watchers) | 1
-[beacon recalculate](action_beacon-recalculate) | 1
-[mob spawner reset delay](action_mob-spawner-reset-delay) | 1
-[end gateway yellow beam](action_end-gateway-yellow-beam) | 1
+note block harp | 0
+note block bass drum | 1
+note block snare drum | 2
+note block clicks | 3
+note block sticks | 3
+note block bass guitar | 4
+piston extend | 0
+piston retract | 1
+chest watchers | 1
+beacon recalculate | 1
+mob spawner reset delay | 1
+end gateway yellow beam | 1
 
 ### parameter
 
@@ -50,9 +52,9 @@ Name | Value
 
 Name | Value
 ---|:---:
-[piston down](parameter_piston-down) | 0
-[piston up](parameter_piston-up) | 1
-[piston south](parameter_piston-south) | 2
-[piston west](parameter_piston-west) | 3
-[piston north](parameter_piston-north) | 4
-[piston east](parameter_piston-east) | 5
+piston down | 0
+piston up | 1
+piston south | 2
+piston west | 3
+piston north | 4
+piston east | 5

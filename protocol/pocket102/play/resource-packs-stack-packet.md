@@ -6,6 +6,8 @@ layout: default
 
 # Resource packs stack packet
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#play.resource_packs_stack_packet)
+
 **Id**: 8
 
 **Id** (hex): 08

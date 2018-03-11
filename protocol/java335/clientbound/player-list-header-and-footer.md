@@ -6,6 +6,8 @@ layout: default
 
 # Player list header and footer
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#clientbound.player_list_header_and_footer)
+
 **Id**: 73
 
 **Id** (hex): 49

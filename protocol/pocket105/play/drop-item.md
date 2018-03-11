@@ -6,6 +6,8 @@ layout: default
 
 # Drop item
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.drop_item)
+
 **Id**: 47
 
 **Id** (hex): 2F
@@ -29,4 +31,4 @@ item | [slot](/protocol/pocket105/types/slot)
 
 Name | Value
 ---|:---:
-[drop](action_drop) | 0
+drop | 0

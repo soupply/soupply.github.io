@@ -6,6 +6,8 @@ layout: default
 
 # Teams
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#clientbound.teams)
+
 **Id**: 68
 
 **Id** (hex): 44
@@ -54,8 +56,8 @@ players | string[]
 
 Name | Value
 ---|:---:
-[friendly fire](create-team_friendly-flags_friendly-fire) | 1
-[see team invisible players](create-team_friendly-flags_see-team-invisible-players) | 2
+friendly fire | 1
+see team invisible players | 2
 
 ### nametag visibility
 
@@ -63,10 +65,10 @@ Name | Value
 
 Name | Value
 ---|:---:
-[always hide](create-team_nametag-visibility_always-hide) | always
-[hide other teams](create-team_nametag-visibility_hide-other-teams) | hideOtherTeams
-[hide own team](create-team_nametag-visibility_hide-own-team) | hideOwnTeam
-[never hide](create-team_nametag-visibility_never-hide) | never
+always hide | always
+hide other teams | hideOtherTeams
+hide own team | hideOwnTeam
+never hide | never
 
 ### collision rule
 
@@ -74,10 +76,10 @@ Name | Value
 
 Name | Value
 ---|:---:
-[always push](create-team_collision-rule_always-push) | always
-[push other teams](create-team_collision-rule_push-other-teams) | pushOtherTeams
-[push own team](create-team_collision-rule_push-own-team) | pushOwnTeam
-[never push](create-team_collision-rule_never-push) | never
+always push | always
+push other teams | pushOtherTeams
+push own team | pushOwnTeam
+never push | never
 
 ### Remove Team
 
@@ -101,8 +103,8 @@ color | ubyte
 
 Name | Value
 ---|:---:
-[friendly fire](update-team-info_friendly-flags_friendly-fire) | 1
-[see team invisible players](update-team-info_friendly-flags_see-team-invisible-players) | 2
+friendly fire | 1
+see team invisible players | 2
 
 ### nametag visibility
 
@@ -110,10 +112,10 @@ Name | Value
 
 Name | Value
 ---|:---:
-[always hide](update-team-info_nametag-visibility_always-hide) | always
-[hide other teams](update-team-info_nametag-visibility_hide-other-teams) | hideOtherTeams
-[hide own team](update-team-info_nametag-visibility_hide-own-team) | hideOwnTeam
-[never hide](update-team-info_nametag-visibility_never-hide) | never
+always hide | always
+hide other teams | hideOtherTeams
+hide own team | hideOwnTeam
+never hide | never
 
 ### collision rule
 
@@ -121,10 +123,10 @@ Name | Value
 
 Name | Value
 ---|:---:
-[always push](update-team-info_collision-rule_always-push) | always
-[push other teams](update-team-info_collision-rule_push-other-teams) | pushOtherTeams
-[push own team](update-team-info_collision-rule_push-own-team) | pushOwnTeam
-[never push](update-team-info_collision-rule_never-push) | never
+always push | always
+push other teams | pushOtherTeams
+push own team | pushOwnTeam
+never push | never
 
 ### Add Players
 

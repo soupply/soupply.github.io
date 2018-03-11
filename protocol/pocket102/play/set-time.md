@@ -6,6 +6,8 @@ layout: default
 
 # Set time
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#play.set_time)
+
 **Id**: 11
 
 **Id** (hex): 0B

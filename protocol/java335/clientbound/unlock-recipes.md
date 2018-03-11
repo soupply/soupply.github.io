@@ -6,6 +6,8 @@ layout: default
 
 # Unlock recipes
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#clientbound.unlock_recipes)
+
 **Id**: 48
 
 **Id** (hex): 30
@@ -32,6 +34,6 @@ book recipes | varuint[] | <code>action</code> is equal to <code>1 |  | action</
 
 Name | Value
 ---|:---:
-[add](action_add) | 1
-[remove](action_remove) | 2
-[add without notification](action_add-without-notification) | 3
+add | 1
+remove | 2
+add without notification | 3

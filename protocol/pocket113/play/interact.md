@@ -6,6 +6,8 @@ layout: default
 
 # Interact
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.interact)
+
 **Id**: 33
 
 **Id** (hex): 21
@@ -29,7 +31,7 @@ target | varlong
 
 Name | Value
 ---|:---:
-[interact](action_interact) | 1
-[attack](action_attack) | 2
-[leave vehicle](action_leave-vehicle) | 3
-[hover](action_hover) | 4
+interact | 1
+attack | 2
+leave vehicle | 3
+hover | 4

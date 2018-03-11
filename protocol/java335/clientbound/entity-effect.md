@@ -6,6 +6,8 @@ layout: default
 
 # Entity effect
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#clientbound.entity_effect)
+
 **Id**: 78
 
 **Id** (hex): 4E
@@ -32,5 +34,5 @@ duration | varuint
 
 Name | Value
 ---|:---:
-[ambient](flags_ambient) | 1
-[show particles](flags_show-particles) | 2
+ambient | 1
+show particles | 2

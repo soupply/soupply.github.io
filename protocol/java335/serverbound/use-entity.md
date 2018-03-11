@@ -6,6 +6,8 @@ layout: default
 
 # Use entity
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#serverbound.use_entity)
+
 **Id**: 11
 
 **Id** (hex): 0B
@@ -31,9 +33,9 @@ target position | float&lt;xyz&gt; | <code>type</code> is equal to <code>2</code
 
 Name | Value
 ---|:---:
-[interact](type_interact) | 0
-[attack](type_attack) | 1
-[interact at](type_interact-at) | 2
+interact | 0
+attack | 1
+interact at | 2
 
 ### hand
 
@@ -41,5 +43,5 @@ Name | Value
 
 Name | Value
 ---|:---:
-[main hand](hand_main-hand) | 0
-[off hand](hand_off-hand) | 1
+main hand | 0
+off hand | 1

@@ -6,6 +6,8 @@ layout: default
 
 # Add behavior tree
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#play.add_behavior_tree)
+
 **Id**: 89
 
 **Id** (hex): 59

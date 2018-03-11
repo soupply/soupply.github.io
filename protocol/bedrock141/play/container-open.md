@@ -6,6 +6,8 @@ layout: default
 
 # Container open
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#play.container_open)
+
 **Id**: 46
 
 **Id** (hex): 2E

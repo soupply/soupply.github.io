@@ -6,6 +6,8 @@ layout: default
 
 # Creative inventory action
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#serverbound.creative_inventory_action)
+
 **Id**: 27
 
 **Id** (hex): 1B

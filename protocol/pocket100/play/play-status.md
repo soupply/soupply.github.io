@@ -6,6 +6,8 @@ layout: default
 
 # Play status
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#play.play_status)
+
 **Id**: 2
 
 **Id** (hex): 02
@@ -28,9 +30,9 @@ Name | Type
 
 Name | Value
 ---|:---:
-[ok](status_ok) | 0
-[outdated client](status_outdated-client) | 1
-[outdated server](status_outdated-server) | 2
-[spawned](status_spawned) | 3
-[invalid tenant](status_invalid-tenant) | 4
-[edition mismatch](status_edition-mismatch) | 5
+ok | 0
+outdated client | 1
+outdated server | 2
+spawned | 3
+invalid tenant | 4
+edition mismatch | 5

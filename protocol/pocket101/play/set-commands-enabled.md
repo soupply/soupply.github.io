@@ -6,6 +6,8 @@ layout: default
 
 # Set commands enabled
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#play.set_commands_enabled)
+
 **Id**: 59
 
 **Id** (hex): 3B

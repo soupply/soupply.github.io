@@ -6,6 +6,8 @@ layout: default
 
 # Rider jump
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#play.rider_jump)
+
 **Id**: 21
 
 **Id** (hex): 15

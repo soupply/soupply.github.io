@@ -6,6 +6,8 @@ layout: default
 
 # Update trade
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.update_trade)
+
 **Id**: 81
 
 **Id** (hex): 51

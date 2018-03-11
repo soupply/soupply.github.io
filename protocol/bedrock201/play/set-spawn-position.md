@@ -6,6 +6,8 @@ layout: default
 
 # Set spawn position
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#play.set_spawn_position)
+
 **Id**: 43
 
 **Id** (hex): 2B
@@ -30,5 +32,5 @@ forced | bool
 
 Name | Value
 ---|:---:
-[player spawn](type_player-spawn) | 0
-[world spawn](type_world-spawn) | 1
+player spawn | 0
+world spawn | 1

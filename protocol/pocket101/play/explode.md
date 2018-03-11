@@ -6,6 +6,8 @@ layout: default
 
 # Explode
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#play.explode)
+
 **Id**: 25
 
 **Id** (hex): 19

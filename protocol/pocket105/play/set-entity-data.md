@@ -6,6 +6,8 @@ layout: default
 
 # Set entity data
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.set_entity_data)
+
 **Id**: 40
 
 **Id** (hex): 28

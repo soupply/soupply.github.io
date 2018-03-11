@@ -6,6 +6,8 @@ layout: default
 
 # Remove entity
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.remove_entity)
+
 **Id**: 14
 
 **Id** (hex): 0E

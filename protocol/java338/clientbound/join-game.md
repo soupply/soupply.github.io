@@ -6,6 +6,8 @@ layout: default
 
 # Join game
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#clientbound.join_game)
+
 **Id**: 35
 
 **Id** (hex): 23
@@ -34,10 +36,10 @@ reduced debug | bool
 
 Name | Value
 ---|:---:
-[survival](gamemode_survival) | 0
-[creative](gamemode_creative) | 1
-[adventure](gamemode_adventure) | 2
-[spectator](gamemode_spectator) | 3
+survival | 0
+creative | 1
+adventure | 2
+spectator | 3
 
 ### dimension
 
@@ -45,9 +47,9 @@ Name | Value
 
 Name | Value
 ---|:---:
-[nether](dimension_nether) | -1
-[overworld](dimension_overworld) | 0
-[end](dimension_end) | 1
+nether | -1
+overworld | 0
+end | 1
 
 ### difficulty
 
@@ -55,10 +57,10 @@ Name | Value
 
 Name | Value
 ---|:---:
-[peaceful](difficulty_peaceful) | 0
-[easy](difficulty_easy) | 1
-[normal](difficulty_normal) | 2
-[hard](difficulty_hard) | 3
+peaceful | 0
+easy | 1
+normal | 2
+hard | 3
 
 ### level type
 
@@ -66,7 +68,7 @@ Name | Value
 
 Name | Value
 ---|:---:
-[infinity](level-type_infinity) | default
-[flat](level-type_flat) | flat
-[amplified](level-type_amplified) | amplified
-[large biomes](level-type_large-biomes) | largeBiomes
+infinity | default
+flat | flat
+amplified | amplified
+large biomes | largeBiomes

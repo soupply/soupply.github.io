@@ -6,6 +6,8 @@ layout: default
 
 # Entity head look
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#clientbound.entity_head_look)
+
 **Id**: 52
 
 **Id** (hex): 34

@@ -6,6 +6,8 @@ layout: default
 
 # Update sign
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#serverbound.update_sign)
+
 **Id**: 28
 
 **Id** (hex): 1C

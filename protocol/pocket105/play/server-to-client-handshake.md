@@ -6,6 +6,8 @@ layout: default
 
 # Server to client handshake
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.server_to_client_handshake)
+
 **Id**: 3
 
 **Id** (hex): 03

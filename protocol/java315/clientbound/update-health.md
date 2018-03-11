@@ -6,6 +6,8 @@ layout: default
 
 # Update health
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#clientbound.update_health)
+
 **Id**: 62
 
 **Id** (hex): 3E

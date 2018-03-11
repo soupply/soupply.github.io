@@ -6,6 +6,8 @@ layout: default
 
 # Crafting event
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#play.crafting_event)
+
 **Id**: 54
 
 **Id** (hex): 36

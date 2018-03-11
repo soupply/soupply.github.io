@@ -6,6 +6,8 @@ layout: default
 
 # Set last hurt by
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#play.set_last_hurt_by)
+
 **Id**: 96
 
 **Id** (hex): 60

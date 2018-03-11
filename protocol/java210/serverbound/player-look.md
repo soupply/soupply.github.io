@@ -6,6 +6,8 @@ layout: default
 
 # Player look
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#serverbound.player_look)
+
 **Id**: 14
 
 **Id** (hex): 0E

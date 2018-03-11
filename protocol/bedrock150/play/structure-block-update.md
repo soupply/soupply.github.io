@@ -6,6 +6,8 @@ layout: default
 
 # Structure block update
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.structure_block_update)
+
 **Id**: 90
 
 **Id** (hex): 5A

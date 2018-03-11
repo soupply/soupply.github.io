@@ -6,6 +6,8 @@ layout: default
 
 # Player list
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#play.player_list)
+
 **Id**: 63
 
 **Id** (hex): 3F

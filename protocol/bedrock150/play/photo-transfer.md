@@ -6,6 +6,8 @@ layout: default
 
 # Photo transfer
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.photo_transfer)
+
 **Id**: 99
 
 **Id** (hex): 63

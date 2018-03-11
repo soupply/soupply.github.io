@@ -6,6 +6,8 @@ layout: default
 
 # Add painting
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.add_painting)
+
 **Id**: 22
 
 **Id** (hex): 16

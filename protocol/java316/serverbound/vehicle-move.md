@@ -6,6 +6,8 @@ layout: default
 
 # Vehicle move
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#serverbound.vehicle_move)
+
 **Id**: 16
 
 **Id** (hex): 10

@@ -6,6 +6,8 @@ layout: default
 
 # Container close
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#play.container_close)
+
 **Id**: 49
 
 **Id** (hex): 31

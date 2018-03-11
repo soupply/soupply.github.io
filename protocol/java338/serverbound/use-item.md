@@ -6,6 +6,8 @@ layout: default
 
 # Use item
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#serverbound.use_item)
+
 **Id**: 32
 
 **Id** (hex): 20
@@ -28,5 +30,5 @@ Name | Type
 
 Name | Value
 ---|:---:
-[main hand](hand_main-hand) | 0
-[off hand](hand_off-hand) | 1
+main hand | 0
+off hand | 1

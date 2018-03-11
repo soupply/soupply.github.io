@@ -6,6 +6,8 @@ layout: default
 
 # Text
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#play.text)
+
 **Id**: 10
 
 **Id** (hex): 0A

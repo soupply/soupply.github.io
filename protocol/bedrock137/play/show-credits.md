@@ -6,6 +6,8 @@ layout: default
 
 # Show credits
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.show_credits)
+
 **Id**: 75
 
 **Id** (hex): 4B
@@ -29,5 +31,5 @@ entity id | varlong
 
 Name | Value
 ---|:---:
-[start](status_start) | 0
-[end](status_end) | 1
+start | 0
+end | 1

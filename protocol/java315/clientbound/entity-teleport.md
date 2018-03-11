@@ -6,6 +6,8 @@ layout: default
 
 # Entity teleport
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#clientbound.entity_teleport)
+
 **Id**: 73
 
 **Id** (hex): 49

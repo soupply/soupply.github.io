@@ -6,6 +6,8 @@ layout: default
 
 # Map
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#clientbound.map)
+
 **Id**: 36
 
 **Id** (hex): 24

@@ -6,6 +6,8 @@ layout: default
 
 # Set title
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.set_title)
+
 **Id**: 88
 
 **Id** (hex): 58
@@ -34,12 +36,12 @@ fade out | varint
 
 Name | Value |  |
 ---|:---:|---
-[hide](action_hide) | 0 | Hides the title and the subtitle
-[reset](action_reset) | 1 | Hides and resets the title and the subtitle
-[set title](action_set-title) | 2 | Sets the title
-[set subtitle](action_set-subtitle) | 3 | Sets the subtitle, displayed under the title
-[set action bar](action_set-action-bar) | 4 | Show a message over the hotbar for some seconds
-[set timings](action_set-timings) | 5 | Shows the title and the subtitle
+hide | 0 | Hides the title and the subtitle
+reset | 1 | Hides and resets the title and the subtitle
+set title | 2 | Sets the title
+set subtitle | 3 | Sets the subtitle, displayed under the title
+set action bar | 4 | Show a message over the hotbar for some seconds
+set timings | 5 | Shows the title and the subtitle
 
 ### text
 

@@ -6,6 +6,8 @@ layout: default
 
 # Attach entity
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#clientbound.attach_entity)
+
 **Id**: 58
 
 **Id** (hex): 3A

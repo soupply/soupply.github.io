@@ -6,6 +6,8 @@ layout: default
 
 # Latency
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#status.latency)
+
 **Id**: 1
 
 **Id** (hex): 01

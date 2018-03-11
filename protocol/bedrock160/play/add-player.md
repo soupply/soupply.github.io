@@ -6,6 +6,8 @@ layout: default
 
 # Add player
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.add_player)
+
 **Id**: 12
 
 **Id** (hex): 0C

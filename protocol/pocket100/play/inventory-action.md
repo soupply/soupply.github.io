@@ -6,6 +6,8 @@ layout: default
 
 # Inventory action
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#play.inventory_action)
+
 **Id**: 47
 
 **Id** (hex): 2F

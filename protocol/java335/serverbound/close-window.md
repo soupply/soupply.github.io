@@ -6,6 +6,8 @@ layout: default
 
 # Close window
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#serverbound.close_window)
+
 **Id**: 9
 
 **Id** (hex): 09

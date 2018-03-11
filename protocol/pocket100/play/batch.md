@@ -6,6 +6,8 @@ layout: default
 
 # Batch
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#play.batch)
+
 **Id**: 6
 
 **Id** (hex): 06

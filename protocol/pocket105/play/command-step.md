@@ -6,6 +6,8 @@ layout: default
 
 # Command step
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.command_step)
+
 **Id**: 79
 
 **Id** (hex): 4F

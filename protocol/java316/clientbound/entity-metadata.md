@@ -6,6 +6,8 @@ layout: default
 
 # Entity metadata
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#clientbound.entity_metadata)
+
 **Id**: 57
 
 **Id** (hex): 39

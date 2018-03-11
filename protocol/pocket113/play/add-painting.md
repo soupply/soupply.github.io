@@ -6,6 +6,8 @@ layout: default
 
 # Add painting
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.add_painting)
+
 **Id**: 23
 
 **Id** (hex): 17

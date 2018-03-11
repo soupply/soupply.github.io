@@ -6,6 +6,8 @@ layout: default
 
 # Set time
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.set_time)
+
 **Id**: 10
 
 **Id** (hex): 0A

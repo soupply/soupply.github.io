@@ -6,6 +6,8 @@ layout: default
 
 # Entity equipment
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#clientbound.entity_equipment)
+
 **Id**: 63
 
 **Id** (hex): 3F

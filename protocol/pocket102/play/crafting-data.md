@@ -6,6 +6,8 @@ layout: default
 
 # Crafting data
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#play.crafting_data)
+
 **Id**: 53
 
 **Id** (hex): 35

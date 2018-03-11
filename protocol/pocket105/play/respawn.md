@@ -6,6 +6,8 @@ layout: default
 
 # Respawn
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.respawn)
+
 **Id**: 46
 
 **Id** (hex): 2E

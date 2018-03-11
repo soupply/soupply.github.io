@@ -6,6 +6,8 @@ layout: default
 
 # Update equip
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#play.update_equip)
+
 **Id**: 81
 
 **Id** (hex): 51

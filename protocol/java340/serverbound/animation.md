@@ -6,6 +6,8 @@ layout: default
 
 # Animation
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#serverbound.animation)
+
 **Id**: 29
 
 **Id** (hex): 1D
@@ -28,5 +30,5 @@ Name | Type
 
 Name | Value
 ---|:---:
-[main hand](hand_main-hand) | 0
-[off hand](hand_off-hand) | 1
+main hand | 0
+off hand | 1

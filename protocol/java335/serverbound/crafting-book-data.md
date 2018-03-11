@@ -6,6 +6,8 @@ layout: default
 
 # Crafting book data
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#serverbound.crafting_book_data)
+
 **Id**: 23
 
 **Id** (hex): 17

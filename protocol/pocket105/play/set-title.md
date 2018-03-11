@@ -6,6 +6,8 @@ layout: default
 
 # Set title
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.set_title)
+
 **Id**: 88
 
 **Id** (hex): 58
@@ -32,9 +34,9 @@ fade out | varint
 
 Name | Value
 ---|:---:
-[hide](action_hide) | 0
-[reset](action_reset) | 1
-[set title](action_set-title) | 2
-[set subtitle](action_set-subtitle) | 3
-[set action bar](action_set-action-bar) | 4
-[set timings](action_set-timings) | 5
+hide | 0
+reset | 1
+set title | 2
+set subtitle | 3
+set action bar | 4
+set timings | 5

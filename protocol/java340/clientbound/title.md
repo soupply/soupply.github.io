@@ -6,6 +6,8 @@ layout: default
 
 # Title
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#clientbound.title)
+
 **Id**: 72
 
 **Id** (hex): 48

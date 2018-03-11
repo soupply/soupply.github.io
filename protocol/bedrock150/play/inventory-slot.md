@@ -6,6 +6,8 @@ layout: default
 
 # Inventory slot
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.inventory_slot)
+
 **Id**: 50
 
 **Id** (hex): 32

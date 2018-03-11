@@ -6,6 +6,8 @@ layout: default
 
 # Entity
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#clientbound.entity)
+
 **Id**: 40
 
 **Id** (hex): 28

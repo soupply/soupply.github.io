@@ -6,6 +6,8 @@ layout: default
 
 # Camera
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#play.camera)
+
 **Id**: 73
 
 **Id** (hex): 49

@@ -6,6 +6,8 @@ layout: default
 
 # Window items
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#clientbound.window_items)
+
 **Id**: 20
 
 **Id** (hex): 14

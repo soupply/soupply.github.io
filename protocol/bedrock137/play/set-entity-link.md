@@ -6,6 +6,8 @@ layout: default
 
 # Set entity link
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.set_entity_link)
+
 **Id**: 41
 
 **Id** (hex): 29
@@ -30,5 +32,5 @@ passenger | varlong
 
 Name | Value
 ---|:---:
-[remove](action_remove) | 0
-[add](action_add) | 1
+remove | 0
+add | 1

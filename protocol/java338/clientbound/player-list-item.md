@@ -6,6 +6,8 @@ layout: default
 
 # Player list item
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#clientbound.player_list_item)
+
 **Id**: 46
 
 **Id** (hex): 2E

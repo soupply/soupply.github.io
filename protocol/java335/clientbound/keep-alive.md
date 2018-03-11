@@ -6,6 +6,8 @@ layout: default
 
 # Keep alive
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#clientbound.keep_alive)
+
 **Id**: 31
 
 **Id** (hex): 1F

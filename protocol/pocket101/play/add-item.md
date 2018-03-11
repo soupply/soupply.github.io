@@ -6,6 +6,8 @@ layout: default
 
 # Add item
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#play.add_item)
+
 **Id**: 74
 
 **Id** (hex): 4A

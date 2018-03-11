@@ -6,6 +6,8 @@ layout: default
 
 # Start game
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.start_game)
+
 **Id**: 12
 
 **Id** (hex): 0C
@@ -61,9 +63,9 @@ World's dimension. Different dimensions have different sky colours and render di
 
 Name | Value
 ---|:---:
-[overworld](dimension_overworld) | 0
-[nether](dimension_nether) | 1
-[end](dimension_end) | 2
+overworld | 0
+nether | 1
+end | 2
 
 ### generator
 
@@ -74,9 +76,9 @@ In old and infinite world the sky becomes darker at 32 blocks of altitude and in
 
 Name | Value
 ---|:---:
-[old](generator_old) | 0
-[infinite](generator_infinite) | 1
-[flat](generator_flat) | 2
+old | 0
+infinite | 1
+flat | 2
 
 ### world gamemode
 
@@ -86,8 +88,8 @@ Default's world gamemode. If the player's gamemode is different from the default
 
 Name | Value
 ---|:---:
-[survival](world-gamemode_survival) | 0
-[creative](world-gamemode_creative) | 1
+survival | 0
+creative | 1
 
 ### difficulty
 
@@ -97,10 +99,10 @@ World's difficulty. The value is visible in the client's world settings.
 
 Name | Value
 ---|:---:
-[peaceful](difficulty_peaceful) | 0
-[easy](difficulty_easy) | 1
-[normal](difficulty_normal) | 2
-[hard](difficulty_hard) | 3
+peaceful | 0
+easy | 1
+normal | 2
+hard | 3
 
 ### spawn position
 
@@ -119,8 +121,8 @@ Game's edition. Some behaviours (some entities for example) may only work in a v
 
 Name | Value
 ---|:---:
-[classic](edition_classic) | 0
-[education](edition_education) | 1
+classic | 0
+education | 1
 
 ### rain level
 

@@ -6,6 +6,8 @@ layout: default
 
 # Response
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#status.response)
+
 **Id**: 0
 
 **Id** (hex): 00

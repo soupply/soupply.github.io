@@ -6,6 +6,8 @@ layout: default
 
 # Add hanging entity
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#play.add_hanging_entity)
+
 **Id**: 16
 
 **Id** (hex): 10

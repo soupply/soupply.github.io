@@ -6,6 +6,8 @@ layout: default
 
 # Purchase receipt
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.purchase_receipt)
+
 **Id**: 92
 
 **Id** (hex): 5C

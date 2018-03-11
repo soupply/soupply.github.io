@@ -6,6 +6,8 @@ layout: default
 
 # Disconnect
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#login.disconnect)
+
 **Id**: 0
 
 **Id** (hex): 00

@@ -6,6 +6,8 @@ layout: default
 
 # Update block entity
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#clientbound.update_block_entity)
+
 **Id**: 9
 
 **Id** (hex): 09
@@ -30,12 +32,12 @@ nbt | bytes
 
 Name | Value
 ---|:---:
-[mob spawner data](action_mob-spawner-data) | 1
-[command block text](action_command-block-text) | 2
-[beacon powers](action_beacon-powers) | 3
-[mob head data](action_mob-head-data) | 4
-[flower pot flower](action_flower-pot-flower) | 5
-[banner data](action_banner-data) | 6
-[structure data](action_structure-data) | 7
-[end gateway destination](action_end-gateway-destination) | 8
-[sign text](action_sign-text) | 9
+mob spawner data | 1
+command block text | 2
+beacon powers | 3
+mob head data | 4
+flower pot flower | 5
+banner data | 6
+structure data | 7
+end gateway destination | 8
+sign text | 9

@@ -6,6 +6,8 @@ layout: default
 
 # Display scoreboard
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#clientbound.display_scoreboard)
+
 **Id**: 59
 
 **Id** (hex): 3B
@@ -29,6 +31,6 @@ score name | string
 
 Name | Value
 ---|:---:
-[list](position_list) | 0
-[sidebar](position_sidebar) | 1
-[below name](position_below-name) | 2
+list | 0
+sidebar | 1
+below name | 2

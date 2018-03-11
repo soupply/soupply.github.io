@@ -6,6 +6,8 @@ layout: default
 
 # Entity velocity
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#clientbound.entity_velocity)
+
 **Id**: 62
 
 **Id** (hex): 3E

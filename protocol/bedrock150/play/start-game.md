@@ -6,6 +6,8 @@ layout: default
 
 # Start game
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.start_game)
+
 **Id**: 11
 
 **Id** (hex): 0B
@@ -67,9 +69,9 @@ Player's gamemode that may differ from the world's gamemode.
 
 Name | Value
 ---|:---:
-[survival](gamemode_survival) | 0
-[creative](gamemode_creative) | 1
-[adventure](gamemode_adventure) | 2
+survival | 0
+creative | 1
+adventure | 2
 
 ### position
 
@@ -87,9 +89,9 @@ World's dimension. Different dimensions have different sky colours and render di
 
 Name | Value
 ---|:---:
-[overworld](dimension_overworld) | 0
-[nether](dimension_nether) | 1
-[end](dimension_end) | 2
+overworld | 0
+nether | 1
+end | 2
 
 ### generator
 
@@ -100,9 +102,9 @@ In old and infinite world the sky becomes darker at 32 blocks of altitude and in
 
 Name | Value
 ---|:---:
-[old](generator_old) | 0
-[infinite](generator_infinite) | 1
-[flat](generator_flat) | 2
+old | 0
+infinite | 1
+flat | 2
 
 ### world gamemode
 
@@ -116,10 +118,10 @@ World's difficulty. The value is visible in the client's world settings.
 
 Name | Value
 ---|:---:
-[peaceful](difficulty_peaceful) | 0
-[easy](difficulty_easy) | 1
-[normal](difficulty_normal) | 2
-[hard](difficulty_hard) | 3
+peaceful | 0
+easy | 1
+normal | 2
+hard | 3
 
 ### spawn position
 
@@ -137,8 +139,8 @@ Game's edition. Some behaviours (some entities for example) may only work in a v
 
 Name | Value
 ---|:---:
-[vanilla](version_vanilla) | 0
-[education](version_education) | 1
+vanilla | 0
+education | 1
 
 ### rain level
 

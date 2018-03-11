@@ -6,6 +6,8 @@ layout: default
 
 # Boss bar
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#clientbound.boss_bar)
+
 **Id**: 12
 
 **Id** (hex): 0C
@@ -52,13 +54,13 @@ health | float
 
 Name | Value
 ---|:---:
-[pink](add_color_pink) | 0
-[blue](add_color_blue) | 1
-[red](add_color_red) | 2
-[green](add_color_green) | 3
-[yellow](add_color_yellow) | 4
-[purple](add_color_purple) | 5
-[white](add_color_white) | 6
+pink | 0
+blue | 1
+red | 2
+green | 3
+yellow | 4
+purple | 5
+white | 6
 
 ### division
 
@@ -66,11 +68,11 @@ Name | Value
 
 Name | Value
 ---|:---:
-[no division](add_division_no-division) | 0
-[six notches](add_division_six-notches) | 1
-[ten notches](add_division_ten-notches) | 2
-[twelve notches](add_division_twelve-notches) | 3
-[twenty notches](add_division_twenty-notches) | 4
+no division | 0
+six notches | 1
+ten notches | 2
+twelve notches | 3
+twenty notches | 4
 
 ### flags
 
@@ -78,8 +80,8 @@ Name | Value
 
 Name | Value
 ---|:---:
-[dark sky](add_flags_dark-sky) | 1
-[is dragon bar](add_flags_is-dragon-bar) | 2
+dark sky | 1
+is dragon bar | 2
 
 ### Remove
 
@@ -114,13 +116,13 @@ Name | Type
 
 Name | Value
 ---|:---:
-[pink](update-style_color_pink) | 0
-[blue](update-style_color_blue) | 1
-[red](update-style_color_red) | 2
-[green](update-style_color_green) | 3
-[yellow](update-style_color_yellow) | 4
-[purple](update-style_color_purple) | 5
-[white](update-style_color_white) | 6
+pink | 0
+blue | 1
+red | 2
+green | 3
+yellow | 4
+purple | 5
+white | 6
 
 ### division
 
@@ -128,11 +130,11 @@ Name | Value
 
 Name | Value
 ---|:---:
-[no division](update-style_division_no-division) | 0
-[six notches](update-style_division_six-notches) | 1
-[ten notches](update-style_division_ten-notches) | 2
-[twelve notches](update-style_division_twelve-notches) | 3
-[twenty notches](update-style_division_twenty-notches) | 4
+no division | 0
+six notches | 1
+ten notches | 2
+twelve notches | 3
+twenty notches | 4
 
 ### Update Flags
 
@@ -148,5 +150,5 @@ Name | Type
 
 Name | Value
 ---|:---:
-[dark sky](update-flags_flags_dark-sky) | 1
-[is dragon bar](update-flags_flags_is-dragon-bar) | 2
+dark sky | 1
+is dragon bar | 2

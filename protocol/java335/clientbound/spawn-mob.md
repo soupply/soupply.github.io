@@ -6,6 +6,8 @@ layout: default
 
 # Spawn mob
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#clientbound.spawn_mob)
+
 **Id**: 3
 
 **Id** (hex): 03

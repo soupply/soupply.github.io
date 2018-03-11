@@ -6,6 +6,8 @@ layout: default
 
 # Resource pack send
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#clientbound.resource_pack_send)
+
 **Id**: 51
 
 **Id** (hex): 33

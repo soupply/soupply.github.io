@@ -6,6 +6,8 @@ layout: default
 
 # Player skin
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.player_skin)
+
 **Id**: 93
 
 **Id** (hex): 5D

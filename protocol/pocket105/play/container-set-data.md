@@ -6,6 +6,8 @@ layout: default
 
 # Container set data
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.container_set_data)
+
 **Id**: 52
 
 **Id** (hex): 34

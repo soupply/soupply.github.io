@@ -6,6 +6,8 @@ layout: default
 
 # Add item entity
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.add_item_entity)
+
 **Id**: 16
 
 **Id** (hex): 10

@@ -6,6 +6,8 @@ layout: default
 
 # Unload chunk
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#clientbound.unload_chunk)
+
 **Id**: 29
 
 **Id** (hex): 1D

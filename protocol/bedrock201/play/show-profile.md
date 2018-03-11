@@ -6,6 +6,8 @@ layout: default
 
 # Show profile
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#play.show_profile)
+
 **Id**: 104
 
 **Id** (hex): 68

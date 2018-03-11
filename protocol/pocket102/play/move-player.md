@@ -6,6 +6,8 @@ layout: default
 
 # Move player
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#play.move_player)
+
 **Id**: 20
 
 **Id** (hex): 14
@@ -34,6 +36,6 @@ on ground | bool
 
 Name | Value
 ---|:---:
-[full](animation_full) | 0
-[none](animation_none) | 1
-[rotation](animation_rotation) | 2
+full | 0
+none | 1
+rotation | 2

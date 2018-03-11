@@ -6,6 +6,8 @@ layout: default
 
 # Scoreboard objective
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#clientbound.scoreboard_objective)
+
 **Id**: 66
 
 **Id** (hex): 42
@@ -31,9 +33,9 @@ value | string | <code>mode</code> is not equal to <code>1</code>
 
 Name | Value
 ---|:---:
-[create](mode_create) | 0
-[remove](mode_remove) | 1
-[update](mode_update) | 2
+create | 0
+remove | 1
+update | 2
 
 ### type
 
@@ -41,5 +43,5 @@ Name | Value
 
 Name | Value
 ---|:---:
-[numeric](type_numeric) | integer
-[graphic](type_graphic) | hearts
+numeric | integer
+graphic | hearts

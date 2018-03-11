@@ -6,6 +6,8 @@ layout: default
 
 # Spectate
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#serverbound.spectate)
+
 **Id**: 27
 
 **Id** (hex): 1B

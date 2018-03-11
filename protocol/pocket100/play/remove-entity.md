@@ -6,6 +6,8 @@ layout: default
 
 # Remove entity
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#play.remove_entity)
+
 **Id**: 15
 
 **Id** (hex): 0F

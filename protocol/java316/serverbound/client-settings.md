@@ -6,6 +6,8 @@ layout: default
 
 # Client settings
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java316#serverbound.client_settings)
+
 **Id**: 4
 
 **Id** (hex): 04
@@ -33,9 +35,9 @@ chat colors | bool
 
 Name | Value
 ---|:---:
-[enabled](chat-mode_enabled) | 0
-[commands only](chat-mode_commands-only) | 1
-[disabled](chat-mode_disabled) | 2
+enabled | 0
+commands only | 1
+disabled | 2
 
 ### displayed skin parts
 
@@ -43,13 +45,13 @@ Name | Value
 
 Name | Value
 ---|:---:
-[cape](displayed-skin-parts_cape) | 1
-[jacket](displayed-skin-parts_jacket) | 2
-[left sleeve](displayed-skin-parts_left-sleeve) | 4
-[right sleeve](displayed-skin-parts_right-sleeve) | 8
-[left pants](displayed-skin-parts_left-pants) | 16
-[right pants](displayed-skin-parts_right-pants) | 32
-[hat](displayed-skin-parts_hat) | 64
+cape | 1
+jacket | 2
+left sleeve | 4
+right sleeve | 8
+left pants | 16
+right pants | 32
+hat | 64
 
 ### main hand
 
@@ -57,5 +59,5 @@ Name | Value
 
 Name | Value
 ---|:---:
-[right](main-hand_right) | 0
-[left](main-hand_left) | 1
+right | 0
+left | 1

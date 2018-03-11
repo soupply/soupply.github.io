@@ -20,8 +20,8 @@ value | bool
 
 Name | Value
 ---|:---:
-[drowning damage](name_drowning-damage) | drowningdamage
-[fall damage](name_fall-damage) | falldamage
-[fire damage](name_fire-damage) | firedamage
-[immutable world](name_immutable-world) | immutableworld
-[pvp](name_pvp) | pvp
+drowning damage | drowningdamage
+fall damage | falldamage
+fire damage | firedamage
+immutable world | immutableworld
+pvp | pvp

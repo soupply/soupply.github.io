@@ -6,6 +6,8 @@ layout: default
 
 # Game rules changed
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.game_rules_changed)
+
 **Id**: 73
 
 **Id** (hex): 49

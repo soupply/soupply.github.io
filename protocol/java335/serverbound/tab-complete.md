@@ -6,6 +6,8 @@ layout: default
 
 # Tab complete
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#serverbound.tab_complete)
+
 **Id**: 2
 
 **Id** (hex): 02

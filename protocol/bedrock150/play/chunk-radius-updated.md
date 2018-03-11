@@ -6,6 +6,8 @@ layout: default
 
 # Chunk radius updated
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.chunk_radius_updated)
+
 **Id**: 70
 
 **Id** (hex): 46

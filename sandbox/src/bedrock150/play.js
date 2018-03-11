@@ -1,1 +1,6812 @@
-const Play ={Login: class extends Buffer{static get ID(){return 1;};static get CLIENTBOUND(){return false;};static get SERVERBOUND(){return true;};constructor(protocol=150,body=null){super();this.protocol = protocol;this.body = body;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(1);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeBigEndianInt(this.protocol);this.writeBytes(this.body.encodeBody(true));return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.protocol=this.readBigEndianInt();this.body=new Types.LoginBody().decodeBody(this._buffer);this._buffer=this.body._buffer;return this;}},PlayStatus: class extends Buffer{static get ID(){return 2;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(status=0){super();this.status = status;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(2);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeBigEndianInt(this.status);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.status=this.readBigEndianInt();return this;}},ServerToClientHandshake: class extends Buffer{static get ID(){return 3;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(serverPublicKey="",token=[]){super();this.serverPublicKey = serverPublicKey;this.token = token;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(3);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}var dhc5zjzj=this.encodeString(this.serverPublicKey);this.writeVaruint(dhc5zjzj.length);this.writeBytes(dhc5zjzj);this.writeVaruint(this.token.length);this.writeBytes(this.token);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);var dhc5zjzj=this.readVaruint();this.serverPublicKey=this.decodeString(this.readBytes(dhc5zjzj));var aramd9z4=this.readVaruint();this.token=this.readBytes(aramd9z4);return this;}},ClientToServerHandshake: class extends Buffer{static get ID(){return 4;};static get CLIENTBOUND(){return false;};static get SERVERBOUND(){return true;};constructor(){super();}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(4);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);return this;}},Disconnect: class extends Buffer{static get ID(){return 5;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(hideDisconnectionScreen=false,message=""){super();this.hideDisconnectionScreen = hideDisconnectionScreen;this.message = message;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(5);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeBool(this.hideDisconnectionScreen);if(hideDisconnectionScreen==false){var dhc5znyd=this.encodeString(this.message);this.writeVaruint(dhc5znyd.length);this.writeBytes(dhc5znyd);}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.hideDisconnectionScreen=this.readBool();if(hideDisconnectionScreen==false){var dhc5znyd=this.readVaruint();this.message=this.decodeString(this.readBytes(dhc5znyd));}return this;}},ResourcePacksInfo: class extends Buffer{static get ID(){return 6;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(mustAccept=false,behaviourPacks=null,resourcePacks=null){super();this.mustAccept = mustAccept;this.behaviourPacks = behaviourPacks;this.resourcePacks = resourcePacks;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(6);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeBool(this.mustAccept);this.writeBigEndianShort(this.behaviourPacks.length);for(var dhc5zhdl in this.behaviourPacks){this.writeBytes(this.behaviourPacks[dhc5zhdl].encodeBody(true));}this.writeBigEndianShort(this.resourcePacks.length);for(var dhc5zndj in this.resourcePacks){this.writeBytes(this.resourcePacks[dhc5zndj].encodeBody(true));}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.mustAccept=this.readBool();var aramyvyz=this.readBigEndianShort();this.behaviourPacks=[];for(var dhc5zhdl=0;dhc5zhdl<aramyvyz;dhc5zhdl++){this.behaviourPacks[dhc5zhdl]=new Types.PackWithSize().decodeBody(this._buffer);this._buffer=this.behaviourPacks[dhc5zhdl]._buffer;}var aramcvbv=this.readBigEndianShort();this.resourcePacks=[];for(var dhc5zndj=0;dhc5zndj<aramcvbv;dhc5zndj++){this.resourcePacks[dhc5zndj]=new Types.PackWithSize().decodeBody(this._buffer);this._buffer=this.resourcePacks[dhc5zndj]._buffer;}return this;}},ResourcePacksStackPacket: class extends Buffer{static get ID(){return 7;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(mustAccept=false,behaviourPacks=[],resourcePacks=[]){super();this.mustAccept = mustAccept;this.behaviourPacks = behaviourPacks;this.resourcePacks = resourcePacks;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(7);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeBool(this.mustAccept);this.writeVaruint(this.behaviourPacks.length);for(var dhc5zhdl in this.behaviourPacks){this.writeBytes(this.behaviourPacks[dhc5zhdl].encodeBody(true));}this.writeVaruint(this.resourcePacks.length);for(var dhc5zndj in this.resourcePacks){this.writeBytes(this.resourcePacks[dhc5zndj].encodeBody(true));}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.mustAccept=this.readBool();var aramyvyz=this.readVaruint();this.behaviourPacks=[];for(var dhc5zhdl=0;dhc5zhdl<aramyvyz;dhc5zhdl++){this.behaviourPacks[dhc5zhdl]=new Types.Pack().decodeBody(this._buffer);this._buffer=this.behaviourPacks[dhc5zhdl]._buffer;}var aramcvbv=this.readVaruint();this.resourcePacks=[];for(var dhc5zndj=0;dhc5zndj<aramcvbv;dhc5zndj++){this.resourcePacks[dhc5zndj]=new Types.Pack().decodeBody(this._buffer);this._buffer=this.resourcePacks[dhc5zndj]._buffer;}return this;}},ResourcePackClientResponse: class extends Buffer{static get ID(){return 8;};static get CLIENTBOUND(){return false;};static get SERVERBOUND(){return true;};constructor(status=0,packIds=null){super();this.status = status;this.packIds = packIds;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(8);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeByte(this.status);this.writeLittleEndianShort(this.packIds.length);for(var dhc5ynsr in this.packIds){var dhc5ynsr=this.encodeString(this.packIds[dhc5ynsr]);this.writeVaruint(dhc5ynsr.length);this.writeBytes(dhc5ynsr);}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.status=this.readByte();var aramcfal=this.readLittleEndianShort();this.packIds=[];for(var dhc5ynsr=0;dhc5ynsr<aramcfal;dhc5ynsr++){var dhc5ynsr=this.readVaruint();this.packIds[dhc5ynsr]=this.decodeString(this.readBytes(dhc5ynsr));}return this;}},Text: class extends Buffer{static get ID(){return 9;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return true;};static get RAW(){return 0;};static get CHAT(){return 1;};static get TRANSLATION(){return 2;};static get POPUP(){return 3;};static get JUKEBOX_POPUP(){return 4;};static get TIP(){return 5;};static get SYSTEM(){return 6;};static get WHISPER(){return 7;};static get ANNOUNCEMENT(){return 8;};constructor(type=0,unknown1=false){super();this.type = type;this.unknown1 = unknown1;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(9);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeByte(this.type);this.writeBool(this.unknown1);switch(this.type){case 0:this.writeByte(this.type);this.writeBool(this.unknown3);break;case 1:this.writeByte(this.type);this.writeBool(this.unknown3);break;case 2:this.writeByte(this.type);this.writeBool(this.unknown3);break;case 3:this.writeByte(this.type);this.writeBool(this.unknown3);break;case 4:this.writeByte(this.type);this.writeBool(this.unknown3);break;case 5:this.writeByte(this.type);this.writeBool(this.unknown3);break;case 6:this.writeByte(this.type);this.writeBool(this.unknown3);break;case 7:this.writeByte(this.type);this.writeBool(this.unknown3);break;case 8:this.writeByte(this.type);this.writeBool(this.unknown3);break;default: break;}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.type=this.readByte();this.unknown1=this.readBool();switch(this.type){case 0:var dhc5znyd=this.readVaruint();this.message=this.decodeString(this.readBytes(dhc5znyd));var dhc5dl=this.readVaruint();this.xuid=this.decodeString(this.readBytes(dhc5dl));break;case 1:var dhc5z5zi=this.readVaruint();this.sender=this.decodeString(this.readBytes(dhc5z5zi));var dhc5znyd=this.readVaruint();this.message=this.decodeString(this.readBytes(dhc5znyd));var dhc5dl=this.readVaruint();this.xuid=this.decodeString(this.readBytes(dhc5dl));break;case 2:var dhc5znyd=this.readVaruint();this.message=this.decodeString(this.readBytes(dhc5znyd));var aramcfy1=this.readVaruint();this.parameters=[];for(var dhc5yjbv=0;dhc5yjbv<aramcfy1;dhc5yjbv++){var dhc5yjbv=this.readVaruint();this.parameters[dhc5yjbv]=this.decodeString(this.readBytes(dhc5yjbv));}break;case 3:var dhc5arz=this.readVaruint();this.title=this.decodeString(this.readBytes(dhc5arz));var dhc5djar=this.readVaruint();this.subtitle=this.decodeString(this.readBytes(dhc5djar));break;case 4:var dhc5znyd=this.readVaruint();this.message=this.decodeString(this.readBytes(dhc5znyd));var aramcfy1=this.readVaruint();this.parameters=[];for(var dhc5yjbv=0;dhc5yjbv<aramcfy1;dhc5yjbv++){var dhc5yjbv=this.readVaruint();this.parameters[dhc5yjbv]=this.decodeString(this.readBytes(dhc5yjbv));}break;case 5:var dhc5znyd=this.readVaruint();this.message=this.decodeString(this.readBytes(dhc5znyd));break;case 6:var dhc5znyd=this.readVaruint();this.message=this.decodeString(this.readBytes(dhc5znyd));break;case 7:var dhc5z5zi=this.readVaruint();this.sender=this.decodeString(this.readBytes(dhc5z5zi));var dhc5znyd=this.readVaruint();this.message=this.decodeString(this.readBytes(dhc5znyd));break;case 8:var dhc5b5d5=this.readVaruint();this.announcer=this.decodeString(this.readBytes(dhc5b5d5));var dhc5znyd=this.readVaruint();this.message=this.decodeString(this.readBytes(dhc5znyd));break;default: break;}return this;}},SetTime: class extends Buffer{static get ID(){return 10;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(time=0){super();this.time = time;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(10);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarint(this.time);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.time=this.readVarint();return this;}},StartGame: class extends Buffer{static get ID(){return 11;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(entityId=0,runtimeId=0,gamemode=0,position={x:0,y:0,z:0},yaw=.0,pitch=.0,seed=0,dimension=0,generator=1,worldGamemode=0,difficulty=0,spawnPosition={x:0,y:0,z:0},loadedInCreative=false,time=0,version=0,rainLevel=.0,lightningLevel=.0,multiplayerGame=true,broadcastToLan=false,broadcastToXbl=false,commandsEnabled=false,textureRequired=false,gameRules=[],bonusChestEnabled=false,startWithMapEnabled=false,trustPlayersEnabled=false,permissionLevel=0,unknown27=0,levelId="",worldName="",premiumWorldTemplate="",unknown31=false,worldTicks=0,unknown33=0){super();this.entityId = entityId;this.runtimeId = runtimeId;this.gamemode = gamemode;this.position = position;this.yaw = yaw;this.pitch = pitch;this.seed = seed;this.dimension = dimension;this.generator = generator;this.worldGamemode = worldGamemode;this.difficulty = difficulty;this.spawnPosition = spawnPosition;this.loadedInCreative = loadedInCreative;this.time = time;this.version = version;this.rainLevel = rainLevel;this.lightningLevel = lightningLevel;this.multiplayerGame = multiplayerGame;this.broadcastToLan = broadcastToLan;this.broadcastToXbl = broadcastToXbl;this.commandsEnabled = commandsEnabled;this.textureRequired = textureRequired;this.gameRules = gameRules;this.bonusChestEnabled = bonusChestEnabled;this.startWithMapEnabled = startWithMapEnabled;this.trustPlayersEnabled = trustPlayersEnabled;this.permissionLevel = permissionLevel;this.unknown27 = unknown27;this.levelId = levelId;this.worldName = worldName;this.premiumWorldTemplate = premiumWorldTemplate;this.unknown31 = unknown31;this.worldTicks = worldTicks;this.unknown33 = unknown33;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(11);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.entityId);this.writeVarulong(this.runtimeId);this.writeVarint(this.gamemode);this.writeLittleEndianFloat(this.position.x);this.writeLittleEndianFloat(this.position.y);this.writeLittleEndianFloat(this.position.z);this.writeLittleEndianFloat(this.yaw);this.writeLittleEndianFloat(this.pitch);this.writeVarint(this.seed);this.writeVarint(this.dimension);this.writeVarint(this.generator);this.writeVarint(this.worldGamemode);this.writeVarint(this.difficulty);this.writeVarint(this.spawnPosition.x);this.writeVarint(this.spawnPosition.y);this.writeVarint(this.spawnPosition.z);this.writeBool(this.loadedInCreative);this.writeVarint(this.time);this.writeByte(this.version);this.writeLittleEndianFloat(this.rainLevel);this.writeLittleEndianFloat(this.lightningLevel);this.writeBool(this.multiplayerGame);this.writeBool(this.broadcastToLan);this.writeBool(this.broadcastToXbl);this.writeBool(this.commandsEnabled);this.writeBool(this.textureRequired);this.writeVaruint(this.gameRules.length);for(var dhc5y1uv in this.gameRules){this.writeBytes(this.gameRules[dhc5y1uv].encodeBody(true));}this.writeBool(this.bonusChestEnabled);this.writeBool(this.startWithMapEnabled);this.writeBool(this.trustPlayersEnabled);this.writeVarint(this.permissionLevel);this.writeVarint(this.unknown27);var dhc5zzbl=this.encodeString(this.levelId);this.writeVaruint(dhc5zzbl.length);this.writeBytes(dhc5zzbl);var dhc5bjz5=this.encodeString(this.worldName);this.writeVaruint(dhc5bjz5.length);this.writeBytes(dhc5bjz5);var dhc5cvav=this.encodeString(this.premiumWorldTemplate);this.writeVaruint(dhc5cvav.length);this.writeBytes(dhc5cvav);this.writeBool(this.unknown31);this.writeLittleEndianLong(this.worldTicks);this.writeVarint(this.unknown33);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.entityId=this.readVarlong();this.runtimeId=this.readVarulong();this.gamemode=this.readVarint();this.position={};this.position.x=this.readLittleEndianFloat();this.position.y=this.readLittleEndianFloat();this.position.z=this.readLittleEndianFloat();this.yaw=this.readLittleEndianFloat();this.pitch=this.readLittleEndianFloat();this.seed=this.readVarint();this.dimension=this.readVarint();this.generator=this.readVarint();this.worldGamemode=this.readVarint();this.difficulty=this.readVarint();this.spawnPosition={};this.spawnPosition.x=this.readVarint();this.spawnPosition.y=this.readVarint();this.spawnPosition.z=this.readVarint();this.loadedInCreative=this.readBool();this.time=this.readVarint();this.version=this.readByte();this.rainLevel=this.readLittleEndianFloat();this.lightningLevel=this.readLittleEndianFloat();this.multiplayerGame=this.readBool();this.broadcastToLan=this.readBool();this.broadcastToXbl=this.readBool();this.commandsEnabled=this.readBool();this.textureRequired=this.readBool();var aramzfzj=this.readVaruint();this.gameRules=[];for(var dhc5y1uv=0;dhc5y1uv<aramzfzj;dhc5y1uv++){this.gameRules[dhc5y1uv]=new Types.Rule().decodeBody(this._buffer);this._buffer=this.gameRules[dhc5y1uv]._buffer;}this.bonusChestEnabled=this.readBool();this.startWithMapEnabled=this.readBool();this.trustPlayersEnabled=this.readBool();this.permissionLevel=this.readVarint();this.unknown27=this.readVarint();var dhc5zzbl=this.readVaruint();this.levelId=this.decodeString(this.readBytes(dhc5zzbl));var dhc5bjz5=this.readVaruint();this.worldName=this.decodeString(this.readBytes(dhc5bjz5));var dhc5cvav=this.readVaruint();this.premiumWorldTemplate=this.decodeString(this.readBytes(dhc5cvav));this.unknown31=this.readBool();this.worldTicks=this.readLittleEndianLong();this.unknown33=this.readVarint();return this;}},AddPlayer: class extends Buffer{static get ID(){return 12;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(uuid=null,username="",entityId=0,runtimeId=0,position={x:0,y:0,z:0},motion={x:0,y:0,z:0},pitch=.0,headYaw=.0,yaw=.0,heldItem=null,metadata=new Metadata(),unknown11=0,unknown12=0,unknown13=0,unknown14=0,unknown15=0,unknown16=0,links=[]){super();this.uuid = uuid;this.username = username;this.entityId = entityId;this.runtimeId = runtimeId;this.position = position;this.motion = motion;this.pitch = pitch;this.headYaw = headYaw;this.yaw = yaw;this.heldItem = heldItem;this.metadata = metadata;this.unknown11 = unknown11;this.unknown12 = unknown12;this.unknown13 = unknown13;this.unknown14 = unknown14;this.unknown15 = unknown15;this.unknown16 = unknown16;this.links = links;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(12);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeBytes(this.uuid.encodeBody(true));var dhc5cvbf=this.encodeString(this.username);this.writeVaruint(dhc5cvbf.length);this.writeBytes(dhc5cvbf);this.writeVarlong(this.entityId);this.writeVarulong(this.runtimeId);this.writeLittleEndianFloat(this.position.x);this.writeLittleEndianFloat(this.position.y);this.writeLittleEndianFloat(this.position.z);this.writeLittleEndianFloat(this.motion.x);this.writeLittleEndianFloat(this.motion.y);this.writeLittleEndianFloat(this.motion.z);this.writeLittleEndianFloat(this.pitch);this.writeLittleEndianFloat(this.headYaw);this.writeLittleEndianFloat(this.yaw);this.writeBytes(this.heldItem.encodeBody(true));this.writeBytes(this.metadata.encodeBody(true));this.writeVaruint(this.unknown11);this.writeVaruint(this.unknown12);this.writeVaruint(this.unknown13);this.writeVaruint(this.unknown14);this.writeVaruint(this.unknown15);this.writeLittleEndianLong(this.unknown16);this.writeVaruint(this.links.length);for(var dhc5a5c in this.links){this.writeBytes(this.links[dhc5a5c].encodeBody(true));}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.uuid=new Types.McpeUuid().decodeBody(this._buffer);this._buffer=this.uuid._buffer;var dhc5cvbf=this.readVaruint();this.username=this.decodeString(this.readBytes(dhc5cvbf));this.entityId=this.readVarlong();this.runtimeId=this.readVarulong();this.position={};this.position.x=this.readLittleEndianFloat();this.position.y=this.readLittleEndianFloat();this.position.z=this.readLittleEndianFloat();this.motion={};this.motion.x=this.readLittleEndianFloat();this.motion.y=this.readLittleEndianFloat();this.motion.z=this.readLittleEndianFloat();this.pitch=this.readLittleEndianFloat();this.headYaw=this.readLittleEndianFloat();this.yaw=this.readLittleEndianFloat();this.heldItem=new Types.Slot().decodeBody(this._buffer);this._buffer=this.heldItem._buffer;this.metadata=new Metadata().decodeBody(this._buffer);this._buffer=this.metadata._buffer;this.unknown11=this.readVaruint();this.unknown12=this.readVaruint();this.unknown13=this.readVaruint();this.unknown14=this.readVaruint();this.unknown15=this.readVaruint();this.unknown16=this.readLittleEndianLong();var aramblam=this.readVaruint();this.links=[];for(var dhc5a5c=0;dhc5a5c<aramblam;dhc5a5c++){this.links[dhc5a5c]=new Types.Link().decodeBody(this._buffer);this._buffer=this.links[dhc5a5c]._buffer;}return this;}},AddEntity: class extends Buffer{static get ID(){return 13;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(entityId=0,runtimeId=0,type=0,position={x:0,y:0,z:0},motion={x:0,y:0,z:0},pitch=.0,yaw=.0,attributes=[],metadata=new Metadata(),links=[]){super();this.entityId = entityId;this.runtimeId = runtimeId;this.type = type;this.position = position;this.motion = motion;this.pitch = pitch;this.yaw = yaw;this.attributes = attributes;this.metadata = metadata;this.links = links;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(13);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.entityId);this.writeVarulong(this.runtimeId);this.writeVaruint(this.type);this.writeLittleEndianFloat(this.position.x);this.writeLittleEndianFloat(this.position.y);this.writeLittleEndianFloat(this.position.z);this.writeLittleEndianFloat(this.motion.x);this.writeLittleEndianFloat(this.motion.y);this.writeLittleEndianFloat(this.motion.z);this.writeLittleEndianFloat(this.pitch);this.writeLittleEndianFloat(this.yaw);this.writeVaruint(this.attributes.length);for(var dhc5draj in this.attributes){this.writeBytes(this.attributes[dhc5draj].encodeBody(true));}this.writeBytes(this.metadata.encodeBody(true));this.writeVaruint(this.links.length);for(var dhc5a5c in this.links){this.writeBytes(this.links[dhc5a5c].encodeBody(true));}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.entityId=this.readVarlong();this.runtimeId=this.readVarulong();this.type=this.readVaruint();this.position={};this.position.x=this.readLittleEndianFloat();this.position.y=this.readLittleEndianFloat();this.position.z=this.readLittleEndianFloat();this.motion={};this.motion.x=this.readLittleEndianFloat();this.motion.y=this.readLittleEndianFloat();this.motion.z=this.readLittleEndianFloat();this.pitch=this.readLittleEndianFloat();this.yaw=this.readLittleEndianFloat();var aramyrcl=this.readVaruint();this.attributes=[];for(var dhc5draj=0;dhc5draj<aramyrcl;dhc5draj++){this.attributes[dhc5draj]=new Types.Attribute().decodeBody(this._buffer);this._buffer=this.attributes[dhc5draj]._buffer;}this.metadata=new Metadata().decodeBody(this._buffer);this._buffer=this.metadata._buffer;var aramblam=this.readVaruint();this.links=[];for(var dhc5a5c=0;dhc5a5c<aramblam;dhc5a5c++){this.links[dhc5a5c]=new Types.Link().decodeBody(this._buffer);this._buffer=this.links[dhc5a5c]._buffer;}return this;}},RemoveEntity: class extends Buffer{static get ID(){return 14;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(entityId=0){super();this.entityId = entityId;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(14);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.entityId);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.entityId=this.readVarlong();return this;}},AddItemEntity: class extends Buffer{static get ID(){return 15;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(entityId=0,runtimeId=0,item=null,position={x:0,y:0,z:0},motion={x:0,y:0,z:0},metadata=new Metadata()){super();this.entityId = entityId;this.runtimeId = runtimeId;this.item = item;this.position = position;this.motion = motion;this.metadata = metadata;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(15);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.entityId);this.writeVarulong(this.runtimeId);this.writeBytes(this.item.encodeBody(true));this.writeLittleEndianFloat(this.position.x);this.writeLittleEndianFloat(this.position.y);this.writeLittleEndianFloat(this.position.z);this.writeLittleEndianFloat(this.motion.x);this.writeLittleEndianFloat(this.motion.y);this.writeLittleEndianFloat(this.motion.z);this.writeBytes(this.metadata.encodeBody(true));return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.entityId=this.readVarlong();this.runtimeId=this.readVarulong();this.item=new Types.Slot().decodeBody(this._buffer);this._buffer=this.item._buffer;this.position={};this.position.x=this.readLittleEndianFloat();this.position.y=this.readLittleEndianFloat();this.position.z=this.readLittleEndianFloat();this.motion={};this.motion.x=this.readLittleEndianFloat();this.motion.y=this.readLittleEndianFloat();this.motion.z=this.readLittleEndianFloat();this.metadata=new Metadata().decodeBody(this._buffer);this._buffer=this.metadata._buffer;return this;}},AddHangingEntity: class extends Buffer{static get ID(){return 16;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(entityId=0,runtimeId=0,position=null,unknown3=0){super();this.entityId = entityId;this.runtimeId = runtimeId;this.position = position;this.unknown3 = unknown3;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(16);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.entityId);this.writeVarulong(this.runtimeId);this.writeBytes(this.position.encodeBody(true));this.writeVarint(this.unknown3);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.entityId=this.readVarlong();this.runtimeId=this.readVarulong();this.position=new Types.BlockPosition().decodeBody(this._buffer);this._buffer=this.position._buffer;this.unknown3=this.readVarint();return this;}},TakeItemEntity: class extends Buffer{static get ID(){return 17;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(collected=0,collector=0){super();this.collected = collected;this.collector = collector;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(17);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.collected);this.writeVarlong(this.collector);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.collected=this.readVarlong();this.collector=this.readVarlong();return this;}},MoveEntity: class extends Buffer{static get ID(){return 18;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(entityId=0,position={x:0,y:0,z:0},pitch=0,headYaw=0,yaw=0,onGround=false,teleported=false){super();this.entityId = entityId;this.position = position;this.pitch = pitch;this.headYaw = headYaw;this.yaw = yaw;this.onGround = onGround;this.teleported = teleported;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(18);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.entityId);this.writeLittleEndianFloat(this.position.x);this.writeLittleEndianFloat(this.position.y);this.writeLittleEndianFloat(this.position.z);this.writeByte(this.pitch);this.writeByte(this.headYaw);this.writeByte(this.yaw);this.writeBool(this.onGround);this.writeBool(this.teleported);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.entityId=this.readVarlong();this.position={};this.position.x=this.readLittleEndianFloat();this.position.y=this.readLittleEndianFloat();this.position.z=this.readLittleEndianFloat();this.pitch=this.readByte();this.headYaw=this.readByte();this.yaw=this.readByte();this.onGround=this.readBool();this.teleported=this.readBool();return this;}},MovePlayer: class extends Buffer{static get ID(){return 19;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return true;};constructor(entityId=0,position={x:0,y:0,z:0},pitch=.0,headYaw=.0,yaw=.0,animation=0,onGround=false,unknown7=0,unknown8=0,unknown9=0){super();this.entityId = entityId;this.position = position;this.pitch = pitch;this.headYaw = headYaw;this.yaw = yaw;this.animation = animation;this.onGround = onGround;this.unknown7 = unknown7;this.unknown8 = unknown8;this.unknown9 = unknown9;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(19);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.entityId);this.writeLittleEndianFloat(this.position.x);this.writeLittleEndianFloat(this.position.y);this.writeLittleEndianFloat(this.position.z);this.writeLittleEndianFloat(this.pitch);this.writeLittleEndianFloat(this.headYaw);this.writeLittleEndianFloat(this.yaw);this.writeByte(this.animation);this.writeBool(this.onGround);this.writeVarlong(this.unknown7);if(animation==3){this.writeLittleEndianInt(this.unknown8);}if(animation==3){this.writeLittleEndianInt(this.unknown9);}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.entityId=this.readVarlong();this.position={};this.position.x=this.readLittleEndianFloat();this.position.y=this.readLittleEndianFloat();this.position.z=this.readLittleEndianFloat();this.pitch=this.readLittleEndianFloat();this.headYaw=this.readLittleEndianFloat();this.yaw=this.readLittleEndianFloat();this.animation=this.readByte();this.onGround=this.readBool();this.unknown7=this.readVarlong();if(animation==3){this.unknown8=this.readLittleEndianInt();}if(animation==3){this.unknown9=this.readLittleEndianInt();}return this;}},RiderJump: class extends Buffer{static get ID(){return 20;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return true;};constructor(rider=0){super();this.rider = rider;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(20);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.rider);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.rider=this.readVarlong();return this;}},UpdateBlock: class extends Buffer{static get ID(){return 21;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(position=null,block=0,flagsAndMeta=0){super();this.position = position;this.block = block;this.flagsAndMeta = flagsAndMeta;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(21);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeBytes(this.position.encodeBody(true));this.writeVaruint(this.block);this.writeVaruint(this.flagsAndMeta);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.position=new Types.BlockPosition().decodeBody(this._buffer);this._buffer=this.position._buffer;this.block=this.readVaruint();this.flagsAndMeta=this.readVaruint();return this;}},AddPainting: class extends Buffer{static get ID(){return 22;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(entityId=0,runtimeId=0,position=null,direction=0,title=""){super();this.entityId = entityId;this.runtimeId = runtimeId;this.position = position;this.direction = direction;this.title = title;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(22);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.entityId);this.writeVarulong(this.runtimeId);this.writeBytes(this.position.encodeBody(true));this.writeVarint(this.direction);var dhc5arz=this.encodeString(this.title);this.writeVaruint(dhc5arz.length);this.writeBytes(dhc5arz);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.entityId=this.readVarlong();this.runtimeId=this.readVarulong();this.position=new Types.BlockPosition().decodeBody(this._buffer);this._buffer=this.position._buffer;this.direction=this.readVarint();var dhc5arz=this.readVaruint();this.title=this.decodeString(this.readBytes(dhc5arz));return this;}},Explode: class extends Buffer{static get ID(){return 23;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(position={x:0,y:0,z:0},radius=.0,destroyedBlocks=[]){super();this.position = position;this.radius = radius;this.destroyedBlocks = destroyedBlocks;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(23);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeLittleEndianFloat(this.position.x);this.writeLittleEndianFloat(this.position.y);this.writeLittleEndianFloat(this.position.z);this.writeLittleEndianFloat(this.radius);this.writeVaruint(this.destroyedBlocks.length);for(var dhc5znc9 in this.destroyedBlocks){this.writeBytes(this.destroyedBlocks[dhc5znc9].encodeBody(true));}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.position={};this.position.x=this.readLittleEndianFloat();this.position.y=this.readLittleEndianFloat();this.position.z=this.readLittleEndianFloat();this.radius=this.readLittleEndianFloat();var aramzvdj=this.readVaruint();this.destroyedBlocks=[];for(var dhc5znc9=0;dhc5znc9<aramzvdj;dhc5znc9++){this.destroyedBlocks[dhc5znc9]=new Types.BlockPosition().decodeBody(this._buffer);this._buffer=this.destroyedBlocks[dhc5znc9]._buffer;}return this;}},LevelSoundEvent: class extends Buffer{static get ID(){return 24;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return true;};constructor(sound=0,position={x:0,y:0,z:0},volume=0,pitch=0,unknown4=false,disableRelativeVolume=false){super();this.sound = sound;this.position = position;this.volume = volume;this.pitch = pitch;this.unknown4 = unknown4;this.disableRelativeVolume = disableRelativeVolume;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(24);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeByte(this.sound);this.writeLittleEndianFloat(this.position.x);this.writeLittleEndianFloat(this.position.y);this.writeLittleEndianFloat(this.position.z);this.writeVaruint(this.volume);this.writeVarint(this.pitch);this.writeBool(this.unknown4);this.writeBool(this.disableRelativeVolume);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.sound=this.readByte();this.position={};this.position.x=this.readLittleEndianFloat();this.position.y=this.readLittleEndianFloat();this.position.z=this.readLittleEndianFloat();this.volume=this.readVaruint();this.pitch=this.readVarint();this.unknown4=this.readBool();this.disableRelativeVolume=this.readBool();return this;}},LevelEvent: class extends Buffer{static get ID(){return 25;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(eventId=0,position={x:0,y:0,z:0},data=0){super();this.eventId = eventId;this.position = position;this.data = data;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(25);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarint(this.eventId);this.writeLittleEndianFloat(this.position.x);this.writeLittleEndianFloat(this.position.y);this.writeLittleEndianFloat(this.position.z);this.writeVarint(this.data);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.eventId=this.readVarint();this.position={};this.position.x=this.readLittleEndianFloat();this.position.y=this.readLittleEndianFloat();this.position.z=this.readLittleEndianFloat();this.data=this.readVarint();return this;}},BlockEvent: class extends Buffer{static get ID(){return 26;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(position=null,data=new Int32Array(2)){super();this.position = position;this.data = data;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(26);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeBytes(this.position.encodeBody(true));for(var dhc5yr in this.data){this.writeVarint(this.data[dhc5yr]);}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.position=new Types.BlockPosition().decodeBody(this._buffer);this._buffer=this.position._buffer;var aramzfy=2;this.data=[];for(var dhc5yr=0;dhc5yr<aramzfy;dhc5yr++){this.data[dhc5yr]=this.readVarint();}return this;}},EntityEvent: class extends Buffer{static get ID(){return 27;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return true;};constructor(entityId=0,eventId=0,data=0){super();this.entityId = entityId;this.eventId = eventId;this.data = data;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(27);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.entityId);this.writeByte(this.eventId);this.writeVarint(this.data);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.entityId=this.readVarlong();this.eventId=this.readByte();this.data=this.readVarint();return this;}},MobEffect: class extends Buffer{static get ID(){return 28;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(entityId=0,eventId=0,effect=0,amplifier=0,particles=false,duration=0){super();this.entityId = entityId;this.eventId = eventId;this.effect = effect;this.amplifier = amplifier;this.particles = particles;this.duration = duration;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(28);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.entityId);this.writeByte(this.eventId);this.writeVarint(this.effect);this.writeVarint(this.amplifier);this.writeBool(this.particles);this.writeVarint(this.duration);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.entityId=this.readVarlong();this.eventId=this.readByte();this.effect=this.readVarint();this.amplifier=this.readVarint();this.particles=this.readBool();this.duration=this.readVarint();return this;}},UpdateAttributes: class extends Buffer{static get ID(){return 29;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(entityId=0,attributes=[]){super();this.entityId = entityId;this.attributes = attributes;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(29);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.entityId);this.writeVaruint(this.attributes.length);for(var dhc5draj in this.attributes){this.writeBytes(this.attributes[dhc5draj].encodeBody(true));}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.entityId=this.readVarlong();var aramyrcl=this.readVaruint();this.attributes=[];for(var dhc5draj=0;dhc5draj<aramyrcl;dhc5draj++){this.attributes[dhc5draj]=new Types.Attribute().decodeBody(this._buffer);this._buffer=this.attributes[dhc5draj]._buffer;}return this;}},InventoryTransaction: class extends Buffer{static get ID(){return 30;};static get CLIENTBOUND(){return false;};static get SERVERBOUND(){return true;};static get NORMAL_0(){return 0;};static get NORMAL_1(){return 1;};static get USE_ITEM(){return 2;};static get USE_ITEM_ON_ENTITY(){return 3;};static get RELEASE_ITEM(){return 4;};constructor(type=0,actions=[]){super();this.type = type;this.actions = actions;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(30);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVaruint(this.type);this.writeVaruint(this.actions.length);for(var dhc5yrb5 in this.actions){this.writeBytes(this.actions[dhc5yrb5].encodeBody(true));}switch(this.type){case 0:this.writeVaruint(this.type);this.writeVaruint(this.actions.length);for(var dhc5yrb5 in this.actions){this.writeBytes(this.actions[dhc5yrb5].encodeBody(true));}break;case 1:this.writeVaruint(this.type);this.writeVaruint(this.actions.length);for(var dhc5yrb5 in this.actions){this.writeBytes(this.actions[dhc5yrb5].encodeBody(true));}break;case 2:this.writeVaruint(this.type);this.writeVaruint(this.actions.length);for(var dhc5yrb5 in this.actions){this.writeBytes(this.actions[dhc5yrb5].encodeBody(true));}break;case 3:this.writeVaruint(this.type);this.writeVaruint(this.actions.length);for(var dhc5yrb5 in this.actions){this.writeBytes(this.actions[dhc5yrb5].encodeBody(true));}break;case 4:this.writeVaruint(this.type);this.writeVaruint(this.actions.length);for(var dhc5yrb5 in this.actions){this.writeBytes(this.actions[dhc5yrb5].encodeBody(true));}break;default: break;}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.type=this.readVaruint();var aramyna9=this.readVaruint();this.actions=[];for(var dhc5yrb5=0;dhc5yrb5<aramyna9;dhc5yrb5++){this.actions[dhc5yrb5]=new Types.InventoryAction().decodeBody(this._buffer);this._buffer=this.actions[dhc5yrb5]._buffer;}switch(this.type){case 0:break;case 1:break;case 2:this.actionType=this.readVaruint();this.blockPosition=new Types.BlockPosition().decodeBody(this._buffer);this._buffer=this.blockPosition._buffer;this.face=this.readVarint();this.hotbarSlot=this.readVarint();this.item=new Types.Slot().decodeBody(this._buffer);this._buffer=this.item._buffer;this.playerPosition={};this.playerPosition.x=this.readLittleEndianFloat();this.playerPosition.y=this.readLittleEndianFloat();this.playerPosition.z=this.readLittleEndianFloat();this.clickPosition={};this.clickPosition.x=this.readLittleEndianFloat();this.clickPosition.y=this.readLittleEndianFloat();this.clickPosition.z=this.readLittleEndianFloat();break;case 3:this.entityId=this.readVarlong();this.actionType=this.readVaruint();this.hotbarSlot=this.readVarint();this.item=new Types.Slot().decodeBody(this._buffer);this._buffer=this.item._buffer;this.unknown6={};this.unknown6.x=this.readLittleEndianFloat();this.unknown6.y=this.readLittleEndianFloat();this.unknown6.z=this.readLittleEndianFloat();this.unknown7={};this.unknown7.x=this.readLittleEndianFloat();this.unknown7.y=this.readLittleEndianFloat();this.unknown7.z=this.readLittleEndianFloat();break;case 4:this.actionType=this.readVaruint();this.hotbarSlot=this.readVarint();this.item=new Types.Slot().decodeBody(this._buffer);this._buffer=this.item._buffer;this.headPosition={};this.headPosition.x=this.readLittleEndianFloat();this.headPosition.y=this.readLittleEndianFloat();this.headPosition.z=this.readLittleEndianFloat();break;default: break;}return this;}},MobEquipment: class extends Buffer{static get ID(){return 31;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return true;};constructor(entityId=0,item=null,inventorySlot=0,hotbarSlot=0,unknown4=0){super();this.entityId = entityId;this.item = item;this.inventorySlot = inventorySlot;this.hotbarSlot = hotbarSlot;this.unknown4 = unknown4;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(31);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.entityId);this.writeBytes(this.item.encodeBody(true));this.writeByte(this.inventorySlot);this.writeByte(this.hotbarSlot);this.writeByte(this.unknown4);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.entityId=this.readVarlong();this.item=new Types.Slot().decodeBody(this._buffer);this._buffer=this.item._buffer;this.inventorySlot=this.readByte();this.hotbarSlot=this.readByte();this.unknown4=this.readByte();return this;}},MobArmorEquipment: class extends Buffer{static get ID(){return 32;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return true;};constructor(entityId=0,armor=[]){super();this.entityId = entityId;this.armor = armor;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(32);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.entityId);for(var dhc5c1c in this.armor){this.writeBytes(this.armor[dhc5c1c].encodeBody(true));}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.entityId=this.readVarlong();var aramyjbi=4;this.armor=[];for(var dhc5c1c=0;dhc5c1c<aramyjbi;dhc5c1c++){this.armor[dhc5c1c]=new Types.Slot().decodeBody(this._buffer);this._buffer=this.armor[dhc5c1c]._buffer;}return this;}},Interact: class extends Buffer{static get ID(){return 33;};static get CLIENTBOUND(){return false;};static get SERVERBOUND(){return true;};constructor(action=0,target=0,targetPosition={x:0,y:0,z:0}){super();this.action = action;this.target = target;this.targetPosition = targetPosition;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(33);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeByte(this.action);this.writeVarlong(this.target);if(action==4){this.writeLittleEndianFloat(this.targetPosition.x);this.writeLittleEndianFloat(this.targetPosition.y);this.writeLittleEndianFloat(this.targetPosition.z);}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.action=this.readByte();this.target=this.readVarlong();if(action==4){this.targetPosition={};this.targetPosition.x=this.readLittleEndianFloat();this.targetPosition.y=this.readLittleEndianFloat();this.targetPosition.z=this.readLittleEndianFloat();}return this;}},BlockPickRequest: class extends Buffer{static get ID(){return 34;};static get CLIENTBOUND(){return false;};static get SERVERBOUND(){return true;};constructor(position={x:0,y:0,z:0},unknown1=false,slot=0){super();this.position = position;this.unknown1 = unknown1;this.slot = slot;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(34);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarint(this.position.x);this.writeVarint(this.position.y);this.writeVarint(this.position.z);this.writeBool(this.unknown1);this.writeByte(this.slot);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.position={};this.position.x=this.readVarint();this.position.y=this.readVarint();this.position.z=this.readVarint();this.unknown1=this.readBool();this.slot=this.readByte();return this;}},EntityPickRequest: class extends Buffer{static get ID(){return 35;};static get CLIENTBOUND(){return false;};static get SERVERBOUND(){return true;};constructor(entityType=0,slot=0){super();this.entityType = entityType;this.slot = slot;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(35);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeLittleEndianLong(this.entityType);this.writeByte(this.slot);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.entityType=this.readLittleEndianLong();this.slot=this.readByte();return this;}},PlayerAction: class extends Buffer{static get ID(){return 36;};static get CLIENTBOUND(){return false;};static get SERVERBOUND(){return true;};constructor(entityId=0,action=0,position=null,face=0){super();this.entityId = entityId;this.action = action;this.position = position;this.face = face;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(36);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.entityId);this.writeVarint(this.action);this.writeBytes(this.position.encodeBody(true));this.writeVarint(this.face);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.entityId=this.readVarlong();this.action=this.readVarint();this.position=new Types.BlockPosition().decodeBody(this._buffer);this._buffer=this.position._buffer;this.face=this.readVarint();return this;}},EntityFall: class extends Buffer{static get ID(){return 37;};static get CLIENTBOUND(){return false;};static get SERVERBOUND(){return true;};constructor(entityId=0,distance=.0,unknown2=false){super();this.entityId = entityId;this.distance = distance;this.unknown2 = unknown2;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(37);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.entityId);this.writeLittleEndianFloat(this.distance);this.writeBool(this.unknown2);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.entityId=this.readVarlong();this.distance=this.readLittleEndianFloat();this.unknown2=this.readBool();return this;}},HurtArmor: class extends Buffer{static get ID(){return 38;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(unknown0=0){super();this.unknown0 = unknown0;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(38);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarint(this.unknown0);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.unknown0=this.readVarint();return this;}},SetEntityData: class extends Buffer{static get ID(){return 39;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(entityId=0,metadata=new Metadata()){super();this.entityId = entityId;this.metadata = metadata;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(39);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.entityId);this.writeBytes(this.metadata.encodeBody(true));return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.entityId=this.readVarlong();this.metadata=new Metadata().decodeBody(this._buffer);this._buffer=this.metadata._buffer;return this;}},SetEntityMotion: class extends Buffer{static get ID(){return 40;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(entityId=0,motion={x:0,y:0,z:0}){super();this.entityId = entityId;this.motion = motion;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(40);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.entityId);this.writeLittleEndianFloat(this.motion.x);this.writeLittleEndianFloat(this.motion.y);this.writeLittleEndianFloat(this.motion.z);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.entityId=this.readVarlong();this.motion={};this.motion.x=this.readLittleEndianFloat();this.motion.y=this.readLittleEndianFloat();this.motion.z=this.readLittleEndianFloat();return this;}},SetEntityLink: class extends Buffer{static get ID(){return 41;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(vehicle=0,passenger=0,action=0){super();this.vehicle = vehicle;this.passenger = passenger;this.action = action;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(41);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.vehicle);this.writeVarlong(this.passenger);this.writeByte(this.action);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.vehicle=this.readVarlong();this.passenger=this.readVarlong();this.action=this.readByte();return this;}},SetHealth: class extends Buffer{static get ID(){return 42;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(health=0){super();this.health = health;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(42);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarint(this.health);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.health=this.readVarint();return this;}},SetSpawnPosition: class extends Buffer{static get ID(){return 43;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(type=0,position=null,forced=false){super();this.type = type;this.position = position;this.forced = forced;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(43);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarint(this.type);this.writeBytes(this.position.encodeBody(true));this.writeBool(this.forced);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.type=this.readVarint();this.position=new Types.BlockPosition().decodeBody(this._buffer);this._buffer=this.position._buffer;this.forced=this.readBool();return this;}},Animate: class extends Buffer{static get ID(){return 44;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return true;};constructor(action=0,entityId=0,unknown2=.0){super();this.action = action;this.entityId = entityId;this.unknown2 = unknown2;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(44);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarint(this.action);this.writeVarlong(this.entityId);if(action>128){this.writeLittleEndianFloat(this.unknown2);}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.action=this.readVarint();this.entityId=this.readVarlong();if(action>128){this.unknown2=this.readLittleEndianFloat();}return this;}},Respawn: class extends Buffer{static get ID(){return 45;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(position={x:0,y:0,z:0}){super();this.position = position;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(45);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeLittleEndianFloat(this.position.x);this.writeLittleEndianFloat(this.position.y);this.writeLittleEndianFloat(this.position.z);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.position={};this.position.x=this.readLittleEndianFloat();this.position.y=this.readLittleEndianFloat();this.position.z=this.readLittleEndianFloat();return this;}},ContainerOpen: class extends Buffer{static get ID(){return 46;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(window=0,type=0,position=null,entityId=0){super();this.window = window;this.type = type;this.position = position;this.entityId = entityId;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(46);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeByte(this.window);this.writeByte(this.type);this.writeBytes(this.position.encodeBody(true));this.writeVarlong(this.entityId);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.window=this.readByte();this.type=this.readByte();this.position=new Types.BlockPosition().decodeBody(this._buffer);this._buffer=this.position._buffer;this.entityId=this.readVarlong();return this;}},ContainerClose: class extends Buffer{static get ID(){return 47;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return true;};constructor(window=0){super();this.window = window;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(47);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeByte(this.window);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.window=this.readByte();return this;}},PlayerHotbar: class extends Buffer{static get ID(){return 48;};static get CLIENTBOUND(){return false;};static get SERVERBOUND(){return false;};constructor(){super();}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(48);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);return this;}},InventoryContent: class extends Buffer{static get ID(){return 49;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(window=0,slots=[]){super();this.window = window;this.slots = slots;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(49);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVaruint(this.window);this.writeVaruint(this.slots.length);for(var dhc5b9c in this.slots){this.writeBytes(this.slots[dhc5b9c].encodeBody(true));}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.window=this.readVaruint();var aramcxdm=this.readVaruint();this.slots=[];for(var dhc5b9c=0;dhc5b9c<aramcxdm;dhc5b9c++){this.slots[dhc5b9c]=new Types.Slot().decodeBody(this._buffer);this._buffer=this.slots[dhc5b9c]._buffer;}return this;}},InventorySlot: class extends Buffer{static get ID(){return 50;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(){super();}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(50);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);return this;}},ContainerSetData: class extends Buffer{static get ID(){return 51;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(window=0,property=0,value=0){super();this.window = window;this.property = property;this.value = value;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(51);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeByte(this.window);this.writeVarint(this.property);this.writeVarint(this.value);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.window=this.readByte();this.property=this.readVarint();this.value=this.readVarint();return this;}},CraftingData: class extends Buffer{static get ID(){return 52;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(recipes=[]){super();this.recipes = recipes;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(52);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVaruint(this.recipes.length);for(var dhc5zncv in this.recipes){this.writeBytes(this.recipes[dhc5zncv].encodeBody(true));}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);var aramcvab=this.readVaruint();this.recipes=[];for(var dhc5zncv=0;dhc5zncv<aramcvab;dhc5zncv++){this.recipes[dhc5zncv]=new Types.Recipe().decodeBody(this._buffer);this._buffer=this.recipes[dhc5zncv]._buffer;}return this;}},CraftingEvent: class extends Buffer{static get ID(){return 53;};static get CLIENTBOUND(){return false;};static get SERVERBOUND(){return true;};constructor(window=0,type=0,uuid=null,input=[],output=[]){super();this.window = window;this.type = type;this.uuid = uuid;this.input = input;this.output = output;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(53);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeByte(this.window);this.writeVarint(this.type);this.writeBytes(this.uuid.encodeBody(true));this.writeVaruint(this.input.length);for(var dhc5bbd in this.input){this.writeBytes(this.input[dhc5bbd].encodeBody(true));}this.writeVaruint(this.output.length);for(var dhc5drdq in this.output){this.writeBytes(this.output[dhc5drdq].encodeBody(true));}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.window=this.readByte();this.type=this.readVarint();this.uuid=new Types.McpeUuid().decodeBody(this._buffer);this._buffer=this.uuid._buffer;var arama5dq=this.readVaruint();this.input=[];for(var dhc5bbd=0;dhc5bbd<arama5dq;dhc5bbd++){this.input[dhc5bbd]=new Types.Slot().decodeBody(this._buffer);this._buffer=this.input[dhc5bbd]._buffer;}var arambvcv=this.readVaruint();this.output=[];for(var dhc5drdq=0;dhc5drdq<arambvcv;dhc5drdq++){this.output[dhc5drdq]=new Types.Slot().decodeBody(this._buffer);this._buffer=this.output[dhc5drdq]._buffer;}return this;}},GuiDataPickItem: class extends Buffer{static get ID(){return 54;};static get CLIENTBOUND(){return false;};static get SERVERBOUND(){return true;};constructor(slot=0){super();this.slot = slot;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(54);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeLittleEndianInt(this.slot);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.slot=this.readLittleEndianInt();return this;}},AdventureSettings: class extends Buffer{static get ID(){return 55;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return true;};constructor(flags=0,permissionLevel=0,abilities=0,playerRank=0,customPermissions=0,entityId=0){super();this.flags = flags;this.permissionLevel = permissionLevel;this.abilities = abilities;this.playerRank = playerRank;this.customPermissions = customPermissions;this.entityId = entityId;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(55);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVaruint(this.flags);this.writeVaruint(this.permissionLevel);this.writeVaruint(this.abilities);this.writeVaruint(this.playerRank);this.writeVaruint(this.customPermissions);this.writeLittleEndianLong(this.entityId);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.flags=this.readVaruint();this.permissionLevel=this.readVaruint();this.abilities=this.readVaruint();this.playerRank=this.readVaruint();this.customPermissions=this.readVaruint();this.entityId=this.readLittleEndianLong();return this;}},BlockEntityData: class extends Buffer{static get ID(){return 56;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return true;};constructor(position=null,nbt=null){super();this.position = position;this.nbt = nbt;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(56);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeBytes(this.position.encodeBody(true));this.writeBytes(this.nbt);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.position=new Types.BlockPosition().decodeBody(this._buffer);this._buffer=this.position._buffer;this.nbt=Array.from(this._buffer);this._buffer=[];return this;}},PlayerInput: class extends Buffer{static get ID(){return 57;};static get CLIENTBOUND(){return false;};static get SERVERBOUND(){return true;};constructor(sideways=.0,forward=.0,unknown2=false,unknown3=false){super();this.sideways = sideways;this.forward = forward;this.unknown2 = unknown2;this.unknown3 = unknown3;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(57);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeLittleEndianFloat(this.sideways);this.writeLittleEndianFloat(this.forward);this.writeBool(this.unknown2);this.writeBool(this.unknown3);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.sideways=this.readLittleEndianFloat();this.forward=this.readLittleEndianFloat();this.unknown2=this.readBool();this.unknown3=this.readBool();return this;}},FullChunkData: class extends Buffer{static get ID(){return 58;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(position={x:0,z:0},data=null){super();this.position = position;this.data = data;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(58);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarint(this.position.x);this.writeVarint(this.position.z);this.writeBytes(this.data.encodeBody(true));return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.position={};this.position.x=this.readVarint();this.position.z=this.readVarint();this.data=new Types.ChunkData().decodeBody(this._buffer);this._buffer=this.data._buffer;return this;}},SetCommandsEnabled: class extends Buffer{static get ID(){return 59;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(enabled=false){super();this.enabled = enabled;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(59);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeBool(this.enabled);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.enabled=this.readBool();return this;}},SetDifficulty: class extends Buffer{static get ID(){return 60;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(difficulty=0){super();this.difficulty = difficulty;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(60);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVaruint(this.difficulty);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.difficulty=this.readVaruint();return this;}},ChangeDimension: class extends Buffer{static get ID(){return 61;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(dimension=0,position={x:0,y:0,z:0},unknown2=false){super();this.dimension = dimension;this.position = position;this.unknown2 = unknown2;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(61);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarint(this.dimension);this.writeLittleEndianFloat(this.position.x);this.writeLittleEndianFloat(this.position.y);this.writeLittleEndianFloat(this.position.z);this.writeBool(this.unknown2);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.dimension=this.readVarint();this.position={};this.position.x=this.readLittleEndianFloat();this.position.y=this.readLittleEndianFloat();this.position.z=this.readLittleEndianFloat();this.unknown2=this.readBool();return this;}},SetPlayerGameType: class extends Buffer{static get ID(){return 62;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return true;};constructor(gamemode=0){super();this.gamemode = gamemode;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(62);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarint(this.gamemode);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.gamemode=this.readVarint();return this;}},PlayerList: class extends Buffer{static get ID(){return 63;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};static get ADD(){return 0;};static get REMOVE(){return 1;};constructor(action=0){super();this.action = action;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(63);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeByte(this.action);switch(this.action){case 0:this.writeByte(this.action);break;case 1:this.writeByte(this.action);break;default: break;}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.action=this.readByte();switch(this.action){case 0:var aramcxev=this.readVaruint();this.players=[];for(var dhc5bfzj=0;dhc5bfzj<aramcxev;dhc5bfzj++){this.players[dhc5bfzj]=new Types.PlayerList().decodeBody(this._buffer);this._buffer=this.players[dhc5bfzj]._buffer;}break;case 1:var aramcxev=this.readVaruint();this.players=[];for(var dhc5bfzj=0;dhc5bfzj<aramcxev;dhc5bfzj++){this.players[dhc5bfzj]=new Types.McpeUuid().decodeBody(this._buffer);this._buffer=this.players[dhc5bfzj]._buffer;}break;default: break;}return this;}},SimpleEvent: class extends Buffer{static get ID(){return 64;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return true;};constructor(){super();}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(64);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);return this;}},TelemetryEvent: class extends Buffer{static get ID(){return 65;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(entityId=0,eventId=0){super();this.entityId = entityId;this.eventId = eventId;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(65);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.entityId);this.writeVarint(this.eventId);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.entityId=this.readVarlong();this.eventId=this.readVarint();return this;}},SpawnExperienceOrb: class extends Buffer{static get ID(){return 66;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(position={x:0,y:0,z:0},count=0){super();this.position = position;this.count = count;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(66);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeLittleEndianFloat(this.position.x);this.writeLittleEndianFloat(this.position.y);this.writeLittleEndianFloat(this.position.z);this.writeVarint(this.count);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.position={};this.position.x=this.readLittleEndianFloat();this.position.y=this.readLittleEndianFloat();this.position.z=this.readLittleEndianFloat();this.count=this.readVarint();return this;}},ClientboundMapItemData: class extends Buffer{static get ID(){return 67;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(mapId=0,update=0,scale=0,size={x:0,z:0},offset={x:0,z:0},data=null,decorations=[]){super();this.mapId = mapId;this.update = update;this.scale = scale;this.size = size;this.offset = offset;this.data = data;this.decorations = decorations;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(67);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.mapId);this.writeVaruint(this.update);if(update==2||update==4){this.writeByte(this.scale);}if(update==2){this.writeVarint(this.size.x);this.writeVarint(this.size.z);}if(update==2){this.writeVarint(this.offset.x);this.writeVarint(this.offset.z);}if(update==2){this.writeBytes(this.data);}if(update==4){this.writeVaruint(this.decorations.length);for(var dhc5zncf in this.decorations){this.writeBytes(this.decorations[dhc5zncf].encodeBody(true));}}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.mapId=this.readVarlong();this.update=this.readVaruint();if(update==2||update==4){this.scale=this.readByte();}if(update==2){this.size={};this.size.x=this.readVarint();this.size.z=this.readVarint();}if(update==2){this.offset={};this.offset.x=this.readVarint();this.offset.z=this.readVarint();}if(update==2){this.data=Array.from(this._buffer);this._buffer=[];}if(update==4){var aramzvbj=this.readVaruint();this.decorations=[];for(var dhc5zncf=0;dhc5zncf<aramzvbj;dhc5zncf++){this.decorations[dhc5zncf]=new Types.Decoration().decodeBody(this._buffer);this._buffer=this.decorations[dhc5zncf]._buffer;}}return this;}},MapInfoRequest: class extends Buffer{static get ID(){return 68;};static get CLIENTBOUND(){return false;};static get SERVERBOUND(){return true;};constructor(mapId=0){super();this.mapId = mapId;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(68);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.mapId);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.mapId=this.readVarlong();return this;}},RequestChunkRadius: class extends Buffer{static get ID(){return 69;};static get CLIENTBOUND(){return false;};static get SERVERBOUND(){return true;};constructor(radius=0){super();this.radius = radius;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(69);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarint(this.radius);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.radius=this.readVarint();return this;}},ChunkRadiusUpdated: class extends Buffer{static get ID(){return 70;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(radius=0){super();this.radius = radius;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(70);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarint(this.radius);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.radius=this.readVarint();return this;}},ItemFrameDropItem: class extends Buffer{static get ID(){return 71;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(position=null,item=null){super();this.position = position;this.item = item;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(71);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeBytes(this.position.encodeBody(true));this.writeBytes(this.item.encodeBody(true));return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.position=new Types.BlockPosition().decodeBody(this._buffer);this._buffer=this.position._buffer;this.item=new Types.Slot().decodeBody(this._buffer);this._buffer=this.item._buffer;return this;}},GameRulesChanged: class extends Buffer{static get ID(){return 72;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(rules=[]){super();this.rules = rules;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(72);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVaruint(this.rules.length);for(var dhc5dxc in this.rules){this.writeBytes(this.rules[dhc5dxc].encodeBody(true));}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);var aramcvzm=this.readVaruint();this.rules=[];for(var dhc5dxc=0;dhc5dxc<aramcvzm;dhc5dxc++){this.rules[dhc5dxc]=new Types.Rule().decodeBody(this._buffer);this._buffer=this.rules[dhc5dxc]._buffer;}return this;}},Camera: class extends Buffer{static get ID(){return 73;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(unknown0=0,unknown1=0){super();this.unknown0 = unknown0;this.unknown1 = unknown1;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(73);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.unknown0);this.writeVarlong(this.unknown1);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.unknown0=this.readVarlong();this.unknown1=this.readVarlong();return this;}},BossEvent: class extends Buffer{static get ID(){return 74;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(entityId=0,eventId=0){super();this.entityId = entityId;this.eventId = eventId;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(74);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.entityId);this.writeVaruint(this.eventId);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.entityId=this.readVarlong();this.eventId=this.readVaruint();return this;}},ShowCredits: class extends Buffer{static get ID(){return 75;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return true;};constructor(entityId=0,status=0){super();this.entityId = entityId;this.status = status;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(75);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.entityId);this.writeVarint(this.status);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.entityId=this.readVarlong();this.status=this.readVarint();return this;}},AvailableCommands: class extends Buffer{static get ID(){return 76;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(enumValues=[],unknown1=[],enums=[],commands=[]){super();this.enumValues = enumValues;this.unknown1 = unknown1;this.enums = enums;this.commands = commands;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(76);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVaruint(this.enumValues.length);for(var dhc5bvvf in this.enumValues){var dhc5bvvf=this.encodeString(this.enumValues[dhc5bvvf]);this.writeVaruint(dhc5bvvf.length);this.writeBytes(dhc5bvvf);}this.writeVaruint(this.unknown1.length);for(var dhc5btbd in this.unknown1){var dhc5btbd=this.encodeString(this.unknown1[dhc5btbd]);this.writeVaruint(dhc5btbd.length);this.writeBytes(dhc5btbd);}this.writeVaruint(this.enums.length);for(var dhc5bvc in this.enums){this.writeBytes(this.enums[dhc5bvc].encodeBody(true));}this.writeVaruint(this.commands.length);for(var dhc5b1y5 in this.commands){this.writeBytes(this.commands[dhc5b1y5].encodeBody(true));}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);var aramz5bz=this.readVaruint();this.enumValues=[];for(var dhc5bvvf=0;dhc5bvvf<aramz5bz;dhc5bvvf++){var dhc5bvvf=this.readVaruint();this.enumValues[dhc5bvvf]=this.decodeString(this.readBytes(dhc5bvvf));}var aramd5b9=this.readVaruint();this.unknown1=[];for(var dhc5btbd=0;dhc5btbd<aramd5b9;dhc5btbd++){var dhc5btbd=this.readVaruint();this.unknown1[dhc5btbd]=this.decodeString(this.readBytes(dhc5btbd));}var aramz5bm=this.readVaruint();this.enums=[];for(var dhc5bvc=0;dhc5bvc<aramz5bm;dhc5bvc++){this.enums[dhc5bvc]=new Types.Enum().decodeBody(this._buffer);this._buffer=this.enums[dhc5bvc]._buffer;}var aramy9bf=this.readVaruint();this.commands=[];for(var dhc5b1y5=0;dhc5b1y5<aramy9bf;dhc5b1y5++){this.commands[dhc5b1y5]=new Types.Command().decodeBody(this._buffer);this._buffer=this.commands[dhc5b1y5]._buffer;}return this;}},CommandRequest: class extends Buffer{static get ID(){return 77;};static get CLIENTBOUND(){return false;};static get SERVERBOUND(){return true;};constructor(command="",type=0,uuid=null,requestId="",playerId=0,internal=false){super();this.command = command;this.type = type;this.uuid = uuid;this.requestId = requestId;this.playerId = playerId;this.internal = internal;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(77);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}var dhc5b1y5=this.encodeString(this.command);this.writeVaruint(dhc5b1y5.length);this.writeBytes(dhc5b1y5);this.writeVaruint(this.type);this.writeBytes(this.uuid.encodeBody(true));var dhc5zfzn=this.encodeString(this.requestId);this.writeVaruint(dhc5zfzn.length);this.writeBytes(dhc5zfzn);if(type==3){this.writeVarint(this.playerId);}this.writeBool(this.internal);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);var dhc5b1y5=this.readVaruint();this.command=this.decodeString(this.readBytes(dhc5b1y5));this.type=this.readVaruint();this.uuid=new Types.McpeUuid().decodeBody(this._buffer);this._buffer=this.uuid._buffer;var dhc5zfzn=this.readVaruint();this.requestId=this.decodeString(this.readBytes(dhc5zfzn));if(type==3){this.playerId=this.readVarint();}this.internal=this.readBool();return this;}},CommandBlockUpdate: class extends Buffer{static get ID(){return 78;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return true;};constructor(updateBlock=false,position=null,mode=0,redstoneMode=false,conditional=false,minecart=0,command="",lastOutput="",hover="",trackOutput=false){super();this.updateBlock = updateBlock;this.position = position;this.mode = mode;this.redstoneMode = redstoneMode;this.conditional = conditional;this.minecart = minecart;this.command = command;this.lastOutput = lastOutput;this.hover = hover;this.trackOutput = trackOutput;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(78);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeBool(this.updateBlock);if(updateBlock==true){this.writeBytes(this.position.encodeBody(true));}if(updateBlock==true){this.writeVaruint(this.mode);}if(updateBlock==true){this.writeBool(this.redstoneMode);}if(updateBlock==true){this.writeBool(this.conditional);}if(updateBlock==false){this.writeVarlong(this.minecart);}var dhc5b1y5=this.encodeString(this.command);this.writeVaruint(dhc5b1y5.length);this.writeBytes(dhc5b1y5);var dhc5yntv=this.encodeString(this.lastOutput);this.writeVaruint(dhc5yntv.length);this.writeBytes(dhc5yntv);var dhc5bzc=this.encodeString(this.hover);this.writeVaruint(dhc5bzc.length);this.writeBytes(dhc5bzc);this.writeBool(this.trackOutput);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.updateBlock=this.readBool();if(updateBlock==true){this.position=new Types.BlockPosition().decodeBody(this._buffer);this._buffer=this.position._buffer;}if(updateBlock==true){this.mode=this.readVaruint();}if(updateBlock==true){this.redstoneMode=this.readBool();}if(updateBlock==true){this.conditional=this.readBool();}if(updateBlock==false){this.minecart=this.readVarlong();}var dhc5b1y5=this.readVaruint();this.command=this.decodeString(this.readBytes(dhc5b1y5));var dhc5yntv=this.readVaruint();this.lastOutput=this.decodeString(this.readBytes(dhc5yntv));var dhc5bzc=this.readVaruint();this.hover=this.decodeString(this.readBytes(dhc5bzc));this.trackOutput=this.readBool();return this;}},UpdateTrade: class extends Buffer{static get ID(){return 80;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(window=0,windowType=15,unknown2=0,unknown3=0,willing=false,trader=0,player=0,displayName="",offers=null){super();this.window = window;this.windowType = windowType;this.unknown2 = unknown2;this.unknown3 = unknown3;this.willing = willing;this.trader = trader;this.player = player;this.displayName = displayName;this.offers = offers;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(80);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeByte(this.window);this.writeByte(this.windowType);this.writeVarint(this.unknown2);this.writeVarint(this.unknown3);this.writeBool(this.willing);this.writeVarlong(this.trader);this.writeVarlong(this.player);var dhc5anbf=this.encodeString(this.displayName);this.writeVaruint(dhc5anbf.length);this.writeBytes(dhc5anbf);this.writeBytes(this.offers);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.window=this.readByte();this.windowType=this.readByte();this.unknown2=this.readVarint();this.unknown3=this.readVarint();this.willing=this.readBool();this.trader=this.readVarlong();this.player=this.readVarlong();var dhc5anbf=this.readVaruint();this.displayName=this.decodeString(this.readBytes(dhc5anbf));this.offers=Array.from(this._buffer);this._buffer=[];return this;}},UpdateEquip: class extends Buffer{static get ID(){return 81;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(){super();}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(81);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);return this;}},ResourcePackDataInfo: class extends Buffer{static get ID(){return 82;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(id="",maxChunkSize=0,chunkCount=0,compressedPackSize=0,sha256=""){super();this.id = id;this.maxChunkSize = maxChunkSize;this.chunkCount = chunkCount;this.compressedPackSize = compressedPackSize;this.sha256 = sha256;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(82);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}var dhc5z=this.encodeString(this.id);this.writeVaruint(dhc5z.length);this.writeBytes(dhc5z);this.writeLittleEndianInt(this.maxChunkSize);this.writeLittleEndianInt(this.chunkCount);this.writeLittleEndianLong(this.compressedPackSize);var dhc5aeny=this.encodeString(this.sha256);this.writeVaruint(dhc5aeny.length);this.writeBytes(dhc5aeny);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);var dhc5z=this.readVaruint();this.id=this.decodeString(this.readBytes(dhc5z));this.maxChunkSize=this.readLittleEndianInt();this.chunkCount=this.readLittleEndianInt();this.compressedPackSize=this.readLittleEndianLong();var dhc5aeny=this.readVaruint();this.sha256=this.decodeString(this.readBytes(dhc5aeny));return this;}},ResourcePackChunkData: class extends Buffer{static get ID(){return 83;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(id="",chunkIndex=0,progress=0,data=null){super();this.id = id;this.chunkIndex = chunkIndex;this.progress = progress;this.data = data;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(83);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}var dhc5z=this.encodeString(this.id);this.writeVaruint(dhc5z.length);this.writeBytes(dhc5z);this.writeLittleEndianInt(this.chunkIndex);this.writeLittleEndianLong(this.progress);this.writeLittleEndianInt(this.data.length);this.writeBytes(this.data);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);var dhc5z=this.readVaruint();this.id=this.decodeString(this.readBytes(dhc5z));this.chunkIndex=this.readLittleEndianInt();this.progress=this.readLittleEndianLong();var aramzfy=this.readLittleEndianInt();this.data=this.readBytes(aramzfy);return this;}},ResourcePackChunkRequest: class extends Buffer{static get ID(){return 84;};static get CLIENTBOUND(){return false;};static get SERVERBOUND(){return true;};constructor(id="",chunkIndex=0){super();this.id = id;this.chunkIndex = chunkIndex;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(84);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}var dhc5z=this.encodeString(this.id);this.writeVaruint(dhc5z.length);this.writeBytes(dhc5z);this.writeLittleEndianInt(this.chunkIndex);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);var dhc5z=this.readVaruint();this.id=this.decodeString(this.readBytes(dhc5z));this.chunkIndex=this.readLittleEndianInt();return this;}},Transfer: class extends Buffer{static get ID(){return 85;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(ip="",port=19132){super();this.ip = ip;this.port = port;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(85);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}var dhc5c=this.encodeString(this.ip);this.writeVaruint(dhc5c.length);this.writeBytes(dhc5c);this.writeLittleEndianShort(this.port);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);var dhc5c=this.readVaruint();this.ip=this.decodeString(this.readBytes(dhc5c));this.port=this.readLittleEndianShort();return this;}},PlaySound: class extends Buffer{static get ID(){return 86;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(name="",position=null,volume=.0,pitch=.0){super();this.name = name;this.position = position;this.volume = volume;this.pitch = pitch;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(86);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}var dhc5y1=this.encodeString(this.name);this.writeVaruint(dhc5y1.length);this.writeBytes(dhc5y1);this.writeBytes(this.position.encodeBody(true));this.writeLittleEndianFloat(this.volume);this.writeLittleEndianFloat(this.pitch);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);var dhc5y1=this.readVaruint();this.name=this.decodeString(this.readBytes(dhc5y1));this.position=new Types.BlockPosition().decodeBody(this._buffer);this._buffer=this.position._buffer;this.volume=this.readLittleEndianFloat();this.pitch=this.readLittleEndianFloat();return this;}},StopSound: class extends Buffer{static get ID(){return 87;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(name="",stopAll=false){super();this.name = name;this.stopAll = stopAll;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(87);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}var dhc5y1=this.encodeString(this.name);this.writeVaruint(dhc5y1.length);this.writeBytes(dhc5y1);this.writeBool(this.stopAll);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);var dhc5y1=this.readVaruint();this.name=this.decodeString(this.readBytes(dhc5y1));this.stopAll=this.readBool();return this;}},SetTitle: class extends Buffer{static get ID(){return 88;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(action=0,text="",fadeIn=0,stay=0,fadeOut=0){super();this.action = action;this.text = text;this.fadeIn = fadeIn;this.stay = stay;this.fadeOut = fadeOut;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(88);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarint(this.action);var dhc5zh=this.encodeString(this.text);this.writeVaruint(dhc5zh.length);this.writeBytes(dhc5zh);this.writeVarint(this.fadeIn);this.writeVarint(this.stay);this.writeVarint(this.fadeOut);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.action=this.readVarint();var dhc5zh=this.readVaruint();this.text=this.decodeString(this.readBytes(dhc5zh));this.fadeIn=this.readVarint();this.stay=this.readVarint();this.fadeOut=this.readVarint();return this;}},AddBehaviorTree: class extends Buffer{static get ID(){return 89;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(unknown0=""){super();this.unknown0 = unknown0;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(89);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}var dhc5btbd=this.encodeString(this.unknown0);this.writeVaruint(dhc5btbd.length);this.writeBytes(dhc5btbd);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);var dhc5btbd=this.readVaruint();this.unknown0=this.decodeString(this.readBytes(dhc5btbd));return this;}},StructureBlockUpdate: class extends Buffer{static get ID(){return 90;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(){super();}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(90);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);return this;}},ShowStoreOffer: class extends Buffer{static get ID(){return 91;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(unknown0="",unknown1=false,unknown2=""){super();this.unknown0 = unknown0;this.unknown1 = unknown1;this.unknown2 = unknown2;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(91);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}var dhc5btbd=this.encodeString(this.unknown0);this.writeVaruint(dhc5btbd.length);this.writeBytes(dhc5btbd);this.writeBool(this.unknown1);var dhc5btbd=this.encodeString(this.unknown2);this.writeVaruint(dhc5btbd.length);this.writeBytes(dhc5btbd);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);var dhc5btbd=this.readVaruint();this.unknown0=this.decodeString(this.readBytes(dhc5btbd));this.unknown1=this.readBool();var dhc5btbd=this.readVaruint();this.unknown2=this.decodeString(this.readBytes(dhc5btbd));return this;}},PurchaseReceipt: class extends Buffer{static get ID(){return 92;};static get CLIENTBOUND(){return false;};static get SERVERBOUND(){return true;};constructor(unknown0=[]){super();this.unknown0 = unknown0;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(92);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVaruint(this.unknown0.length);for(var dhc5btbd in this.unknown0){var dhc5btbd=this.encodeString(this.unknown0[dhc5btbd]);this.writeVaruint(dhc5btbd.length);this.writeBytes(dhc5btbd);}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);var aramd5b9=this.readVaruint();this.unknown0=[];for(var dhc5btbd=0;dhc5btbd<aramd5b9;dhc5btbd++){var dhc5btbd=this.readVaruint();this.unknown0[dhc5btbd]=this.decodeString(this.readBytes(dhc5btbd));}return this;}},PlayerSkin: class extends Buffer{static get ID(){return 93;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(uuid=null,skinId="",skinName="",unknown3="",skinData=[],capeData=[],geometryModel="",geometryData=[]){super();this.uuid = uuid;this.skinId = skinId;this.skinName = skinName;this.unknown3 = unknown3;this.skinData = skinData;this.capeData = capeData;this.geometryModel = geometryModel;this.geometryData = geometryData;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(93);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeBytes(this.uuid.encodeBody(true));var dhc5alsq=this.encodeString(this.skinId);this.writeVaruint(dhc5alsq.length);this.writeBytes(dhc5alsq);var dhc5altf=this.encodeString(this.skinName);this.writeVaruint(dhc5altf.length);this.writeBytes(dhc5altf);var dhc5btbd=this.encodeString(this.unknown3);this.writeVaruint(dhc5btbd.length);this.writeBytes(dhc5btbd);this.writeVaruint(this.skinData.length);this.writeBytes(this.skinData);this.writeVaruint(this.capeData.length);this.writeBytes(this.capeData);var dhc5z9zr=this.encodeString(this.geometryModel);this.writeVaruint(dhc5z9zr.length);this.writeBytes(dhc5z9zr);this.writeVaruint(this.geometryData.length);this.writeBytes(this.geometryData);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.uuid=new Types.McpeUuid().decodeBody(this._buffer);this._buffer=this.uuid._buffer;var dhc5alsq=this.readVaruint();this.skinId=this.decodeString(this.readBytes(dhc5alsq));var dhc5altf=this.readVaruint();this.skinName=this.decodeString(this.readBytes(dhc5altf));var dhc5btbd=this.readVaruint();this.unknown3=this.decodeString(this.readBytes(dhc5btbd));var aramctbr=this.readVaruint();this.skinData=this.readBytes(aramctbr);var aramyfzr=this.readVaruint();this.capeData=this.readBytes(aramyfzr);var dhc5z9zr=this.readVaruint();this.geometryModel=this.decodeString(this.readBytes(dhc5z9zr));var aramzvbv=this.readVaruint();this.geometryData=this.readBytes(aramzvbv);return this;}},SubClientLogin: class extends Buffer{static get ID(){return 94;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(){super();}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(94);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);return this;}},InitiateWebSocketConnection: class extends Buffer{static get ID(){return 95;};static get CLIENTBOUND(){return false;};static get SERVERBOUND(){return false;};constructor(unknown0=""){super();this.unknown0 = unknown0;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(95);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}var dhc5btbd=this.encodeString(this.unknown0);this.writeVaruint(dhc5btbd.length);this.writeBytes(dhc5btbd);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);var dhc5btbd=this.readVaruint();this.unknown0=this.decodeString(this.readBytes(dhc5btbd));return this;}},SetLastHurtBy: class extends Buffer{static get ID(){return 96;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(unknown0=0){super();this.unknown0 = unknown0;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(96);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarint(this.unknown0);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.unknown0=this.readVarint();return this;}},BookEdit: class extends Buffer{static get ID(){return 97;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return true;};static get REPLACE_PAGE(){return 0;};static get ADD_PAGE(){return 1;};static get DELETE_PAGE(){return 2;};static get SWAP_PAGES(){return 3;};static get SIGN(){return 4;};constructor(type=0,slot=0){super();this.type = type;this.slot = slot;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(97);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeByte(this.type);this.writeByte(this.slot);switch(this.type){case 0:this.writeByte(this.type);this.writeByte(this.slot);break;case 1:this.writeByte(this.type);this.writeByte(this.slot);break;case 2:this.writeByte(this.type);this.writeByte(this.slot);break;case 3:this.writeByte(this.type);this.writeByte(this.slot);break;case 4:this.writeByte(this.type);this.writeByte(this.slot);break;default: break;}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.type=this.readByte();this.slot=this.readByte();switch(this.type){case 0:this.pageNumber=this.readByte();var dhc5btbd=this.readVaruint();this.unknown3=this.decodeString(this.readBytes(dhc5btbd));var dhc5btbd=this.readVaruint();this.unknown4=this.decodeString(this.readBytes(dhc5btbd));break;case 1:this.pageNumber=this.readByte();var dhc5btbd=this.readVaruint();this.unknown3=this.decodeString(this.readBytes(dhc5btbd));var dhc5btbd=this.readVaruint();this.unknown4=this.decodeString(this.readBytes(dhc5btbd));break;case 2:this.pageNumber=this.readByte();break;case 3:this.page1=this.readByte();this.page2=this.readByte();break;case 4:var dhc5arz=this.readVaruint();this.title=this.decodeString(this.readBytes(dhc5arz));var dhc5drbi=this.readVaruint();this.author=this.decodeString(this.readBytes(dhc5drbi));break;default: break;}return this;}},NpcRequest: class extends Buffer{static get ID(){return 98;};static get CLIENTBOUND(){return false;};static get SERVERBOUND(){return true;};constructor(entityId=0,requestType=0,command="",actionType=0){super();this.entityId = entityId;this.requestType = requestType;this.command = command;this.actionType = actionType;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(98);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVarlong(this.entityId);this.writeByte(this.requestType);var dhc5b1y5=this.encodeString(this.command);this.writeVaruint(dhc5b1y5.length);this.writeBytes(dhc5b1y5);this.writeByte(this.actionType);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.entityId=this.readVarlong();this.requestType=this.readByte();var dhc5b1y5=this.readVaruint();this.command=this.decodeString(this.readBytes(dhc5b1y5));this.actionType=this.readByte();return this;}},PhotoTransfer: class extends Buffer{static get ID(){return 99;};static get CLIENTBOUND(){return false;};static get SERVERBOUND(){return true;};constructor(unknown0="",unknown1="",unknown2=""){super();this.unknown0 = unknown0;this.unknown1 = unknown1;this.unknown2 = unknown2;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(99);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}var dhc5btbd=this.encodeString(this.unknown0);this.writeVaruint(dhc5btbd.length);this.writeBytes(dhc5btbd);var dhc5btbd=this.encodeString(this.unknown1);this.writeVaruint(dhc5btbd.length);this.writeBytes(dhc5btbd);var dhc5btbd=this.encodeString(this.unknown2);this.writeVaruint(dhc5btbd.length);this.writeBytes(dhc5btbd);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);var dhc5btbd=this.readVaruint();this.unknown0=this.decodeString(this.readBytes(dhc5btbd));var dhc5btbd=this.readVaruint();this.unknown1=this.decodeString(this.readBytes(dhc5btbd));var dhc5btbd=this.readVaruint();this.unknown2=this.decodeString(this.readBytes(dhc5btbd));return this;}},ModalFormRequest: class extends Buffer{static get ID(){return 100;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(formId=0,data=""){super();this.formId = formId;this.data = data;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(100);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVaruint(this.formId);var dhc5yr=this.encodeString(this.data);this.writeVaruint(dhc5yr.length);this.writeBytes(dhc5yr);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.formId=this.readVaruint();var dhc5yr=this.readVaruint();this.data=this.decodeString(this.readBytes(dhc5yr));return this;}},ModalFormResponse: class extends Buffer{static get ID(){return 101;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(formId=0,data=""){super();this.formId = formId;this.data = data;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(101);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVaruint(this.formId);var dhc5yr=this.encodeString(this.data);this.writeVaruint(dhc5yr.length);this.writeBytes(dhc5yr);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.formId=this.readVaruint();var dhc5yr=this.readVaruint();this.data=this.decodeString(this.readBytes(dhc5yr));return this;}},ServerSettingsRequest: class extends Buffer{static get ID(){return 102;};static get CLIENTBOUND(){return false;};static get SERVERBOUND(){return true;};constructor(){super();}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(102);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);return this;}},ServerSettingsResponse: class extends Buffer{static get ID(){return 103;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(formId=0,data=""){super();this.formId = formId;this.data = data;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(103);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVaruint(this.formId);var dhc5yr=this.encodeString(this.data);this.writeVaruint(dhc5yr.length);this.writeBytes(dhc5yr);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.formId=this.readVaruint();var dhc5yr=this.readVaruint();this.data=this.decodeString(this.readBytes(dhc5yr));return this;}},ShowProfile: class extends Buffer{static get ID(){return 104;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(){super();}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(104);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);return this;}},SetDefaultGameType: class extends Buffer{static get ID(){return 105;};static get CLIENTBOUND(){return true;};static get SERVERBOUND(){return false;};constructor(gameType=0){super();this.gameType = gameType;}reset(){this._buffer=[];}encode(){this.reset();this.writeVaruint(105);this.writeBytes(new Uint8Array(2));return this.encodeBody(false);}encodeBody(reset){if(reset){this.reset();}this.writeVaruint(this.gameType);return new Uint8Array(this._buffer);}decode(_buffer){this._buffer=Array.from(_buffer);var _id=this.readVaruint();this.readBytes(2);return this.decodeBody(this._buffer);}decodeBody(_buffer){this._buffer=Array.from(_buffer);this.gameType=this.readVaruint();return this;}}}
+const Play ={
+
+	Login: class extends Buffer{
+
+		static get ID(){return 1;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(protocol=150,body=new Types.LoginBody()){
+			super();
+			this.protocol = protocol;
+			this.body = body;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(1);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeBigEndianInt(this.protocol);
+			this.writeBytes(this.body.encodeBody(true));
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.protocol=this.readBigEndianInt();
+			traceDecode('protocol');
+			this.body=new Types.LoginBody().decodeBody(this._buffer);
+			this._buffer=this.body._buffer;
+			traceDecode('body');
+			return this;
+		}
+
+	}
+	,
+
+	PlayStatus: class extends Buffer{
+
+		static get ID(){return 2;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(status=0){
+			super();
+			this.status = status;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(2);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeBigEndianInt(this.status);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.status=this.readBigEndianInt();
+			traceDecode('status');
+			return this;
+		}
+
+	}
+	,
+
+	ServerToClientHandshake: class extends Buffer{
+
+		static get ID(){return 3;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(serverPublicKey="",token=new Uint8Array(0)){
+			super();
+			this.serverPublicKey = serverPublicKey;
+			this.token = token;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(3);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			var dhc5zjzj=this.encodeString(this.serverPublicKey);
+			this.writeVaruint(dhc5zjzj.length);
+			this.writeBytes(dhc5zjzj);
+			this.writeVaruint(this.token.length);
+			this.writeBytes(this.token);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			var dhc5zjzj=this.readVaruint();
+			this.serverPublicKey=this.decodeString(this.readBytes(dhc5zjzj));
+			traceDecode('serverPublicKey');
+			var aramd9z4=this.readVaruint();
+			this.token=this.readBytes(aramd9z4);
+			traceDecode('token');
+			return this;
+		}
+
+	}
+	,
+
+	ClientToServerHandshake: class extends Buffer{
+
+		static get ID(){return 4;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(){
+			super();
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(4);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			return this;
+		}
+
+	}
+	,
+
+	Disconnect: class extends Buffer{
+
+		static get ID(){return 5;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(hideDisconnectionScreen=false,message=""){
+			super();
+			this.hideDisconnectionScreen = hideDisconnectionScreen;
+			this.message = message;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(5);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeBool(this.hideDisconnectionScreen);
+			if(hideDisconnectionScreen==false){
+				var dhc5znyd=this.encodeString(this.message);
+				this.writeVaruint(dhc5znyd.length);
+				this.writeBytes(dhc5znyd);
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.hideDisconnectionScreen=this.readBool();
+			traceDecode('hideDisconnectionScreen');
+			if(hideDisconnectionScreen==false){
+				var dhc5znyd=this.readVaruint();
+				this.message=this.decodeString(this.readBytes(dhc5znyd));
+				traceDecode('message');
+			}
+			return this;
+		}
+
+	}
+	,
+
+	ResourcePacksInfo: class extends Buffer{
+
+		static get ID(){return 6;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(mustAccept=false,behaviourPacks=[],resourcePacks=[]){
+			super();
+			this.mustAccept = mustAccept;
+			this.behaviourPacks = behaviourPacks;
+			this.resourcePacks = resourcePacks;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(6);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeBool(this.mustAccept);
+			this.writeBigEndianShort(this.behaviourPacks.length);
+			for(var dhc5zhdl in this.behaviourPacks){
+				this.writeBytes(this.behaviourPacks[dhc5zhdl].encodeBody(true));
+			}
+			this.writeBigEndianShort(this.resourcePacks.length);
+			for(var dhc5zndj in this.resourcePacks){
+				this.writeBytes(this.resourcePacks[dhc5zndj].encodeBody(true));
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.mustAccept=this.readBool();
+			traceDecode('mustAccept');
+			var aramyvyz=this.readBigEndianShort();
+			this.behaviourPacks=[];
+			for(var dhc5zhdl=0;dhc5zhdl<aramyvyz;dhc5zhdl++){
+				this.behaviourPacks[dhc5zhdl]=new Types.PackWithSize().decodeBody(this._buffer);
+				this._buffer=this.behaviourPacks[dhc5zhdl]._buffer;
+			}
+			traceDecode('behaviourPacks');
+			var aramcvbv=this.readBigEndianShort();
+			this.resourcePacks=[];
+			for(var dhc5zndj=0;dhc5zndj<aramcvbv;dhc5zndj++){
+				this.resourcePacks[dhc5zndj]=new Types.PackWithSize().decodeBody(this._buffer);
+				this._buffer=this.resourcePacks[dhc5zndj]._buffer;
+			}
+			traceDecode('resourcePacks');
+			return this;
+		}
+
+	}
+	,
+
+	ResourcePacksStackPacket: class extends Buffer{
+
+		static get ID(){return 7;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(mustAccept=false,behaviourPacks=[],resourcePacks=[]){
+			super();
+			this.mustAccept = mustAccept;
+			this.behaviourPacks = behaviourPacks;
+			this.resourcePacks = resourcePacks;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(7);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeBool(this.mustAccept);
+			this.writeVaruint(this.behaviourPacks.length);
+			for(var dhc5zhdl in this.behaviourPacks){
+				this.writeBytes(this.behaviourPacks[dhc5zhdl].encodeBody(true));
+			}
+			this.writeVaruint(this.resourcePacks.length);
+			for(var dhc5zndj in this.resourcePacks){
+				this.writeBytes(this.resourcePacks[dhc5zndj].encodeBody(true));
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.mustAccept=this.readBool();
+			traceDecode('mustAccept');
+			var aramyvyz=this.readVaruint();
+			this.behaviourPacks=[];
+			for(var dhc5zhdl=0;dhc5zhdl<aramyvyz;dhc5zhdl++){
+				this.behaviourPacks[dhc5zhdl]=new Types.Pack().decodeBody(this._buffer);
+				this._buffer=this.behaviourPacks[dhc5zhdl]._buffer;
+			}
+			traceDecode('behaviourPacks');
+			var aramcvbv=this.readVaruint();
+			this.resourcePacks=[];
+			for(var dhc5zndj=0;dhc5zndj<aramcvbv;dhc5zndj++){
+				this.resourcePacks[dhc5zndj]=new Types.Pack().decodeBody(this._buffer);
+				this._buffer=this.resourcePacks[dhc5zndj]._buffer;
+			}
+			traceDecode('resourcePacks');
+			return this;
+		}
+
+	}
+	,
+
+	ResourcePackClientResponse: class extends Buffer{
+
+		static get ID(){return 8;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(status=0,packIds=[]){
+			super();
+			this.status = status;
+			this.packIds = packIds;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(8);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeByte(this.status);
+			this.writeLittleEndianShort(this.packIds.length);
+			for(var dhc5ynsr in this.packIds){
+				var dhc5ynsr=this.encodeString(this.packIds[dhc5ynsr]);
+				this.writeVaruint(dhc5ynsr.length);
+				this.writeBytes(dhc5ynsr);
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.status=this.readByte();
+			traceDecode('status');
+			var aramcfal=this.readLittleEndianShort();
+			this.packIds=[];
+			for(var dhc5ynsr=0;dhc5ynsr<aramcfal;dhc5ynsr++){
+				var dhc5ynsr=this.readVaruint();
+				this.packIds[dhc5ynsr]=this.decodeString(this.readBytes(dhc5ynsr));
+			}
+			traceDecode('packIds');
+			return this;
+		}
+
+	}
+	,
+
+	Text: class extends Buffer{
+
+		static get ID(){return 9;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return true;};
+
+		static get RAW(){return 0;};
+		static get CHAT(){return 1;};
+		static get TRANSLATION(){return 2;};
+		static get POPUP(){return 3;};
+		static get JUKEBOX_POPUP(){return 4;};
+		static get TIP(){return 5;};
+		static get SYSTEM(){return 6;};
+		static get WHISPER(){return 7;};
+		static get ANNOUNCEMENT(){return 8;};
+
+		constructor(type=0,unknown1=false){
+			super();
+			this.type = type;
+			this.unknown1 = unknown1;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(9);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeByte(this.type);
+			this.writeBool(this.unknown1);
+			switch(this.type){
+				case 0:
+					this.writeByte(this.type);
+					this.writeBool(this.unknown3);
+					break;
+				case 1:
+					this.writeByte(this.type);
+					this.writeBool(this.unknown3);
+					break;
+				case 2:
+					this.writeByte(this.type);
+					this.writeBool(this.unknown3);
+					break;
+				case 3:
+					this.writeByte(this.type);
+					this.writeBool(this.unknown3);
+					break;
+				case 4:
+					this.writeByte(this.type);
+					this.writeBool(this.unknown3);
+					break;
+				case 5:
+					this.writeByte(this.type);
+					this.writeBool(this.unknown3);
+					break;
+				case 6:
+					this.writeByte(this.type);
+					this.writeBool(this.unknown3);
+					break;
+				case 7:
+					this.writeByte(this.type);
+					this.writeBool(this.unknown3);
+					break;
+				case 8:
+					this.writeByte(this.type);
+					this.writeBool(this.unknown3);
+					break;
+				default: break;
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.type=this.readByte();
+			traceDecode('type');
+			this.unknown1=this.readBool();
+			traceDecode('unknown1');
+			switch(this.type){
+				case 0:
+					var dhc5znyd=this.readVaruint();
+					this.message=this.decodeString(this.readBytes(dhc5znyd));
+					var dhc5dl=this.readVaruint();
+					this.xuid=this.decodeString(this.readBytes(dhc5dl));
+					break;
+				case 1:
+					var dhc5z5zi=this.readVaruint();
+					this.sender=this.decodeString(this.readBytes(dhc5z5zi));
+					var dhc5znyd=this.readVaruint();
+					this.message=this.decodeString(this.readBytes(dhc5znyd));
+					var dhc5dl=this.readVaruint();
+					this.xuid=this.decodeString(this.readBytes(dhc5dl));
+					break;
+				case 2:
+					var dhc5znyd=this.readVaruint();
+					this.message=this.decodeString(this.readBytes(dhc5znyd));
+					var aramcfy1=this.readVaruint();
+					this.parameters=[];
+					for(var dhc5yjbv=0;dhc5yjbv<aramcfy1;dhc5yjbv++){
+						var dhc5yjbv=this.readVaruint();
+						this.parameters[dhc5yjbv]=this.decodeString(this.readBytes(dhc5yjbv));
+					}
+					break;
+				case 3:
+					var dhc5arz=this.readVaruint();
+					this.title=this.decodeString(this.readBytes(dhc5arz));
+					var dhc5djar=this.readVaruint();
+					this.subtitle=this.decodeString(this.readBytes(dhc5djar));
+					break;
+				case 4:
+					var dhc5znyd=this.readVaruint();
+					this.message=this.decodeString(this.readBytes(dhc5znyd));
+					var aramcfy1=this.readVaruint();
+					this.parameters=[];
+					for(var dhc5yjbv=0;dhc5yjbv<aramcfy1;dhc5yjbv++){
+						var dhc5yjbv=this.readVaruint();
+						this.parameters[dhc5yjbv]=this.decodeString(this.readBytes(dhc5yjbv));
+					}
+					break;
+				case 5:
+					var dhc5znyd=this.readVaruint();
+					this.message=this.decodeString(this.readBytes(dhc5znyd));
+					break;
+				case 6:
+					var dhc5znyd=this.readVaruint();
+					this.message=this.decodeString(this.readBytes(dhc5znyd));
+					break;
+				case 7:
+					var dhc5z5zi=this.readVaruint();
+					this.sender=this.decodeString(this.readBytes(dhc5z5zi));
+					var dhc5znyd=this.readVaruint();
+					this.message=this.decodeString(this.readBytes(dhc5znyd));
+					break;
+				case 8:
+					var dhc5b5d5=this.readVaruint();
+					this.announcer=this.decodeString(this.readBytes(dhc5b5d5));
+					var dhc5znyd=this.readVaruint();
+					this.message=this.decodeString(this.readBytes(dhc5znyd));
+					break;
+				default: break;
+			}
+			return this;
+		}
+
+	}
+	,
+
+	SetTime: class extends Buffer{
+
+		static get ID(){return 10;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(time=0){
+			super();
+			this.time = time;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(10);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarint(this.time);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.time=this.readVarint();
+			traceDecode('time');
+			return this;
+		}
+
+	}
+	,
+
+	StartGame: class extends Buffer{
+
+		static get ID(){return 11;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(entityId=0,runtimeId=0,gamemode=0,position={x:0,y:0,z:0},yaw=.0,pitch=.0,seed=0,dimension=0,generator=1,worldGamemode=0,difficulty=0,spawnPosition={x:0,y:0,z:0},loadedInCreative=false,time=0,version=0,rainLevel=.0,lightningLevel=.0,multiplayerGame=true,broadcastToLan=false,broadcastToXbl=false,commandsEnabled=false,textureRequired=false,gameRules=[],bonusChestEnabled=false,startWithMapEnabled=false,trustPlayersEnabled=false,permissionLevel=0,unknown27=0,levelId="",worldName="",premiumWorldTemplate="",unknown31=false,worldTicks=0,unknown33=0){
+			super();
+			this.entityId = entityId;
+			this.runtimeId = runtimeId;
+			this.gamemode = gamemode;
+			this.position = position;
+			this.yaw = yaw;
+			this.pitch = pitch;
+			this.seed = seed;
+			this.dimension = dimension;
+			this.generator = generator;
+			this.worldGamemode = worldGamemode;
+			this.difficulty = difficulty;
+			this.spawnPosition = spawnPosition;
+			this.loadedInCreative = loadedInCreative;
+			this.time = time;
+			this.version = version;
+			this.rainLevel = rainLevel;
+			this.lightningLevel = lightningLevel;
+			this.multiplayerGame = multiplayerGame;
+			this.broadcastToLan = broadcastToLan;
+			this.broadcastToXbl = broadcastToXbl;
+			this.commandsEnabled = commandsEnabled;
+			this.textureRequired = textureRequired;
+			this.gameRules = gameRules;
+			this.bonusChestEnabled = bonusChestEnabled;
+			this.startWithMapEnabled = startWithMapEnabled;
+			this.trustPlayersEnabled = trustPlayersEnabled;
+			this.permissionLevel = permissionLevel;
+			this.unknown27 = unknown27;
+			this.levelId = levelId;
+			this.worldName = worldName;
+			this.premiumWorldTemplate = premiumWorldTemplate;
+			this.unknown31 = unknown31;
+			this.worldTicks = worldTicks;
+			this.unknown33 = unknown33;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(11);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.entityId);
+			this.writeVarulong(this.runtimeId);
+			this.writeVarint(this.gamemode);
+			this.writeLittleEndianFloat(this.position.x);
+			this.writeLittleEndianFloat(this.position.y);
+			this.writeLittleEndianFloat(this.position.z);
+			this.writeLittleEndianFloat(this.yaw);
+			this.writeLittleEndianFloat(this.pitch);
+			this.writeVarint(this.seed);
+			this.writeVarint(this.dimension);
+			this.writeVarint(this.generator);
+			this.writeVarint(this.worldGamemode);
+			this.writeVarint(this.difficulty);
+			this.writeVarint(this.spawnPosition.x);
+			this.writeVarint(this.spawnPosition.y);
+			this.writeVarint(this.spawnPosition.z);
+			this.writeBool(this.loadedInCreative);
+			this.writeVarint(this.time);
+			this.writeByte(this.version);
+			this.writeLittleEndianFloat(this.rainLevel);
+			this.writeLittleEndianFloat(this.lightningLevel);
+			this.writeBool(this.multiplayerGame);
+			this.writeBool(this.broadcastToLan);
+			this.writeBool(this.broadcastToXbl);
+			this.writeBool(this.commandsEnabled);
+			this.writeBool(this.textureRequired);
+			this.writeVaruint(this.gameRules.length);
+			for(var dhc5y1uv in this.gameRules){
+				this.writeBytes(this.gameRules[dhc5y1uv].encodeBody(true));
+			}
+			this.writeBool(this.bonusChestEnabled);
+			this.writeBool(this.startWithMapEnabled);
+			this.writeBool(this.trustPlayersEnabled);
+			this.writeVarint(this.permissionLevel);
+			this.writeVarint(this.unknown27);
+			var dhc5zzbl=this.encodeString(this.levelId);
+			this.writeVaruint(dhc5zzbl.length);
+			this.writeBytes(dhc5zzbl);
+			var dhc5bjz5=this.encodeString(this.worldName);
+			this.writeVaruint(dhc5bjz5.length);
+			this.writeBytes(dhc5bjz5);
+			var dhc5cvav=this.encodeString(this.premiumWorldTemplate);
+			this.writeVaruint(dhc5cvav.length);
+			this.writeBytes(dhc5cvav);
+			this.writeBool(this.unknown31);
+			this.writeLittleEndianLong(this.worldTicks);
+			this.writeVarint(this.unknown33);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			this.runtimeId=this.readVarulong();
+			traceDecode('runtimeId');
+			this.gamemode=this.readVarint();
+			traceDecode('gamemode');
+			this.position={};
+			this.position.x=this.readLittleEndianFloat();
+			this.position.y=this.readLittleEndianFloat();
+			this.position.z=this.readLittleEndianFloat();
+			traceDecode('position');
+			this.yaw=this.readLittleEndianFloat();
+			traceDecode('yaw');
+			this.pitch=this.readLittleEndianFloat();
+			traceDecode('pitch');
+			this.seed=this.readVarint();
+			traceDecode('seed');
+			this.dimension=this.readVarint();
+			traceDecode('dimension');
+			this.generator=this.readVarint();
+			traceDecode('generator');
+			this.worldGamemode=this.readVarint();
+			traceDecode('worldGamemode');
+			this.difficulty=this.readVarint();
+			traceDecode('difficulty');
+			this.spawnPosition={};
+			this.spawnPosition.x=this.readVarint();
+			this.spawnPosition.y=this.readVarint();
+			this.spawnPosition.z=this.readVarint();
+			traceDecode('spawnPosition');
+			this.loadedInCreative=this.readBool();
+			traceDecode('loadedInCreative');
+			this.time=this.readVarint();
+			traceDecode('time');
+			this.version=this.readByte();
+			traceDecode('version');
+			this.rainLevel=this.readLittleEndianFloat();
+			traceDecode('rainLevel');
+			this.lightningLevel=this.readLittleEndianFloat();
+			traceDecode('lightningLevel');
+			this.multiplayerGame=this.readBool();
+			traceDecode('multiplayerGame');
+			this.broadcastToLan=this.readBool();
+			traceDecode('broadcastToLan');
+			this.broadcastToXbl=this.readBool();
+			traceDecode('broadcastToXbl');
+			this.commandsEnabled=this.readBool();
+			traceDecode('commandsEnabled');
+			this.textureRequired=this.readBool();
+			traceDecode('textureRequired');
+			var aramzfzj=this.readVaruint();
+			this.gameRules=[];
+			for(var dhc5y1uv=0;dhc5y1uv<aramzfzj;dhc5y1uv++){
+				this.gameRules[dhc5y1uv]=new Types.Rule().decodeBody(this._buffer);
+				this._buffer=this.gameRules[dhc5y1uv]._buffer;
+			}
+			traceDecode('gameRules');
+			this.bonusChestEnabled=this.readBool();
+			traceDecode('bonusChestEnabled');
+			this.startWithMapEnabled=this.readBool();
+			traceDecode('startWithMapEnabled');
+			this.trustPlayersEnabled=this.readBool();
+			traceDecode('trustPlayersEnabled');
+			this.permissionLevel=this.readVarint();
+			traceDecode('permissionLevel');
+			this.unknown27=this.readVarint();
+			traceDecode('unknown27');
+			var dhc5zzbl=this.readVaruint();
+			this.levelId=this.decodeString(this.readBytes(dhc5zzbl));
+			traceDecode('levelId');
+			var dhc5bjz5=this.readVaruint();
+			this.worldName=this.decodeString(this.readBytes(dhc5bjz5));
+			traceDecode('worldName');
+			var dhc5cvav=this.readVaruint();
+			this.premiumWorldTemplate=this.decodeString(this.readBytes(dhc5cvav));
+			traceDecode('premiumWorldTemplate');
+			this.unknown31=this.readBool();
+			traceDecode('unknown31');
+			this.worldTicks=this.readLittleEndianLong();
+			traceDecode('worldTicks');
+			this.unknown33=this.readVarint();
+			traceDecode('unknown33');
+			return this;
+		}
+
+	}
+	,
+
+	AddPlayer: class extends Buffer{
+
+		static get ID(){return 12;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(uuid=new Types.McpeUuid(),username="",entityId=0,runtimeId=0,position={x:0,y:0,z:0},motion={x:0,y:0,z:0},pitch=.0,headYaw=.0,yaw=.0,heldItem=new Types.Slot(),metadata=new Metadata(),unknown11=0,unknown12=0,unknown13=0,unknown14=0,unknown15=0,unknown16=0,links=[]){
+			super();
+			this.uuid = uuid;
+			this.username = username;
+			this.entityId = entityId;
+			this.runtimeId = runtimeId;
+			this.position = position;
+			this.motion = motion;
+			this.pitch = pitch;
+			this.headYaw = headYaw;
+			this.yaw = yaw;
+			this.heldItem = heldItem;
+			this.metadata = metadata;
+			this.unknown11 = unknown11;
+			this.unknown12 = unknown12;
+			this.unknown13 = unknown13;
+			this.unknown14 = unknown14;
+			this.unknown15 = unknown15;
+			this.unknown16 = unknown16;
+			this.links = links;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(12);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeBytes(this.uuid.encodeBody(true));
+			var dhc5cvbf=this.encodeString(this.username);
+			this.writeVaruint(dhc5cvbf.length);
+			this.writeBytes(dhc5cvbf);
+			this.writeVarlong(this.entityId);
+			this.writeVarulong(this.runtimeId);
+			this.writeLittleEndianFloat(this.position.x);
+			this.writeLittleEndianFloat(this.position.y);
+			this.writeLittleEndianFloat(this.position.z);
+			this.writeLittleEndianFloat(this.motion.x);
+			this.writeLittleEndianFloat(this.motion.y);
+			this.writeLittleEndianFloat(this.motion.z);
+			this.writeLittleEndianFloat(this.pitch);
+			this.writeLittleEndianFloat(this.headYaw);
+			this.writeLittleEndianFloat(this.yaw);
+			this.writeBytes(this.heldItem.encodeBody(true));
+			this.writeBytes(this.metadata.encodeBody(true));
+			this.writeVaruint(this.unknown11);
+			this.writeVaruint(this.unknown12);
+			this.writeVaruint(this.unknown13);
+			this.writeVaruint(this.unknown14);
+			this.writeVaruint(this.unknown15);
+			this.writeLittleEndianLong(this.unknown16);
+			this.writeVaruint(this.links.length);
+			for(var dhc5a5c in this.links){
+				this.writeBytes(this.links[dhc5a5c].encodeBody(true));
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.uuid=new Types.McpeUuid().decodeBody(this._buffer);
+			this._buffer=this.uuid._buffer;
+			traceDecode('uuid');
+			var dhc5cvbf=this.readVaruint();
+			this.username=this.decodeString(this.readBytes(dhc5cvbf));
+			traceDecode('username');
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			this.runtimeId=this.readVarulong();
+			traceDecode('runtimeId');
+			this.position={};
+			this.position.x=this.readLittleEndianFloat();
+			this.position.y=this.readLittleEndianFloat();
+			this.position.z=this.readLittleEndianFloat();
+			traceDecode('position');
+			this.motion={};
+			this.motion.x=this.readLittleEndianFloat();
+			this.motion.y=this.readLittleEndianFloat();
+			this.motion.z=this.readLittleEndianFloat();
+			traceDecode('motion');
+			this.pitch=this.readLittleEndianFloat();
+			traceDecode('pitch');
+			this.headYaw=this.readLittleEndianFloat();
+			traceDecode('headYaw');
+			this.yaw=this.readLittleEndianFloat();
+			traceDecode('yaw');
+			this.heldItem=new Types.Slot().decodeBody(this._buffer);
+			this._buffer=this.heldItem._buffer;
+			traceDecode('heldItem');
+			this.metadata=new Metadata().decodeBody(this._buffer);
+			this._buffer=this.metadata._buffer;
+			traceDecode('metadata');
+			this.unknown11=this.readVaruint();
+			traceDecode('unknown11');
+			this.unknown12=this.readVaruint();
+			traceDecode('unknown12');
+			this.unknown13=this.readVaruint();
+			traceDecode('unknown13');
+			this.unknown14=this.readVaruint();
+			traceDecode('unknown14');
+			this.unknown15=this.readVaruint();
+			traceDecode('unknown15');
+			this.unknown16=this.readLittleEndianLong();
+			traceDecode('unknown16');
+			var aramblam=this.readVaruint();
+			this.links=[];
+			for(var dhc5a5c=0;dhc5a5c<aramblam;dhc5a5c++){
+				this.links[dhc5a5c]=new Types.Link().decodeBody(this._buffer);
+				this._buffer=this.links[dhc5a5c]._buffer;
+			}
+			traceDecode('links');
+			return this;
+		}
+
+	}
+	,
+
+	AddEntity: class extends Buffer{
+
+		static get ID(){return 13;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(entityId=0,runtimeId=0,type=0,position={x:0,y:0,z:0},motion={x:0,y:0,z:0},pitch=.0,yaw=.0,attributes=[],metadata=new Metadata(),links=[]){
+			super();
+			this.entityId = entityId;
+			this.runtimeId = runtimeId;
+			this.type = type;
+			this.position = position;
+			this.motion = motion;
+			this.pitch = pitch;
+			this.yaw = yaw;
+			this.attributes = attributes;
+			this.metadata = metadata;
+			this.links = links;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(13);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.entityId);
+			this.writeVarulong(this.runtimeId);
+			this.writeVaruint(this.type);
+			this.writeLittleEndianFloat(this.position.x);
+			this.writeLittleEndianFloat(this.position.y);
+			this.writeLittleEndianFloat(this.position.z);
+			this.writeLittleEndianFloat(this.motion.x);
+			this.writeLittleEndianFloat(this.motion.y);
+			this.writeLittleEndianFloat(this.motion.z);
+			this.writeLittleEndianFloat(this.pitch);
+			this.writeLittleEndianFloat(this.yaw);
+			this.writeVaruint(this.attributes.length);
+			for(var dhc5draj in this.attributes){
+				this.writeBytes(this.attributes[dhc5draj].encodeBody(true));
+			}
+			this.writeBytes(this.metadata.encodeBody(true));
+			this.writeVaruint(this.links.length);
+			for(var dhc5a5c in this.links){
+				this.writeBytes(this.links[dhc5a5c].encodeBody(true));
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			this.runtimeId=this.readVarulong();
+			traceDecode('runtimeId');
+			this.type=this.readVaruint();
+			traceDecode('type');
+			this.position={};
+			this.position.x=this.readLittleEndianFloat();
+			this.position.y=this.readLittleEndianFloat();
+			this.position.z=this.readLittleEndianFloat();
+			traceDecode('position');
+			this.motion={};
+			this.motion.x=this.readLittleEndianFloat();
+			this.motion.y=this.readLittleEndianFloat();
+			this.motion.z=this.readLittleEndianFloat();
+			traceDecode('motion');
+			this.pitch=this.readLittleEndianFloat();
+			traceDecode('pitch');
+			this.yaw=this.readLittleEndianFloat();
+			traceDecode('yaw');
+			var aramyrcl=this.readVaruint();
+			this.attributes=[];
+			for(var dhc5draj=0;dhc5draj<aramyrcl;dhc5draj++){
+				this.attributes[dhc5draj]=new Types.Attribute().decodeBody(this._buffer);
+				this._buffer=this.attributes[dhc5draj]._buffer;
+			}
+			traceDecode('attributes');
+			this.metadata=new Metadata().decodeBody(this._buffer);
+			this._buffer=this.metadata._buffer;
+			traceDecode('metadata');
+			var aramblam=this.readVaruint();
+			this.links=[];
+			for(var dhc5a5c=0;dhc5a5c<aramblam;dhc5a5c++){
+				this.links[dhc5a5c]=new Types.Link().decodeBody(this._buffer);
+				this._buffer=this.links[dhc5a5c]._buffer;
+			}
+			traceDecode('links');
+			return this;
+		}
+
+	}
+	,
+
+	RemoveEntity: class extends Buffer{
+
+		static get ID(){return 14;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(entityId=0){
+			super();
+			this.entityId = entityId;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(14);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.entityId);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			return this;
+		}
+
+	}
+	,
+
+	AddItemEntity: class extends Buffer{
+
+		static get ID(){return 15;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(entityId=0,runtimeId=0,item=new Types.Slot(),position={x:0,y:0,z:0},motion={x:0,y:0,z:0},metadata=new Metadata()){
+			super();
+			this.entityId = entityId;
+			this.runtimeId = runtimeId;
+			this.item = item;
+			this.position = position;
+			this.motion = motion;
+			this.metadata = metadata;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(15);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.entityId);
+			this.writeVarulong(this.runtimeId);
+			this.writeBytes(this.item.encodeBody(true));
+			this.writeLittleEndianFloat(this.position.x);
+			this.writeLittleEndianFloat(this.position.y);
+			this.writeLittleEndianFloat(this.position.z);
+			this.writeLittleEndianFloat(this.motion.x);
+			this.writeLittleEndianFloat(this.motion.y);
+			this.writeLittleEndianFloat(this.motion.z);
+			this.writeBytes(this.metadata.encodeBody(true));
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			this.runtimeId=this.readVarulong();
+			traceDecode('runtimeId');
+			this.item=new Types.Slot().decodeBody(this._buffer);
+			this._buffer=this.item._buffer;
+			traceDecode('item');
+			this.position={};
+			this.position.x=this.readLittleEndianFloat();
+			this.position.y=this.readLittleEndianFloat();
+			this.position.z=this.readLittleEndianFloat();
+			traceDecode('position');
+			this.motion={};
+			this.motion.x=this.readLittleEndianFloat();
+			this.motion.y=this.readLittleEndianFloat();
+			this.motion.z=this.readLittleEndianFloat();
+			traceDecode('motion');
+			this.metadata=new Metadata().decodeBody(this._buffer);
+			this._buffer=this.metadata._buffer;
+			traceDecode('metadata');
+			return this;
+		}
+
+	}
+	,
+
+	AddHangingEntity: class extends Buffer{
+
+		static get ID(){return 16;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(entityId=0,runtimeId=0,position=new Types.BlockPosition(),unknown3=0){
+			super();
+			this.entityId = entityId;
+			this.runtimeId = runtimeId;
+			this.position = position;
+			this.unknown3 = unknown3;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(16);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.entityId);
+			this.writeVarulong(this.runtimeId);
+			this.writeBytes(this.position.encodeBody(true));
+			this.writeVarint(this.unknown3);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			this.runtimeId=this.readVarulong();
+			traceDecode('runtimeId');
+			this.position=new Types.BlockPosition().decodeBody(this._buffer);
+			this._buffer=this.position._buffer;
+			traceDecode('position');
+			this.unknown3=this.readVarint();
+			traceDecode('unknown3');
+			return this;
+		}
+
+	}
+	,
+
+	TakeItemEntity: class extends Buffer{
+
+		static get ID(){return 17;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(collected=0,collector=0){
+			super();
+			this.collected = collected;
+			this.collector = collector;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(17);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.collected);
+			this.writeVarlong(this.collector);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.collected=this.readVarlong();
+			traceDecode('collected');
+			this.collector=this.readVarlong();
+			traceDecode('collector');
+			return this;
+		}
+
+	}
+	,
+
+	MoveEntity: class extends Buffer{
+
+		static get ID(){return 18;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(entityId=0,position={x:0,y:0,z:0},pitch=0,headYaw=0,yaw=0,onGround=false,teleported=false){
+			super();
+			this.entityId = entityId;
+			this.position = position;
+			this.pitch = pitch;
+			this.headYaw = headYaw;
+			this.yaw = yaw;
+			this.onGround = onGround;
+			this.teleported = teleported;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(18);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.entityId);
+			this.writeLittleEndianFloat(this.position.x);
+			this.writeLittleEndianFloat(this.position.y);
+			this.writeLittleEndianFloat(this.position.z);
+			this.writeByte(this.pitch);
+			this.writeByte(this.headYaw);
+			this.writeByte(this.yaw);
+			this.writeBool(this.onGround);
+			this.writeBool(this.teleported);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			this.position={};
+			this.position.x=this.readLittleEndianFloat();
+			this.position.y=this.readLittleEndianFloat();
+			this.position.z=this.readLittleEndianFloat();
+			traceDecode('position');
+			this.pitch=this.readByte();
+			traceDecode('pitch');
+			this.headYaw=this.readByte();
+			traceDecode('headYaw');
+			this.yaw=this.readByte();
+			traceDecode('yaw');
+			this.onGround=this.readBool();
+			traceDecode('onGround');
+			this.teleported=this.readBool();
+			traceDecode('teleported');
+			return this;
+		}
+
+	}
+	,
+
+	MovePlayer: class extends Buffer{
+
+		static get ID(){return 19;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(entityId=0,position={x:0,y:0,z:0},pitch=.0,headYaw=.0,yaw=.0,animation=0,onGround=false,unknown7=0,unknown8=0,unknown9=0){
+			super();
+			this.entityId = entityId;
+			this.position = position;
+			this.pitch = pitch;
+			this.headYaw = headYaw;
+			this.yaw = yaw;
+			this.animation = animation;
+			this.onGround = onGround;
+			this.unknown7 = unknown7;
+			this.unknown8 = unknown8;
+			this.unknown9 = unknown9;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(19);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.entityId);
+			this.writeLittleEndianFloat(this.position.x);
+			this.writeLittleEndianFloat(this.position.y);
+			this.writeLittleEndianFloat(this.position.z);
+			this.writeLittleEndianFloat(this.pitch);
+			this.writeLittleEndianFloat(this.headYaw);
+			this.writeLittleEndianFloat(this.yaw);
+			this.writeByte(this.animation);
+			this.writeBool(this.onGround);
+			this.writeVarlong(this.unknown7);
+			if(animation==3){
+				this.writeLittleEndianInt(this.unknown8);
+			}
+			if(animation==3){
+				this.writeLittleEndianInt(this.unknown9);
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			this.position={};
+			this.position.x=this.readLittleEndianFloat();
+			this.position.y=this.readLittleEndianFloat();
+			this.position.z=this.readLittleEndianFloat();
+			traceDecode('position');
+			this.pitch=this.readLittleEndianFloat();
+			traceDecode('pitch');
+			this.headYaw=this.readLittleEndianFloat();
+			traceDecode('headYaw');
+			this.yaw=this.readLittleEndianFloat();
+			traceDecode('yaw');
+			this.animation=this.readByte();
+			traceDecode('animation');
+			this.onGround=this.readBool();
+			traceDecode('onGround');
+			this.unknown7=this.readVarlong();
+			traceDecode('unknown7');
+			if(animation==3){
+				this.unknown8=this.readLittleEndianInt();
+				traceDecode('unknown8');
+			}
+			if(animation==3){
+				this.unknown9=this.readLittleEndianInt();
+				traceDecode('unknown9');
+			}
+			return this;
+		}
+
+	}
+	,
+
+	RiderJump: class extends Buffer{
+
+		static get ID(){return 20;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(rider=0){
+			super();
+			this.rider = rider;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(20);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.rider);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.rider=this.readVarlong();
+			traceDecode('rider');
+			return this;
+		}
+
+	}
+	,
+
+	UpdateBlock: class extends Buffer{
+
+		static get ID(){return 21;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(position=new Types.BlockPosition(),block=0,flagsAndMeta=0){
+			super();
+			this.position = position;
+			this.block = block;
+			this.flagsAndMeta = flagsAndMeta;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(21);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeBytes(this.position.encodeBody(true));
+			this.writeVaruint(this.block);
+			this.writeVaruint(this.flagsAndMeta);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.position=new Types.BlockPosition().decodeBody(this._buffer);
+			this._buffer=this.position._buffer;
+			traceDecode('position');
+			this.block=this.readVaruint();
+			traceDecode('block');
+			this.flagsAndMeta=this.readVaruint();
+			traceDecode('flagsAndMeta');
+			return this;
+		}
+
+	}
+	,
+
+	AddPainting: class extends Buffer{
+
+		static get ID(){return 22;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(entityId=0,runtimeId=0,position=new Types.BlockPosition(),direction=0,title=""){
+			super();
+			this.entityId = entityId;
+			this.runtimeId = runtimeId;
+			this.position = position;
+			this.direction = direction;
+			this.title = title;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(22);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.entityId);
+			this.writeVarulong(this.runtimeId);
+			this.writeBytes(this.position.encodeBody(true));
+			this.writeVarint(this.direction);
+			var dhc5arz=this.encodeString(this.title);
+			this.writeVaruint(dhc5arz.length);
+			this.writeBytes(dhc5arz);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			this.runtimeId=this.readVarulong();
+			traceDecode('runtimeId');
+			this.position=new Types.BlockPosition().decodeBody(this._buffer);
+			this._buffer=this.position._buffer;
+			traceDecode('position');
+			this.direction=this.readVarint();
+			traceDecode('direction');
+			var dhc5arz=this.readVaruint();
+			this.title=this.decodeString(this.readBytes(dhc5arz));
+			traceDecode('title');
+			return this;
+		}
+
+	}
+	,
+
+	Explode: class extends Buffer{
+
+		static get ID(){return 23;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(position={x:0,y:0,z:0},radius=.0,destroyedBlocks=[]){
+			super();
+			this.position = position;
+			this.radius = radius;
+			this.destroyedBlocks = destroyedBlocks;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(23);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeLittleEndianFloat(this.position.x);
+			this.writeLittleEndianFloat(this.position.y);
+			this.writeLittleEndianFloat(this.position.z);
+			this.writeLittleEndianFloat(this.radius);
+			this.writeVaruint(this.destroyedBlocks.length);
+			for(var dhc5znc9 in this.destroyedBlocks){
+				this.writeBytes(this.destroyedBlocks[dhc5znc9].encodeBody(true));
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.position={};
+			this.position.x=this.readLittleEndianFloat();
+			this.position.y=this.readLittleEndianFloat();
+			this.position.z=this.readLittleEndianFloat();
+			traceDecode('position');
+			this.radius=this.readLittleEndianFloat();
+			traceDecode('radius');
+			var aramzvdj=this.readVaruint();
+			this.destroyedBlocks=[];
+			for(var dhc5znc9=0;dhc5znc9<aramzvdj;dhc5znc9++){
+				this.destroyedBlocks[dhc5znc9]=new Types.BlockPosition().decodeBody(this._buffer);
+				this._buffer=this.destroyedBlocks[dhc5znc9]._buffer;
+			}
+			traceDecode('destroyedBlocks');
+			return this;
+		}
+
+	}
+	,
+
+	LevelSoundEvent: class extends Buffer{
+
+		static get ID(){return 24;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(sound=0,position={x:0,y:0,z:0},volume=0,pitch=0,unknown4=false,disableRelativeVolume=false){
+			super();
+			this.sound = sound;
+			this.position = position;
+			this.volume = volume;
+			this.pitch = pitch;
+			this.unknown4 = unknown4;
+			this.disableRelativeVolume = disableRelativeVolume;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(24);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeByte(this.sound);
+			this.writeLittleEndianFloat(this.position.x);
+			this.writeLittleEndianFloat(this.position.y);
+			this.writeLittleEndianFloat(this.position.z);
+			this.writeVaruint(this.volume);
+			this.writeVarint(this.pitch);
+			this.writeBool(this.unknown4);
+			this.writeBool(this.disableRelativeVolume);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.sound=this.readByte();
+			traceDecode('sound');
+			this.position={};
+			this.position.x=this.readLittleEndianFloat();
+			this.position.y=this.readLittleEndianFloat();
+			this.position.z=this.readLittleEndianFloat();
+			traceDecode('position');
+			this.volume=this.readVaruint();
+			traceDecode('volume');
+			this.pitch=this.readVarint();
+			traceDecode('pitch');
+			this.unknown4=this.readBool();
+			traceDecode('unknown4');
+			this.disableRelativeVolume=this.readBool();
+			traceDecode('disableRelativeVolume');
+			return this;
+		}
+
+	}
+	,
+
+	LevelEvent: class extends Buffer{
+
+		static get ID(){return 25;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(eventId=0,position={x:0,y:0,z:0},data=0){
+			super();
+			this.eventId = eventId;
+			this.position = position;
+			this.data = data;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(25);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarint(this.eventId);
+			this.writeLittleEndianFloat(this.position.x);
+			this.writeLittleEndianFloat(this.position.y);
+			this.writeLittleEndianFloat(this.position.z);
+			this.writeVarint(this.data);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.eventId=this.readVarint();
+			traceDecode('eventId');
+			this.position={};
+			this.position.x=this.readLittleEndianFloat();
+			this.position.y=this.readLittleEndianFloat();
+			this.position.z=this.readLittleEndianFloat();
+			traceDecode('position');
+			this.data=this.readVarint();
+			traceDecode('data');
+			return this;
+		}
+
+	}
+	,
+
+	BlockEvent: class extends Buffer{
+
+		static get ID(){return 26;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(position=new Types.BlockPosition(),data=new Int32Array(2)){
+			super();
+			this.position = position;
+			this.data = data;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(26);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeBytes(this.position.encodeBody(true));
+			for(var dhc5yr in this.data){
+				this.writeVarint(this.data[dhc5yr]);
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.position=new Types.BlockPosition().decodeBody(this._buffer);
+			this._buffer=this.position._buffer;
+			traceDecode('position');
+			var aramzfy=2;
+			this.data=[];
+			for(var dhc5yr=0;dhc5yr<aramzfy;dhc5yr++){
+				this.data[dhc5yr]=this.readVarint();
+			}
+			traceDecode('data');
+			return this;
+		}
+
+	}
+	,
+
+	EntityEvent: class extends Buffer{
+
+		static get ID(){return 27;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(entityId=0,eventId=0,data=0){
+			super();
+			this.entityId = entityId;
+			this.eventId = eventId;
+			this.data = data;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(27);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.entityId);
+			this.writeByte(this.eventId);
+			this.writeVarint(this.data);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			this.eventId=this.readByte();
+			traceDecode('eventId');
+			this.data=this.readVarint();
+			traceDecode('data');
+			return this;
+		}
+
+	}
+	,
+
+	MobEffect: class extends Buffer{
+
+		static get ID(){return 28;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(entityId=0,eventId=0,effect=0,amplifier=0,particles=false,duration=0){
+			super();
+			this.entityId = entityId;
+			this.eventId = eventId;
+			this.effect = effect;
+			this.amplifier = amplifier;
+			this.particles = particles;
+			this.duration = duration;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(28);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.entityId);
+			this.writeByte(this.eventId);
+			this.writeVarint(this.effect);
+			this.writeVarint(this.amplifier);
+			this.writeBool(this.particles);
+			this.writeVarint(this.duration);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			this.eventId=this.readByte();
+			traceDecode('eventId');
+			this.effect=this.readVarint();
+			traceDecode('effect');
+			this.amplifier=this.readVarint();
+			traceDecode('amplifier');
+			this.particles=this.readBool();
+			traceDecode('particles');
+			this.duration=this.readVarint();
+			traceDecode('duration');
+			return this;
+		}
+
+	}
+	,
+
+	UpdateAttributes: class extends Buffer{
+
+		static get ID(){return 29;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(entityId=0,attributes=[]){
+			super();
+			this.entityId = entityId;
+			this.attributes = attributes;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(29);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.entityId);
+			this.writeVaruint(this.attributes.length);
+			for(var dhc5draj in this.attributes){
+				this.writeBytes(this.attributes[dhc5draj].encodeBody(true));
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			var aramyrcl=this.readVaruint();
+			this.attributes=[];
+			for(var dhc5draj=0;dhc5draj<aramyrcl;dhc5draj++){
+				this.attributes[dhc5draj]=new Types.Attribute().decodeBody(this._buffer);
+				this._buffer=this.attributes[dhc5draj]._buffer;
+			}
+			traceDecode('attributes');
+			return this;
+		}
+
+	}
+	,
+
+	InventoryTransaction: class extends Buffer{
+
+		static get ID(){return 30;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		static get NORMAL_0(){return 0;};
+		static get NORMAL_1(){return 1;};
+		static get USE_ITEM(){return 2;};
+		static get USE_ITEM_ON_ENTITY(){return 3;};
+		static get RELEASE_ITEM(){return 4;};
+
+		constructor(type=0,actions=[]){
+			super();
+			this.type = type;
+			this.actions = actions;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(30);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVaruint(this.type);
+			this.writeVaruint(this.actions.length);
+			for(var dhc5yrb5 in this.actions){
+				this.writeBytes(this.actions[dhc5yrb5].encodeBody(true));
+			}
+			switch(this.type){
+				case 0:
+					this.writeVaruint(this.type);
+					this.writeVaruint(this.actions.length);
+					for(var dhc5yrb5 in this.actions){
+						this.writeBytes(this.actions[dhc5yrb5].encodeBody(true));
+					}
+					break;
+				case 1:
+					this.writeVaruint(this.type);
+					this.writeVaruint(this.actions.length);
+					for(var dhc5yrb5 in this.actions){
+						this.writeBytes(this.actions[dhc5yrb5].encodeBody(true));
+					}
+					break;
+				case 2:
+					this.writeVaruint(this.type);
+					this.writeVaruint(this.actions.length);
+					for(var dhc5yrb5 in this.actions){
+						this.writeBytes(this.actions[dhc5yrb5].encodeBody(true));
+					}
+					break;
+				case 3:
+					this.writeVaruint(this.type);
+					this.writeVaruint(this.actions.length);
+					for(var dhc5yrb5 in this.actions){
+						this.writeBytes(this.actions[dhc5yrb5].encodeBody(true));
+					}
+					break;
+				case 4:
+					this.writeVaruint(this.type);
+					this.writeVaruint(this.actions.length);
+					for(var dhc5yrb5 in this.actions){
+						this.writeBytes(this.actions[dhc5yrb5].encodeBody(true));
+					}
+					break;
+				default: break;
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.type=this.readVaruint();
+			traceDecode('type');
+			var aramyna9=this.readVaruint();
+			this.actions=[];
+			for(var dhc5yrb5=0;dhc5yrb5<aramyna9;dhc5yrb5++){
+				this.actions[dhc5yrb5]=new Types.InventoryAction().decodeBody(this._buffer);
+				this._buffer=this.actions[dhc5yrb5]._buffer;
+			}
+			traceDecode('actions');
+			switch(this.type){
+				case 0:
+					break;
+				case 1:
+					break;
+				case 2:
+					this.actionType=this.readVaruint();
+					this.blockPosition=new Types.BlockPosition().decodeBody(this._buffer);
+					this._buffer=this.blockPosition._buffer;
+					this.face=this.readVarint();
+					this.hotbarSlot=this.readVarint();
+					this.item=new Types.Slot().decodeBody(this._buffer);
+					this._buffer=this.item._buffer;
+					this.playerPosition={};
+					this.playerPosition.x=this.readLittleEndianFloat();
+					this.playerPosition.y=this.readLittleEndianFloat();
+					this.playerPosition.z=this.readLittleEndianFloat();
+					this.clickPosition={};
+					this.clickPosition.x=this.readLittleEndianFloat();
+					this.clickPosition.y=this.readLittleEndianFloat();
+					this.clickPosition.z=this.readLittleEndianFloat();
+					break;
+				case 3:
+					this.entityId=this.readVarlong();
+					this.actionType=this.readVaruint();
+					this.hotbarSlot=this.readVarint();
+					this.item=new Types.Slot().decodeBody(this._buffer);
+					this._buffer=this.item._buffer;
+					this.unknown6={};
+					this.unknown6.x=this.readLittleEndianFloat();
+					this.unknown6.y=this.readLittleEndianFloat();
+					this.unknown6.z=this.readLittleEndianFloat();
+					this.unknown7={};
+					this.unknown7.x=this.readLittleEndianFloat();
+					this.unknown7.y=this.readLittleEndianFloat();
+					this.unknown7.z=this.readLittleEndianFloat();
+					break;
+				case 4:
+					this.actionType=this.readVaruint();
+					this.hotbarSlot=this.readVarint();
+					this.item=new Types.Slot().decodeBody(this._buffer);
+					this._buffer=this.item._buffer;
+					this.headPosition={};
+					this.headPosition.x=this.readLittleEndianFloat();
+					this.headPosition.y=this.readLittleEndianFloat();
+					this.headPosition.z=this.readLittleEndianFloat();
+					break;
+				default: break;
+			}
+			return this;
+		}
+
+	}
+	,
+
+	MobEquipment: class extends Buffer{
+
+		static get ID(){return 31;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(entityId=0,item=new Types.Slot(),inventorySlot=0,hotbarSlot=0,unknown4=0){
+			super();
+			this.entityId = entityId;
+			this.item = item;
+			this.inventorySlot = inventorySlot;
+			this.hotbarSlot = hotbarSlot;
+			this.unknown4 = unknown4;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(31);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.entityId);
+			this.writeBytes(this.item.encodeBody(true));
+			this.writeByte(this.inventorySlot);
+			this.writeByte(this.hotbarSlot);
+			this.writeByte(this.unknown4);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			this.item=new Types.Slot().decodeBody(this._buffer);
+			this._buffer=this.item._buffer;
+			traceDecode('item');
+			this.inventorySlot=this.readByte();
+			traceDecode('inventorySlot');
+			this.hotbarSlot=this.readByte();
+			traceDecode('hotbarSlot');
+			this.unknown4=this.readByte();
+			traceDecode('unknown4');
+			return this;
+		}
+
+	}
+	,
+
+	MobArmorEquipment: class extends Buffer{
+
+		static get ID(){return 32;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(entityId=0,armor=[]){
+			super();
+			this.entityId = entityId;
+			this.armor = armor;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(32);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.entityId);
+			for(var dhc5c1c in this.armor){
+				this.writeBytes(this.armor[dhc5c1c].encodeBody(true));
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			var aramyjbi=4;
+			this.armor=[];
+			for(var dhc5c1c=0;dhc5c1c<aramyjbi;dhc5c1c++){
+				this.armor[dhc5c1c]=new Types.Slot().decodeBody(this._buffer);
+				this._buffer=this.armor[dhc5c1c]._buffer;
+			}
+			traceDecode('armor');
+			return this;
+		}
+
+	}
+	,
+
+	Interact: class extends Buffer{
+
+		static get ID(){return 33;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(action=0,target=0,targetPosition={x:0,y:0,z:0}){
+			super();
+			this.action = action;
+			this.target = target;
+			this.targetPosition = targetPosition;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(33);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeByte(this.action);
+			this.writeVarlong(this.target);
+			if(action==4){
+				this.writeLittleEndianFloat(this.targetPosition.x);
+				this.writeLittleEndianFloat(this.targetPosition.y);
+				this.writeLittleEndianFloat(this.targetPosition.z);
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.action=this.readByte();
+			traceDecode('action');
+			this.target=this.readVarlong();
+			traceDecode('target');
+			if(action==4){
+				this.targetPosition={};
+				this.targetPosition.x=this.readLittleEndianFloat();
+				this.targetPosition.y=this.readLittleEndianFloat();
+				this.targetPosition.z=this.readLittleEndianFloat();
+				traceDecode('targetPosition');
+			}
+			return this;
+		}
+
+	}
+	,
+
+	BlockPickRequest: class extends Buffer{
+
+		static get ID(){return 34;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(position={x:0,y:0,z:0},unknown1=false,slot=0){
+			super();
+			this.position = position;
+			this.unknown1 = unknown1;
+			this.slot = slot;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(34);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarint(this.position.x);
+			this.writeVarint(this.position.y);
+			this.writeVarint(this.position.z);
+			this.writeBool(this.unknown1);
+			this.writeByte(this.slot);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.position={};
+			this.position.x=this.readVarint();
+			this.position.y=this.readVarint();
+			this.position.z=this.readVarint();
+			traceDecode('position');
+			this.unknown1=this.readBool();
+			traceDecode('unknown1');
+			this.slot=this.readByte();
+			traceDecode('slot');
+			return this;
+		}
+
+	}
+	,
+
+	EntityPickRequest: class extends Buffer{
+
+		static get ID(){return 35;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(entityType=0,slot=0){
+			super();
+			this.entityType = entityType;
+			this.slot = slot;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(35);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeLittleEndianLong(this.entityType);
+			this.writeByte(this.slot);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.entityType=this.readLittleEndianLong();
+			traceDecode('entityType');
+			this.slot=this.readByte();
+			traceDecode('slot');
+			return this;
+		}
+
+	}
+	,
+
+	PlayerAction: class extends Buffer{
+
+		static get ID(){return 36;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(entityId=0,action=0,position=new Types.BlockPosition(),face=0){
+			super();
+			this.entityId = entityId;
+			this.action = action;
+			this.position = position;
+			this.face = face;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(36);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.entityId);
+			this.writeVarint(this.action);
+			this.writeBytes(this.position.encodeBody(true));
+			this.writeVarint(this.face);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			this.action=this.readVarint();
+			traceDecode('action');
+			this.position=new Types.BlockPosition().decodeBody(this._buffer);
+			this._buffer=this.position._buffer;
+			traceDecode('position');
+			this.face=this.readVarint();
+			traceDecode('face');
+			return this;
+		}
+
+	}
+	,
+
+	EntityFall: class extends Buffer{
+
+		static get ID(){return 37;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(entityId=0,distance=.0,unknown2=false){
+			super();
+			this.entityId = entityId;
+			this.distance = distance;
+			this.unknown2 = unknown2;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(37);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.entityId);
+			this.writeLittleEndianFloat(this.distance);
+			this.writeBool(this.unknown2);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			this.distance=this.readLittleEndianFloat();
+			traceDecode('distance');
+			this.unknown2=this.readBool();
+			traceDecode('unknown2');
+			return this;
+		}
+
+	}
+	,
+
+	HurtArmor: class extends Buffer{
+
+		static get ID(){return 38;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(unknown0=0){
+			super();
+			this.unknown0 = unknown0;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(38);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarint(this.unknown0);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.unknown0=this.readVarint();
+			traceDecode('unknown0');
+			return this;
+		}
+
+	}
+	,
+
+	SetEntityData: class extends Buffer{
+
+		static get ID(){return 39;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(entityId=0,metadata=new Metadata()){
+			super();
+			this.entityId = entityId;
+			this.metadata = metadata;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(39);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.entityId);
+			this.writeBytes(this.metadata.encodeBody(true));
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			this.metadata=new Metadata().decodeBody(this._buffer);
+			this._buffer=this.metadata._buffer;
+			traceDecode('metadata');
+			return this;
+		}
+
+	}
+	,
+
+	SetEntityMotion: class extends Buffer{
+
+		static get ID(){return 40;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(entityId=0,motion={x:0,y:0,z:0}){
+			super();
+			this.entityId = entityId;
+			this.motion = motion;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(40);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.entityId);
+			this.writeLittleEndianFloat(this.motion.x);
+			this.writeLittleEndianFloat(this.motion.y);
+			this.writeLittleEndianFloat(this.motion.z);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			this.motion={};
+			this.motion.x=this.readLittleEndianFloat();
+			this.motion.y=this.readLittleEndianFloat();
+			this.motion.z=this.readLittleEndianFloat();
+			traceDecode('motion');
+			return this;
+		}
+
+	}
+	,
+
+	SetEntityLink: class extends Buffer{
+
+		static get ID(){return 41;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(vehicle=0,passenger=0,action=0){
+			super();
+			this.vehicle = vehicle;
+			this.passenger = passenger;
+			this.action = action;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(41);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.vehicle);
+			this.writeVarlong(this.passenger);
+			this.writeByte(this.action);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.vehicle=this.readVarlong();
+			traceDecode('vehicle');
+			this.passenger=this.readVarlong();
+			traceDecode('passenger');
+			this.action=this.readByte();
+			traceDecode('action');
+			return this;
+		}
+
+	}
+	,
+
+	SetHealth: class extends Buffer{
+
+		static get ID(){return 42;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(health=0){
+			super();
+			this.health = health;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(42);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarint(this.health);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.health=this.readVarint();
+			traceDecode('health');
+			return this;
+		}
+
+	}
+	,
+
+	SetSpawnPosition: class extends Buffer{
+
+		static get ID(){return 43;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(type=0,position=new Types.BlockPosition(),forced=false){
+			super();
+			this.type = type;
+			this.position = position;
+			this.forced = forced;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(43);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarint(this.type);
+			this.writeBytes(this.position.encodeBody(true));
+			this.writeBool(this.forced);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.type=this.readVarint();
+			traceDecode('type');
+			this.position=new Types.BlockPosition().decodeBody(this._buffer);
+			this._buffer=this.position._buffer;
+			traceDecode('position');
+			this.forced=this.readBool();
+			traceDecode('forced');
+			return this;
+		}
+
+	}
+	,
+
+	Animate: class extends Buffer{
+
+		static get ID(){return 44;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(action=0,entityId=0,unknown2=.0){
+			super();
+			this.action = action;
+			this.entityId = entityId;
+			this.unknown2 = unknown2;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(44);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarint(this.action);
+			this.writeVarlong(this.entityId);
+			if(action>128){
+				this.writeLittleEndianFloat(this.unknown2);
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.action=this.readVarint();
+			traceDecode('action');
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			if(action>128){
+				this.unknown2=this.readLittleEndianFloat();
+				traceDecode('unknown2');
+			}
+			return this;
+		}
+
+	}
+	,
+
+	Respawn: class extends Buffer{
+
+		static get ID(){return 45;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(position={x:0,y:0,z:0}){
+			super();
+			this.position = position;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(45);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeLittleEndianFloat(this.position.x);
+			this.writeLittleEndianFloat(this.position.y);
+			this.writeLittleEndianFloat(this.position.z);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.position={};
+			this.position.x=this.readLittleEndianFloat();
+			this.position.y=this.readLittleEndianFloat();
+			this.position.z=this.readLittleEndianFloat();
+			traceDecode('position');
+			return this;
+		}
+
+	}
+	,
+
+	ContainerOpen: class extends Buffer{
+
+		static get ID(){return 46;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(window=0,type=0,position=new Types.BlockPosition(),entityId=0){
+			super();
+			this.window = window;
+			this.type = type;
+			this.position = position;
+			this.entityId = entityId;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(46);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeByte(this.window);
+			this.writeByte(this.type);
+			this.writeBytes(this.position.encodeBody(true));
+			this.writeVarlong(this.entityId);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.window=this.readByte();
+			traceDecode('window');
+			this.type=this.readByte();
+			traceDecode('type');
+			this.position=new Types.BlockPosition().decodeBody(this._buffer);
+			this._buffer=this.position._buffer;
+			traceDecode('position');
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			return this;
+		}
+
+	}
+	,
+
+	ContainerClose: class extends Buffer{
+
+		static get ID(){return 47;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(window=0){
+			super();
+			this.window = window;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(47);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeByte(this.window);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.window=this.readByte();
+			traceDecode('window');
+			return this;
+		}
+
+	}
+	,
+
+	PlayerHotbar: class extends Buffer{
+
+		static get ID(){return 48;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(){
+			super();
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(48);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			return this;
+		}
+
+	}
+	,
+
+	InventoryContent: class extends Buffer{
+
+		static get ID(){return 49;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(window=0,slots=[]){
+			super();
+			this.window = window;
+			this.slots = slots;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(49);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVaruint(this.window);
+			this.writeVaruint(this.slots.length);
+			for(var dhc5b9c in this.slots){
+				this.writeBytes(this.slots[dhc5b9c].encodeBody(true));
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.window=this.readVaruint();
+			traceDecode('window');
+			var aramcxdm=this.readVaruint();
+			this.slots=[];
+			for(var dhc5b9c=0;dhc5b9c<aramcxdm;dhc5b9c++){
+				this.slots[dhc5b9c]=new Types.Slot().decodeBody(this._buffer);
+				this._buffer=this.slots[dhc5b9c]._buffer;
+			}
+			traceDecode('slots');
+			return this;
+		}
+
+	}
+	,
+
+	InventorySlot: class extends Buffer{
+
+		static get ID(){return 50;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(){
+			super();
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(50);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			return this;
+		}
+
+	}
+	,
+
+	ContainerSetData: class extends Buffer{
+
+		static get ID(){return 51;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(window=0,property=0,value=0){
+			super();
+			this.window = window;
+			this.property = property;
+			this.value = value;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(51);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeByte(this.window);
+			this.writeVarint(this.property);
+			this.writeVarint(this.value);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.window=this.readByte();
+			traceDecode('window');
+			this.property=this.readVarint();
+			traceDecode('property');
+			this.value=this.readVarint();
+			traceDecode('value');
+			return this;
+		}
+
+	}
+	,
+
+	CraftingData: class extends Buffer{
+
+		static get ID(){return 52;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(recipes=[]){
+			super();
+			this.recipes = recipes;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(52);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVaruint(this.recipes.length);
+			for(var dhc5zncv in this.recipes){
+				this.writeBytes(this.recipes[dhc5zncv].encodeBody(true));
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			var aramcvab=this.readVaruint();
+			this.recipes=[];
+			for(var dhc5zncv=0;dhc5zncv<aramcvab;dhc5zncv++){
+				this.recipes[dhc5zncv]=new Types.Recipe().decodeBody(this._buffer);
+				this._buffer=this.recipes[dhc5zncv]._buffer;
+			}
+			traceDecode('recipes');
+			return this;
+		}
+
+	}
+	,
+
+	CraftingEvent: class extends Buffer{
+
+		static get ID(){return 53;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(window=0,type=0,uuid=new Types.McpeUuid(),input=[],output=[]){
+			super();
+			this.window = window;
+			this.type = type;
+			this.uuid = uuid;
+			this.input = input;
+			this.output = output;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(53);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeByte(this.window);
+			this.writeVarint(this.type);
+			this.writeBytes(this.uuid.encodeBody(true));
+			this.writeVaruint(this.input.length);
+			for(var dhc5bbd in this.input){
+				this.writeBytes(this.input[dhc5bbd].encodeBody(true));
+			}
+			this.writeVaruint(this.output.length);
+			for(var dhc5drdq in this.output){
+				this.writeBytes(this.output[dhc5drdq].encodeBody(true));
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.window=this.readByte();
+			traceDecode('window');
+			this.type=this.readVarint();
+			traceDecode('type');
+			this.uuid=new Types.McpeUuid().decodeBody(this._buffer);
+			this._buffer=this.uuid._buffer;
+			traceDecode('uuid');
+			var arama5dq=this.readVaruint();
+			this.input=[];
+			for(var dhc5bbd=0;dhc5bbd<arama5dq;dhc5bbd++){
+				this.input[dhc5bbd]=new Types.Slot().decodeBody(this._buffer);
+				this._buffer=this.input[dhc5bbd]._buffer;
+			}
+			traceDecode('input');
+			var arambvcv=this.readVaruint();
+			this.output=[];
+			for(var dhc5drdq=0;dhc5drdq<arambvcv;dhc5drdq++){
+				this.output[dhc5drdq]=new Types.Slot().decodeBody(this._buffer);
+				this._buffer=this.output[dhc5drdq]._buffer;
+			}
+			traceDecode('output');
+			return this;
+		}
+
+	}
+	,
+
+	GuiDataPickItem: class extends Buffer{
+
+		static get ID(){return 54;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(slot=0){
+			super();
+			this.slot = slot;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(54);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeLittleEndianInt(this.slot);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.slot=this.readLittleEndianInt();
+			traceDecode('slot');
+			return this;
+		}
+
+	}
+	,
+
+	AdventureSettings: class extends Buffer{
+
+		static get ID(){return 55;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(flags=0,permissionLevel=0,abilities=0,playerRank=0,customPermissions=0,entityId=0){
+			super();
+			this.flags = flags;
+			this.permissionLevel = permissionLevel;
+			this.abilities = abilities;
+			this.playerRank = playerRank;
+			this.customPermissions = customPermissions;
+			this.entityId = entityId;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(55);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVaruint(this.flags);
+			this.writeVaruint(this.permissionLevel);
+			this.writeVaruint(this.abilities);
+			this.writeVaruint(this.playerRank);
+			this.writeVaruint(this.customPermissions);
+			this.writeLittleEndianLong(this.entityId);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.flags=this.readVaruint();
+			traceDecode('flags');
+			this.permissionLevel=this.readVaruint();
+			traceDecode('permissionLevel');
+			this.abilities=this.readVaruint();
+			traceDecode('abilities');
+			this.playerRank=this.readVaruint();
+			traceDecode('playerRank');
+			this.customPermissions=this.readVaruint();
+			traceDecode('customPermissions');
+			this.entityId=this.readLittleEndianLong();
+			traceDecode('entityId');
+			return this;
+		}
+
+	}
+	,
+
+	BlockEntityData: class extends Buffer{
+
+		static get ID(){return 56;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(position=new Types.BlockPosition(),nbt=new Types.Bytes()){
+			super();
+			this.position = position;
+			this.nbt = nbt;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(56);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeBytes(this.position.encodeBody(true));
+			this.writeBytes(this.nbt);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.position=new Types.BlockPosition().decodeBody(this._buffer);
+			this._buffer=this.position._buffer;
+			traceDecode('position');
+			this.nbt=Array.from(this._buffer);
+			this._buffer=[];
+			traceDecode('nbt');
+			return this;
+		}
+
+	}
+	,
+
+	PlayerInput: class extends Buffer{
+
+		static get ID(){return 57;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(sideways=.0,forward=.0,unknown2=false,unknown3=false){
+			super();
+			this.sideways = sideways;
+			this.forward = forward;
+			this.unknown2 = unknown2;
+			this.unknown3 = unknown3;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(57);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeLittleEndianFloat(this.sideways);
+			this.writeLittleEndianFloat(this.forward);
+			this.writeBool(this.unknown2);
+			this.writeBool(this.unknown3);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.sideways=this.readLittleEndianFloat();
+			traceDecode('sideways');
+			this.forward=this.readLittleEndianFloat();
+			traceDecode('forward');
+			this.unknown2=this.readBool();
+			traceDecode('unknown2');
+			this.unknown3=this.readBool();
+			traceDecode('unknown3');
+			return this;
+		}
+
+	}
+	,
+
+	FullChunkData: class extends Buffer{
+
+		static get ID(){return 58;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(position={x:0,z:0},data=new Types.ChunkData()){
+			super();
+			this.position = position;
+			this.data = data;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(58);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarint(this.position.x);
+			this.writeVarint(this.position.z);
+			this.writeBytes(this.data.encodeBody(true));
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.position={};
+			this.position.x=this.readVarint();
+			this.position.z=this.readVarint();
+			traceDecode('position');
+			this.data=new Types.ChunkData().decodeBody(this._buffer);
+			this._buffer=this.data._buffer;
+			traceDecode('data');
+			return this;
+		}
+
+	}
+	,
+
+	SetCommandsEnabled: class extends Buffer{
+
+		static get ID(){return 59;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(enabled=false){
+			super();
+			this.enabled = enabled;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(59);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeBool(this.enabled);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.enabled=this.readBool();
+			traceDecode('enabled');
+			return this;
+		}
+
+	}
+	,
+
+	SetDifficulty: class extends Buffer{
+
+		static get ID(){return 60;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(difficulty=0){
+			super();
+			this.difficulty = difficulty;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(60);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVaruint(this.difficulty);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.difficulty=this.readVaruint();
+			traceDecode('difficulty');
+			return this;
+		}
+
+	}
+	,
+
+	ChangeDimension: class extends Buffer{
+
+		static get ID(){return 61;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(dimension=0,position={x:0,y:0,z:0},unknown2=false){
+			super();
+			this.dimension = dimension;
+			this.position = position;
+			this.unknown2 = unknown2;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(61);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarint(this.dimension);
+			this.writeLittleEndianFloat(this.position.x);
+			this.writeLittleEndianFloat(this.position.y);
+			this.writeLittleEndianFloat(this.position.z);
+			this.writeBool(this.unknown2);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.dimension=this.readVarint();
+			traceDecode('dimension');
+			this.position={};
+			this.position.x=this.readLittleEndianFloat();
+			this.position.y=this.readLittleEndianFloat();
+			this.position.z=this.readLittleEndianFloat();
+			traceDecode('position');
+			this.unknown2=this.readBool();
+			traceDecode('unknown2');
+			return this;
+		}
+
+	}
+	,
+
+	SetPlayerGameType: class extends Buffer{
+
+		static get ID(){return 62;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(gamemode=0){
+			super();
+			this.gamemode = gamemode;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(62);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarint(this.gamemode);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.gamemode=this.readVarint();
+			traceDecode('gamemode');
+			return this;
+		}
+
+	}
+	,
+
+	PlayerList: class extends Buffer{
+
+		static get ID(){return 63;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		static get ADD(){return 0;};
+		static get REMOVE(){return 1;};
+
+		constructor(action=0){
+			super();
+			this.action = action;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(63);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeByte(this.action);
+			switch(this.action){
+				case 0:
+					this.writeByte(this.action);
+					break;
+				case 1:
+					this.writeByte(this.action);
+					break;
+				default: break;
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.action=this.readByte();
+			traceDecode('action');
+			switch(this.action){
+				case 0:
+					var aramcxev=this.readVaruint();
+					this.players=[];
+					for(var dhc5bfzj=0;dhc5bfzj<aramcxev;dhc5bfzj++){
+						this.players[dhc5bfzj]=new Types.PlayerList().decodeBody(this._buffer);
+						this._buffer=this.players[dhc5bfzj]._buffer;
+					}
+					break;
+				case 1:
+					var aramcxev=this.readVaruint();
+					this.players=[];
+					for(var dhc5bfzj=0;dhc5bfzj<aramcxev;dhc5bfzj++){
+						this.players[dhc5bfzj]=new Types.McpeUuid().decodeBody(this._buffer);
+						this._buffer=this.players[dhc5bfzj]._buffer;
+					}
+					break;
+				default: break;
+			}
+			return this;
+		}
+
+	}
+	,
+
+	SimpleEvent: class extends Buffer{
+
+		static get ID(){return 64;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(){
+			super();
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(64);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			return this;
+		}
+
+	}
+	,
+
+	TelemetryEvent: class extends Buffer{
+
+		static get ID(){return 65;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(entityId=0,eventId=0){
+			super();
+			this.entityId = entityId;
+			this.eventId = eventId;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(65);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.entityId);
+			this.writeVarint(this.eventId);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			this.eventId=this.readVarint();
+			traceDecode('eventId');
+			return this;
+		}
+
+	}
+	,
+
+	SpawnExperienceOrb: class extends Buffer{
+
+		static get ID(){return 66;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(position={x:0,y:0,z:0},count=0){
+			super();
+			this.position = position;
+			this.count = count;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(66);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeLittleEndianFloat(this.position.x);
+			this.writeLittleEndianFloat(this.position.y);
+			this.writeLittleEndianFloat(this.position.z);
+			this.writeVarint(this.count);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.position={};
+			this.position.x=this.readLittleEndianFloat();
+			this.position.y=this.readLittleEndianFloat();
+			this.position.z=this.readLittleEndianFloat();
+			traceDecode('position');
+			this.count=this.readVarint();
+			traceDecode('count');
+			return this;
+		}
+
+	}
+	,
+
+	ClientboundMapItemData: class extends Buffer{
+
+		static get ID(){return 67;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(mapId=0,update=0,scale=0,size={x:0,z:0},offset={x:0,z:0},data=new Types.Bytes(),decorations=[]){
+			super();
+			this.mapId = mapId;
+			this.update = update;
+			this.scale = scale;
+			this.size = size;
+			this.offset = offset;
+			this.data = data;
+			this.decorations = decorations;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(67);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.mapId);
+			this.writeVaruint(this.update);
+			if(update==2||update==4){
+				this.writeByte(this.scale);
+			}
+			if(update==2){
+				this.writeVarint(this.size.x);
+				this.writeVarint(this.size.z);
+			}
+			if(update==2){
+				this.writeVarint(this.offset.x);
+				this.writeVarint(this.offset.z);
+			}
+			if(update==2){
+				this.writeBytes(this.data);
+			}
+			if(update==4){
+				this.writeVaruint(this.decorations.length);
+				for(var dhc5zncf in this.decorations){
+					this.writeBytes(this.decorations[dhc5zncf].encodeBody(true));
+				}
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.mapId=this.readVarlong();
+			traceDecode('mapId');
+			this.update=this.readVaruint();
+			traceDecode('update');
+			if(update==2||update==4){
+				this.scale=this.readByte();
+				traceDecode('scale');
+			}
+			if(update==2){
+				this.size={};
+				this.size.x=this.readVarint();
+				this.size.z=this.readVarint();
+				traceDecode('size');
+			}
+			if(update==2){
+				this.offset={};
+				this.offset.x=this.readVarint();
+				this.offset.z=this.readVarint();
+				traceDecode('offset');
+			}
+			if(update==2){
+				this.data=Array.from(this._buffer);
+				this._buffer=[];
+				traceDecode('data');
+			}
+			if(update==4){
+				var aramzvbj=this.readVaruint();
+				this.decorations=[];
+				for(var dhc5zncf=0;dhc5zncf<aramzvbj;dhc5zncf++){
+					this.decorations[dhc5zncf]=new Types.Decoration().decodeBody(this._buffer);
+					this._buffer=this.decorations[dhc5zncf]._buffer;
+				}
+				traceDecode('decorations');
+			}
+			return this;
+		}
+
+	}
+	,
+
+	MapInfoRequest: class extends Buffer{
+
+		static get ID(){return 68;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(mapId=0){
+			super();
+			this.mapId = mapId;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(68);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.mapId);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.mapId=this.readVarlong();
+			traceDecode('mapId');
+			return this;
+		}
+
+	}
+	,
+
+	RequestChunkRadius: class extends Buffer{
+
+		static get ID(){return 69;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(radius=0){
+			super();
+			this.radius = radius;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(69);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarint(this.radius);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.radius=this.readVarint();
+			traceDecode('radius');
+			return this;
+		}
+
+	}
+	,
+
+	ChunkRadiusUpdated: class extends Buffer{
+
+		static get ID(){return 70;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(radius=0){
+			super();
+			this.radius = radius;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(70);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarint(this.radius);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.radius=this.readVarint();
+			traceDecode('radius');
+			return this;
+		}
+
+	}
+	,
+
+	ItemFrameDropItem: class extends Buffer{
+
+		static get ID(){return 71;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(position=new Types.BlockPosition(),item=new Types.Slot()){
+			super();
+			this.position = position;
+			this.item = item;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(71);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeBytes(this.position.encodeBody(true));
+			this.writeBytes(this.item.encodeBody(true));
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.position=new Types.BlockPosition().decodeBody(this._buffer);
+			this._buffer=this.position._buffer;
+			traceDecode('position');
+			this.item=new Types.Slot().decodeBody(this._buffer);
+			this._buffer=this.item._buffer;
+			traceDecode('item');
+			return this;
+		}
+
+	}
+	,
+
+	GameRulesChanged: class extends Buffer{
+
+		static get ID(){return 72;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(rules=[]){
+			super();
+			this.rules = rules;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(72);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVaruint(this.rules.length);
+			for(var dhc5dxc in this.rules){
+				this.writeBytes(this.rules[dhc5dxc].encodeBody(true));
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			var aramcvzm=this.readVaruint();
+			this.rules=[];
+			for(var dhc5dxc=0;dhc5dxc<aramcvzm;dhc5dxc++){
+				this.rules[dhc5dxc]=new Types.Rule().decodeBody(this._buffer);
+				this._buffer=this.rules[dhc5dxc]._buffer;
+			}
+			traceDecode('rules');
+			return this;
+		}
+
+	}
+	,
+
+	Camera: class extends Buffer{
+
+		static get ID(){return 73;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(unknown0=0,unknown1=0){
+			super();
+			this.unknown0 = unknown0;
+			this.unknown1 = unknown1;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(73);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.unknown0);
+			this.writeVarlong(this.unknown1);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.unknown0=this.readVarlong();
+			traceDecode('unknown0');
+			this.unknown1=this.readVarlong();
+			traceDecode('unknown1');
+			return this;
+		}
+
+	}
+	,
+
+	BossEvent: class extends Buffer{
+
+		static get ID(){return 74;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(entityId=0,eventId=0){
+			super();
+			this.entityId = entityId;
+			this.eventId = eventId;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(74);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.entityId);
+			this.writeVaruint(this.eventId);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			this.eventId=this.readVaruint();
+			traceDecode('eventId');
+			return this;
+		}
+
+	}
+	,
+
+	ShowCredits: class extends Buffer{
+
+		static get ID(){return 75;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(entityId=0,status=0){
+			super();
+			this.entityId = entityId;
+			this.status = status;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(75);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.entityId);
+			this.writeVarint(this.status);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			this.status=this.readVarint();
+			traceDecode('status');
+			return this;
+		}
+
+	}
+	,
+
+	AvailableCommands: class extends Buffer{
+
+		static get ID(){return 76;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(enumValues=[],unknown1=[],enums=[],commands=[]){
+			super();
+			this.enumValues = enumValues;
+			this.unknown1 = unknown1;
+			this.enums = enums;
+			this.commands = commands;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(76);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVaruint(this.enumValues.length);
+			for(var dhc5bvvf in this.enumValues){
+				var dhc5bvvf=this.encodeString(this.enumValues[dhc5bvvf]);
+				this.writeVaruint(dhc5bvvf.length);
+				this.writeBytes(dhc5bvvf);
+			}
+			this.writeVaruint(this.unknown1.length);
+			for(var dhc5btbd in this.unknown1){
+				var dhc5btbd=this.encodeString(this.unknown1[dhc5btbd]);
+				this.writeVaruint(dhc5btbd.length);
+				this.writeBytes(dhc5btbd);
+			}
+			this.writeVaruint(this.enums.length);
+			for(var dhc5bvc in this.enums){
+				this.writeBytes(this.enums[dhc5bvc].encodeBody(true));
+			}
+			this.writeVaruint(this.commands.length);
+			for(var dhc5b1y5 in this.commands){
+				this.writeBytes(this.commands[dhc5b1y5].encodeBody(true));
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			var aramz5bz=this.readVaruint();
+			this.enumValues=[];
+			for(var dhc5bvvf=0;dhc5bvvf<aramz5bz;dhc5bvvf++){
+				var dhc5bvvf=this.readVaruint();
+				this.enumValues[dhc5bvvf]=this.decodeString(this.readBytes(dhc5bvvf));
+			}
+			traceDecode('enumValues');
+			var aramd5b9=this.readVaruint();
+			this.unknown1=[];
+			for(var dhc5btbd=0;dhc5btbd<aramd5b9;dhc5btbd++){
+				var dhc5btbd=this.readVaruint();
+				this.unknown1[dhc5btbd]=this.decodeString(this.readBytes(dhc5btbd));
+			}
+			traceDecode('unknown1');
+			var aramz5bm=this.readVaruint();
+			this.enums=[];
+			for(var dhc5bvc=0;dhc5bvc<aramz5bm;dhc5bvc++){
+				this.enums[dhc5bvc]=new Types.Enum().decodeBody(this._buffer);
+				this._buffer=this.enums[dhc5bvc]._buffer;
+			}
+			traceDecode('enums');
+			var aramy9bf=this.readVaruint();
+			this.commands=[];
+			for(var dhc5b1y5=0;dhc5b1y5<aramy9bf;dhc5b1y5++){
+				this.commands[dhc5b1y5]=new Types.Command().decodeBody(this._buffer);
+				this._buffer=this.commands[dhc5b1y5]._buffer;
+			}
+			traceDecode('commands');
+			return this;
+		}
+
+	}
+	,
+
+	CommandRequest: class extends Buffer{
+
+		static get ID(){return 77;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(command="",type=0,uuid=new Types.McpeUuid(),requestId="",playerId=0,internal=false){
+			super();
+			this.command = command;
+			this.type = type;
+			this.uuid = uuid;
+			this.requestId = requestId;
+			this.playerId = playerId;
+			this.internal = internal;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(77);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			var dhc5b1y5=this.encodeString(this.command);
+			this.writeVaruint(dhc5b1y5.length);
+			this.writeBytes(dhc5b1y5);
+			this.writeVaruint(this.type);
+			this.writeBytes(this.uuid.encodeBody(true));
+			var dhc5zfzn=this.encodeString(this.requestId);
+			this.writeVaruint(dhc5zfzn.length);
+			this.writeBytes(dhc5zfzn);
+			if(type==3){
+				this.writeVarint(this.playerId);
+			}
+			this.writeBool(this.internal);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			var dhc5b1y5=this.readVaruint();
+			this.command=this.decodeString(this.readBytes(dhc5b1y5));
+			traceDecode('command');
+			this.type=this.readVaruint();
+			traceDecode('type');
+			this.uuid=new Types.McpeUuid().decodeBody(this._buffer);
+			this._buffer=this.uuid._buffer;
+			traceDecode('uuid');
+			var dhc5zfzn=this.readVaruint();
+			this.requestId=this.decodeString(this.readBytes(dhc5zfzn));
+			traceDecode('requestId');
+			if(type==3){
+				this.playerId=this.readVarint();
+				traceDecode('playerId');
+			}
+			this.internal=this.readBool();
+			traceDecode('internal');
+			return this;
+		}
+
+	}
+	,
+
+	CommandBlockUpdate: class extends Buffer{
+
+		static get ID(){return 78;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(updateBlock=false,position=new Types.BlockPosition(),mode=0,redstoneMode=false,conditional=false,minecart=0,command="",lastOutput="",hover="",trackOutput=false){
+			super();
+			this.updateBlock = updateBlock;
+			this.position = position;
+			this.mode = mode;
+			this.redstoneMode = redstoneMode;
+			this.conditional = conditional;
+			this.minecart = minecart;
+			this.command = command;
+			this.lastOutput = lastOutput;
+			this.hover = hover;
+			this.trackOutput = trackOutput;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(78);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeBool(this.updateBlock);
+			if(updateBlock==true){
+				this.writeBytes(this.position.encodeBody(true));
+			}
+			if(updateBlock==true){
+				this.writeVaruint(this.mode);
+			}
+			if(updateBlock==true){
+				this.writeBool(this.redstoneMode);
+			}
+			if(updateBlock==true){
+				this.writeBool(this.conditional);
+			}
+			if(updateBlock==false){
+				this.writeVarlong(this.minecart);
+			}
+			var dhc5b1y5=this.encodeString(this.command);
+			this.writeVaruint(dhc5b1y5.length);
+			this.writeBytes(dhc5b1y5);
+			var dhc5yntv=this.encodeString(this.lastOutput);
+			this.writeVaruint(dhc5yntv.length);
+			this.writeBytes(dhc5yntv);
+			var dhc5bzc=this.encodeString(this.hover);
+			this.writeVaruint(dhc5bzc.length);
+			this.writeBytes(dhc5bzc);
+			this.writeBool(this.trackOutput);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.updateBlock=this.readBool();
+			traceDecode('updateBlock');
+			if(updateBlock==true){
+				this.position=new Types.BlockPosition().decodeBody(this._buffer);
+				this._buffer=this.position._buffer;
+				traceDecode('position');
+			}
+			if(updateBlock==true){
+				this.mode=this.readVaruint();
+				traceDecode('mode');
+			}
+			if(updateBlock==true){
+				this.redstoneMode=this.readBool();
+				traceDecode('redstoneMode');
+			}
+			if(updateBlock==true){
+				this.conditional=this.readBool();
+				traceDecode('conditional');
+			}
+			if(updateBlock==false){
+				this.minecart=this.readVarlong();
+				traceDecode('minecart');
+			}
+			var dhc5b1y5=this.readVaruint();
+			this.command=this.decodeString(this.readBytes(dhc5b1y5));
+			traceDecode('command');
+			var dhc5yntv=this.readVaruint();
+			this.lastOutput=this.decodeString(this.readBytes(dhc5yntv));
+			traceDecode('lastOutput');
+			var dhc5bzc=this.readVaruint();
+			this.hover=this.decodeString(this.readBytes(dhc5bzc));
+			traceDecode('hover');
+			this.trackOutput=this.readBool();
+			traceDecode('trackOutput');
+			return this;
+		}
+
+	}
+	,
+
+	UpdateTrade: class extends Buffer{
+
+		static get ID(){return 80;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(window=0,windowType=15,unknown2=0,unknown3=0,willing=false,trader=0,player=0,displayName="",offers=new Types.Bytes()){
+			super();
+			this.window = window;
+			this.windowType = windowType;
+			this.unknown2 = unknown2;
+			this.unknown3 = unknown3;
+			this.willing = willing;
+			this.trader = trader;
+			this.player = player;
+			this.displayName = displayName;
+			this.offers = offers;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(80);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeByte(this.window);
+			this.writeByte(this.windowType);
+			this.writeVarint(this.unknown2);
+			this.writeVarint(this.unknown3);
+			this.writeBool(this.willing);
+			this.writeVarlong(this.trader);
+			this.writeVarlong(this.player);
+			var dhc5anbf=this.encodeString(this.displayName);
+			this.writeVaruint(dhc5anbf.length);
+			this.writeBytes(dhc5anbf);
+			this.writeBytes(this.offers);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.window=this.readByte();
+			traceDecode('window');
+			this.windowType=this.readByte();
+			traceDecode('windowType');
+			this.unknown2=this.readVarint();
+			traceDecode('unknown2');
+			this.unknown3=this.readVarint();
+			traceDecode('unknown3');
+			this.willing=this.readBool();
+			traceDecode('willing');
+			this.trader=this.readVarlong();
+			traceDecode('trader');
+			this.player=this.readVarlong();
+			traceDecode('player');
+			var dhc5anbf=this.readVaruint();
+			this.displayName=this.decodeString(this.readBytes(dhc5anbf));
+			traceDecode('displayName');
+			this.offers=Array.from(this._buffer);
+			this._buffer=[];
+			traceDecode('offers');
+			return this;
+		}
+
+	}
+	,
+
+	UpdateEquip: class extends Buffer{
+
+		static get ID(){return 81;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(){
+			super();
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(81);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			return this;
+		}
+
+	}
+	,
+
+	ResourcePackDataInfo: class extends Buffer{
+
+		static get ID(){return 82;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(id="",maxChunkSize=0,chunkCount=0,compressedPackSize=0,sha256=""){
+			super();
+			this.id = id;
+			this.maxChunkSize = maxChunkSize;
+			this.chunkCount = chunkCount;
+			this.compressedPackSize = compressedPackSize;
+			this.sha256 = sha256;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(82);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			var dhc5z=this.encodeString(this.id);
+			this.writeVaruint(dhc5z.length);
+			this.writeBytes(dhc5z);
+			this.writeLittleEndianInt(this.maxChunkSize);
+			this.writeLittleEndianInt(this.chunkCount);
+			this.writeLittleEndianLong(this.compressedPackSize);
+			var dhc5aeny=this.encodeString(this.sha256);
+			this.writeVaruint(dhc5aeny.length);
+			this.writeBytes(dhc5aeny);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			var dhc5z=this.readVaruint();
+			this.id=this.decodeString(this.readBytes(dhc5z));
+			traceDecode('id');
+			this.maxChunkSize=this.readLittleEndianInt();
+			traceDecode('maxChunkSize');
+			this.chunkCount=this.readLittleEndianInt();
+			traceDecode('chunkCount');
+			this.compressedPackSize=this.readLittleEndianLong();
+			traceDecode('compressedPackSize');
+			var dhc5aeny=this.readVaruint();
+			this.sha256=this.decodeString(this.readBytes(dhc5aeny));
+			traceDecode('sha256');
+			return this;
+		}
+
+	}
+	,
+
+	ResourcePackChunkData: class extends Buffer{
+
+		static get ID(){return 83;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(id="",chunkIndex=0,progress=0,data=new Uint8Array(0)){
+			super();
+			this.id = id;
+			this.chunkIndex = chunkIndex;
+			this.progress = progress;
+			this.data = data;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(83);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			var dhc5z=this.encodeString(this.id);
+			this.writeVaruint(dhc5z.length);
+			this.writeBytes(dhc5z);
+			this.writeLittleEndianInt(this.chunkIndex);
+			this.writeLittleEndianLong(this.progress);
+			this.writeLittleEndianInt(this.data.length);
+			this.writeBytes(this.data);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			var dhc5z=this.readVaruint();
+			this.id=this.decodeString(this.readBytes(dhc5z));
+			traceDecode('id');
+			this.chunkIndex=this.readLittleEndianInt();
+			traceDecode('chunkIndex');
+			this.progress=this.readLittleEndianLong();
+			traceDecode('progress');
+			var aramzfy=this.readLittleEndianInt();
+			this.data=this.readBytes(aramzfy);
+			traceDecode('data');
+			return this;
+		}
+
+	}
+	,
+
+	ResourcePackChunkRequest: class extends Buffer{
+
+		static get ID(){return 84;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(id="",chunkIndex=0){
+			super();
+			this.id = id;
+			this.chunkIndex = chunkIndex;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(84);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			var dhc5z=this.encodeString(this.id);
+			this.writeVaruint(dhc5z.length);
+			this.writeBytes(dhc5z);
+			this.writeLittleEndianInt(this.chunkIndex);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			var dhc5z=this.readVaruint();
+			this.id=this.decodeString(this.readBytes(dhc5z));
+			traceDecode('id');
+			this.chunkIndex=this.readLittleEndianInt();
+			traceDecode('chunkIndex');
+			return this;
+		}
+
+	}
+	,
+
+	Transfer: class extends Buffer{
+
+		static get ID(){return 85;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(ip="",port=19132){
+			super();
+			this.ip = ip;
+			this.port = port;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(85);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			var dhc5c=this.encodeString(this.ip);
+			this.writeVaruint(dhc5c.length);
+			this.writeBytes(dhc5c);
+			this.writeLittleEndianShort(this.port);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			var dhc5c=this.readVaruint();
+			this.ip=this.decodeString(this.readBytes(dhc5c));
+			traceDecode('ip');
+			this.port=this.readLittleEndianShort();
+			traceDecode('port');
+			return this;
+		}
+
+	}
+	,
+
+	PlaySound: class extends Buffer{
+
+		static get ID(){return 86;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(name="",position=new Types.BlockPosition(),volume=.0,pitch=.0){
+			super();
+			this.name = name;
+			this.position = position;
+			this.volume = volume;
+			this.pitch = pitch;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(86);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			var dhc5y1=this.encodeString(this.name);
+			this.writeVaruint(dhc5y1.length);
+			this.writeBytes(dhc5y1);
+			this.writeBytes(this.position.encodeBody(true));
+			this.writeLittleEndianFloat(this.volume);
+			this.writeLittleEndianFloat(this.pitch);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			var dhc5y1=this.readVaruint();
+			this.name=this.decodeString(this.readBytes(dhc5y1));
+			traceDecode('name');
+			this.position=new Types.BlockPosition().decodeBody(this._buffer);
+			this._buffer=this.position._buffer;
+			traceDecode('position');
+			this.volume=this.readLittleEndianFloat();
+			traceDecode('volume');
+			this.pitch=this.readLittleEndianFloat();
+			traceDecode('pitch');
+			return this;
+		}
+
+	}
+	,
+
+	StopSound: class extends Buffer{
+
+		static get ID(){return 87;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(name="",stopAll=false){
+			super();
+			this.name = name;
+			this.stopAll = stopAll;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(87);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			var dhc5y1=this.encodeString(this.name);
+			this.writeVaruint(dhc5y1.length);
+			this.writeBytes(dhc5y1);
+			this.writeBool(this.stopAll);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			var dhc5y1=this.readVaruint();
+			this.name=this.decodeString(this.readBytes(dhc5y1));
+			traceDecode('name');
+			this.stopAll=this.readBool();
+			traceDecode('stopAll');
+			return this;
+		}
+
+	}
+	,
+
+	SetTitle: class extends Buffer{
+
+		static get ID(){return 88;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(action=0,text="",fadeIn=0,stay=0,fadeOut=0){
+			super();
+			this.action = action;
+			this.text = text;
+			this.fadeIn = fadeIn;
+			this.stay = stay;
+			this.fadeOut = fadeOut;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(88);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarint(this.action);
+			var dhc5zh=this.encodeString(this.text);
+			this.writeVaruint(dhc5zh.length);
+			this.writeBytes(dhc5zh);
+			this.writeVarint(this.fadeIn);
+			this.writeVarint(this.stay);
+			this.writeVarint(this.fadeOut);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.action=this.readVarint();
+			traceDecode('action');
+			var dhc5zh=this.readVaruint();
+			this.text=this.decodeString(this.readBytes(dhc5zh));
+			traceDecode('text');
+			this.fadeIn=this.readVarint();
+			traceDecode('fadeIn');
+			this.stay=this.readVarint();
+			traceDecode('stay');
+			this.fadeOut=this.readVarint();
+			traceDecode('fadeOut');
+			return this;
+		}
+
+	}
+	,
+
+	AddBehaviorTree: class extends Buffer{
+
+		static get ID(){return 89;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(unknown0=""){
+			super();
+			this.unknown0 = unknown0;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(89);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			var dhc5btbd=this.encodeString(this.unknown0);
+			this.writeVaruint(dhc5btbd.length);
+			this.writeBytes(dhc5btbd);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			var dhc5btbd=this.readVaruint();
+			this.unknown0=this.decodeString(this.readBytes(dhc5btbd));
+			traceDecode('unknown0');
+			return this;
+		}
+
+	}
+	,
+
+	StructureBlockUpdate: class extends Buffer{
+
+		static get ID(){return 90;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(){
+			super();
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(90);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			return this;
+		}
+
+	}
+	,
+
+	ShowStoreOffer: class extends Buffer{
+
+		static get ID(){return 91;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(unknown0="",unknown1=false,unknown2=""){
+			super();
+			this.unknown0 = unknown0;
+			this.unknown1 = unknown1;
+			this.unknown2 = unknown2;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(91);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			var dhc5btbd=this.encodeString(this.unknown0);
+			this.writeVaruint(dhc5btbd.length);
+			this.writeBytes(dhc5btbd);
+			this.writeBool(this.unknown1);
+			var dhc5btbd=this.encodeString(this.unknown2);
+			this.writeVaruint(dhc5btbd.length);
+			this.writeBytes(dhc5btbd);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			var dhc5btbd=this.readVaruint();
+			this.unknown0=this.decodeString(this.readBytes(dhc5btbd));
+			traceDecode('unknown0');
+			this.unknown1=this.readBool();
+			traceDecode('unknown1');
+			var dhc5btbd=this.readVaruint();
+			this.unknown2=this.decodeString(this.readBytes(dhc5btbd));
+			traceDecode('unknown2');
+			return this;
+		}
+
+	}
+	,
+
+	PurchaseReceipt: class extends Buffer{
+
+		static get ID(){return 92;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(unknown0=[]){
+			super();
+			this.unknown0 = unknown0;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(92);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVaruint(this.unknown0.length);
+			for(var dhc5btbd in this.unknown0){
+				var dhc5btbd=this.encodeString(this.unknown0[dhc5btbd]);
+				this.writeVaruint(dhc5btbd.length);
+				this.writeBytes(dhc5btbd);
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			var aramd5b9=this.readVaruint();
+			this.unknown0=[];
+			for(var dhc5btbd=0;dhc5btbd<aramd5b9;dhc5btbd++){
+				var dhc5btbd=this.readVaruint();
+				this.unknown0[dhc5btbd]=this.decodeString(this.readBytes(dhc5btbd));
+			}
+			traceDecode('unknown0');
+			return this;
+		}
+
+	}
+	,
+
+	PlayerSkin: class extends Buffer{
+
+		static get ID(){return 93;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(uuid=new Types.McpeUuid(),skinId="",skinName="",unknown3="",skinData=new Uint8Array(0),capeData=new Uint8Array(0),geometryModel="",geometryData=new Uint8Array(0)){
+			super();
+			this.uuid = uuid;
+			this.skinId = skinId;
+			this.skinName = skinName;
+			this.unknown3 = unknown3;
+			this.skinData = skinData;
+			this.capeData = capeData;
+			this.geometryModel = geometryModel;
+			this.geometryData = geometryData;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(93);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeBytes(this.uuid.encodeBody(true));
+			var dhc5alsq=this.encodeString(this.skinId);
+			this.writeVaruint(dhc5alsq.length);
+			this.writeBytes(dhc5alsq);
+			var dhc5altf=this.encodeString(this.skinName);
+			this.writeVaruint(dhc5altf.length);
+			this.writeBytes(dhc5altf);
+			var dhc5btbd=this.encodeString(this.unknown3);
+			this.writeVaruint(dhc5btbd.length);
+			this.writeBytes(dhc5btbd);
+			this.writeVaruint(this.skinData.length);
+			this.writeBytes(this.skinData);
+			this.writeVaruint(this.capeData.length);
+			this.writeBytes(this.capeData);
+			var dhc5z9zr=this.encodeString(this.geometryModel);
+			this.writeVaruint(dhc5z9zr.length);
+			this.writeBytes(dhc5z9zr);
+			this.writeVaruint(this.geometryData.length);
+			this.writeBytes(this.geometryData);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.uuid=new Types.McpeUuid().decodeBody(this._buffer);
+			this._buffer=this.uuid._buffer;
+			traceDecode('uuid');
+			var dhc5alsq=this.readVaruint();
+			this.skinId=this.decodeString(this.readBytes(dhc5alsq));
+			traceDecode('skinId');
+			var dhc5altf=this.readVaruint();
+			this.skinName=this.decodeString(this.readBytes(dhc5altf));
+			traceDecode('skinName');
+			var dhc5btbd=this.readVaruint();
+			this.unknown3=this.decodeString(this.readBytes(dhc5btbd));
+			traceDecode('unknown3');
+			var aramctbr=this.readVaruint();
+			this.skinData=this.readBytes(aramctbr);
+			traceDecode('skinData');
+			var aramyfzr=this.readVaruint();
+			this.capeData=this.readBytes(aramyfzr);
+			traceDecode('capeData');
+			var dhc5z9zr=this.readVaruint();
+			this.geometryModel=this.decodeString(this.readBytes(dhc5z9zr));
+			traceDecode('geometryModel');
+			var aramzvbv=this.readVaruint();
+			this.geometryData=this.readBytes(aramzvbv);
+			traceDecode('geometryData');
+			return this;
+		}
+
+	}
+	,
+
+	SubClientLogin: class extends Buffer{
+
+		static get ID(){return 94;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(){
+			super();
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(94);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			return this;
+		}
+
+	}
+	,
+
+	InitiateWebSocketConnection: class extends Buffer{
+
+		static get ID(){return 95;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(unknown0=""){
+			super();
+			this.unknown0 = unknown0;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(95);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			var dhc5btbd=this.encodeString(this.unknown0);
+			this.writeVaruint(dhc5btbd.length);
+			this.writeBytes(dhc5btbd);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			var dhc5btbd=this.readVaruint();
+			this.unknown0=this.decodeString(this.readBytes(dhc5btbd));
+			traceDecode('unknown0');
+			return this;
+		}
+
+	}
+	,
+
+	SetLastHurtBy: class extends Buffer{
+
+		static get ID(){return 96;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(unknown0=0){
+			super();
+			this.unknown0 = unknown0;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(96);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarint(this.unknown0);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.unknown0=this.readVarint();
+			traceDecode('unknown0');
+			return this;
+		}
+
+	}
+	,
+
+	BookEdit: class extends Buffer{
+
+		static get ID(){return 97;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return true;};
+
+		static get REPLACE_PAGE(){return 0;};
+		static get ADD_PAGE(){return 1;};
+		static get DELETE_PAGE(){return 2;};
+		static get SWAP_PAGES(){return 3;};
+		static get SIGN(){return 4;};
+
+		constructor(type=0,slot=0){
+			super();
+			this.type = type;
+			this.slot = slot;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(97);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeByte(this.type);
+			this.writeByte(this.slot);
+			switch(this.type){
+				case 0:
+					this.writeByte(this.type);
+					this.writeByte(this.slot);
+					break;
+				case 1:
+					this.writeByte(this.type);
+					this.writeByte(this.slot);
+					break;
+				case 2:
+					this.writeByte(this.type);
+					this.writeByte(this.slot);
+					break;
+				case 3:
+					this.writeByte(this.type);
+					this.writeByte(this.slot);
+					break;
+				case 4:
+					this.writeByte(this.type);
+					this.writeByte(this.slot);
+					break;
+				default: break;
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.type=this.readByte();
+			traceDecode('type');
+			this.slot=this.readByte();
+			traceDecode('slot');
+			switch(this.type){
+				case 0:
+					this.pageNumber=this.readByte();
+					var dhc5btbd=this.readVaruint();
+					this.unknown3=this.decodeString(this.readBytes(dhc5btbd));
+					var dhc5btbd=this.readVaruint();
+					this.unknown4=this.decodeString(this.readBytes(dhc5btbd));
+					break;
+				case 1:
+					this.pageNumber=this.readByte();
+					var dhc5btbd=this.readVaruint();
+					this.unknown3=this.decodeString(this.readBytes(dhc5btbd));
+					var dhc5btbd=this.readVaruint();
+					this.unknown4=this.decodeString(this.readBytes(dhc5btbd));
+					break;
+				case 2:
+					this.pageNumber=this.readByte();
+					break;
+				case 3:
+					this.page1=this.readByte();
+					this.page2=this.readByte();
+					break;
+				case 4:
+					var dhc5arz=this.readVaruint();
+					this.title=this.decodeString(this.readBytes(dhc5arz));
+					var dhc5drbi=this.readVaruint();
+					this.author=this.decodeString(this.readBytes(dhc5drbi));
+					break;
+				default: break;
+			}
+			return this;
+		}
+
+	}
+	,
+
+	NpcRequest: class extends Buffer{
+
+		static get ID(){return 98;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(entityId=0,requestType=0,command="",actionType=0){
+			super();
+			this.entityId = entityId;
+			this.requestType = requestType;
+			this.command = command;
+			this.actionType = actionType;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(98);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarlong(this.entityId);
+			this.writeByte(this.requestType);
+			var dhc5b1y5=this.encodeString(this.command);
+			this.writeVaruint(dhc5b1y5.length);
+			this.writeBytes(dhc5b1y5);
+			this.writeByte(this.actionType);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			this.requestType=this.readByte();
+			traceDecode('requestType');
+			var dhc5b1y5=this.readVaruint();
+			this.command=this.decodeString(this.readBytes(dhc5b1y5));
+			traceDecode('command');
+			this.actionType=this.readByte();
+			traceDecode('actionType');
+			return this;
+		}
+
+	}
+	,
+
+	PhotoTransfer: class extends Buffer{
+
+		static get ID(){return 99;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(unknown0="",unknown1="",unknown2=""){
+			super();
+			this.unknown0 = unknown0;
+			this.unknown1 = unknown1;
+			this.unknown2 = unknown2;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(99);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			var dhc5btbd=this.encodeString(this.unknown0);
+			this.writeVaruint(dhc5btbd.length);
+			this.writeBytes(dhc5btbd);
+			var dhc5btbd=this.encodeString(this.unknown1);
+			this.writeVaruint(dhc5btbd.length);
+			this.writeBytes(dhc5btbd);
+			var dhc5btbd=this.encodeString(this.unknown2);
+			this.writeVaruint(dhc5btbd.length);
+			this.writeBytes(dhc5btbd);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			var dhc5btbd=this.readVaruint();
+			this.unknown0=this.decodeString(this.readBytes(dhc5btbd));
+			traceDecode('unknown0');
+			var dhc5btbd=this.readVaruint();
+			this.unknown1=this.decodeString(this.readBytes(dhc5btbd));
+			traceDecode('unknown1');
+			var dhc5btbd=this.readVaruint();
+			this.unknown2=this.decodeString(this.readBytes(dhc5btbd));
+			traceDecode('unknown2');
+			return this;
+		}
+
+	}
+	,
+
+	ModalFormRequest: class extends Buffer{
+
+		static get ID(){return 100;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(formId=0,data=""){
+			super();
+			this.formId = formId;
+			this.data = data;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(100);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVaruint(this.formId);
+			var dhc5yr=this.encodeString(this.data);
+			this.writeVaruint(dhc5yr.length);
+			this.writeBytes(dhc5yr);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.formId=this.readVaruint();
+			traceDecode('formId');
+			var dhc5yr=this.readVaruint();
+			this.data=this.decodeString(this.readBytes(dhc5yr));
+			traceDecode('data');
+			return this;
+		}
+
+	}
+	,
+
+	ModalFormResponse: class extends Buffer{
+
+		static get ID(){return 101;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(formId=0,data=""){
+			super();
+			this.formId = formId;
+			this.data = data;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(101);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVaruint(this.formId);
+			var dhc5yr=this.encodeString(this.data);
+			this.writeVaruint(dhc5yr.length);
+			this.writeBytes(dhc5yr);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.formId=this.readVaruint();
+			traceDecode('formId');
+			var dhc5yr=this.readVaruint();
+			this.data=this.decodeString(this.readBytes(dhc5yr));
+			traceDecode('data');
+			return this;
+		}
+
+	}
+	,
+
+	ServerSettingsRequest: class extends Buffer{
+
+		static get ID(){return 102;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		constructor(){
+			super();
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(102);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			return this;
+		}
+
+	}
+	,
+
+	ServerSettingsResponse: class extends Buffer{
+
+		static get ID(){return 103;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(formId=0,data=""){
+			super();
+			this.formId = formId;
+			this.data = data;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(103);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVaruint(this.formId);
+			var dhc5yr=this.encodeString(this.data);
+			this.writeVaruint(dhc5yr.length);
+			this.writeBytes(dhc5yr);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.formId=this.readVaruint();
+			traceDecode('formId');
+			var dhc5yr=this.readVaruint();
+			this.data=this.decodeString(this.readBytes(dhc5yr));
+			traceDecode('data');
+			return this;
+		}
+
+	}
+	,
+
+	ShowProfile: class extends Buffer{
+
+		static get ID(){return 104;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(){
+			super();
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(104);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			return this;
+		}
+
+	}
+	,
+
+	SetDefaultGameType: class extends Buffer{
+
+		static get ID(){return 105;};
+
+		static get CLIENTBOUND(){return true;};
+		static get SERVERBOUND(){return false;};
+
+		constructor(gameType=0){
+			super();
+			this.gameType = gameType;
+		}
+
+		reset(){
+			this._buffer=[];
+		}
+
+		encode(){
+			this.reset();
+			this.writeVaruint(105);
+			this.writeBytes(new Uint8Array(2));
+			return this.encodeBody(false);
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVaruint(this.gameType);
+			return new Uint8Array(this._buffer);
+		}
+
+		decode(_buffer){
+			this._buffer=Array.from(_buffer);
+			var _id=this.readVaruint();
+			this.readBytes(2);
+			return this.decodeBody(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.gameType=this.readVaruint();
+			traceDecode('gameType');
+			return this;
+		}
+
+	}
+
+}

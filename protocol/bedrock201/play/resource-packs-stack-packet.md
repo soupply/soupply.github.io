@@ -6,6 +6,8 @@ layout: default
 
 # Resource packs stack packet
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#play.resource_packs_stack_packet)
+
 **Id**: 7
 
 **Id** (hex): 07

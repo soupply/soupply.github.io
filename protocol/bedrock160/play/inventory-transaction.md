@@ -6,6 +6,8 @@ layout: default
 
 # Inventory transaction
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.inventory_transaction)
+
 **Id**: 30
 
 **Id** (hex): 1E
@@ -57,9 +59,9 @@ click position | float&lt;xyz&gt;
 
 Name | Value
 ---|:---:
-[click block](use-item_action-type_click-block) | 0
-[click air](use-item_action-type_click-air) | 1
-[break block](use-item_action-type_break-block) | 2
+click block | 0
+click air | 1
+break block | 2
 
 ### Use Item On Entity
 
@@ -80,8 +82,8 @@ item | [slot](/protocol/bedrock160/types/slot)
 
 Name | Value
 ---|:---:
-[interact](use-item-on-entity_action-type_interact) | 0
-[attack](use-item-on-entity_action-type_attack) | 1
+interact | 0
+attack | 1
 
 ### Release Item
 
@@ -100,5 +102,5 @@ head position | float&lt;xyz&gt;
 
 Name | Value
 ---|:---:
-[shoot bow](release-item_action-type_shoot-bow) | 0
-[consume](release-item_action-type_consume) | 1
+shoot bow | 0
+consume | 1

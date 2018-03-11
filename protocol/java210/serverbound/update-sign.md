@@ -6,6 +6,8 @@ layout: default
 
 # Update sign
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#serverbound.update_sign)
+
 **Id**: 25
 
 **Id** (hex): 19

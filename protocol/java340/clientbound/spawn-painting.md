@@ -6,6 +6,8 @@ layout: default
 
 # Spawn painting
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#clientbound.spawn_painting)
+
 **Id**: 4
 
 **Id** (hex): 04
@@ -32,7 +34,7 @@ position | ulong
 
 Name | Value
 ---|:---:
-[south](direction_south) | 0
-[west](direction_west) | 1
-[north](direction_north) | 2
-[east](direction_east) | 3
+south | 0
+west | 1
+north | 2
+east | 3

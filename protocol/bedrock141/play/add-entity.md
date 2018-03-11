@@ -6,6 +6,8 @@ layout: default
 
 # Add entity
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#play.add_entity)
+
 **Id**: 13
 
 **Id** (hex): 0D

@@ -6,6 +6,8 @@ layout: default
 
 # Adventure settings
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#play.adventure_settings)
+
 **Id**: 55
 
 **Id** (hex): 37
@@ -29,15 +31,15 @@ Name | Type
 
 Name | Value
 ---|:---:
-[immutable world](flags_immutable-world) | 1
-[pvp disabled](flags_pvp-disabled) | 2
-[pvm disabled](flags_pvm-disabled) | 4
-[mvp disbaled](flags_mvp-disbaled) | 8
-[evp disabled](flags_evp-disabled) | 16
-[auto jump](flags_auto-jump) | 32
-[allow flight](flags_allow-flight) | 64
-[no clip](flags_no-clip) | 128
-[flying](flags_flying) | 512
+immutable world | 1
+pvp disabled | 2
+pvm disabled | 4
+mvp disbaled | 8
+evp disabled | 16
+auto jump | 32
+allow flight | 64
+no clip | 128
+flying | 512
 
 ### permissions
 
@@ -45,8 +47,8 @@ Name | Value
 
 Name | Value
 ---|:---:
-[user](permissions_user) | 0
-[operator](permissions_operator) | 1
-[host](permissions_host) | 2
-[automation](permissions_automation) | 3
-[admin](permissions_admin) | 4
+user | 0
+operator | 1
+host | 2
+automation | 3
+admin | 4

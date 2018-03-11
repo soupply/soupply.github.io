@@ -6,6 +6,8 @@ layout: default
 
 # Text
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#play.text)
+
 **Id**: 9
 
 **Id** (hex): 09

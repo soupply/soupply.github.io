@@ -19,7 +19,7 @@ uuid | uuid
 
 Name | Value
 ---|:---:
-[survival](gamemode_survival) | 0
-[creative](gamemode_creative) | 1
-[adventure](gamemode_adventure) | 2
-[spectator](gamemode_spectator) | 3
+survival | 0
+creative | 1
+adventure | 2
+spectator | 3

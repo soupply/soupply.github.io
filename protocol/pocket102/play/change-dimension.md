@@ -6,6 +6,8 @@ layout: default
 
 # Change dimension
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#play.change_dimension)
+
 **Id**: 61
 
 **Id** (hex): 3D
@@ -30,6 +32,6 @@ position | float&lt;xyz&gt;
 
 Name | Value
 ---|:---:
-[overworld](dimension_overworld) | 0
-[nether](dimension_nether) | 1
-[end](dimension_end) | 2
+overworld | 0
+nether | 1
+end | 2

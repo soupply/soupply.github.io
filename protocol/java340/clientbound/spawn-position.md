@@ -6,6 +6,8 @@ layout: default
 
 # Spawn position
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#clientbound.spawn_position)
+
 **Id**: 70
 
 **Id** (hex): 46

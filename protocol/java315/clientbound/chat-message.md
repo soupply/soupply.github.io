@@ -6,6 +6,8 @@ layout: default
 
 # Chat message
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#clientbound.chat_message)
+
 **Id**: 15
 
 **Id** (hex): 0F
@@ -29,6 +31,6 @@ message | string
 
 Name | Value
 ---|:---:
-[chat](position_chat) | 0
-[system message](position_system-message) | 1
-[above hotbar](position_above-hotbar) | 2
+chat | 0
+system message | 1
+above hotbar | 2

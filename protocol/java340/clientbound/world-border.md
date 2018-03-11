@@ -6,6 +6,8 @@ layout: default
 
 # World border
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#clientbound.world_border)
+
 **Id**: 56
 
 **Id** (hex): 38

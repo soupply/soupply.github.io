@@ -6,6 +6,8 @@ layout: default
 
 # Resource pack client response
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#play.resource_pack_client_response)
+
 **Id**: 8
 
 **Id** (hex): 08
@@ -29,7 +31,7 @@ pack ids | [packIds](/protocol/bedrock201/arrays)
 
 Name | Value
 ---|:---:
-[refused](status_refused) | 1
-[send packs](status_send-packs) | 2
-[have all packs](status_have-all-packs) | 3
-[completed](status_completed) | 4
+refused | 1
+send packs | 2
+have all packs | 3
+completed | 4

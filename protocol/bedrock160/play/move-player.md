@@ -6,6 +6,8 @@ layout: default
 
 # Move player
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.move_player)
+
 **Id**: 19
 
 **Id** (hex): 13
@@ -37,7 +39,7 @@ on ground | bool |
 
 Name | Value
 ---|:---:
-[full](animation_full) | 0
-[none](animation_none) | 1
-[teleport](animation_teleport) | 2
-[pitch](animation_pitch) | 3
+full | 0
+none | 1
+teleport | 2
+pitch | 3

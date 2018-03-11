@@ -6,6 +6,8 @@ layout: default
 
 # Mob equipment
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.mob_equipment)
+
 **Id**: 31
 
 **Id** (hex): 1F

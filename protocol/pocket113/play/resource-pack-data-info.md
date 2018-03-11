@@ -6,6 +6,8 @@ layout: default
 
 # Resource pack data info
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.resource_pack_data_info)
+
 **Id**: 83
 
 **Id** (hex): 53

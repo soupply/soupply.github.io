@@ -6,6 +6,8 @@ layout: default
 
 # Block event
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.block_event)
+
 **Id**: 26
 
 **Id** (hex): 1A

@@ -6,6 +6,8 @@ layout: default
 
 # Camera
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#clientbound.camera)
+
 **Id**: 56
 
 **Id** (hex): 38

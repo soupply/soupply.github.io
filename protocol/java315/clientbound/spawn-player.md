@@ -6,6 +6,8 @@ layout: default
 
 # Spawn player
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#clientbound.spawn_player)
+
 **Id**: 5
 
 **Id** (hex): 05

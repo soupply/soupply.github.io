@@ -6,6 +6,8 @@ layout: default
 
 # Player abilities
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#serverbound.player_abilities)
+
 **Id**: 18
 
 **Id** (hex): 12
@@ -30,7 +32,7 @@ walking speed | float
 
 Name | Value
 ---|:---:
-[creative mode](flags_creative-mode) | 1
-[flying](flags_flying) | 2
-[allow flying](flags_allow-flying) | 4
-[invincible](flags_invincible) | 8
+creative mode | 1
+flying | 2
+allow flying | 4
+invincible | 8

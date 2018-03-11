@@ -6,6 +6,8 @@ layout: default
 
 # Spawn experience orb
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock160#play.spawn_experience_orb)
+
 **Id**: 66
 
 **Id** (hex): 42

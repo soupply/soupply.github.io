@@ -6,6 +6,8 @@ layout: default
 
 # Multi block change
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java315#clientbound.multi_block_change)
+
 **Id**: 16
 
 **Id** (hex): 10

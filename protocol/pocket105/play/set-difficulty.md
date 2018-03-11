@@ -6,6 +6,8 @@ layout: default
 
 # Set difficulty
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.set_difficulty)
+
 **Id**: 61
 
 **Id** (hex): 3D
@@ -30,7 +32,7 @@ Name | Type
 
 Name | Value
 ---|:---:
-[peaceful](difficulty_peaceful) | 0
-[easy](difficulty_easy) | 1
-[normal](difficulty_normal) | 2
-[hard](difficulty_hard) | 3
+peaceful | 0
+easy | 1
+normal | 2
+hard | 3

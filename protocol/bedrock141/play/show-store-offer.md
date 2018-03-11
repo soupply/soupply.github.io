@@ -6,6 +6,8 @@ layout: default
 
 # Show store offer
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#play.show_store_offer)
+
 **Id**: 91
 
 **Id** (hex): 5B

@@ -6,6 +6,8 @@ layout: default
 
 # Book edit
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.book_edit)
+
 **Id**: 97
 
 **Id** (hex): 61

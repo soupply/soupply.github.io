@@ -6,6 +6,8 @@ layout: default
 
 # Player input
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket105#play.player_input)
+
 **Id**: 58
 
 **Id** (hex): 3A

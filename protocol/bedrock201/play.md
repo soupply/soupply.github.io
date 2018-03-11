@@ -6,7 +6,7 @@ layout: default
 
 # Play
 
-Packets related to the gameplay. Network-related packets (encapsulation, acks, nacks) are managed by [RakNet](../raknet/8.html) and every packet in this section is encapsualted in an [Encapsualted](../raknet/8.html#control_encapsulated) packet.
+Packets related to the gameplay. Network-related packets (encapsulation, acks, nacks) are managed by RakNet and every packet in this section is encapsualted in an encapsulated packet.
 
 Packet | Id | Clientbound | Serverbound
 ---|:---:|:---:|:---:

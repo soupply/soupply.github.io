@@ -6,6 +6,8 @@ layout: default
 
 # Mob effect
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#play.mob_effect)
+
 **Id**: 28
 
 **Id** (hex): 1C
@@ -33,6 +35,6 @@ duration | varint
 
 Name | Value
 ---|:---:
-[add](event-id_add) | 1
-[modify](event-id_modify) | 2
-[remove](event-id_remove) | 3
+add | 1
+modify | 2
+remove | 3

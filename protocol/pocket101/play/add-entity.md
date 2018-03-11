@@ -6,6 +6,8 @@ layout: default
 
 # Add entity
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#play.add_entity)
+
 **Id**: 14
 
 **Id** (hex): 0E

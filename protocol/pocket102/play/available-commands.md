@@ -6,6 +6,8 @@ layout: default
 
 # Available commands
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket102#play.available_commands)
+
 **Id**: 77
 
 **Id** (hex): 4D

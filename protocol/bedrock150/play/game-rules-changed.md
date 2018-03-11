@@ -6,6 +6,8 @@ layout: default
 
 # Game rules changed
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.game_rules_changed)
+
 **Id**: 72
 
 **Id** (hex): 48

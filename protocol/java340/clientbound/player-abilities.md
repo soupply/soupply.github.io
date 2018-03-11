@@ -6,6 +6,8 @@ layout: default
 
 # Player abilities
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#clientbound.player_abilities)
+
 **Id**: 44
 
 **Id** (hex): 2C
@@ -30,7 +32,7 @@ fov modifier | float
 
 Name | Value
 ---|:---:
-[invulnerable](flags_invulnerable) | 1
-[flying](flags_flying) | 2
-[allow flying](flags_allow-flying) | 4
-[creative mode](flags_creative-mode) | 8
+invulnerable | 1
+flying | 2
+allow flying | 4
+creative mode | 8

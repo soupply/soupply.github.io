@@ -6,6 +6,8 @@ layout: default
 
 # Animate
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#play.animate)
+
 **Id**: 44
 
 **Id** (hex): 2C
@@ -30,5 +32,5 @@ entity id | varlong |
 
 Name | Value
 ---|:---:
-[breaking](action_breaking) | 1
-[wake up](action_wake-up) | 3
+breaking | 1
+wake up | 3

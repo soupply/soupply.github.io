@@ -6,6 +6,8 @@ layout: default
 
 # Set health
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket101#play.set_health)
+
 **Id**: 42
 
 **Id** (hex): 2A

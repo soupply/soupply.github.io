@@ -6,6 +6,8 @@ layout: default
 
 # Clientbound map item data
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#play.clientbound_map_item_data)
+
 **Id**: 67
 
 **Id** (hex): 43
@@ -34,9 +36,9 @@ decorations | [decoration](/protocol/bedrock141/types/decoration)[] | <code>upda
 
 Name | Value
 ---|:---:
-[texture](update_texture) | 2
-[decorations](update_decorations) | 4
-[entities](update_entities) | 8
+texture | 2
+decorations | 4
+entities | 8
 
 ### size
 

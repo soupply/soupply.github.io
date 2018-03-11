@@ -6,6 +6,8 @@ layout: default
 
 # Boss event
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.boss_event)
+
 **Id**: 74
 
 **Id** (hex): 4A
@@ -31,6 +33,6 @@ entity id | varlong
 
 Name | Value
 ---|:---:
-[add](event-id_add) | 0
-[update](event-id_update) | 1
-[remove](event-id_remove) | 2
+add | 0
+update | 1
+remove | 2

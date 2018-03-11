@@ -6,6 +6,8 @@ layout: default
 
 # Set passengers
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#clientbound.set_passengers)
+
 **Id**: 67
 
 **Id** (hex): 43

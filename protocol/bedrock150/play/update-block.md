@@ -6,6 +6,8 @@ layout: default
 
 # Update block
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.update_block)
+
 **Id**: 21
 
 **Id** (hex): 15
@@ -30,7 +32,7 @@ block | varuint
 
 Name | Value
 ---|:---:
-[neighbors](flags-and-meta_neighbors) | 1
-[network](flags-and-meta_network) | 2
-[no graphic](flags-and-meta_no-graphic) | 4
-[priority](flags-and-meta_priority) | 8
+neighbors | 1
+network | 2
+no graphic | 4
+priority | 8

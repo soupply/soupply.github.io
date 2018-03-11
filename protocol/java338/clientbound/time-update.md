@@ -6,6 +6,8 @@ layout: default
 
 # Time update
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#clientbound.time_update)
+
 **Id**: 71
 
 **Id** (hex): 47

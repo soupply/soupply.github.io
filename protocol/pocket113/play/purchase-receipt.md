@@ -6,6 +6,8 @@ layout: default
 
 # Purchase receipt
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.purchase_receipt)
+
 **Id**: 93
 
 **Id** (hex): 5D

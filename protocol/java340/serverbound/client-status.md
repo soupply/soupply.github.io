@@ -6,6 +6,8 @@ layout: default
 
 # Client status
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java340#serverbound.client_status)
+
 **Id**: 3
 
 **Id** (hex): 03
@@ -28,5 +30,5 @@ Name | Type
 
 Name | Value
 ---|:---:
-[respawn](action_respawn) | 0
-[request stats](action_request-stats) | 1
+respawn | 0
+request stats | 1

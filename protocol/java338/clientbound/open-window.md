@@ -6,6 +6,8 @@ layout: default
 
 # Open window
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#clientbound.open_window)
+
 **Id**: 19
 
 **Id** (hex): 13

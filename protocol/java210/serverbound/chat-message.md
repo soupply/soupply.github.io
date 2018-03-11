@@ -6,6 +6,8 @@ layout: default
 
 # Chat message
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#serverbound.chat_message)
+
 **Id**: 2
 
 **Id** (hex): 02

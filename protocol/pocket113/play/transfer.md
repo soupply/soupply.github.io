@@ -6,6 +6,8 @@ layout: default
 
 # Transfer
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.transfer)
+
 **Id**: 86
 
 **Id** (hex): 56

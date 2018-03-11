@@ -6,6 +6,8 @@ layout: default
 
 # Move entity
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#play.move_entity)
+
 **Id**: 19
 
 **Id** (hex): 13

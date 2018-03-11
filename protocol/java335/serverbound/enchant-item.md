@@ -6,6 +6,8 @@ layout: default
 
 # Enchant item
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#serverbound.enchant_item)
+
 **Id**: 7
 
 **Id** (hex): 07

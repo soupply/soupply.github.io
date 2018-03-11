@@ -6,6 +6,8 @@ layout: default
 
 # Plugin message
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java338#clientbound.plugin_message)
+
 **Id**: 24
 
 **Id** (hex): 18

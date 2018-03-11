@@ -6,6 +6,8 @@ layout: default
 
 # Command request
 
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#play.command_request)
+
 **Id**: 77
 
 **Id** (hex): 4D
@@ -33,7 +35,7 @@ internal | bool |
 
 Name | Value
 ---|:---:
-[player](type_player) | 0
-[command block](type_command-block) | 1
-[minecart command block](type_minecart-command-block) | 2
-[dev console](type_dev-console) | 3
+player | 0
+command block | 1
+minecart command block | 2
+dev console | 3

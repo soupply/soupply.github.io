@@ -6,6 +6,8 @@ layout: default
 
 # Resource pack chunk request
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket113#play.resource_pack_chunk_request)
+
 **Id**: 85
 
 **Id** (hex): 55

@@ -6,6 +6,8 @@ layout: default
 
 # Login
 
+Encode/decode this packet in [Sandbox](../../../sandbox/pocket100#play.login)
+
 **Id**: 1
 
 **Id** (hex): 01
@@ -30,5 +32,5 @@ body | ubyte[]
 
 Name | Value
 ---|:---:
-[classic](edition_classic) | 0
-[education](edition_education) | 1
+classic | 0
+education | 1

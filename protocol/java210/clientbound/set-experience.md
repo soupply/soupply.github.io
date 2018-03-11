@@ -6,6 +6,8 @@ layout: default
 
 # Set experience
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java210#clientbound.set_experience)
+
 **Id**: 61
 
 **Id** (hex): 3D

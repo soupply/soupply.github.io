@@ -6,6 +6,8 @@ layout: default
 
 # Keep alive
 
+Encode/decode this packet in [Sandbox](../../../sandbox/java335#serverbound.keep_alive)
+
 **Id**: 12
 
 **Id** (hex): 0C
