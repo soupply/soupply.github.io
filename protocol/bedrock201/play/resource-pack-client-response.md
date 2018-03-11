@@ -23,7 +23,7 @@ Encode/decode this packet in [Sandbox](../../../sandbox/bedrock201#Play.Resource
 Name | Type
 ---|---
 [status](#status) | ubyte
-pack ids | [packIds](/protocol/bedrock201/arrays)
+pack ids | [array6](/protocol/bedrock201/arrays)
 
 ### status
 

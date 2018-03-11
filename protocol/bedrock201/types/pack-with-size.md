@@ -13,3 +13,5 @@ Name | Type
 id | string
 version | string
 size | ulong
+? | string
+? | string

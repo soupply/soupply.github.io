@@ -23,4 +23,4 @@ Encode/decode this packet in [Sandbox](../../../sandbox/java340#Clientbound.Enti
 Name | Type
 ---|---
 entity id | varuint
-attributes | [attributes](/protocol/java340/arrays)
+attributes | [array3](/protocol/java340/arrays)

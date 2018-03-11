@@ -296,11 +296,11 @@ const Play ={
 				this.reset();
 			}
 			this.writeBool(this.mustAccept);
-			this.writeBigEndianShort(this.behaviourPacks.length);
+			this.writeLittleEndianShort(this.behaviourPacks.length);
 			for(var dhc5zhdl in this.behaviourPacks){
 				this.writeBytes(this.behaviourPacks[dhc5zhdl].encodeBody(true));
 			}
-			this.writeBigEndianShort(this.resourcePacks.length);
+			this.writeLittleEndianShort(this.resourcePacks.length);
 			for(var dhc5zndj in this.resourcePacks){
 				this.writeBytes(this.resourcePacks[dhc5zndj].encodeBody(true));
 			}
@@ -319,14 +319,14 @@ const Play ={
 			initDecode(this);
 			this.mustAccept=this.readBool();
 			traceDecode('mustAccept');
-			var aramyvyz=this.readBigEndianShort();
+			var aramyvyz=this.readLittleEndianShort();
 			this.behaviourPacks=[];
 			for(var dhc5zhdl=0;dhc5zhdl<aramyvyz;dhc5zhdl++){
 				this.behaviourPacks[dhc5zhdl]=new Types.PackWithSize().decodeBody(this._buffer);
 				this._buffer=this.behaviourPacks[dhc5zhdl]._buffer;
 			}
 			traceDecode('behaviourPacks');
-			var aramcvbv=this.readBigEndianShort();
+			var aramcvbv=this.readLittleEndianShort();
 			this.resourcePacks=[];
 			for(var dhc5zndj=0;dhc5zndj<aramcvbv;dhc5zndj++){
 				this.resourcePacks[dhc5zndj]=new Types.PackWithSize().decodeBody(this._buffer);

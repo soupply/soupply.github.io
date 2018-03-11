@@ -14,7 +14,7 @@ Name | Type | When
 ---|---|:---:
 [id](#id) | varint | 
 [meta and count](#meta-and-count) | varint | <code>id</code> is greater than <code>0</code>
-[nbt](#nbt) | [nbt](/protocol/bedrock201/arrays) | <code>id</code> is greater than <code>0</code>
+[nbt](#nbt) | [array3](/protocol/bedrock201/arrays) | <code>id</code> is greater than <code>0</code>
 can place on | string[] | 
 can destroy | string[] | 
 

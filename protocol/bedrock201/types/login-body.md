@@ -12,5 +12,5 @@ layout: default
 
 Name | Type
 ---|---
-chain | [loginPayload](/protocol/bedrock201/arrays)
-client data | [loginPayload](/protocol/bedrock201/arrays)
+chain | [array1](/protocol/bedrock201/arrays)
+client data | [array2](/protocol/bedrock201/arrays)

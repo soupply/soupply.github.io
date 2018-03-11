@@ -50,11 +50,13 @@ const Types ={
 
 	PackWithSize: class extends Buffer{
 
-		constructor(id="",version="",size=0){
+		constructor(id="",version="",size=0,unknown3="",unknown4=""){
 			super();
 			this.id = id;
 			this.version = version;
 			this.size = size;
+			this.unknown3 = unknown3;
+			this.unknown4 = unknown4;
 		}
 
 		reset(){
@@ -72,6 +74,12 @@ const Types ={
 			this.writeVaruint(dhc5zja9.length);
 			this.writeBytes(dhc5zja9);
 			this.writeLittleEndianLong(this.size);
+			var dhc5btbd=this.encodeString(this.unknown3);
+			this.writeVaruint(dhc5btbd.length);
+			this.writeBytes(dhc5btbd);
+			var dhc5btbd=this.encodeString(this.unknown4);
+			this.writeVaruint(dhc5btbd.length);
+			this.writeBytes(dhc5btbd);
 			return new Uint8Array(this._buffer);
 		}
 
@@ -86,6 +94,12 @@ const Types ={
 			traceDecode('version');
 			this.size=this.readLittleEndianLong();
 			traceDecode('size');
+			var dhc5btbd=this.readVaruint();
+			this.unknown3=this.decodeString(this.readBytes(dhc5btbd));
+			traceDecode('unknown3');
+			var dhc5btbd=this.readVaruint();
+			this.unknown4=this.decodeString(this.readBytes(dhc5btbd));
+			traceDecode('unknown4');
 			return this;
 		}
 
@@ -94,10 +108,11 @@ const Types ={
 
 	Pack: class extends Buffer{
 
-		constructor(id="",version=""){
+		constructor(id="",version="",unknown2=""){
 			super();
 			this.id = id;
 			this.version = version;
+			this.unknown2 = unknown2;
 		}
 
 		reset(){
@@ -114,6 +129,9 @@ const Types ={
 			var dhc5zja9=this.encodeString(this.version);
 			this.writeVaruint(dhc5zja9.length);
 			this.writeBytes(dhc5zja9);
+			var dhc5btbd=this.encodeString(this.unknown2);
+			this.writeVaruint(dhc5btbd.length);
+			this.writeBytes(dhc5btbd);
 			return new Uint8Array(this._buffer);
 		}
 
@@ -126,6 +144,9 @@ const Types ={
 			var dhc5zja9=this.readVaruint();
 			this.version=this.decodeString(this.readBytes(dhc5zja9));
 			traceDecode('version');
+			var dhc5btbd=this.readVaruint();
+			this.unknown2=this.decodeString(this.readBytes(dhc5btbd));
+			traceDecode('unknown2');
 			return this;
 		}
 

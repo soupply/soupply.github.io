@@ -24,5 +24,5 @@ Name | Type
 ---|---
 position | float&lt;xyz&gt;
 radius | float
-records | [explosionRecords](/protocol/java340/arrays)
+records | [array2](/protocol/java340/arrays)
 motion | float&lt;xyz&gt;

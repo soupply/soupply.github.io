@@ -25,4 +25,4 @@ Name | Type
 id | string
 chunk index | uint
 progress | ulong
-data | [uintLeBytes](/protocol/bedrock201/arrays)
+data | [array7](/protocol/bedrock201/arrays)

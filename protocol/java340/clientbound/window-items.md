@@ -23,4 +23,4 @@ Encode/decode this packet in [Sandbox](../../../sandbox/java340#Clientbound.Wind
 Name | Type
 ---|---
 window | ubyte
-slots | [slots](/protocol/java340/arrays)
+slots | [array1](/protocol/java340/arrays)
