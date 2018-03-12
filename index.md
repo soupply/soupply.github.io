@@ -22,13 +22,3 @@ Protocol | Packets | Released | From | To
 [150](protocol/bedrock150) | 104 | 2017/12/6 | 1.2.6 | 1.2.6
 [141](protocol/bedrock141) | 104 | 2017/11/21 | 1.2.5 | 1.2.5
 [137](protocol/bedrock137) | 104 | 2017/9/20 | 1.2.0 | 1.2.3
-
-## [Minecraft: Pocket Edition](protocol/pocket113)
-
-Protocol | Packets | Released | From | To
-:---:|:---:|:---:|:---:|:---:
-[113](protocol/pocket113) | 93 | 2017/6/1 | 1.1.0 | 1.1.4
-[105](protocol/pocket105) | 88 | 2017/3/28 | 1.0.5 | 1.0.5
-[102](protocol/pocket102) | 83 | 2017/3/9 | 1.0.4 | 1.0.4
-[101](protocol/pocket101) | 82 | 2017/2/8 | 1.0.3 | 1.0.3
-[100](protocol/pocket100) | 81 | 2016/12/19 | 1.0.0 | 1.0.2
