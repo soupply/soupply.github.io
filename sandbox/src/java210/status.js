@@ -1,11 +1,15 @@
 const Status ={
 
-	Handshake: class extends Buffer{
+	Handshake: class extends Packet{
 
 		static get ID(){return 0;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 0;
+		}
 
 		constructor(protocol=0,serverAddress="",serverPort=0,next=0){
 			super();
@@ -13,16 +17,6 @@ const Status ={
 			this.serverAddress = serverAddress;
 			this.serverPort = serverPort;
 			this.next = next;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(0);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -36,12 +30,6 @@ const Status ={
 			this.writeBigEndianShort(this.serverPort);
 			this.writeVaruint(this.next);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -62,25 +50,19 @@ const Status ={
 	}
 	,
 
-	Request: class extends Buffer{
+	Request: class extends Packet{
 
 		static get ID(){return 0;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 0;
+		}
+
 		constructor(){
 			super();
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(0);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -88,12 +70,6 @@ const Status ={
 				this.reset();
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -105,26 +81,20 @@ const Status ={
 	}
 	,
 
-	Response: class extends Buffer{
+	Response: class extends Packet{
 
 		static get ID(){return 0;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 0;
+		}
+
 		constructor(json=""){
 			super();
 			this.json = json;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(0);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -135,12 +105,6 @@ const Status ={
 			this.writeVaruint(dhc5c9.length);
 			this.writeBytes(dhc5c9);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -155,26 +119,20 @@ const Status ={
 	}
 	,
 
-	Latency: class extends Buffer{
+	Latency: class extends Packet{
 
 		static get ID(){return 1;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 1;
+		}
+
 		constructor(id=0){
 			super();
 			this.id = id;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(1);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -183,12 +141,6 @@ const Status ={
 			}
 			this.writeBigEndianLong(this.id);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){

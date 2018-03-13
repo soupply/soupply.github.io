@@ -1,25 +1,19 @@
 const Login ={
 
-	Disconnect: class extends Buffer{
+	Disconnect: class extends Packet{
 
 		static get ID(){return 0;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 0;
+		}
+
 		constructor(reason=""){
 			super();
 			this.reason = reason;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(0);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -30,12 +24,6 @@ const Login ={
 			this.writeVaruint(dhc5zfb4.length);
 			this.writeBytes(dhc5zfb4);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -50,26 +38,20 @@ const Login ={
 	}
 	,
 
-	LoginStart: class extends Buffer{
+	LoginStart: class extends Packet{
 
 		static get ID(){return 0;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 0;
+		}
+
 		constructor(username=""){
 			super();
 			this.username = username;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(0);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -80,12 +62,6 @@ const Login ={
 			this.writeVaruint(dhc5cvbf.length);
 			this.writeBytes(dhc5cvbf);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -100,28 +76,22 @@ const Login ={
 	}
 	,
 
-	EncryptionRequest: class extends Buffer{
+	EncryptionRequest: class extends Packet{
 
 		static get ID(){return 1;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 1;
+		}
+
 		constructor(serverId="",publicKey=new Uint8Array(0),verifyToken=new Uint8Array(0)){
 			super();
 			this.serverId = serverId;
 			this.publicKey = publicKey;
 			this.verifyToken = verifyToken;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(1);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -136,12 +106,6 @@ const Login ={
 			this.writeVaruint(this.verifyToken.length);
 			this.writeBytes(this.verifyToken);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -162,27 +126,21 @@ const Login ={
 	}
 	,
 
-	EncryptionResponse: class extends Buffer{
+	EncryptionResponse: class extends Packet{
 
 		static get ID(){return 1;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 1;
+		}
+
 		constructor(sharedSecret=new Uint8Array(0),verifyToken=new Uint8Array(0)){
 			super();
 			this.sharedSecret = sharedSecret;
 			this.verifyToken = verifyToken;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(1);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -194,12 +152,6 @@ const Login ={
 			this.writeVaruint(this.verifyToken.length);
 			this.writeBytes(this.verifyToken);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -217,27 +169,21 @@ const Login ={
 	}
 	,
 
-	LoginSuccess: class extends Buffer{
+	LoginSuccess: class extends Packet{
 
 		static get ID(){return 2;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 2;
+		}
+
 		constructor(uuid="",username=""){
 			super();
 			this.uuid = uuid;
 			this.username = username;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(2);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -251,12 +197,6 @@ const Login ={
 			this.writeVaruint(dhc5cvbf.length);
 			this.writeBytes(dhc5cvbf);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -274,26 +214,20 @@ const Login ={
 	}
 	,
 
-	SetCompression: class extends Buffer{
+	SetCompression: class extends Packet{
 
 		static get ID(){return 3;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 3;
+		}
+
 		constructor(thresold=0){
 			super();
 			this.thresold = thresold;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(3);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -302,12 +236,6 @@ const Login ={
 			}
 			this.writeVaruint(this.thresold);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){

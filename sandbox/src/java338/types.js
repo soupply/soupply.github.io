@@ -8,10 +8,6 @@ const Types ={
 			this.value = value;
 		}
 
-		reset(){
-			this._buffer=[];
-		}
-
 		encodeBody(reset){
 			if(reset){
 				this.reset();
@@ -44,10 +40,6 @@ const Types ={
 			this.xz = xz;
 			this.y = y;
 			this.block = block;
-		}
-
-		reset(){
-			this._buffer=[];
 		}
 
 		encodeBody(reset){
@@ -83,10 +75,6 @@ const Types ={
 			this.count = count;
 			this.damage = damage;
 			this.nbt = nbt;
-		}
-
-		reset(){
-			this._buffer=[];
 		}
 
 		encodeBody(reset){
@@ -138,10 +126,6 @@ const Types ={
 			this.position = position;
 		}
 
-		reset(){
-			this._buffer=[];
-		}
-
 		encodeBody(reset){
 			if(reset){
 				this.reset();
@@ -175,10 +159,6 @@ const Types ={
 			this.value = value;
 			this.signed = signed;
 			this.signature = signature;
-		}
-
-		reset(){
-			this._buffer=[];
 		}
 
 		encodeBody(reset){
@@ -233,10 +213,6 @@ const Types ={
 			this.latency = latency;
 			this.hasDisplayName = hasDisplayName;
 			this.displayName = displayName;
-		}
-
-		reset(){
-			this._buffer=[];
 		}
 
 		encodeBody(reset){
@@ -302,10 +278,6 @@ const Types ={
 			this.gamemode = gamemode;
 		}
 
-		reset(){
-			this._buffer=[];
-		}
-
 		encodeBody(reset){
 			if(reset){
 				this.reset();
@@ -334,10 +306,6 @@ const Types ={
 			super();
 			this.uuid = uuid;
 			this.latency = latency;
-		}
-
-		reset(){
-			this._buffer=[];
 		}
 
 		encodeBody(reset){
@@ -369,10 +337,6 @@ const Types ={
 			this.uuid = uuid;
 			this.hasDisplayName = hasDisplayName;
 			this.displayName = displayName;
-		}
-
-		reset(){
-			this._buffer=[];
 		}
 
 		encodeBody(reset){
@@ -416,10 +380,6 @@ const Types ={
 			this.operation = operation;
 		}
 
-		reset(){
-			this._buffer=[];
-		}
-
 		encodeBody(reset){
 			if(reset){
 				this.reset();
@@ -452,10 +412,6 @@ const Types ={
 			this.key = key;
 			this.value = value;
 			this.modifiers = modifiers;
-		}
-
-		reset(){
-			this._buffer=[];
 		}
 
 		encodeBody(reset){
@@ -503,10 +459,6 @@ const Types ={
 			this.playerSlot = playerSlot;
 		}
 
-		reset(){
-			this._buffer=[];
-		}
-
 		encodeBody(reset){
 			if(reset){
 				this.reset();
@@ -541,10 +493,6 @@ const Types ={
 			this.position = position;
 		}
 
-		reset(){
-			this._buffer=[];
-		}
-
 		encodeBody(reset){
 			if(reset){
 				this.reset();
@@ -577,10 +525,6 @@ const Types ={
 			super();
 			this.hasUuid = hasUuid;
 			this.uuid = uuid;
-		}
-
-		reset(){
-			this._buffer=[];
 		}
 
 		encodeBody(reset){

@@ -8,10 +8,6 @@ const Types ={
 			this.clientData = clientData;
 		}
 
-		reset(){
-			this._buffer=[];
-		}
-
 		encodeBody(reset){
 			if(reset){
 				this.reset();
@@ -57,10 +53,6 @@ const Types ={
 			this.size = size;
 			this.unknown3 = unknown3;
 			this.unknown4 = unknown4;
-		}
-
-		reset(){
-			this._buffer=[];
 		}
 
 		encodeBody(reset){
@@ -115,10 +107,6 @@ const Types ={
 			this.unknown2 = unknown2;
 		}
 
-		reset(){
-			this._buffer=[];
-		}
-
 		encodeBody(reset){
 			if(reset){
 				this.reset();
@@ -162,10 +150,6 @@ const Types ={
 			this.nbt = nbt;
 			this.canPlaceOn = canPlaceOn;
 			this.canDestroy = canDestroy;
-		}
-
-		reset(){
-			this._buffer=[];
 		}
 
 		encodeBody(reset){
@@ -240,10 +224,6 @@ const Types ={
 			this.name = name;
 		}
 
-		reset(){
-			this._buffer=[];
-		}
-
 		encodeBody(reset){
 			if(reset){
 				this.reset();
@@ -287,10 +267,6 @@ const Types ={
 			this.z = z;
 		}
 
-		reset(){
-			this._buffer=[];
-		}
-
 		encodeBody(reset){
 			if(reset){
 				this.reset();
@@ -324,10 +300,6 @@ const Types ={
 			this.leastSignificantBits = leastSignificantBits;
 		}
 
-		reset(){
-			this._buffer=[];
-		}
-
 		encodeBody(reset){
 			if(reset){
 				this.reset();
@@ -359,10 +331,6 @@ const Types ={
 			this.displayName = displayName;
 			this.skin = skin;
 			this.unknown4 = unknown4;
-		}
-
-		reset(){
-			this._buffer=[];
 		}
 
 		encodeBody(reset){
@@ -413,10 +381,6 @@ const Types ={
 			this.capeData = capeData;
 			this.geometryName = geometryName;
 			this.geometryData = geometryData;
-		}
-
-		reset(){
-			this._buffer=[];
 		}
 
 		encodeBody(reset){
@@ -472,10 +436,6 @@ const Types ={
 			this.unknown3 = unknown3;
 		}
 
-		reset(){
-			this._buffer=[];
-		}
-
 		encodeBody(reset){
 			if(reset){
 				this.reset();
@@ -512,10 +472,6 @@ const Types ={
 			this.data = data;
 		}
 
-		reset(){
-			this._buffer=[];
-		}
-
 		encodeBody(reset){
 			if(reset){
 				this.reset();
@@ -549,10 +505,6 @@ const Types ={
 			this.slot = slot;
 			this.oldItem = oldItem;
 			this.newItem = newItem;
-		}
-
-		reset(){
-			this._buffer=[];
 		}
 
 		encodeBody(reset){
@@ -609,10 +561,6 @@ const Types ={
 			this.borders = borders;
 			this.extraData = extraData;
 			this.blockEntities = blockEntities;
-		}
-
-		reset(){
-			this._buffer=[];
 		}
 
 		encodeBody(reset){
@@ -694,10 +642,6 @@ const Types ={
 			this.blockMetas = blockMetas;
 		}
 
-		reset(){
-			this._buffer=[];
-		}
-
 		encodeBody(reset){
 			if(reset){
 				this.reset();
@@ -733,10 +677,6 @@ const Types ={
 			this.value = value;
 		}
 
-		reset(){
-			this._buffer=[];
-		}
-
 		encodeBody(reset){
 			if(reset){
 				this.reset();
@@ -767,10 +707,6 @@ const Types ={
 			this.position = position;
 			this.label = label;
 			this.color = color;
-		}
-
-		reset(){
-			this._buffer=[];
 		}
 
 		encodeBody(reset){
@@ -816,10 +752,6 @@ const Types ={
 			this.booleanValue = booleanValue;
 			this.integerValue = integerValue;
 			this.floatingValue = floatingValue;
-		}
-
-		reset(){
-			this._buffer=[];
 		}
 
 		encodeBody(reset){
@@ -876,10 +808,6 @@ const Types ={
 			this.valuesIndexes = valuesIndexes;
 		}
 
-		reset(){
-			this._buffer=[];
-		}
-
 		encodeBody(reset){
 			if(reset){
 				this.reset();
@@ -922,10 +850,6 @@ const Types ={
 			this.permissionLevel = permissionLevel;
 			this.aliasesEnum = aliasesEnum;
 			this.overloads = overloads;
-		}
-
-		reset(){
-			this._buffer=[];
 		}
 
 		encodeBody(reset){
@@ -983,10 +907,6 @@ const Types ={
 			this.parameters = parameters;
 		}
 
-		reset(){
-			this._buffer=[];
-		}
-
 		encodeBody(reset){
 			if(reset){
 				this.reset();
@@ -1021,10 +941,6 @@ const Types ={
 			this.name = name;
 			this.type = type;
 			this.optional = optional;
-		}
-
-		reset(){
-			this._buffer=[];
 		}
 
 		encodeBody(reset){

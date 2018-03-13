@@ -1,25 +1,19 @@
 const Serverbound ={
 
-	TeleportConfirm: class extends Buffer{
+	TeleportConfirm: class extends Packet{
 
 		static get ID(){return 0;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 0;
+		}
+
 		constructor(teleportId=0){
 			super();
 			this.teleportId = teleportId;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(0);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -28,12 +22,6 @@ const Serverbound ={
 			}
 			this.writeVaruint(this.teleportId);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -47,12 +35,16 @@ const Serverbound ={
 	}
 	,
 
-	TabComplete: class extends Buffer{
+	TabComplete: class extends Packet{
 
 		static get ID(){return 1;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 1;
+		}
 
 		constructor(text="",command=false,hasPosition=false,block=0){
 			super();
@@ -60,16 +52,6 @@ const Serverbound ={
 			this.command = command;
 			this.hasPosition = hasPosition;
 			this.block = block;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(1);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -85,12 +67,6 @@ const Serverbound ={
 				this.writeBigEndianLong(this.block);
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -113,26 +89,20 @@ const Serverbound ={
 	}
 	,
 
-	ChatMessage: class extends Buffer{
+	ChatMessage: class extends Packet{
 
 		static get ID(){return 2;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 2;
+		}
+
 		constructor(text=""){
 			super();
 			this.text = text;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(2);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -143,12 +113,6 @@ const Serverbound ={
 			this.writeVaruint(dhc5zh.length);
 			this.writeBytes(dhc5zh);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -163,26 +127,20 @@ const Serverbound ={
 	}
 	,
 
-	ClientStatus: class extends Buffer{
+	ClientStatus: class extends Packet{
 
 		static get ID(){return 3;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 3;
+		}
+
 		constructor(action=0){
 			super();
 			this.action = action;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(3);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -191,12 +149,6 @@ const Serverbound ={
 			}
 			this.writeVaruint(this.action);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -210,12 +162,16 @@ const Serverbound ={
 	}
 	,
 
-	ClientSettings: class extends Buffer{
+	ClientSettings: class extends Packet{
 
 		static get ID(){return 4;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 4;
+		}
 
 		constructor(language="",viewDistance=0,chatMode=0,chatColors=false,displayedSkinParts=0,mainHand=0){
 			super();
@@ -225,16 +181,6 @@ const Serverbound ={
 			this.chatColors = chatColors;
 			this.displayedSkinParts = displayedSkinParts;
 			this.mainHand = mainHand;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(4);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -250,12 +196,6 @@ const Serverbound ={
 			this.writeByte(this.displayedSkinParts);
 			this.writeByte(this.mainHand);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -280,28 +220,22 @@ const Serverbound ={
 	}
 	,
 
-	ConfirmTransaction: class extends Buffer{
+	ConfirmTransaction: class extends Packet{
 
 		static get ID(){return 5;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 5;
+		}
+
 		constructor(window=0,action=0,accepted=false){
 			super();
 			this.window = window;
 			this.action = action;
 			this.accepted = accepted;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(5);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -312,12 +246,6 @@ const Serverbound ={
 			this.writeBigEndianShort(this.action);
 			this.writeBool(this.accepted);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -335,27 +263,21 @@ const Serverbound ={
 	}
 	,
 
-	EnchantItem: class extends Buffer{
+	EnchantItem: class extends Packet{
 
 		static get ID(){return 6;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 6;
+		}
+
 		constructor(window=0,enchantment=0){
 			super();
 			this.window = window;
 			this.enchantment = enchantment;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(6);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -365,12 +287,6 @@ const Serverbound ={
 			this.writeByte(this.window);
 			this.writeByte(this.enchantment);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -386,12 +302,16 @@ const Serverbound ={
 	}
 	,
 
-	ClickWindow: class extends Buffer{
+	ClickWindow: class extends Packet{
 
 		static get ID(){return 7;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 7;
+		}
 
 		constructor(window=0,slot=0,button=0,action=0,mode=0,clickedItem=new Types.Slot()){
 			super();
@@ -401,16 +321,6 @@ const Serverbound ={
 			this.action = action;
 			this.mode = mode;
 			this.clickedItem = clickedItem;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(7);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -424,12 +334,6 @@ const Serverbound ={
 			this.writeVaruint(this.mode);
 			this.writeBytes(this.clickedItem.encodeBody(true));
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -454,26 +358,20 @@ const Serverbound ={
 	}
 	,
 
-	CloseWindow: class extends Buffer{
+	CloseWindow: class extends Packet{
 
 		static get ID(){return 8;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 8;
+		}
+
 		constructor(window=0){
 			super();
 			this.window = window;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(8);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -482,12 +380,6 @@ const Serverbound ={
 			}
 			this.writeByte(this.window);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -501,27 +393,21 @@ const Serverbound ={
 	}
 	,
 
-	PluginMessage: class extends Buffer{
+	PluginMessage: class extends Packet{
 
 		static get ID(){return 9;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 9;
+		}
+
 		constructor(channel="",data=new Types.Bytes()){
 			super();
 			this.channel = channel;
 			this.data = data;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(9);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -533,12 +419,6 @@ const Serverbound ={
 			this.writeBytes(dhc5afbv);
 			this.writeBytes(this.data);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -556,12 +436,16 @@ const Serverbound ={
 	}
 	,
 
-	UseEntity: class extends Buffer{
+	UseEntity: class extends Packet{
 
 		static get ID(){return 10;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 10;
+		}
 
 		constructor(target=0,type=0,targetPosition={x:0,y:0,z:0},hand=0){
 			super();
@@ -569,16 +453,6 @@ const Serverbound ={
 			this.type = type;
 			this.targetPosition = targetPosition;
 			this.hand = hand;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(10);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -596,12 +470,6 @@ const Serverbound ={
 				this.writeVaruint(this.hand);
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -628,26 +496,20 @@ const Serverbound ={
 	}
 	,
 
-	KeepAlive: class extends Buffer{
+	KeepAlive: class extends Packet{
 
 		static get ID(){return 11;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 11;
+		}
+
 		constructor(id=0){
 			super();
 			this.id = id;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(11);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -656,12 +518,6 @@ const Serverbound ={
 			}
 			this.writeVaruint(this.id);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -675,27 +531,21 @@ const Serverbound ={
 	}
 	,
 
-	PlayerPosition: class extends Buffer{
+	PlayerPosition: class extends Packet{
 
 		static get ID(){return 12;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 12;
+		}
+
 		constructor(position={x:0,y:0,z:0},onGround=false){
 			super();
 			this.position = position;
 			this.onGround = onGround;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(12);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -707,12 +557,6 @@ const Serverbound ={
 			this.writeBigEndianDouble(this.position.z);
 			this.writeBool(this.onGround);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -731,12 +575,16 @@ const Serverbound ={
 	}
 	,
 
-	PlayerPositionAndLook: class extends Buffer{
+	PlayerPositionAndLook: class extends Packet{
 
 		static get ID(){return 13;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 13;
+		}
 
 		constructor(position={x:0,y:0,z:0},yaw=.0,pitch=.0,onGround=false){
 			super();
@@ -746,16 +594,6 @@ const Serverbound ={
 			this.onGround = onGround;
 		}
 
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(13);
-			return this.encodeBody(false);
-		}
-
 		encodeBody(reset){
 			if(reset){
 				this.reset();
@@ -767,12 +605,6 @@ const Serverbound ={
 			this.writeBigEndianFloat(this.pitch);
 			this.writeBool(this.onGround);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -795,12 +627,16 @@ const Serverbound ={
 	}
 	,
 
-	PlayerLook: class extends Buffer{
+	PlayerLook: class extends Packet{
 
 		static get ID(){return 14;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 14;
+		}
 
 		constructor(yaw=.0,pitch=.0,onGround=false){
 			super();
@@ -809,16 +645,6 @@ const Serverbound ={
 			this.onGround = onGround;
 		}
 
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(14);
-			return this.encodeBody(false);
-		}
-
 		encodeBody(reset){
 			if(reset){
 				this.reset();
@@ -827,12 +653,6 @@ const Serverbound ={
 			this.writeBigEndianFloat(this.pitch);
 			this.writeBool(this.onGround);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -850,26 +670,20 @@ const Serverbound ={
 	}
 	,
 
-	Player: class extends Buffer{
+	Player: class extends Packet{
 
 		static get ID(){return 15;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 15;
+		}
+
 		constructor(onGround=false){
 			super();
 			this.onGround = onGround;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(15);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -878,12 +692,6 @@ const Serverbound ={
 			}
 			this.writeBool(this.onGround);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -897,28 +705,22 @@ const Serverbound ={
 	}
 	,
 
-	VehicleMove: class extends Buffer{
+	VehicleMove: class extends Packet{
 
 		static get ID(){return 16;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 16;
+		}
+
 		constructor(position={x:0,y:0,z:0},yaw=.0,pitch=.0){
 			super();
 			this.position = position;
 			this.yaw = yaw;
 			this.pitch = pitch;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(16);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -931,12 +733,6 @@ const Serverbound ={
 			this.writeBigEndianFloat(this.yaw);
 			this.writeBigEndianFloat(this.pitch);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -957,27 +753,21 @@ const Serverbound ={
 	}
 	,
 
-	SteerBoat: class extends Buffer{
+	SteerBoat: class extends Packet{
 
 		static get ID(){return 17;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 17;
+		}
+
 		constructor(rightPaddleTurning=false,leftPaddleTurning=false){
 			super();
 			this.rightPaddleTurning = rightPaddleTurning;
 			this.leftPaddleTurning = leftPaddleTurning;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(17);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -987,12 +777,6 @@ const Serverbound ={
 			this.writeBool(this.rightPaddleTurning);
 			this.writeBool(this.leftPaddleTurning);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1008,28 +792,22 @@ const Serverbound ={
 	}
 	,
 
-	PlayerAbilities: class extends Buffer{
+	PlayerAbilities: class extends Packet{
 
 		static get ID(){return 18;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 18;
+		}
+
 		constructor(flags=0,flyingSpeed=.0,walkingSpeed=.0){
 			super();
 			this.flags = flags;
 			this.flyingSpeed = flyingSpeed;
 			this.walkingSpeed = walkingSpeed;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(18);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1040,12 +818,6 @@ const Serverbound ={
 			this.writeBigEndianFloat(this.flyingSpeed);
 			this.writeBigEndianFloat(this.walkingSpeed);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1063,28 +835,22 @@ const Serverbound ={
 	}
 	,
 
-	PlayerDigging: class extends Buffer{
+	PlayerDigging: class extends Packet{
 
 		static get ID(){return 19;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 19;
+		}
+
 		constructor(status=0,position=0,face=0){
 			super();
 			this.status = status;
 			this.position = position;
 			this.face = face;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(19);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1095,12 +861,6 @@ const Serverbound ={
 			this.writeBigEndianLong(this.position);
 			this.writeByte(this.face);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1118,28 +878,22 @@ const Serverbound ={
 	}
 	,
 
-	EntityAction: class extends Buffer{
+	EntityAction: class extends Packet{
 
 		static get ID(){return 20;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 20;
+		}
+
 		constructor(entityId=0,action=0,jumpBoost=0){
 			super();
 			this.entityId = entityId;
 			this.action = action;
 			this.jumpBoost = jumpBoost;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(20);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1150,12 +904,6 @@ const Serverbound ={
 			this.writeVaruint(this.action);
 			this.writeVaruint(this.jumpBoost);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1173,28 +921,22 @@ const Serverbound ={
 	}
 	,
 
-	SteerVehicle: class extends Buffer{
+	SteerVehicle: class extends Packet{
 
 		static get ID(){return 21;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 21;
+		}
+
 		constructor(sideways=.0,forward=.0,flags=0){
 			super();
 			this.sideways = sideways;
 			this.forward = forward;
 			this.flags = flags;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(21);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1205,12 +947,6 @@ const Serverbound ={
 			this.writeBigEndianFloat(this.forward);
 			this.writeByte(this.flags);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1228,26 +964,20 @@ const Serverbound ={
 	}
 	,
 
-	ResourcePackStatus: class extends Buffer{
+	ResourcePackStatus: class extends Packet{
 
 		static get ID(){return 22;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 22;
+		}
+
 		constructor(result=0){
 			super();
 			this.result = result;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(22);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1256,12 +986,6 @@ const Serverbound ={
 			}
 			this.writeVaruint(this.result);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1275,26 +999,20 @@ const Serverbound ={
 	}
 	,
 
-	HeldItemChange: class extends Buffer{
+	HeldItemChange: class extends Packet{
 
 		static get ID(){return 23;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 23;
+		}
+
 		constructor(slot=0){
 			super();
 			this.slot = slot;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(23);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1303,12 +1021,6 @@ const Serverbound ={
 			}
 			this.writeBigEndianShort(this.slot);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1322,27 +1034,21 @@ const Serverbound ={
 	}
 	,
 
-	CreativeInventoryAction: class extends Buffer{
+	CreativeInventoryAction: class extends Packet{
 
 		static get ID(){return 24;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 24;
+		}
+
 		constructor(slot=0,clickedItem=new Types.Slot()){
 			super();
 			this.slot = slot;
 			this.clickedItem = clickedItem;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(24);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1352,12 +1058,6 @@ const Serverbound ={
 			this.writeBigEndianShort(this.slot);
 			this.writeBytes(this.clickedItem.encodeBody(true));
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1374,27 +1074,21 @@ const Serverbound ={
 	}
 	,
 
-	UpdateSign: class extends Buffer{
+	UpdateSign: class extends Packet{
 
 		static get ID(){return 25;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 25;
+		}
+
 		constructor(position=0,lines=[]){
 			super();
 			this.position = position;
 			this.lines = lines;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(25);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1408,12 +1102,6 @@ const Serverbound ={
 				this.writeBytes(dhc5a5ct);
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1434,26 +1122,20 @@ const Serverbound ={
 	}
 	,
 
-	Animation: class extends Buffer{
+	Animation: class extends Packet{
 
 		static get ID(){return 26;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 26;
+		}
+
 		constructor(hand=0){
 			super();
 			this.hand = hand;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(26);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1462,12 +1144,6 @@ const Serverbound ={
 			}
 			this.writeVaruint(this.hand);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1481,26 +1157,20 @@ const Serverbound ={
 	}
 	,
 
-	Spectate: class extends Buffer{
+	Spectate: class extends Packet{
 
 		static get ID(){return 27;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 27;
+		}
+
 		constructor(player=new Uint8Array(16)){
 			super();
 			this.player = player;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(27);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1509,12 +1179,6 @@ const Serverbound ={
 			}
 			this.writeBytes(this.player);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1528,12 +1192,16 @@ const Serverbound ={
 	}
 	,
 
-	PlayerBlockPlacement: class extends Buffer{
+	PlayerBlockPlacement: class extends Packet{
 
 		static get ID(){return 28;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 28;
+		}
 
 		constructor(position=0,face=0,hand=0,cursorPosition={x:0,y:0,z:0}){
 			super();
@@ -1541,16 +1209,6 @@ const Serverbound ={
 			this.face = face;
 			this.hand = hand;
 			this.cursorPosition = cursorPosition;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(28);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1564,12 +1222,6 @@ const Serverbound ={
 			this.writeByte(this.cursorPosition.y);
 			this.writeByte(this.cursorPosition.z);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1592,26 +1244,20 @@ const Serverbound ={
 	}
 	,
 
-	UseItem: class extends Buffer{
+	UseItem: class extends Packet{
 
 		static get ID(){return 29;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 29;
+		}
+
 		constructor(hand=0){
 			super();
 			this.hand = hand;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(29);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1620,12 +1266,6 @@ const Serverbound ={
 			}
 			this.writeVaruint(this.hand);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){

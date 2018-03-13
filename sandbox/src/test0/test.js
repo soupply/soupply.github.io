@@ -1,11 +1,15 @@
 const Test ={
 
-	TestInt: class extends Buffer{
+	TestInt: class extends Packet{
 
 		static get ID(){return 0;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return false;};
+
+		getId(){
+			return 0;
+		}
 
 		constructor(a=0,b=0,c=0,d=0,e=0){
 			super();
@@ -14,16 +18,6 @@ const Test ={
 			this.c = c;
 			this.d = d;
 			this.e = e;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeByte(0);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -36,12 +30,6 @@ const Test ={
 			this.writeVarshort(this.d);
 			this.writeVaruint(this.e);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readByte();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -63,28 +51,22 @@ const Test ={
 	}
 	,
 
-	TestFloat: class extends Buffer{
+	TestFloat: class extends Packet{
 
 		static get ID(){return 1;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 1;
+		}
+
 		constructor(a=.0,b=.0,c=.0){
 			super();
 			this.a = a;
 			this.b = b;
 			this.c = c;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeByte(1);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -95,12 +77,6 @@ const Test ={
 			this.writeBigEndianDouble(this.b);
 			this.writeLittleEndianFloat(this.c);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readByte();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -118,12 +94,16 @@ const Test ={
 	}
 	,
 
-	TestArray: class extends Buffer{
+	TestArray: class extends Packet{
 
 		static get ID(){return 2;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return false;};
+
+		getId(){
+			return 2;
+		}
 
 		constructor(a=new Uint8Array(0),b="",c=new Int16Array(0),d=new Uint32Array(0)){
 			super();
@@ -131,16 +111,6 @@ const Test ={
 			this.b = b;
 			this.c = c;
 			this.d = d;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeByte(2);
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -161,12 +131,6 @@ const Test ={
 				this.writeVaruint(this.d[dhc5]);
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readByte();
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){

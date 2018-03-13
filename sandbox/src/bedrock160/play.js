@@ -1,27 +1,20 @@
 const Play ={
 
-	Login: class extends Buffer{
+	Login: class extends Packet{
 
 		static get ID(){return 1;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 1;
+		}
+
 		constructor(protocol=160,body=new Types.LoginBody()){
 			super();
 			this.protocol = protocol;
 			this.body = body;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(1);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -31,13 +24,6 @@ const Play ={
 			this.writeBigEndianInt(this.protocol);
 			this.writeBytes(this.body.encodeBody(true));
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -54,27 +40,20 @@ const Play ={
 	}
 	,
 
-	PlayStatus: class extends Buffer{
+	PlayStatus: class extends Packet{
 
 		static get ID(){return 2;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 2;
+		}
+
 		constructor(status=0){
 			super();
 			this.status = status;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(2);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -83,13 +62,6 @@ const Play ={
 			}
 			this.writeBigEndianInt(this.status);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -103,28 +75,21 @@ const Play ={
 	}
 	,
 
-	ServerToClientHandshake: class extends Buffer{
+	ServerToClientHandshake: class extends Packet{
 
 		static get ID(){return 3;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 3;
+		}
+
 		constructor(serverPublicKey="",token=new Uint8Array(0)){
 			super();
 			this.serverPublicKey = serverPublicKey;
 			this.token = token;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(3);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -137,13 +102,6 @@ const Play ={
 			this.writeVaruint(this.token.length);
 			this.writeBytes(this.token);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -161,26 +119,19 @@ const Play ={
 	}
 	,
 
-	ClientToServerHandshake: class extends Buffer{
+	ClientToServerHandshake: class extends Packet{
 
 		static get ID(){return 4;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 4;
+		}
+
 		constructor(){
 			super();
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(4);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -188,13 +139,6 @@ const Play ={
 				this.reset();
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -206,28 +150,21 @@ const Play ={
 	}
 	,
 
-	Disconnect: class extends Buffer{
+	Disconnect: class extends Packet{
 
 		static get ID(){return 5;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 5;
+		}
+
 		constructor(hideDisconnectionScreen=false,message=""){
 			super();
 			this.hideDisconnectionScreen = hideDisconnectionScreen;
 			this.message = message;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(5);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -241,13 +178,6 @@ const Play ={
 				this.writeBytes(dhc5znyd);
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -266,29 +196,22 @@ const Play ={
 	}
 	,
 
-	ResourcePacksInfo: class extends Buffer{
+	ResourcePacksInfo: class extends Packet{
 
 		static get ID(){return 6;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 6;
+		}
+
 		constructor(mustAccept=false,behaviourPacks=[],resourcePacks=[]){
 			super();
 			this.mustAccept = mustAccept;
 			this.behaviourPacks = behaviourPacks;
 			this.resourcePacks = resourcePacks;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(6);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -305,13 +228,6 @@ const Play ={
 				this.writeBytes(this.resourcePacks[dhc5zndj].encodeBody(true));
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -339,29 +255,22 @@ const Play ={
 	}
 	,
 
-	ResourcePacksStackPacket: class extends Buffer{
+	ResourcePacksStackPacket: class extends Packet{
 
 		static get ID(){return 7;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 7;
+		}
+
 		constructor(mustAccept=false,behaviourPacks=[],resourcePacks=[]){
 			super();
 			this.mustAccept = mustAccept;
 			this.behaviourPacks = behaviourPacks;
 			this.resourcePacks = resourcePacks;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(7);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -378,13 +287,6 @@ const Play ={
 				this.writeBytes(this.resourcePacks[dhc5zndj].encodeBody(true));
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -412,28 +314,21 @@ const Play ={
 	}
 	,
 
-	ResourcePackClientResponse: class extends Buffer{
+	ResourcePackClientResponse: class extends Packet{
 
 		static get ID(){return 8;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 8;
+		}
+
 		constructor(status=0,packIds=[]){
 			super();
 			this.status = status;
 			this.packIds = packIds;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(8);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -448,13 +343,6 @@ const Play ={
 				this.writeBytes(dhc5ynsr);
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -475,12 +363,16 @@ const Play ={
 	}
 	,
 
-	Text: class extends Buffer{
+	Text: class extends Packet{
 
 		static get ID(){return 9;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 9;
+		}
 
 		static get RAW(){return 0;};
 		static get CHAT(){return 1;};
@@ -496,17 +388,6 @@ const Play ={
 			super();
 			this.type = type;
 			this.unknown1 = unknown1;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(9);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -555,13 +436,6 @@ const Play ={
 				default: break;
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -640,27 +514,20 @@ const Play ={
 	}
 	,
 
-	SetTime: class extends Buffer{
+	SetTime: class extends Packet{
 
 		static get ID(){return 10;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 10;
+		}
+
 		constructor(time=0){
 			super();
 			this.time = time;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(10);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -669,13 +536,6 @@ const Play ={
 			}
 			this.writeVarint(this.time);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -689,12 +549,16 @@ const Play ={
 	}
 	,
 
-	StartGame: class extends Buffer{
+	StartGame: class extends Packet{
 
 		static get ID(){return 11;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
+
+		getId(){
+			return 11;
+		}
 
 		constructor(entityId=0,runtimeId=0,gamemode=0,position={x:0,y:0,z:0},yaw=.0,pitch=.0,seed=0,dimension=0,generator=1,worldGamemode=0,difficulty=0,spawnPosition={x:0,y:0,z:0},loadedInCreative=false,time=0,version=0,rainLevel=.0,lightningLevel=.0,multiplayerGame=true,broadcastToLan=false,broadcastToXbl=false,commandsEnabled=false,textureRequired=false,gameRules=[],bonusChestEnabled=false,startWithMapEnabled=false,trustPlayersEnabled=false,permissionLevel=0,unknown27=0,levelId="",worldName="",premiumWorldTemplate="",unknown31=false,worldTicks=0,unknown33=0){
 			super();
@@ -732,17 +596,6 @@ const Play ={
 			this.unknown31 = unknown31;
 			this.worldTicks = worldTicks;
 			this.unknown33 = unknown33;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(11);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -797,13 +650,6 @@ const Play ={
 			this.writeLittleEndianLong(this.worldTicks);
 			this.writeVarint(this.unknown33);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -897,12 +743,16 @@ const Play ={
 	}
 	,
 
-	AddPlayer: class extends Buffer{
+	AddPlayer: class extends Packet{
 
 		static get ID(){return 12;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
+
+		getId(){
+			return 12;
+		}
 
 		constructor(uuid=new Types.McpeUuid(),username="",entityId=0,runtimeId=0,position={x:0,y:0,z:0},motion={x:0,y:0,z:0},pitch=.0,headYaw=.0,yaw=.0,heldItem=new Types.Slot(),metadata=new Metadata(),unknown11=0,unknown12=0,unknown13=0,unknown14=0,unknown15=0,unknown16=0,links=[]){
 			super();
@@ -924,17 +774,6 @@ const Play ={
 			this.unknown15 = unknown15;
 			this.unknown16 = unknown16;
 			this.links = links;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(12);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -969,13 +808,6 @@ const Play ={
 				this.writeBytes(this.links[dhc5a5c].encodeBody(true));
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1038,12 +870,16 @@ const Play ={
 	}
 	,
 
-	AddEntity: class extends Buffer{
+	AddEntity: class extends Packet{
 
 		static get ID(){return 13;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
+
+		getId(){
+			return 13;
+		}
 
 		constructor(entityId=0,runtimeId=0,type=0,position={x:0,y:0,z:0},motion={x:0,y:0,z:0},pitch=.0,yaw=.0,attributes=[],metadata=new Metadata(),links=[]){
 			super();
@@ -1057,17 +893,6 @@ const Play ={
 			this.attributes = attributes;
 			this.metadata = metadata;
 			this.links = links;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(13);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1095,13 +920,6 @@ const Play ={
 				this.writeBytes(this.links[dhc5a5c].encodeBody(true));
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1150,27 +968,20 @@ const Play ={
 	}
 	,
 
-	RemoveEntity: class extends Buffer{
+	RemoveEntity: class extends Packet{
 
 		static get ID(){return 14;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 14;
+		}
+
 		constructor(entityId=0){
 			super();
 			this.entityId = entityId;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(14);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1179,13 +990,6 @@ const Play ={
 			}
 			this.writeVarlong(this.entityId);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1199,12 +1003,16 @@ const Play ={
 	}
 	,
 
-	AddItemEntity: class extends Buffer{
+	AddItemEntity: class extends Packet{
 
 		static get ID(){return 15;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
+
+		getId(){
+			return 15;
+		}
 
 		constructor(entityId=0,runtimeId=0,item=new Types.Slot(),position={x:0,y:0,z:0},motion={x:0,y:0,z:0},metadata=new Metadata()){
 			super();
@@ -1214,17 +1022,6 @@ const Play ={
 			this.position = position;
 			this.motion = motion;
 			this.metadata = metadata;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(15);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1242,13 +1039,6 @@ const Play ={
 			this.writeLittleEndianFloat(this.motion.z);
 			this.writeBytes(this.metadata.encodeBody(true));
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1280,12 +1070,16 @@ const Play ={
 	}
 	,
 
-	AddHangingEntity: class extends Buffer{
+	AddHangingEntity: class extends Packet{
 
 		static get ID(){return 16;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
+
+		getId(){
+			return 16;
+		}
 
 		constructor(entityId=0,runtimeId=0,position=new Types.BlockPosition(),unknown3=0){
 			super();
@@ -1293,17 +1087,6 @@ const Play ={
 			this.runtimeId = runtimeId;
 			this.position = position;
 			this.unknown3 = unknown3;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(16);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1315,13 +1098,6 @@ const Play ={
 			this.writeBytes(this.position.encodeBody(true));
 			this.writeVarint(this.unknown3);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1342,28 +1118,21 @@ const Play ={
 	}
 	,
 
-	TakeItemEntity: class extends Buffer{
+	TakeItemEntity: class extends Packet{
 
 		static get ID(){return 17;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 17;
+		}
+
 		constructor(collected=0,collector=0){
 			super();
 			this.collected = collected;
 			this.collector = collector;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(17);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1373,13 +1142,6 @@ const Play ={
 			this.writeVarlong(this.collected);
 			this.writeVarlong(this.collector);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1395,12 +1157,16 @@ const Play ={
 	}
 	,
 
-	MoveEntity: class extends Buffer{
+	MoveEntity: class extends Packet{
 
 		static get ID(){return 18;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
+
+		getId(){
+			return 18;
+		}
 
 		constructor(entityId=0,position={x:0,y:0,z:0},pitch=0,headYaw=0,yaw=0,onGround=false,teleported=false){
 			super();
@@ -1411,17 +1177,6 @@ const Play ={
 			this.yaw = yaw;
 			this.onGround = onGround;
 			this.teleported = teleported;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(18);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1438,13 +1193,6 @@ const Play ={
 			this.writeBool(this.onGround);
 			this.writeBool(this.teleported);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1473,12 +1221,16 @@ const Play ={
 	}
 	,
 
-	MovePlayer: class extends Buffer{
+	MovePlayer: class extends Packet{
 
 		static get ID(){return 19;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 19;
+		}
 
 		constructor(entityId=0,position={x:0,y:0,z:0},pitch=.0,headYaw=.0,yaw=.0,animation=0,onGround=false,unknown7=0,unknown8=0,unknown9=0){
 			super();
@@ -1492,17 +1244,6 @@ const Play ={
 			this.unknown7 = unknown7;
 			this.unknown8 = unknown8;
 			this.unknown9 = unknown9;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(19);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1526,13 +1267,6 @@ const Play ={
 				this.writeLittleEndianInt(this.unknown9);
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1571,27 +1305,20 @@ const Play ={
 	}
 	,
 
-	RiderJump: class extends Buffer{
+	RiderJump: class extends Packet{
 
 		static get ID(){return 20;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 20;
+		}
+
 		constructor(rider=0){
 			super();
 			this.rider = rider;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(20);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1600,13 +1327,6 @@ const Play ={
 			}
 			this.writeVarlong(this.rider);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1620,29 +1340,22 @@ const Play ={
 	}
 	,
 
-	UpdateBlock: class extends Buffer{
+	UpdateBlock: class extends Packet{
 
 		static get ID(){return 21;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 21;
+		}
+
 		constructor(position=new Types.BlockPosition(),block=0,flagsAndMeta=0){
 			super();
 			this.position = position;
 			this.block = block;
 			this.flagsAndMeta = flagsAndMeta;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(21);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1653,13 +1366,6 @@ const Play ={
 			this.writeVaruint(this.block);
 			this.writeVaruint(this.flagsAndMeta);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1678,12 +1384,16 @@ const Play ={
 	}
 	,
 
-	AddPainting: class extends Buffer{
+	AddPainting: class extends Packet{
 
 		static get ID(){return 22;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
+
+		getId(){
+			return 22;
+		}
 
 		constructor(entityId=0,runtimeId=0,position=new Types.BlockPosition(),direction=0,title=""){
 			super();
@@ -1692,17 +1402,6 @@ const Play ={
 			this.position = position;
 			this.direction = direction;
 			this.title = title;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(22);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1717,13 +1416,6 @@ const Play ={
 			this.writeVaruint(dhc5arz.length);
 			this.writeBytes(dhc5arz);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1747,29 +1439,22 @@ const Play ={
 	}
 	,
 
-	Explode: class extends Buffer{
+	Explode: class extends Packet{
 
 		static get ID(){return 23;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 23;
+		}
+
 		constructor(position={x:0,y:0,z:0},radius=.0,destroyedBlocks=[]){
 			super();
 			this.position = position;
 			this.radius = radius;
 			this.destroyedBlocks = destroyedBlocks;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(23);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1785,13 +1470,6 @@ const Play ={
 				this.writeBytes(this.destroyedBlocks[dhc5znc9].encodeBody(true));
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1817,12 +1495,16 @@ const Play ={
 	}
 	,
 
-	LevelSoundEvent: class extends Buffer{
+	LevelSoundEvent: class extends Packet{
 
 		static get ID(){return 24;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 24;
+		}
 
 		constructor(sound=0,position={x:0,y:0,z:0},volume=0,pitch=0,unknown4=false,disableRelativeVolume=false){
 			super();
@@ -1832,17 +1514,6 @@ const Play ={
 			this.pitch = pitch;
 			this.unknown4 = unknown4;
 			this.disableRelativeVolume = disableRelativeVolume;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(24);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1858,13 +1529,6 @@ const Play ={
 			this.writeBool(this.unknown4);
 			this.writeBool(this.disableRelativeVolume);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1891,29 +1555,22 @@ const Play ={
 	}
 	,
 
-	LevelEvent: class extends Buffer{
+	LevelEvent: class extends Packet{
 
 		static get ID(){return 25;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 25;
+		}
+
 		constructor(eventId=0,position={x:0,y:0,z:0},data=0){
 			super();
 			this.eventId = eventId;
 			this.position = position;
 			this.data = data;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(25);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1926,13 +1583,6 @@ const Play ={
 			this.writeLittleEndianFloat(this.position.z);
 			this.writeVarint(this.data);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -1953,28 +1603,21 @@ const Play ={
 	}
 	,
 
-	BlockEvent: class extends Buffer{
+	BlockEvent: class extends Packet{
 
 		static get ID(){return 26;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 26;
+		}
+
 		constructor(position=new Types.BlockPosition(),data=new Int32Array(2)){
 			super();
 			this.position = position;
 			this.data = data;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(26);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -1986,13 +1629,6 @@ const Play ={
 				this.writeVarint(this.data[dhc5yr]);
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -2013,29 +1649,22 @@ const Play ={
 	}
 	,
 
-	EntityEvent: class extends Buffer{
+	EntityEvent: class extends Packet{
 
 		static get ID(){return 27;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 27;
+		}
+
 		constructor(entityId=0,eventId=0,data=0){
 			super();
 			this.entityId = entityId;
 			this.eventId = eventId;
 			this.data = data;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(27);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -2046,13 +1675,6 @@ const Play ={
 			this.writeByte(this.eventId);
 			this.writeVarint(this.data);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -2070,12 +1692,16 @@ const Play ={
 	}
 	,
 
-	MobEffect: class extends Buffer{
+	MobEffect: class extends Packet{
 
 		static get ID(){return 28;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
+
+		getId(){
+			return 28;
+		}
 
 		constructor(entityId=0,eventId=0,effect=0,amplifier=0,particles=false,duration=0){
 			super();
@@ -2085,17 +1711,6 @@ const Play ={
 			this.amplifier = amplifier;
 			this.particles = particles;
 			this.duration = duration;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(28);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -2109,13 +1724,6 @@ const Play ={
 			this.writeBool(this.particles);
 			this.writeVarint(this.duration);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -2139,28 +1747,21 @@ const Play ={
 	}
 	,
 
-	UpdateAttributes: class extends Buffer{
+	UpdateAttributes: class extends Packet{
 
 		static get ID(){return 29;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 29;
+		}
+
 		constructor(entityId=0,attributes=[]){
 			super();
 			this.entityId = entityId;
 			this.attributes = attributes;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(29);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -2173,13 +1774,6 @@ const Play ={
 				this.writeBytes(this.attributes[dhc5draj].encodeBody(true));
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -2200,12 +1794,16 @@ const Play ={
 	}
 	,
 
-	InventoryTransaction: class extends Buffer{
+	InventoryTransaction: class extends Packet{
 
 		static get ID(){return 30;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 30;
+		}
 
 		static get NORMAL_0(){return 0;};
 		static get NORMAL_1(){return 1;};
@@ -2217,17 +1815,6 @@ const Play ={
 			super();
 			this.type = type;
 			this.actions = actions;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(30);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -2278,13 +1865,6 @@ const Play ={
 				default: break;
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -2354,12 +1934,16 @@ const Play ={
 	}
 	,
 
-	MobEquipment: class extends Buffer{
+	MobEquipment: class extends Packet{
 
 		static get ID(){return 31;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 31;
+		}
 
 		constructor(entityId=0,item=new Types.Slot(),inventorySlot=0,hotbarSlot=0,unknown4=0){
 			super();
@@ -2368,17 +1952,6 @@ const Play ={
 			this.inventorySlot = inventorySlot;
 			this.hotbarSlot = hotbarSlot;
 			this.unknown4 = unknown4;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(31);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -2391,13 +1964,6 @@ const Play ={
 			this.writeByte(this.hotbarSlot);
 			this.writeByte(this.unknown4);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -2420,28 +1986,21 @@ const Play ={
 	}
 	,
 
-	MobArmorEquipment: class extends Buffer{
+	MobArmorEquipment: class extends Packet{
 
 		static get ID(){return 32;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 32;
+		}
+
 		constructor(entityId=0,armor=[]){
 			super();
 			this.entityId = entityId;
 			this.armor = armor;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(32);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -2453,13 +2012,6 @@ const Play ={
 				this.writeBytes(this.armor[dhc5c1c].encodeBody(true));
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -2480,29 +2032,22 @@ const Play ={
 	}
 	,
 
-	Interact: class extends Buffer{
+	Interact: class extends Packet{
 
 		static get ID(){return 33;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 33;
+		}
+
 		constructor(action=0,target=0,targetPosition={x:0,y:0,z:0}){
 			super();
 			this.action = action;
 			this.target = target;
 			this.targetPosition = targetPosition;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(33);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -2517,13 +2062,6 @@ const Play ={
 				this.writeLittleEndianFloat(this.targetPosition.z);
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -2546,29 +2084,22 @@ const Play ={
 	}
 	,
 
-	BlockPickRequest: class extends Buffer{
+	BlockPickRequest: class extends Packet{
 
 		static get ID(){return 34;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 34;
+		}
+
 		constructor(position={x:0,y:0,z:0},unknown1=false,slot=0){
 			super();
 			this.position = position;
 			this.unknown1 = unknown1;
 			this.slot = slot;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(34);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -2581,13 +2112,6 @@ const Play ={
 			this.writeBool(this.unknown1);
 			this.writeByte(this.slot);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -2608,28 +2132,21 @@ const Play ={
 	}
 	,
 
-	EntityPickRequest: class extends Buffer{
+	EntityPickRequest: class extends Packet{
 
 		static get ID(){return 35;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 35;
+		}
+
 		constructor(entityType=0,slot=0){
 			super();
 			this.entityType = entityType;
 			this.slot = slot;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(35);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -2639,13 +2156,6 @@ const Play ={
 			this.writeLittleEndianLong(this.entityType);
 			this.writeByte(this.slot);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -2661,12 +2171,16 @@ const Play ={
 	}
 	,
 
-	PlayerAction: class extends Buffer{
+	PlayerAction: class extends Packet{
 
 		static get ID(){return 36;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 36;
+		}
 
 		constructor(entityId=0,action=0,position=new Types.BlockPosition(),face=0){
 			super();
@@ -2674,17 +2188,6 @@ const Play ={
 			this.action = action;
 			this.position = position;
 			this.face = face;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(36);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -2696,13 +2199,6 @@ const Play ={
 			this.writeBytes(this.position.encodeBody(true));
 			this.writeVarint(this.face);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -2723,29 +2219,22 @@ const Play ={
 	}
 	,
 
-	EntityFall: class extends Buffer{
+	EntityFall: class extends Packet{
 
 		static get ID(){return 37;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 37;
+		}
+
 		constructor(entityId=0,distance=.0,unknown2=false){
 			super();
 			this.entityId = entityId;
 			this.distance = distance;
 			this.unknown2 = unknown2;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(37);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -2756,13 +2245,6 @@ const Play ={
 			this.writeLittleEndianFloat(this.distance);
 			this.writeBool(this.unknown2);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -2780,27 +2262,20 @@ const Play ={
 	}
 	,
 
-	HurtArmor: class extends Buffer{
+	HurtArmor: class extends Packet{
 
 		static get ID(){return 38;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 38;
+		}
+
 		constructor(unknown0=0){
 			super();
 			this.unknown0 = unknown0;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(38);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -2809,13 +2284,6 @@ const Play ={
 			}
 			this.writeVarint(this.unknown0);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -2829,28 +2297,21 @@ const Play ={
 	}
 	,
 
-	SetEntityData: class extends Buffer{
+	SetEntityData: class extends Packet{
 
 		static get ID(){return 39;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 39;
+		}
+
 		constructor(entityId=0,metadata=new Metadata()){
 			super();
 			this.entityId = entityId;
 			this.metadata = metadata;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(39);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -2860,13 +2321,6 @@ const Play ={
 			this.writeVarlong(this.entityId);
 			this.writeBytes(this.metadata.encodeBody(true));
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -2883,28 +2337,21 @@ const Play ={
 	}
 	,
 
-	SetEntityMotion: class extends Buffer{
+	SetEntityMotion: class extends Packet{
 
 		static get ID(){return 40;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 40;
+		}
+
 		constructor(entityId=0,motion={x:0,y:0,z:0}){
 			super();
 			this.entityId = entityId;
 			this.motion = motion;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(40);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -2916,13 +2363,6 @@ const Play ={
 			this.writeLittleEndianFloat(this.motion.y);
 			this.writeLittleEndianFloat(this.motion.z);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -2941,29 +2381,22 @@ const Play ={
 	}
 	,
 
-	SetEntityLink: class extends Buffer{
+	SetEntityLink: class extends Packet{
 
 		static get ID(){return 41;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 41;
+		}
+
 		constructor(vehicle=0,passenger=0,action=0){
 			super();
 			this.vehicle = vehicle;
 			this.passenger = passenger;
 			this.action = action;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(41);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -2974,13 +2407,6 @@ const Play ={
 			this.writeVarlong(this.passenger);
 			this.writeByte(this.action);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -2998,27 +2424,20 @@ const Play ={
 	}
 	,
 
-	SetHealth: class extends Buffer{
+	SetHealth: class extends Packet{
 
 		static get ID(){return 42;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 42;
+		}
+
 		constructor(health=0){
 			super();
 			this.health = health;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(42);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -3027,13 +2446,6 @@ const Play ={
 			}
 			this.writeVarint(this.health);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -3047,29 +2459,22 @@ const Play ={
 	}
 	,
 
-	SetSpawnPosition: class extends Buffer{
+	SetSpawnPosition: class extends Packet{
 
 		static get ID(){return 43;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 43;
+		}
+
 		constructor(type=0,position=new Types.BlockPosition(),forced=false){
 			super();
 			this.type = type;
 			this.position = position;
 			this.forced = forced;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(43);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -3080,13 +2485,6 @@ const Play ={
 			this.writeBytes(this.position.encodeBody(true));
 			this.writeBool(this.forced);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -3105,29 +2503,22 @@ const Play ={
 	}
 	,
 
-	Animate: class extends Buffer{
+	Animate: class extends Packet{
 
 		static get ID(){return 44;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 44;
+		}
+
 		constructor(action=0,entityId=0,unknown2=.0){
 			super();
 			this.action = action;
 			this.entityId = entityId;
 			this.unknown2 = unknown2;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(44);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -3140,13 +2531,6 @@ const Play ={
 				this.writeLittleEndianFloat(this.unknown2);
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -3166,27 +2550,20 @@ const Play ={
 	}
 	,
 
-	Respawn: class extends Buffer{
+	Respawn: class extends Packet{
 
 		static get ID(){return 45;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 45;
+		}
+
 		constructor(position={x:0,y:0,z:0}){
 			super();
 			this.position = position;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(45);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -3197,13 +2574,6 @@ const Play ={
 			this.writeLittleEndianFloat(this.position.y);
 			this.writeLittleEndianFloat(this.position.z);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -3220,12 +2590,16 @@ const Play ={
 	}
 	,
 
-	ContainerOpen: class extends Buffer{
+	ContainerOpen: class extends Packet{
 
 		static get ID(){return 46;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
+
+		getId(){
+			return 46;
+		}
 
 		constructor(window=0,type=0,position=new Types.BlockPosition(),entityId=0){
 			super();
@@ -3233,17 +2607,6 @@ const Play ={
 			this.type = type;
 			this.position = position;
 			this.entityId = entityId;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(46);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -3255,13 +2618,6 @@ const Play ={
 			this.writeBytes(this.position.encodeBody(true));
 			this.writeVarlong(this.entityId);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -3282,27 +2638,20 @@ const Play ={
 	}
 	,
 
-	ContainerClose: class extends Buffer{
+	ContainerClose: class extends Packet{
 
 		static get ID(){return 47;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 47;
+		}
+
 		constructor(window=0){
 			super();
 			this.window = window;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(47);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -3311,13 +2660,6 @@ const Play ={
 			}
 			this.writeByte(this.window);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -3331,26 +2673,19 @@ const Play ={
 	}
 	,
 
-	PlayerHotbar: class extends Buffer{
+	PlayerHotbar: class extends Packet{
 
 		static get ID(){return 48;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 48;
+		}
+
 		constructor(){
 			super();
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(48);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -3358,13 +2693,6 @@ const Play ={
 				this.reset();
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -3376,28 +2704,21 @@ const Play ={
 	}
 	,
 
-	InventoryContent: class extends Buffer{
+	InventoryContent: class extends Packet{
 
 		static get ID(){return 49;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 49;
+		}
+
 		constructor(window=0,slots=[]){
 			super();
 			this.window = window;
 			this.slots = slots;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(49);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -3410,13 +2731,6 @@ const Play ={
 				this.writeBytes(this.slots[dhc5b9c].encodeBody(true));
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -3437,26 +2751,19 @@ const Play ={
 	}
 	,
 
-	InventorySlot: class extends Buffer{
+	InventorySlot: class extends Packet{
 
 		static get ID(){return 50;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 50;
+		}
+
 		constructor(){
 			super();
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(50);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -3464,13 +2771,6 @@ const Play ={
 				this.reset();
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -3482,29 +2782,22 @@ const Play ={
 	}
 	,
 
-	ContainerSetData: class extends Buffer{
+	ContainerSetData: class extends Packet{
 
 		static get ID(){return 51;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 51;
+		}
+
 		constructor(window=0,property=0,value=0){
 			super();
 			this.window = window;
 			this.property = property;
 			this.value = value;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(51);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -3515,13 +2808,6 @@ const Play ={
 			this.writeVarint(this.property);
 			this.writeVarint(this.value);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -3539,27 +2825,20 @@ const Play ={
 	}
 	,
 
-	CraftingData: class extends Buffer{
+	CraftingData: class extends Packet{
 
 		static get ID(){return 52;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 52;
+		}
+
 		constructor(recipes=[]){
 			super();
 			this.recipes = recipes;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(52);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -3571,13 +2850,6 @@ const Play ={
 				this.writeBytes(this.recipes[dhc5zncv].encodeBody(true));
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -3596,12 +2868,16 @@ const Play ={
 	}
 	,
 
-	CraftingEvent: class extends Buffer{
+	CraftingEvent: class extends Packet{
 
 		static get ID(){return 53;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 53;
+		}
 
 		constructor(window=0,type=0,uuid=new Types.McpeUuid(),input=[],output=[]){
 			super();
@@ -3610,17 +2886,6 @@ const Play ={
 			this.uuid = uuid;
 			this.input = input;
 			this.output = output;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(53);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -3639,13 +2904,6 @@ const Play ={
 				this.writeBytes(this.output[dhc5drdq].encodeBody(true));
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -3678,27 +2936,20 @@ const Play ={
 	}
 	,
 
-	GuiDataPickItem: class extends Buffer{
+	GuiDataPickItem: class extends Packet{
 
 		static get ID(){return 54;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 54;
+		}
+
 		constructor(slot=0){
 			super();
 			this.slot = slot;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(54);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -3707,13 +2958,6 @@ const Play ={
 			}
 			this.writeLittleEndianInt(this.slot);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -3727,12 +2971,16 @@ const Play ={
 	}
 	,
 
-	AdventureSettings: class extends Buffer{
+	AdventureSettings: class extends Packet{
 
 		static get ID(){return 55;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 55;
+		}
 
 		constructor(flags=0,permissionLevel=0,abilities=0,playerRank=0,customPermissions=0,entityId=0){
 			super();
@@ -3742,17 +2990,6 @@ const Play ={
 			this.playerRank = playerRank;
 			this.customPermissions = customPermissions;
 			this.entityId = entityId;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(55);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -3766,13 +3003,6 @@ const Play ={
 			this.writeVaruint(this.customPermissions);
 			this.writeLittleEndianLong(this.entityId);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -3796,28 +3026,21 @@ const Play ={
 	}
 	,
 
-	BlockEntityData: class extends Buffer{
+	BlockEntityData: class extends Packet{
 
 		static get ID(){return 56;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 56;
+		}
+
 		constructor(position=new Types.BlockPosition(),nbt=new Types.Bytes()){
 			super();
 			this.position = position;
 			this.nbt = nbt;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(56);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -3827,13 +3050,6 @@ const Play ={
 			this.writeBytes(this.position.encodeBody(true));
 			this.writeBytes(this.nbt);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -3851,12 +3067,16 @@ const Play ={
 	}
 	,
 
-	PlayerInput: class extends Buffer{
+	PlayerInput: class extends Packet{
 
 		static get ID(){return 57;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 57;
+		}
 
 		constructor(sideways=.0,forward=.0,unknown2=false,unknown3=false){
 			super();
@@ -3864,17 +3084,6 @@ const Play ={
 			this.forward = forward;
 			this.unknown2 = unknown2;
 			this.unknown3 = unknown3;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(57);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -3886,13 +3095,6 @@ const Play ={
 			this.writeBool(this.unknown2);
 			this.writeBool(this.unknown3);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -3912,28 +3114,21 @@ const Play ={
 	}
 	,
 
-	FullChunkData: class extends Buffer{
+	FullChunkData: class extends Packet{
 
 		static get ID(){return 58;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 58;
+		}
+
 		constructor(position={x:0,z:0},data=new Types.ChunkData()){
 			super();
 			this.position = position;
 			this.data = data;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(58);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -3944,13 +3139,6 @@ const Play ={
 			this.writeVarint(this.position.z);
 			this.writeBytes(this.data.encodeBody(true));
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -3969,27 +3157,20 @@ const Play ={
 	}
 	,
 
-	SetCommandsEnabled: class extends Buffer{
+	SetCommandsEnabled: class extends Packet{
 
 		static get ID(){return 59;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 59;
+		}
+
 		constructor(enabled=false){
 			super();
 			this.enabled = enabled;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(59);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -3998,13 +3179,6 @@ const Play ={
 			}
 			this.writeBool(this.enabled);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -4018,27 +3192,20 @@ const Play ={
 	}
 	,
 
-	SetDifficulty: class extends Buffer{
+	SetDifficulty: class extends Packet{
 
 		static get ID(){return 60;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 60;
+		}
+
 		constructor(difficulty=0){
 			super();
 			this.difficulty = difficulty;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(60);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -4047,13 +3214,6 @@ const Play ={
 			}
 			this.writeVaruint(this.difficulty);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -4067,29 +3227,22 @@ const Play ={
 	}
 	,
 
-	ChangeDimension: class extends Buffer{
+	ChangeDimension: class extends Packet{
 
 		static get ID(){return 61;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 61;
+		}
+
 		constructor(dimension=0,position={x:0,y:0,z:0},unknown2=false){
 			super();
 			this.dimension = dimension;
 			this.position = position;
 			this.unknown2 = unknown2;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(61);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -4102,13 +3255,6 @@ const Play ={
 			this.writeLittleEndianFloat(this.position.z);
 			this.writeBool(this.unknown2);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -4129,27 +3275,20 @@ const Play ={
 	}
 	,
 
-	SetPlayerGameType: class extends Buffer{
+	SetPlayerGameType: class extends Packet{
 
 		static get ID(){return 62;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 62;
+		}
+
 		constructor(gamemode=0){
 			super();
 			this.gamemode = gamemode;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(62);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -4158,13 +3297,6 @@ const Play ={
 			}
 			this.writeVarint(this.gamemode);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -4178,12 +3310,16 @@ const Play ={
 	}
 	,
 
-	PlayerList: class extends Buffer{
+	PlayerList: class extends Packet{
 
 		static get ID(){return 63;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
+
+		getId(){
+			return 63;
+		}
 
 		static get ADD(){return 0;};
 		static get REMOVE(){return 1;};
@@ -4191,17 +3327,6 @@ const Play ={
 		constructor(action=0){
 			super();
 			this.action = action;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(63);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -4219,13 +3344,6 @@ const Play ={
 				default: break;
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -4258,26 +3376,19 @@ const Play ={
 	}
 	,
 
-	SimpleEvent: class extends Buffer{
+	SimpleEvent: class extends Packet{
 
 		static get ID(){return 64;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 64;
+		}
+
 		constructor(){
 			super();
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(64);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -4285,13 +3396,6 @@ const Play ={
 				this.reset();
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -4303,28 +3407,21 @@ const Play ={
 	}
 	,
 
-	TelemetryEvent: class extends Buffer{
+	TelemetryEvent: class extends Packet{
 
 		static get ID(){return 65;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 65;
+		}
+
 		constructor(entityId=0,eventId=0){
 			super();
 			this.entityId = entityId;
 			this.eventId = eventId;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(65);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -4334,13 +3431,6 @@ const Play ={
 			this.writeVarlong(this.entityId);
 			this.writeVarint(this.eventId);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -4356,28 +3446,21 @@ const Play ={
 	}
 	,
 
-	SpawnExperienceOrb: class extends Buffer{
+	SpawnExperienceOrb: class extends Packet{
 
 		static get ID(){return 66;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 66;
+		}
+
 		constructor(position={x:0,y:0,z:0},count=0){
 			super();
 			this.position = position;
 			this.count = count;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(66);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -4389,13 +3472,6 @@ const Play ={
 			this.writeLittleEndianFloat(this.position.z);
 			this.writeVarint(this.count);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -4414,12 +3490,16 @@ const Play ={
 	}
 	,
 
-	ClientboundMapItemData: class extends Buffer{
+	ClientboundMapItemData: class extends Packet{
 
 		static get ID(){return 67;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
+
+		getId(){
+			return 67;
+		}
 
 		constructor(mapId=0,update=0,scale=0,size={x:0,z:0},offset={x:0,z:0},data=new Types.Bytes(),decorations=[]){
 			super();
@@ -4430,17 +3510,6 @@ const Play ={
 			this.offset = offset;
 			this.data = data;
 			this.decorations = decorations;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(67);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -4470,13 +3539,6 @@ const Play ={
 				}
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -4522,27 +3584,20 @@ const Play ={
 	}
 	,
 
-	MapInfoRequest: class extends Buffer{
+	MapInfoRequest: class extends Packet{
 
 		static get ID(){return 68;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 68;
+		}
+
 		constructor(mapId=0){
 			super();
 			this.mapId = mapId;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(68);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -4551,13 +3606,6 @@ const Play ={
 			}
 			this.writeVarlong(this.mapId);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -4571,27 +3619,20 @@ const Play ={
 	}
 	,
 
-	RequestChunkRadius: class extends Buffer{
+	RequestChunkRadius: class extends Packet{
 
 		static get ID(){return 69;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 69;
+		}
+
 		constructor(radius=0){
 			super();
 			this.radius = radius;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(69);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -4600,13 +3641,6 @@ const Play ={
 			}
 			this.writeVarint(this.radius);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -4620,27 +3654,20 @@ const Play ={
 	}
 	,
 
-	ChunkRadiusUpdated: class extends Buffer{
+	ChunkRadiusUpdated: class extends Packet{
 
 		static get ID(){return 70;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 70;
+		}
+
 		constructor(radius=0){
 			super();
 			this.radius = radius;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(70);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -4649,13 +3676,6 @@ const Play ={
 			}
 			this.writeVarint(this.radius);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -4669,28 +3689,21 @@ const Play ={
 	}
 	,
 
-	ItemFrameDropItem: class extends Buffer{
+	ItemFrameDropItem: class extends Packet{
 
 		static get ID(){return 71;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 71;
+		}
+
 		constructor(position=new Types.BlockPosition(),item=new Types.Slot()){
 			super();
 			this.position = position;
 			this.item = item;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(71);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -4700,13 +3713,6 @@ const Play ={
 			this.writeBytes(this.position.encodeBody(true));
 			this.writeBytes(this.item.encodeBody(true));
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -4724,27 +3730,20 @@ const Play ={
 	}
 	,
 
-	GameRulesChanged: class extends Buffer{
+	GameRulesChanged: class extends Packet{
 
 		static get ID(){return 72;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 72;
+		}
+
 		constructor(rules=[]){
 			super();
 			this.rules = rules;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(72);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -4756,13 +3755,6 @@ const Play ={
 				this.writeBytes(this.rules[dhc5dxc].encodeBody(true));
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -4781,28 +3773,21 @@ const Play ={
 	}
 	,
 
-	Camera: class extends Buffer{
+	Camera: class extends Packet{
 
 		static get ID(){return 73;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 73;
+		}
+
 		constructor(unknown0=0,unknown1=0){
 			super();
 			this.unknown0 = unknown0;
 			this.unknown1 = unknown1;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(73);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -4812,13 +3797,6 @@ const Play ={
 			this.writeVarlong(this.unknown0);
 			this.writeVarlong(this.unknown1);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -4834,28 +3812,21 @@ const Play ={
 	}
 	,
 
-	BossEvent: class extends Buffer{
+	BossEvent: class extends Packet{
 
 		static get ID(){return 74;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 74;
+		}
+
 		constructor(entityId=0,eventId=0){
 			super();
 			this.entityId = entityId;
 			this.eventId = eventId;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(74);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -4865,13 +3836,6 @@ const Play ={
 			this.writeVarlong(this.entityId);
 			this.writeVaruint(this.eventId);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -4887,28 +3851,21 @@ const Play ={
 	}
 	,
 
-	ShowCredits: class extends Buffer{
+	ShowCredits: class extends Packet{
 
 		static get ID(){return 75;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 75;
+		}
+
 		constructor(entityId=0,status=0){
 			super();
 			this.entityId = entityId;
 			this.status = status;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(75);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -4918,13 +3875,6 @@ const Play ={
 			this.writeVarlong(this.entityId);
 			this.writeVarint(this.status);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -4940,12 +3890,16 @@ const Play ={
 	}
 	,
 
-	AvailableCommands: class extends Buffer{
+	AvailableCommands: class extends Packet{
 
 		static get ID(){return 76;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
+
+		getId(){
+			return 76;
+		}
 
 		constructor(enumValues=[],unknown1=[],enums=[],commands=[]){
 			super();
@@ -4953,17 +3907,6 @@ const Play ={
 			this.unknown1 = unknown1;
 			this.enums = enums;
 			this.commands = commands;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(76);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -4991,13 +3934,6 @@ const Play ={
 				this.writeBytes(this.commands[dhc5b1y5].encodeBody(true));
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -5037,12 +3973,16 @@ const Play ={
 	}
 	,
 
-	CommandRequest: class extends Buffer{
+	CommandRequest: class extends Packet{
 
 		static get ID(){return 77;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 77;
+		}
 
 		constructor(command="",type=0,uuid=new Types.McpeUuid(),requestId="",playerId=0,internal=false){
 			super();
@@ -5052,17 +3992,6 @@ const Play ={
 			this.requestId = requestId;
 			this.playerId = playerId;
 			this.internal = internal;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(77);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -5082,13 +4011,6 @@ const Play ={
 			}
 			this.writeBool(this.internal);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -5117,12 +4039,16 @@ const Play ={
 	}
 	,
 
-	CommandBlockUpdate: class extends Buffer{
+	CommandBlockUpdate: class extends Packet{
 
 		static get ID(){return 78;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 78;
+		}
 
 		constructor(updateBlock=false,position=new Types.BlockPosition(),mode=0,redstoneMode=false,conditional=false,minecart=0,command="",lastOutput="",hover="",trackOutput=false){
 			super();
@@ -5136,17 +4062,6 @@ const Play ={
 			this.lastOutput = lastOutput;
 			this.hover = hover;
 			this.trackOutput = trackOutput;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(78);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -5180,13 +4095,6 @@ const Play ={
 			this.writeBytes(dhc5bzc);
 			this.writeBool(this.trackOutput);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -5232,12 +4140,16 @@ const Play ={
 	}
 	,
 
-	UpdateTrade: class extends Buffer{
+	UpdateTrade: class extends Packet{
 
 		static get ID(){return 80;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
+
+		getId(){
+			return 80;
+		}
 
 		constructor(window=0,windowType=15,unknown2=0,unknown3=0,willing=false,trader=0,player=0,displayName="",offers=new Types.Bytes()){
 			super();
@@ -5250,17 +4162,6 @@ const Play ={
 			this.player = player;
 			this.displayName = displayName;
 			this.offers = offers;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(80);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -5279,13 +4180,6 @@ const Play ={
 			this.writeBytes(dhc5anbf);
 			this.writeBytes(this.offers);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -5317,26 +4211,19 @@ const Play ={
 	}
 	,
 
-	UpdateEquip: class extends Buffer{
+	UpdateEquip: class extends Packet{
 
 		static get ID(){return 81;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 81;
+		}
+
 		constructor(){
 			super();
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(81);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -5344,13 +4231,6 @@ const Play ={
 				this.reset();
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -5362,12 +4242,16 @@ const Play ={
 	}
 	,
 
-	ResourcePackDataInfo: class extends Buffer{
+	ResourcePackDataInfo: class extends Packet{
 
 		static get ID(){return 82;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
+
+		getId(){
+			return 82;
+		}
 
 		constructor(id="",maxChunkSize=0,chunkCount=0,compressedPackSize=0,sha256=""){
 			super();
@@ -5376,17 +4260,6 @@ const Play ={
 			this.chunkCount = chunkCount;
 			this.compressedPackSize = compressedPackSize;
 			this.sha256 = sha256;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(82);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -5403,13 +4276,6 @@ const Play ={
 			this.writeVaruint(dhc5aeny.length);
 			this.writeBytes(dhc5aeny);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -5433,12 +4299,16 @@ const Play ={
 	}
 	,
 
-	ResourcePackChunkData: class extends Buffer{
+	ResourcePackChunkData: class extends Packet{
 
 		static get ID(){return 83;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
+
+		getId(){
+			return 83;
+		}
 
 		constructor(id="",chunkIndex=0,progress=0,data=new Uint8Array(0)){
 			super();
@@ -5446,17 +4316,6 @@ const Play ={
 			this.chunkIndex = chunkIndex;
 			this.progress = progress;
 			this.data = data;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(83);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -5471,13 +4330,6 @@ const Play ={
 			this.writeLittleEndianInt(this.data.length);
 			this.writeBytes(this.data);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -5499,28 +4351,21 @@ const Play ={
 	}
 	,
 
-	ResourcePackChunkRequest: class extends Buffer{
+	ResourcePackChunkRequest: class extends Packet{
 
 		static get ID(){return 84;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 84;
+		}
+
 		constructor(id="",chunkIndex=0){
 			super();
 			this.id = id;
 			this.chunkIndex = chunkIndex;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(84);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -5532,13 +4377,6 @@ const Play ={
 			this.writeBytes(dhc5z);
 			this.writeLittleEndianInt(this.chunkIndex);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -5555,28 +4393,21 @@ const Play ={
 	}
 	,
 
-	Transfer: class extends Buffer{
+	Transfer: class extends Packet{
 
 		static get ID(){return 85;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 85;
+		}
+
 		constructor(ip="",port=19132){
 			super();
 			this.ip = ip;
 			this.port = port;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(85);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -5588,13 +4419,6 @@ const Play ={
 			this.writeBytes(dhc5c);
 			this.writeLittleEndianShort(this.port);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -5611,12 +4435,16 @@ const Play ={
 	}
 	,
 
-	PlaySound: class extends Buffer{
+	PlaySound: class extends Packet{
 
 		static get ID(){return 86;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
+
+		getId(){
+			return 86;
+		}
 
 		constructor(name="",position=new Types.BlockPosition(),volume=.0,pitch=.0){
 			super();
@@ -5624,17 +4452,6 @@ const Play ={
 			this.position = position;
 			this.volume = volume;
 			this.pitch = pitch;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(86);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -5648,13 +4465,6 @@ const Play ={
 			this.writeLittleEndianFloat(this.volume);
 			this.writeLittleEndianFloat(this.pitch);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -5676,28 +4486,21 @@ const Play ={
 	}
 	,
 
-	StopSound: class extends Buffer{
+	StopSound: class extends Packet{
 
 		static get ID(){return 87;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 87;
+		}
+
 		constructor(name="",stopAll=false){
 			super();
 			this.name = name;
 			this.stopAll = stopAll;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(87);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -5709,13 +4512,6 @@ const Play ={
 			this.writeBytes(dhc5y1);
 			this.writeBool(this.stopAll);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -5732,12 +4528,16 @@ const Play ={
 	}
 	,
 
-	SetTitle: class extends Buffer{
+	SetTitle: class extends Packet{
 
 		static get ID(){return 88;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
+
+		getId(){
+			return 88;
+		}
 
 		constructor(action=0,text="",fadeIn=0,stay=0,fadeOut=0){
 			super();
@@ -5746,17 +4546,6 @@ const Play ={
 			this.fadeIn = fadeIn;
 			this.stay = stay;
 			this.fadeOut = fadeOut;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(88);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -5771,13 +4560,6 @@ const Play ={
 			this.writeVarint(this.stay);
 			this.writeVarint(this.fadeOut);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -5800,27 +4582,20 @@ const Play ={
 	}
 	,
 
-	AddBehaviorTree: class extends Buffer{
+	AddBehaviorTree: class extends Packet{
 
 		static get ID(){return 89;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 89;
+		}
+
 		constructor(unknown0=""){
 			super();
 			this.unknown0 = unknown0;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(89);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -5831,13 +4606,6 @@ const Play ={
 			this.writeVaruint(dhc5btbd.length);
 			this.writeBytes(dhc5btbd);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -5852,26 +4620,19 @@ const Play ={
 	}
 	,
 
-	StructureBlockUpdate: class extends Buffer{
+	StructureBlockUpdate: class extends Packet{
 
 		static get ID(){return 90;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 90;
+		}
+
 		constructor(){
 			super();
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(90);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -5879,13 +4640,6 @@ const Play ={
 				this.reset();
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -5897,29 +4651,22 @@ const Play ={
 	}
 	,
 
-	ShowStoreOffer: class extends Buffer{
+	ShowStoreOffer: class extends Packet{
 
 		static get ID(){return 91;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 91;
+		}
+
 		constructor(unknown0="",unknown1=false,unknown2=""){
 			super();
 			this.unknown0 = unknown0;
 			this.unknown1 = unknown1;
 			this.unknown2 = unknown2;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(91);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -5934,13 +4681,6 @@ const Play ={
 			this.writeVaruint(dhc5btbd.length);
 			this.writeBytes(dhc5btbd);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -5960,27 +4700,20 @@ const Play ={
 	}
 	,
 
-	PurchaseReceipt: class extends Buffer{
+	PurchaseReceipt: class extends Packet{
 
 		static get ID(){return 92;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 92;
+		}
+
 		constructor(unknown0=[]){
 			super();
 			this.unknown0 = unknown0;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(92);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -5994,13 +4727,6 @@ const Play ={
 				this.writeBytes(dhc5btbd);
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -6019,12 +4745,16 @@ const Play ={
 	}
 	,
 
-	PlayerSkin: class extends Buffer{
+	PlayerSkin: class extends Packet{
 
 		static get ID(){return 93;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
+
+		getId(){
+			return 93;
+		}
 
 		constructor(uuid=new Types.McpeUuid(),skinId="",skinName="",unknown3="",skinData=new Uint8Array(0),capeData=new Uint8Array(0),geometryModel="",geometryData=new Uint8Array(0)){
 			super();
@@ -6036,17 +4766,6 @@ const Play ={
 			this.capeData = capeData;
 			this.geometryModel = geometryModel;
 			this.geometryData = geometryData;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(93);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -6073,13 +4792,6 @@ const Play ={
 			this.writeVaruint(this.geometryData.length);
 			this.writeBytes(this.geometryData);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -6115,26 +4827,19 @@ const Play ={
 	}
 	,
 
-	SubClientLogin: class extends Buffer{
+	SubClientLogin: class extends Packet{
 
 		static get ID(){return 94;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 94;
+		}
+
 		constructor(){
 			super();
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(94);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -6142,13 +4847,6 @@ const Play ={
 				this.reset();
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -6160,27 +4858,20 @@ const Play ={
 	}
 	,
 
-	InitiateWebSocketConnection: class extends Buffer{
+	InitiateWebSocketConnection: class extends Packet{
 
 		static get ID(){return 95;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 95;
+		}
+
 		constructor(unknown0=""){
 			super();
 			this.unknown0 = unknown0;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(95);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -6191,13 +4882,6 @@ const Play ={
 			this.writeVaruint(dhc5btbd.length);
 			this.writeBytes(dhc5btbd);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -6212,27 +4896,20 @@ const Play ={
 	}
 	,
 
-	SetLastHurtBy: class extends Buffer{
+	SetLastHurtBy: class extends Packet{
 
 		static get ID(){return 96;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 96;
+		}
+
 		constructor(unknown0=0){
 			super();
 			this.unknown0 = unknown0;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(96);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -6241,13 +4918,6 @@ const Play ={
 			}
 			this.writeVarint(this.unknown0);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -6261,12 +4931,16 @@ const Play ={
 	}
 	,
 
-	BookEdit: class extends Buffer{
+	BookEdit: class extends Packet{
 
 		static get ID(){return 97;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 97;
+		}
 
 		static get REPLACE_PAGE(){return 0;};
 		static get ADD_PAGE(){return 1;};
@@ -6278,17 +4952,6 @@ const Play ={
 			super();
 			this.type = type;
 			this.slot = slot;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(97);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -6321,13 +4984,6 @@ const Play ={
 				default: break;
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -6373,12 +5029,16 @@ const Play ={
 	}
 	,
 
-	NpcRequest: class extends Buffer{
+	NpcRequest: class extends Packet{
 
 		static get ID(){return 98;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 98;
+		}
 
 		constructor(entityId=0,requestType=0,command="",actionType=0){
 			super();
@@ -6386,17 +5046,6 @@ const Play ={
 			this.requestType = requestType;
 			this.command = command;
 			this.actionType = actionType;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(98);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -6410,13 +5059,6 @@ const Play ={
 			this.writeBytes(dhc5b1y5);
 			this.writeByte(this.actionType);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -6437,29 +5079,22 @@ const Play ={
 	}
 	,
 
-	PhotoTransfer: class extends Buffer{
+	PhotoTransfer: class extends Packet{
 
 		static get ID(){return 99;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 99;
+		}
+
 		constructor(unknown0="",unknown1="",unknown2=""){
 			super();
 			this.unknown0 = unknown0;
 			this.unknown1 = unknown1;
 			this.unknown2 = unknown2;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(99);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -6476,13 +5111,6 @@ const Play ={
 			this.writeVaruint(dhc5btbd.length);
 			this.writeBytes(dhc5btbd);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -6503,28 +5131,21 @@ const Play ={
 	}
 	,
 
-	ModalFormRequest: class extends Buffer{
+	ModalFormRequest: class extends Packet{
 
 		static get ID(){return 100;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 100;
+		}
+
 		constructor(formId=0,data=""){
 			super();
 			this.formId = formId;
 			this.data = data;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(100);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -6536,13 +5157,6 @@ const Play ={
 			this.writeVaruint(dhc5yr.length);
 			this.writeBytes(dhc5yr);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -6559,28 +5173,21 @@ const Play ={
 	}
 	,
 
-	ModalFormResponse: class extends Buffer{
+	ModalFormResponse: class extends Packet{
 
 		static get ID(){return 101;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 101;
+		}
+
 		constructor(formId=0,data=""){
 			super();
 			this.formId = formId;
 			this.data = data;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(101);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -6592,13 +5199,6 @@ const Play ={
 			this.writeVaruint(dhc5yr.length);
 			this.writeBytes(dhc5yr);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -6615,26 +5215,19 @@ const Play ={
 	}
 	,
 
-	ServerSettingsRequest: class extends Buffer{
+	ServerSettingsRequest: class extends Packet{
 
 		static get ID(){return 102;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
+		getId(){
+			return 102;
+		}
+
 		constructor(){
 			super();
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(102);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -6642,13 +5235,6 @@ const Play ={
 				this.reset();
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -6660,28 +5246,21 @@ const Play ={
 	}
 	,
 
-	ServerSettingsResponse: class extends Buffer{
+	ServerSettingsResponse: class extends Packet{
 
 		static get ID(){return 103;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 103;
+		}
+
 		constructor(formId=0,data=""){
 			super();
 			this.formId = formId;
 			this.data = data;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(103);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -6693,13 +5272,6 @@ const Play ={
 			this.writeVaruint(dhc5yr.length);
 			this.writeBytes(dhc5yr);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -6716,26 +5288,19 @@ const Play ={
 	}
 	,
 
-	ShowProfile: class extends Buffer{
+	ShowProfile: class extends Packet{
 
 		static get ID(){return 104;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 104;
+		}
+
 		constructor(){
 			super();
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(104);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -6743,13 +5308,6 @@ const Play ={
 				this.reset();
 			}
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
@@ -6761,27 +5319,20 @@ const Play ={
 	}
 	,
 
-	SetDefaultGameType: class extends Buffer{
+	SetDefaultGameType: class extends Packet{
 
 		static get ID(){return 105;};
 
 		static get CLIENTBOUND(){return true;};
 		static get SERVERBOUND(){return false;};
 
+		getId(){
+			return 105;
+		}
+
 		constructor(gameType=0){
 			super();
 			this.gameType = gameType;
-		}
-
-		reset(){
-			this._buffer=[];
-		}
-
-		encode(){
-			this.reset();
-			this.writeVaruint(105);
-			this.writeBytes(new Uint8Array(2));
-			return this.encodeBody(false);
 		}
 
 		encodeBody(reset){
@@ -6790,13 +5341,6 @@ const Play ={
 			}
 			this.writeVaruint(this.gameType);
 			return new Uint8Array(this._buffer);
-		}
-
-		decode(_buffer){
-			this._buffer=Array.from(_buffer);
-			var _id=this.readVaruint();
-			this.readBytes(2);
-			return this.decodeBody(this._buffer);
 		}
 
 		decodeBody(_buffer){
