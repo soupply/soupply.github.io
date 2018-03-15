@@ -8,7 +8,7 @@ layout: default
 
 **Compare changes**: [137](../diff/bedrock/137-160), [141](../diff/bedrock/141-160), [150](../diff/bedrock/150-160), [201](../diff/bedrock/160-201)
 
-**Jump to**: [Encoding](#encoding), [Packets](#packets), [Types](bedrock160/types), [Arrays](bedrock160/arrays), [Metadata](bedrock160/metadata)
+**Jump to**: [Encoding](#encoding), [Packets](#packets), [Types](bedrock160/types), [Metadata](bedrock160/metadata)
 
 **Released**: December 14th, 2017
 
@@ -38,11 +38,7 @@ Everything written in the documentation has been tested on [sel-server](https://
 -----
 ## Encoding
 
-**Endianness**:
-
-big endian | little endian
----|---
-ushort, int, uint, long, ulong, float | 
+**Endianness**: little_endian
 
 **Ids**: varuint
 

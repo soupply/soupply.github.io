@@ -8,7 +8,7 @@ layout: default
 
 **Compare changes**: [210](../diff/java/210-315), [316](../diff/java/315-316), [335](../diff/java/315-335), [338](../diff/java/315-338), [340](../diff/java/315-340)
 
-**Jump to**: [Encoding](#encoding), [Packets](#packets), [Types](java315/types), [Arrays](java315/arrays), [Metadata](java315/metadata)
+**Jump to**: [Encoding](#encoding), [Packets](#packets), [Types](java315/types), [Metadata](java315/metadata)
 
 **Released**: November 14th, 2016
 
@@ -16,11 +16,7 @@ Used in version **1.11**
 
 ## Encoding
 
-**Endianness**:
-
-big endian | little endian
----|---
-short, ushort, int, uint, long, ulong, float, double | 
+**Endianness**: big_endian
 
 **Ids**: varuint
 

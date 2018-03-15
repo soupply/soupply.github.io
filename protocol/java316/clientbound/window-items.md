@@ -20,7 +20,7 @@ Encode/decode this packet in [Sandbox](../../../sandbox/java316#Clientbound.Wind
 
 ## Fields
 
-Name | Type
----|---
-window | ubyte
-slots | [slots](/protocol/java316/arrays)
+Name | Type | Length
+---|---|:---:
+window | ubyte | [](/protocol/java316/types/)
+slots | [slot](/protocol/java316/types/slot)[] | ushort

@@ -78,14 +78,14 @@ const Serverbound ={
 			traceDecode('window');
 			this.action=this.readBigEndianShort();
 			traceDecode('action');
-			var aramcvdj=this.readBigEndianShort();
+			var aramcvdj=this.readVaruint();
 			this.returnEntry=[];
 			for(var dhc5zrc5=0;dhc5zrc5<aramcvdj;dhc5zrc5++){
 				this.returnEntry[dhc5zrc5]=new Types.Entry().decodeBody(this._buffer);
 				this._buffer=this.returnEntry[dhc5zrc5]._buffer;
 			}
 			traceDecode('returnEntry');
-			var aramcjcf=this.readBigEndianShort();
+			var aramcjcf=this.readVaruint();
 			this.prepareEntry=[];
 			for(var dhc5cvyj=0;dhc5cvyj<aramcjcf;dhc5cvyj++){
 				this.prepareEntry[dhc5cvyj]=new Types.Entry().decodeBody(this._buffer);

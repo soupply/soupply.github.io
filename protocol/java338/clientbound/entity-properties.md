@@ -20,7 +20,7 @@ Encode/decode this packet in [Sandbox](../../../sandbox/java338#Clientbound.Enti
 
 ## Fields
 
-Name | Type
----|---
-entity id | varuint
-attributes | [attributes](/protocol/java338/arrays)
+Name | Type | Length
+---|---|:---:
+entity id | varuint | [](/protocol/java338/types/)
+attributes | [attribute](/protocol/java338/types/attribute)[] | uint

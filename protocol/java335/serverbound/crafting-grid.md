@@ -20,9 +20,9 @@ Encode/decode this packet in [Sandbox](../../../sandbox/java335#Serverbound.Craf
 
 ## Fields
 
-Name | Type
----|---
-window | ubyte
-action | ushort
-return entry | [entriesArray](/protocol/java335/arrays)
-prepare entry | [entriesArray](/protocol/java335/arrays)
+Name | Type | Length
+---|---|:---:
+window | ubyte | [](/protocol/java335/types/)
+action | ushort | [](/protocol/java335/types/)
+return entry | [entry](/protocol/java335/types/entry)[] | ushort
+prepare entry | [entry](/protocol/java335/types/entry)[] | ushort

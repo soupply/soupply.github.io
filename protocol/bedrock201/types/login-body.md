@@ -10,7 +10,7 @@ layout: default
 
 ## Fields
 
-Name | Type
----|---
-chain | [array1](/protocol/bedrock201/arrays)
-client data | [array2](/protocol/bedrock201/arrays)
+Name | Type | Length
+---|---|:---:
+chain | ubyte[] | uint
+client data | ubyte[] | uint

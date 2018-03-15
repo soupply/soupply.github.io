@@ -20,9 +20,9 @@ Encode/decode this packet in [Sandbox](../../../sandbox/bedrock137#Play.Resource
 
 ## Fields
 
-Name | Type
----|---
-id | string
-chunk index | uint
-progress | ulong
-data | [uintLeBytes](/protocol/bedrock137/arrays)
+Name | Type | Length
+---|---|:---:
+id | string | [](/protocol/bedrock137/types/)
+chunk index | uint | [](/protocol/bedrock137/types/)
+progress | ulong | [](/protocol/bedrock137/types/)
+data | ubyte[] | uint

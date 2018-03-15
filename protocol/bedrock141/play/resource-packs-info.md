@@ -20,8 +20,8 @@ Encode/decode this packet in [Sandbox](../../../sandbox/bedrock141#Play.Resource
 
 ## Fields
 
-Name | Type
----|---
-must accept | bool
-behaviour packs | [packWithSizeArray](/protocol/bedrock141/arrays)
-resource packs | [packWithSizeArray](/protocol/bedrock141/arrays)
+Name | Type | Length
+---|---|:---:
+must accept | bool | [](/protocol/bedrock141/types/)
+behaviour packs | [packWithSize](/protocol/bedrock141/types/pack-with-size)[] | ushort
+resource packs | [packWithSize](/protocol/bedrock141/types/pack-with-size)[] | ushort

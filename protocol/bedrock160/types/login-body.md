@@ -10,7 +10,7 @@ layout: default
 
 ## Fields
 
-Name | Type
----|---
-chain | [loginPayload](/protocol/bedrock160/arrays)
-client data | [loginPayload](/protocol/bedrock160/arrays)
+Name | Type | Length
+---|---|:---:
+chain | ubyte[] | uint
+client data | ubyte[] | uint

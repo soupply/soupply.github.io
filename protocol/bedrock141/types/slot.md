@@ -10,13 +10,13 @@ Informations about a slot, that, if not empty, contains an item id and meta, the
 
 ## Fields
 
-Name | Type | When
----|---|:---:
-[id](#id) | varint | 
-[meta and count](#meta-and-count) | varint | <code>id</code> is greater than <code>0</code>
-[nbt](#nbt) | [nbt](/protocol/bedrock141/arrays) | <code>id</code> is greater than <code>0</code>
-can place on | string[] | 
-can destroy | string[] | 
+Name | Type | Length | When
+---|---|:---:|:---:
+[id](#id) | varint | [](/protocol/bedrock141/types/) | 
+[meta and count](#meta-and-count) | varint | [](/protocol/bedrock141/types/) | <code>id</code> is greater than <code>0</code>
+[nbt](#nbt) | ubyte[] | ushort | <code>id</code> is greater than <code>0</code>
+can place on | string[] | [](/protocol/bedrock141/types/) | 
+can destroy | string[] | [](/protocol/bedrock141/types/) | 
 
 ### id
 

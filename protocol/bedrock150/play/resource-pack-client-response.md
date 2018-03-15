@@ -20,10 +20,10 @@ Encode/decode this packet in [Sandbox](../../../sandbox/bedrock150#Play.Resource
 
 ## Fields
 
-Name | Type
----|---
-[status](#status) | ubyte
-pack ids | [packIds](/protocol/bedrock150/arrays)
+Name | Type | Length
+---|---|:---:
+[status](#status) | ubyte | [](/protocol/bedrock150/types/)
+pack ids | string[] | ushort
 
 ### status
 

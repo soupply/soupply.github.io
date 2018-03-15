@@ -20,9 +20,9 @@ Encode/decode this packet in [Sandbox](../../../sandbox/java210#Clientbound.Expl
 
 ## Fields
 
-Name | Type
----|---
-position | float&lt;xyz&gt;
-radius | float
-records | [explosionRecords](/protocol/java210/arrays)
-motion | float&lt;xyz&gt;
+Name | Type | Length
+---|---|:---:
+position | float&lt;xyz&gt; | [](/protocol/java210/types/)
+radius | float | [](/protocol/java210/types/)
+records | byte&lt;xyz&gt;[] | uint
+motion | float&lt;xyz&gt; | [](/protocol/java210/types/)

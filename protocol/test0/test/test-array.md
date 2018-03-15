@@ -20,9 +20,9 @@ Encode/decode this packet in [Sandbox](../../../sandbox/test0#Test.TestArray)
 
 ## Fields
 
-Name | Type
----|---
-a | ubyte[]
-b | string
-c | [array1](/protocol/test0/arrays)
-d | varuint[]
+Name | Type | Length
+---|---|:---:
+a | ubyte[] | [](/protocol/test0/types/)
+b | string | [](/protocol/test0/types/)
+c | short[] | int
+d | varuint[] | [](/protocol/test0/types/)

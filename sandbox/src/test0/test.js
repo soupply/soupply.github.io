@@ -142,7 +142,7 @@ const Test ={
 			var dhc5=this.readVaruint();
 			this.b=this.decodeString(this.readBytes(dhc5));
 			traceDecode('b');
-			var aramy=this.readBigEndianInt();
+			var aramy=this.readVaruint();
 			this.c=[];
 			for(var dhc5=0;dhc5<aramy;dhc5++){
 				this.c[dhc5]=this.readBigEndianShort();
