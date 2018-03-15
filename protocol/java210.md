@@ -16,7 +16,7 @@ Used from version **1.10** to **1.10.2**
 
 ## Encoding
 
-**Endianness**: big_endian
+**Endianness**: big endian
 
 **Ids**: varuint
 

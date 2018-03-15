@@ -235,14 +235,14 @@ const Play ={
 			initDecode(this);
 			this.mustAccept=this.readBool();
 			traceDecode('mustAccept');
-			var aramyvyz=this.readVaruint();
+			var aramyvyz=this.readLittleEndianShort();
 			this.behaviourPacks=[];
 			for(var dhc5zhdl=0;dhc5zhdl<aramyvyz;dhc5zhdl++){
 				this.behaviourPacks[dhc5zhdl]=new Types.PackWithSize().decodeBody(this._buffer);
 				this._buffer=this.behaviourPacks[dhc5zhdl]._buffer;
 			}
 			traceDecode('behaviourPacks');
-			var aramcvbv=this.readVaruint();
+			var aramcvbv=this.readLittleEndianShort();
 			this.resourcePacks=[];
 			for(var dhc5zndj=0;dhc5zndj<aramcvbv;dhc5zndj++){
 				this.resourcePacks[dhc5zndj]=new Types.PackWithSize().decodeBody(this._buffer);
@@ -350,7 +350,7 @@ const Play ={
 			initDecode(this);
 			this.status=this.readByte();
 			traceDecode('status');
-			var aramcfal=this.readVaruint();
+			var aramcfal=this.readLittleEndianShort();
 			this.packIds=[];
 			for(var dhc5ynsr=0;dhc5ynsr<aramcfal;dhc5ynsr++){
 				var dhc5ynsr=this.readVaruint();
@@ -4333,7 +4333,7 @@ const Play ={
 			traceDecode('chunkIndex');
 			this.progress=this.readLittleEndianLong();
 			traceDecode('progress');
-			var aramzfy=this.readVaruint();
+			var aramzfy=this.readLittleEndianInt();
 			this.data=this.readBytes(aramzfy);
 			traceDecode('data');
 			return this;

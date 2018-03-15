@@ -31,10 +31,10 @@ const Types ={
 			if(this._buffer.length>_length){
 				this._buffer.length=_length;
 			}
-			var aramyha4=this.readVaruint();
+			var aramyha4=this.readLittleEndianInt();
 			this.chain=this.readBytes(aramyha4);
 			traceDecode('chain');
-			var aramyxz5=this.readVaruint();
+			var aramyxz5=this.readLittleEndianInt();
 			this.clientData=this.readBytes(aramyxz5);
 			traceDecode('clientData');
 			this._buffer=_buffer;
@@ -189,7 +189,7 @@ const Types ={
 				traceDecode('metaAndCount');
 			}
 			if(id>0){
-				var arambj=this.readVaruint();
+				var arambj=this.readLittleEndianShort();
 				this.nbt=this.readBytes(arambj);
 				traceDecode('nbt');
 			}

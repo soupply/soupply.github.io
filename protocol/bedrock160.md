@@ -38,7 +38,7 @@ Everything written in the documentation has been tested on [sel-server](https://
 -----
 ## Encoding
 
-**Endianness**: little_endian
+**Endianness**: little endian
 
 **Ids**: varuint
 

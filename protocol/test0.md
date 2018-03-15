@@ -8,7 +8,7 @@ layout: default
 
 ## Encoding
 
-**Endianness**: big_endian
+**Endianness**: big endian
 
 **Ids**: ubyte
 

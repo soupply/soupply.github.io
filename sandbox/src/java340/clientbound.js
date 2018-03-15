@@ -1054,7 +1054,7 @@ const Clientbound ={
 			initDecode(this);
 			this.window=this.readByte();
 			traceDecode('window');
-			var aramcxdm=this.readVaruint();
+			var aramcxdm=this.readBigEndianShort();
 			this.slots=[];
 			for(var dhc5b9c=0;dhc5b9c<aramcxdm;dhc5b9c++){
 				this.slots[dhc5b9c]=new Types.Slot().decodeBody(this._buffer);
@@ -1421,7 +1421,7 @@ const Clientbound ={
 			traceDecode('position');
 			this.radius=this.readBigEndianFloat();
 			traceDecode('radius');
-			var aramcvbj=this.readVaruint();
+			var aramcvbj=this.readBigEndianInt();
 			this.records=[];
 			for(var dhc5zncr=0;dhc5zncr<aramcvbj;dhc5zncr++){
 				this.records[dhc5zncr]={};
@@ -4009,7 +4009,7 @@ const Clientbound ={
 			initDecode(this);
 			this.entityId=this.readVaruint();
 			traceDecode('entityId');
-			var aramyrcl=this.readVaruint();
+			var aramyrcl=this.readBigEndianInt();
 			this.attributes=[];
 			for(var dhc5draj=0;dhc5draj<aramyrcl;dhc5draj++){
 				this.attributes[dhc5draj]=new Types.Attribute().decodeBody(this._buffer);

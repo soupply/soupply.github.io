@@ -27,7 +27,7 @@ Everything written in the documentation has been tested on [selery](https://gith
 -----
 ## Encoding
 
-**Endianness**: little_endian
+**Endianness**: little endian
 
 **Ids**: varuint
 
