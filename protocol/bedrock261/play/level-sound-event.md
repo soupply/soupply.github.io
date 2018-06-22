@@ -75,134 +75,177 @@ plop | 34
 land | 35
 saddle | 36
 armor | 37
-add chest | 38
-throw | 39
-attack | 40
-attack nodamage | 41
-attack strong | 42
-warn | 43
-shear | 44
-milk | 45
-thunder | 46
-explode | 47
-fire | 48
-ignite | 49
-fuse | 50
-stare | 51
-spawn | 52
-shoot | 53
-break block | 54
-launch | 55
-blast | 56
-large blast | 57
-twinkle | 58
-remedy | 59
-unfect | 60
-levelup | 61
-bow hit | 62
-bullet hit | 63
-extinguish fire | 64
-item fizz | 65
-chest open | 66
-chest closed | 67
-shulker box open | 68
-shulker box close | 69
-power on | 70
-power off | 71
-attach | 72
-detach | 73
-deny | 74
-tripod | 75
-pop | 76
-drop slot | 77
-note | 78
-thorns | 79
-piston in | 80
-piston out | 81
-portal | 82
-water | 83
-lava pop | 84
-lava | 85
-burp | 86
-bucket fill water | 87
-bucket fill lava | 88
-bucket empty water | 89
-bucket empty lava | 90
-record 13 | 91
-record cat | 92
-record blocks | 93
-record chirp | 94
-record far | 95
-record mall | 96
-record mellohi | 97
-record stal | 98
-record strad | 99
-record ward | 100
-record 11 | 101
-record wait | 102
-guardian flop | 104
-elderguardian curse | 105
-mob warning | 106
-mob warning baby | 107
-teleport | 108
-shulker open | 109
-shulker close | 110
-haggle | 111
-haggle yes | 112
-haggle no | 113
-haggle idle | 114
-chorus grow | 115
-chorus death | 116
-glass | 117
-cast spell | 118
-prepare attack | 119
-prepare summon | 120
-prepare wololo | 121
-fang | 122
-charge | 123
-camera take picture | 124
-leashknot place | 125
-leashknot break | 126
-growl | 127
-whine | 128
-pant | 129
-purr | 130
-purreow | 131
-death min volume | 132
-death mid volume | 133
-initiate blaze | 134
-initiate cave spider | 135
-initiate creeper | 136
-initiate elder guardian | 137
-initiate ender dragon | 138
-initiate enderman | 139
-initiate evocation illager | 141
-initiate ghast | 142
-initiate husk | 143
-initiate illusion illager | 144
-initiate magma cube | 145
-initiate polar bear | 146
-initiate shulker | 147
-initiate silverfish | 148
-initiate skeleton | 149
-initiate slime | 150
-initiate spider | 151
-initiate stray | 152
-initiate vex | 153
-initiate vindication illager | 154
-initiate witch | 155
-initiate wither | 156
-initiate wither skeleton | 157
-initiate wolf | 158
-initiate zombie | 159
-initiate zombie pigman | 160
-initiate zombie villager | 161
-block end portal frame fill | 162
-block end portal spawn | 163
-random anvil use | 164
-bottle dragonbreath | 165
-default | 166
-undefined | 167
+mob armor stand place | 38
+add chest | 39
+throw | 40
+attack | 41
+attack nodamage | 42
+attack strong | 43
+warn | 44
+shear | 45
+milk | 46
+thunder | 47
+explode | 48
+fire | 49
+ignite | 50
+fuse | 51
+stare | 52
+spawn | 53
+shoot | 54
+break block | 55
+launch | 56
+blast | 57
+large blast | 58
+twinkle | 59
+remedy | 60
+unfect | 61
+levelup | 62
+bow hit | 63
+bullet hit | 64
+extinguish fire | 65
+item fizz | 66
+chest open | 67
+chest closed | 68
+shulkerbox open | 69
+shulkerbox closed | 70
+enderchest open | 71
+enderchest closed | 72
+power on | 73
+power off | 74
+attach | 75
+detach | 76
+deny | 77
+tripod | 78
+pop | 79
+drop slot | 80
+note | 81
+thorns | 82
+piston in | 83
+piston out | 84
+portal | 85
+water | 86
+lava pop | 87
+lava | 88
+burp | 89
+bucket fill water | 90
+bucket fill lava | 91
+bucket empty water | 92
+bucket empty lava | 93
+armor equip chain | 94
+armor equip diamond | 95
+armor equip generic | 96
+armor equip gold | 97
+armor equip iron | 98
+armor equip leather | 99
+armor equip elytra | 100
+record 13 | 101
+record cat | 102
+record blocks | 103
+record chirp | 104
+record far | 105
+record mall | 106
+record mellohi | 107
+record stal | 108
+record strad | 109
+record ward | 110
+record 11 | 111
+record wait | 112
+stop record | 113
+flop | 114
+elderguardian curse | 115
+mob warning | 116
+mob warning baby | 117
+teleport | 118
+shulker open | 119
+shulker close | 120
+haggle | 121
+haggle yes | 122
+haggle no | 123
+haggle idle | 124
+chorusgrow | 125
+chorusdeath | 126
+glass | 127
+potion brewed | 128
+cast spell | 129
+prepare attack | 130
+prepare summon | 131
+prepare wololo | 132
+fang | 133
+charge | 134
+camera take picture | 135
+leashknot place | 136
+leashknot break | 137
+growl | 138
+whine | 139
+pant | 140
+purr | 141
+purreow | 142
+death min volume | 143
+death mid volume | 144
+imitate blaze | 145
+imitate cave spider | 146
+imitate creeper | 147
+imitate elder guardian | 148
+imitate ender dragon | 149
+imitate enderman | 150
+imitate evocation illager | 152
+imitate ghast | 153
+imitate husk | 154
+imitate illusion illager | 155
+imitate magma cube | 156
+imitate polar bear | 157
+imitate shulker | 158
+imitate silverfish | 159
+imitate skeleton | 160
+imitate slime | 161
+imitate spider | 162
+imitate stray | 163
+imitate vex | 164
+imitate vindication illager | 165
+imitate witch | 166
+imitate wither | 167
+imitate wither skeleton | 168
+imitate wolf | 169
+imitate zombie | 170
+imitate zombie pigman | 171
+imitate zombie villager | 172
+block end portal frame fill | 173
+block end portal spawn | 174
+random anvil use | 175
+bottle dragonbreath | 176
+portal travel | 177
+item trident hit | 178
+item trident return | 179
+item trident riptide 1 | 180
+item trident riptide 2 | 181
+item trident riptide 3 | 182
+item trident throw | 183
+item trident thunder | 184
+item trident hit ground | 185
+default | 186
+elemconstruct open | 188
+icebomb hit | 189
+balloonpop | 190
+lt reaction icebomb | 191
+lt reaction bleach | 192
+lt reaction epaste | 193
+lt reaction epaste2 | 194
+lt reaction fertilizer | 199
+lt reaction fireball | 200
+lt reaction mgsalt | 201
+lt reaction miscfire | 202
+lt reaction fire | 203
+lt reaction miscexplosion | 204
+lt reaction miscmystical | 205
+lt reaction miscmystical2 | 206
+lt reaction product | 207
+sparkler use | 208
+glowstick use | 209
+sparkler active | 210
+convert to drowned | 211
+bucket fill fish | 212
+bucket empty fish | 213
+undefined | 214
 
 ### position
 

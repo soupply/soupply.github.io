@@ -37,6 +37,7 @@ pitch | float |
 loaded in creative | bool | 
 [time](#time) | varint | 
 [version](#version) | ubyte | 
+edu features enabled | bool | 
 [rain level](#rain-level) | float | 
 lightning level | float | 
 multiplayer game | bool | true
@@ -45,17 +46,23 @@ broadcast to xbl | bool |
 [commands enabled](#commands-enabled) | bool | 
 texture required | bool | 
 game rules | [rule](/protocol/bedrock261/types/rule)[] | 
-bonus chest enabled | bool | 
-start with map enabled | bool | 
-trust players enabled | bool | 
+has bonus chest enabled | bool | 
+has start with map enabled | bool | 
+has trust players enabled | bool | 
 default permission level | varint | 
 xbox live broadcast mode | varint | 
 server chunk tick radius | uint | 
+has platform broadcast | bool | 
+platform broadcast mode | varint | 
+xbox live broadcast intent | bool | 
+has locked behavior pack | bool | 
+has locked resource pack | bool | 
+is from locked world template | bool | 
 level id | string | 
 [world name](#world-name) | string | 
 premium world template | string | 
-? | bool | 
-world ticks | ulong | 
+is trial | bool | 
+current tick | ulong | 
 enchantment seed | varint | 
 
 ### entity id

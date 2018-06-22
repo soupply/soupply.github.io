@@ -560,7 +560,7 @@ const Play ={
 			return 11;
 		}
 
-		constructor(entityId=0,runtimeId=0,gamemode=0,position={x:0,y:0,z:0},yaw=.0,pitch=.0,seed=0,dimension=0,generator=1,worldGamemode=0,difficulty=0,spawnPosition={x:0,y:0,z:0},loadedInCreative=false,time=0,version=0,rainLevel=.0,lightningLevel=.0,multiplayerGame=true,broadcastToLan=false,broadcastToXbl=false,commandsEnabled=false,textureRequired=false,gameRules=[],bonusChestEnabled=false,startWithMapEnabled=false,trustPlayersEnabled=false,defaultPermissionLevel=0,xboxLiveBroadcastMode=0,serverChunkTickRadius=0,levelId="",worldName="",premiumWorldTemplate="",unknown32=false,worldTicks=0,enchantmentSeed=0){
+		constructor(entityId=0,runtimeId=0,gamemode=0,position={x:0,y:0,z:0},yaw=.0,pitch=.0,seed=0,dimension=0,generator=1,worldGamemode=0,difficulty=0,spawnPosition={x:0,y:0,z:0},loadedInCreative=false,time=0,version=0,eduFeaturesEnabled=false,rainLevel=.0,lightningLevel=.0,multiplayerGame=true,broadcastToLan=false,broadcastToXbl=false,commandsEnabled=false,textureRequired=false,gameRules=[],hasBonusChestEnabled=false,hasStartWithMapEnabled=false,hasTrustPlayersEnabled=false,defaultPermissionLevel=0,xboxLiveBroadcastMode=0,serverChunkTickRadius=0,hasPlatformBroadcast=false,platformBroadcastMode=0,xboxLiveBroadcastIntent=false,hasLockedBehaviorPack=false,hasLockedResourcePack=false,isFromLockedWorldTemplate=false,levelId="",worldName="",premiumWorldTemplate="",isTrial=false,currentTick=0,enchantmentSeed=0){
 			super();
 			this.entityId = entityId;
 			this.runtimeId = runtimeId;
@@ -577,6 +577,7 @@ const Play ={
 			this.loadedInCreative = loadedInCreative;
 			this.time = time;
 			this.version = version;
+			this.eduFeaturesEnabled = eduFeaturesEnabled;
 			this.rainLevel = rainLevel;
 			this.lightningLevel = lightningLevel;
 			this.multiplayerGame = multiplayerGame;
@@ -585,17 +586,23 @@ const Play ={
 			this.commandsEnabled = commandsEnabled;
 			this.textureRequired = textureRequired;
 			this.gameRules = gameRules;
-			this.bonusChestEnabled = bonusChestEnabled;
-			this.startWithMapEnabled = startWithMapEnabled;
-			this.trustPlayersEnabled = trustPlayersEnabled;
+			this.hasBonusChestEnabled = hasBonusChestEnabled;
+			this.hasStartWithMapEnabled = hasStartWithMapEnabled;
+			this.hasTrustPlayersEnabled = hasTrustPlayersEnabled;
 			this.defaultPermissionLevel = defaultPermissionLevel;
 			this.xboxLiveBroadcastMode = xboxLiveBroadcastMode;
 			this.serverChunkTickRadius = serverChunkTickRadius;
+			this.hasPlatformBroadcast = hasPlatformBroadcast;
+			this.platformBroadcastMode = platformBroadcastMode;
+			this.xboxLiveBroadcastIntent = xboxLiveBroadcastIntent;
+			this.hasLockedBehaviorPack = hasLockedBehaviorPack;
+			this.hasLockedResourcePack = hasLockedResourcePack;
+			this.isFromLockedWorldTemplate = isFromLockedWorldTemplate;
 			this.levelId = levelId;
 			this.worldName = worldName;
 			this.premiumWorldTemplate = premiumWorldTemplate;
-			this.unknown32 = unknown32;
-			this.worldTicks = worldTicks;
+			this.isTrial = isTrial;
+			this.currentTick = currentTick;
 			this.enchantmentSeed = enchantmentSeed;
 		}
 
@@ -622,6 +629,7 @@ const Play ={
 			this.writeBool(this.loadedInCreative);
 			this.writeVarint(this.time);
 			this.writeByte(this.version);
+			this.writeBool(this.eduFeaturesEnabled);
 			this.writeLittleEndianFloat(this.rainLevel);
 			this.writeLittleEndianFloat(this.lightningLevel);
 			this.writeBool(this.multiplayerGame);
@@ -633,12 +641,18 @@ const Play ={
 			for(var dhc5y1uv in this.gameRules){
 				this.writeBytes(this.gameRules[dhc5y1uv].encodeBody(true));
 			}
-			this.writeBool(this.bonusChestEnabled);
-			this.writeBool(this.startWithMapEnabled);
-			this.writeBool(this.trustPlayersEnabled);
+			this.writeBool(this.hasBonusChestEnabled);
+			this.writeBool(this.hasStartWithMapEnabled);
+			this.writeBool(this.hasTrustPlayersEnabled);
 			this.writeVarint(this.defaultPermissionLevel);
 			this.writeVarint(this.xboxLiveBroadcastMode);
 			this.writeLittleEndianInt(this.serverChunkTickRadius);
+			this.writeBool(this.hasPlatformBroadcast);
+			this.writeVarint(this.platformBroadcastMode);
+			this.writeBool(this.xboxLiveBroadcastIntent);
+			this.writeBool(this.hasLockedBehaviorPack);
+			this.writeBool(this.hasLockedResourcePack);
+			this.writeBool(this.isFromLockedWorldTemplate);
 			var dhc5zzbl=this.encodeString(this.levelId);
 			this.writeVaruint(dhc5zzbl.length);
 			this.writeBytes(dhc5zzbl);
@@ -648,8 +662,8 @@ const Play ={
 			var dhc5cvav=this.encodeString(this.premiumWorldTemplate);
 			this.writeVaruint(dhc5cvav.length);
 			this.writeBytes(dhc5cvav);
-			this.writeBool(this.unknown32);
-			this.writeLittleEndianLong(this.worldTicks);
+			this.writeBool(this.isTrial);
+			this.writeLittleEndianLong(this.currentTick);
 			this.writeVarint(this.enchantmentSeed);
 			return new Uint8Array(this._buffer);
 		}
@@ -693,6 +707,8 @@ const Play ={
 			traceDecode('time');
 			this.version=this.readByte();
 			traceDecode('version');
+			this.eduFeaturesEnabled=this.readBool();
+			traceDecode('eduFeaturesEnabled');
 			this.rainLevel=this.readLittleEndianFloat();
 			traceDecode('rainLevel');
 			this.lightningLevel=this.readLittleEndianFloat();
@@ -714,18 +730,30 @@ const Play ={
 				this._buffer=this.gameRules[dhc5y1uv]._buffer;
 			}
 			traceDecode('gameRules');
-			this.bonusChestEnabled=this.readBool();
-			traceDecode('bonusChestEnabled');
-			this.startWithMapEnabled=this.readBool();
-			traceDecode('startWithMapEnabled');
-			this.trustPlayersEnabled=this.readBool();
-			traceDecode('trustPlayersEnabled');
+			this.hasBonusChestEnabled=this.readBool();
+			traceDecode('hasBonusChestEnabled');
+			this.hasStartWithMapEnabled=this.readBool();
+			traceDecode('hasStartWithMapEnabled');
+			this.hasTrustPlayersEnabled=this.readBool();
+			traceDecode('hasTrustPlayersEnabled');
 			this.defaultPermissionLevel=this.readVarint();
 			traceDecode('defaultPermissionLevel');
 			this.xboxLiveBroadcastMode=this.readVarint();
 			traceDecode('xboxLiveBroadcastMode');
 			this.serverChunkTickRadius=this.readLittleEndianInt();
 			traceDecode('serverChunkTickRadius');
+			this.hasPlatformBroadcast=this.readBool();
+			traceDecode('hasPlatformBroadcast');
+			this.platformBroadcastMode=this.readVarint();
+			traceDecode('platformBroadcastMode');
+			this.xboxLiveBroadcastIntent=this.readBool();
+			traceDecode('xboxLiveBroadcastIntent');
+			this.hasLockedBehaviorPack=this.readBool();
+			traceDecode('hasLockedBehaviorPack');
+			this.hasLockedResourcePack=this.readBool();
+			traceDecode('hasLockedResourcePack');
+			this.isFromLockedWorldTemplate=this.readBool();
+			traceDecode('isFromLockedWorldTemplate');
 			var dhc5zzbl=this.readVaruint();
 			this.levelId=this.decodeString(this.readBytes(dhc5zzbl));
 			traceDecode('levelId');
@@ -735,10 +763,10 @@ const Play ={
 			var dhc5cvav=this.readVaruint();
 			this.premiumWorldTemplate=this.decodeString(this.readBytes(dhc5cvav));
 			traceDecode('premiumWorldTemplate');
-			this.unknown32=this.readBool();
-			traceDecode('unknown32');
-			this.worldTicks=this.readLittleEndianLong();
-			traceDecode('worldTicks');
+			this.isTrial=this.readBool();
+			traceDecode('isTrial');
+			this.currentTick=this.readLittleEndianLong();
+			traceDecode('currentTick');
 			this.enchantmentSeed=this.readVarint();
 			traceDecode('enchantmentSeed');
 			return this;
@@ -1355,11 +1383,12 @@ const Play ={
 			return 21;
 		}
 
-		constructor(position=new Types.BlockPosition(),block=0,flagsAndMeta=0){
+		constructor(position=new Types.BlockPosition(),block=0,flagsAndMeta=0,dataLayerId=0){
 			super();
 			this.position = position;
 			this.block = block;
 			this.flagsAndMeta = flagsAndMeta;
+			this.dataLayerId = dataLayerId;
 		}
 
 		encodeBody(reset){
@@ -1369,6 +1398,7 @@ const Play ={
 			this.writeBytes(this.position.encodeBody(true));
 			this.writeVaruint(this.block);
 			this.writeVaruint(this.flagsAndMeta);
+			this.writeVaruint(this.dataLayerId);
 			return new Uint8Array(this._buffer);
 		}
 
@@ -1382,6 +1412,8 @@ const Play ={
 			traceDecode('block');
 			this.flagsAndMeta=this.readVaruint();
 			traceDecode('flagsAndMeta');
+			this.dataLayerId=this.readVaruint();
+			traceDecode('dataLayerId');
 			return this;
 		}
 
