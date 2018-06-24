@@ -1,49 +1,5 @@
 const Types ={
 
-	LoginBody: class extends Buffer{
-
-		constructor(chain=new Uint8Array(0),clientData=new Uint8Array(0)){
-			super();
-			this.chain = chain;
-			this.clientData = clientData;
-		}
-
-		encodeBody(reset){
-			if(reset){
-				this.reset();
-			}
-			this.writeLittleEndianInt(this.chain.length);
-			this.writeBytes(this.chain);
-			this.writeLittleEndianInt(this.clientData.length);
-			this.writeBytes(this.clientData);
-			var _buffer=this._buffer;
-			this.reset();
-			this.writeVaruint(_buffer.length);
-			this.writeBytes(_buffer);
-			return new Uint8Array(this._buffer);
-		}
-
-		decodeBody(_buffer){
-			this._buffer=Array.from(_buffer);
-			initDecode(this);
-			var _length=this.readVaruint();
-			_buffer=this._buffer.slice(_length);
-			if(this._buffer.length>_length){
-				this._buffer.length=_length;
-			}
-			var aramyha4=this.readLittleEndianInt();
-			this.chain=this.readBytes(aramyha4);
-			traceDecode('chain');
-			var aramyxz5=this.readLittleEndianInt();
-			this.clientData=this.readBytes(aramyxz5);
-			traceDecode('clientData');
-			this._buffer=_buffer;
-			return this;
-		}
-
-	}
-	,
-
 	PackWithSize: class extends Buffer{
 
 		constructor(id="",version="",size=0,unknown3="",unknown4=""){
@@ -322,110 +278,6 @@ const Types ={
 	}
 	,
 
-	PlayerList: class extends Buffer{
-
-		constructor(uuid=new Types.McpeUuid(),entityId=0,displayName="",skin=new Types.Skin(),unknown4=""){
-			super();
-			this.uuid = uuid;
-			this.entityId = entityId;
-			this.displayName = displayName;
-			this.skin = skin;
-			this.unknown4 = unknown4;
-		}
-
-		encodeBody(reset){
-			if(reset){
-				this.reset();
-			}
-			this.writeBytes(this.uuid.encodeBody(true));
-			this.writeVarlong(this.entityId);
-			var dhc5anbf=this.encodeString(this.displayName);
-			this.writeVaruint(dhc5anbf.length);
-			this.writeBytes(dhc5anbf);
-			this.writeBytes(this.skin.encodeBody(true));
-			var dhc5btbd=this.encodeString(this.unknown4);
-			this.writeVaruint(dhc5btbd.length);
-			this.writeBytes(dhc5btbd);
-			return new Uint8Array(this._buffer);
-		}
-
-		decodeBody(_buffer){
-			this._buffer=Array.from(_buffer);
-			initDecode(this);
-			this.uuid=new Types.McpeUuid().decodeBody(this._buffer);
-			this._buffer=this.uuid._buffer;
-			traceDecode('uuid');
-			this.entityId=this.readVarlong();
-			traceDecode('entityId');
-			var dhc5anbf=this.readVaruint();
-			this.displayName=this.decodeString(this.readBytes(dhc5anbf));
-			traceDecode('displayName');
-			this.skin=new Types.Skin().decodeBody(this._buffer);
-			this._buffer=this.skin._buffer;
-			traceDecode('skin');
-			var dhc5btbd=this.readVaruint();
-			this.unknown4=this.decodeString(this.readBytes(dhc5btbd));
-			traceDecode('unknown4');
-			return this;
-		}
-
-	}
-	,
-
-	Skin: class extends Buffer{
-
-		constructor(name="",data=new Uint8Array(0),capeData=new Uint8Array(0),geometryName="",geometryData=new Uint8Array(0)){
-			super();
-			this.name = name;
-			this.data = data;
-			this.capeData = capeData;
-			this.geometryName = geometryName;
-			this.geometryData = geometryData;
-		}
-
-		encodeBody(reset){
-			if(reset){
-				this.reset();
-			}
-			var dhc5y1=this.encodeString(this.name);
-			this.writeVaruint(dhc5y1.length);
-			this.writeBytes(dhc5y1);
-			this.writeVaruint(this.data.length);
-			this.writeBytes(this.data);
-			this.writeVaruint(this.capeData.length);
-			this.writeBytes(this.capeData);
-			var dhc5z9zr=this.encodeString(this.geometryName);
-			this.writeVaruint(dhc5z9zr.length);
-			this.writeBytes(dhc5z9zr);
-			this.writeVaruint(this.geometryData.length);
-			this.writeBytes(this.geometryData);
-			return new Uint8Array(this._buffer);
-		}
-
-		decodeBody(_buffer){
-			this._buffer=Array.from(_buffer);
-			initDecode(this);
-			var dhc5y1=this.readVaruint();
-			this.name=this.decodeString(this.readBytes(dhc5y1));
-			traceDecode('name');
-			var aramzfy=this.readVaruint();
-			this.data=this.readBytes(aramzfy);
-			traceDecode('data');
-			var aramyfzr=this.readVaruint();
-			this.capeData=this.readBytes(aramyfzr);
-			traceDecode('capeData');
-			var dhc5z9zr=this.readVaruint();
-			this.geometryName=this.decodeString(this.readBytes(dhc5z9zr));
-			traceDecode('geometryName');
-			var aramzvbv=this.readVaruint();
-			this.geometryData=this.readBytes(aramzvbv);
-			traceDecode('geometryData');
-			return this;
-		}
-
-	}
-	,
-
 	Link: class extends Buffer{
 
 		constructor(from=0,to=0,action=0,unknown3=0){
@@ -495,6 +347,107 @@ const Types ={
 	}
 	,
 
+	Rule: class extends Buffer{
+
+		constructor(name="",type=0,booleanValue=false,integerValue=0,floatingValue=.0){
+			super();
+			this.name = name;
+			this.type = type;
+			this.booleanValue = booleanValue;
+			this.integerValue = integerValue;
+			this.floatingValue = floatingValue;
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			var dhc5y1=this.encodeString(this.name);
+			this.writeVaruint(dhc5y1.length);
+			this.writeBytes(dhc5y1);
+			this.writeByte(this.type);
+			if(type==1){
+				this.writeBool(this.booleanValue);
+			}
+			if(type==2){
+				this.writeVaruint(this.integerValue);
+			}
+			if(type==3){
+				this.writeLittleEndianFloat(this.floatingValue);
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			var dhc5y1=this.readVaruint();
+			this.name=this.decodeString(this.readBytes(dhc5y1));
+			traceDecode('name');
+			this.type=this.readByte();
+			traceDecode('type');
+			if(type==1){
+				this.booleanValue=this.readBool();
+				traceDecode('booleanValue');
+			}
+			if(type==2){
+				this.integerValue=this.readVaruint();
+				traceDecode('integerValue');
+			}
+			if(type==3){
+				this.floatingValue=this.readLittleEndianFloat();
+				traceDecode('floatingValue');
+			}
+			return this;
+		}
+
+	}
+	,
+
+	LoginBody: class extends Buffer{
+
+		constructor(chain=new Uint8Array(0),clientData=new Uint8Array(0)){
+			super();
+			this.chain = chain;
+			this.clientData = clientData;
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeLittleEndianInt(this.chain.length);
+			this.writeBytes(this.chain);
+			this.writeLittleEndianInt(this.clientData.length);
+			this.writeBytes(this.clientData);
+			var _buffer=this._buffer;
+			this.reset();
+			this.writeVaruint(_buffer.length);
+			this.writeBytes(_buffer);
+			return new Uint8Array(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			var _length=this.readVaruint();
+			_buffer=this._buffer.slice(_length);
+			if(this._buffer.length>_length){
+				this._buffer.length=_length;
+			}
+			var aramyha4=this.readLittleEndianInt();
+			this.chain=this.readBytes(aramyha4);
+			traceDecode('chain');
+			var aramyxz5=this.readLittleEndianInt();
+			this.clientData=this.readBytes(aramyxz5);
+			traceDecode('clientData');
+			this._buffer=_buffer;
+			return this;
+		}
+
+	}
+	,
+
 	InventoryAction: class extends Buffer{
 
 		constructor(source=0,container=-1,unknown2=0,slot=0,oldItem=new Types.Slot(),newItem=new Types.Slot()){
@@ -545,6 +498,103 @@ const Types ={
 			this.newItem=new Types.Slot().decodeBody(this._buffer);
 			this._buffer=this.newItem._buffer;
 			traceDecode('newItem');
+			return this;
+		}
+
+	}
+	,
+
+	Recipe: class extends Buffer{
+
+		constructor(type=0,data=new Types.Bytes()){
+			super();
+			this.type = type;
+			this.data = data;
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVarint(this.type);
+			this.writeBytes(this.data);
+			return new Uint8Array(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.type=this.readVarint();
+			traceDecode('type');
+			this.data=Array.from(this._buffer);
+			this._buffer=[];
+			traceDecode('data');
+			return this;
+		}
+
+	}
+	,
+
+	Section: class extends Buffer{
+
+		constructor(storageVersion=0,blockIds=new Uint8Array(4096),blockMetas=new Uint8Array(2048)){
+			super();
+			this.storageVersion = storageVersion;
+			this.blockIds = blockIds;
+			this.blockMetas = blockMetas;
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeByte(this.storageVersion);
+			this.writeBytes(this.blockIds);
+			this.writeBytes(this.blockMetas);
+			return new Uint8Array(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.storageVersion=this.readByte();
+			traceDecode('storageVersion');
+			var aramyxyt=4096;
+			this.blockIds=this.readBytes(aramyxyt);
+			traceDecode('blockIds');
+			var aramyxyt=2048;
+			this.blockMetas=this.readBytes(aramyxyt);
+			traceDecode('blockMetas');
+			return this;
+		}
+
+	}
+	,
+
+	ExtraData: class extends Buffer{
+
+		constructor(key=0,value=0){
+			super();
+			this.key = key;
+			this.value = value;
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVaruint(this.key);
+			this.writeLittleEndianShort(this.value);
+			return new Uint8Array(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.key=this.readVaruint();
+			traceDecode('key');
+			this.value=this.readLittleEndianShort();
+			traceDecode('value');
 			return this;
 		}
 
@@ -633,66 +683,104 @@ const Types ={
 	}
 	,
 
-	Section: class extends Buffer{
+	Skin: class extends Buffer{
 
-		constructor(storageVersion=0,blockIds=new Uint8Array(4096),blockMetas=new Uint8Array(2048)){
+		constructor(name="",data=new Uint8Array(0),capeData=new Uint8Array(0),geometryName="",geometryData=new Uint8Array(0)){
 			super();
-			this.storageVersion = storageVersion;
-			this.blockIds = blockIds;
-			this.blockMetas = blockMetas;
+			this.name = name;
+			this.data = data;
+			this.capeData = capeData;
+			this.geometryName = geometryName;
+			this.geometryData = geometryData;
 		}
 
 		encodeBody(reset){
 			if(reset){
 				this.reset();
 			}
-			this.writeByte(this.storageVersion);
-			this.writeBytes(this.blockIds);
-			this.writeBytes(this.blockMetas);
+			var dhc5y1=this.encodeString(this.name);
+			this.writeVaruint(dhc5y1.length);
+			this.writeBytes(dhc5y1);
+			this.writeVaruint(this.data.length);
+			this.writeBytes(this.data);
+			this.writeVaruint(this.capeData.length);
+			this.writeBytes(this.capeData);
+			var dhc5z9zr=this.encodeString(this.geometryName);
+			this.writeVaruint(dhc5z9zr.length);
+			this.writeBytes(dhc5z9zr);
+			this.writeVaruint(this.geometryData.length);
+			this.writeBytes(this.geometryData);
 			return new Uint8Array(this._buffer);
 		}
 
 		decodeBody(_buffer){
 			this._buffer=Array.from(_buffer);
 			initDecode(this);
-			this.storageVersion=this.readByte();
-			traceDecode('storageVersion');
-			var aramyxyt=4096;
-			this.blockIds=this.readBytes(aramyxyt);
-			traceDecode('blockIds');
-			var aramyxyt=2048;
-			this.blockMetas=this.readBytes(aramyxyt);
-			traceDecode('blockMetas');
+			var dhc5y1=this.readVaruint();
+			this.name=this.decodeString(this.readBytes(dhc5y1));
+			traceDecode('name');
+			var aramzfy=this.readVaruint();
+			this.data=this.readBytes(aramzfy);
+			traceDecode('data');
+			var aramyfzr=this.readVaruint();
+			this.capeData=this.readBytes(aramyfzr);
+			traceDecode('capeData');
+			var dhc5z9zr=this.readVaruint();
+			this.geometryName=this.decodeString(this.readBytes(dhc5z9zr));
+			traceDecode('geometryName');
+			var aramzvbv=this.readVaruint();
+			this.geometryData=this.readBytes(aramzvbv);
+			traceDecode('geometryData');
 			return this;
 		}
 
 	}
 	,
 
-	ExtraData: class extends Buffer{
+	PlayerList: class extends Buffer{
 
-		constructor(key=0,value=0){
+		constructor(uuid=new Types.McpeUuid(),entityId=0,displayName="",skin=new Types.Skin(),unknown4=""){
 			super();
-			this.key = key;
-			this.value = value;
+			this.uuid = uuid;
+			this.entityId = entityId;
+			this.displayName = displayName;
+			this.skin = skin;
+			this.unknown4 = unknown4;
 		}
 
 		encodeBody(reset){
 			if(reset){
 				this.reset();
 			}
-			this.writeVaruint(this.key);
-			this.writeLittleEndianShort(this.value);
+			this.writeBytes(this.uuid.encodeBody(true));
+			this.writeVarlong(this.entityId);
+			var dhc5anbf=this.encodeString(this.displayName);
+			this.writeVaruint(dhc5anbf.length);
+			this.writeBytes(dhc5anbf);
+			this.writeBytes(this.skin.encodeBody(true));
+			var dhc5btbd=this.encodeString(this.unknown4);
+			this.writeVaruint(dhc5btbd.length);
+			this.writeBytes(dhc5btbd);
 			return new Uint8Array(this._buffer);
 		}
 
 		decodeBody(_buffer){
 			this._buffer=Array.from(_buffer);
 			initDecode(this);
-			this.key=this.readVaruint();
-			traceDecode('key');
-			this.value=this.readLittleEndianShort();
-			traceDecode('value');
+			this.uuid=new Types.McpeUuid().decodeBody(this._buffer);
+			this._buffer=this.uuid._buffer;
+			traceDecode('uuid');
+			this.entityId=this.readVarlong();
+			traceDecode('entityId');
+			var dhc5anbf=this.readVaruint();
+			this.displayName=this.decodeString(this.readBytes(dhc5anbf));
+			traceDecode('displayName');
+			this.skin=new Types.Skin().decodeBody(this._buffer);
+			this._buffer=this.skin._buffer;
+			traceDecode('skin');
+			var dhc5btbd=this.readVaruint();
+			this.unknown4=this.decodeString(this.readBytes(dhc5btbd));
+			traceDecode('unknown4');
 			return this;
 		}
 
@@ -743,63 +831,6 @@ const Types ={
 	}
 	,
 
-	Rule: class extends Buffer{
-
-		constructor(name="",type=0,booleanValue=false,integerValue=0,floatingValue=.0){
-			super();
-			this.name = name;
-			this.type = type;
-			this.booleanValue = booleanValue;
-			this.integerValue = integerValue;
-			this.floatingValue = floatingValue;
-		}
-
-		encodeBody(reset){
-			if(reset){
-				this.reset();
-			}
-			var dhc5y1=this.encodeString(this.name);
-			this.writeVaruint(dhc5y1.length);
-			this.writeBytes(dhc5y1);
-			this.writeByte(this.type);
-			if(type==1){
-				this.writeBool(this.booleanValue);
-			}
-			if(type==2){
-				this.writeVaruint(this.integerValue);
-			}
-			if(type==3){
-				this.writeLittleEndianFloat(this.floatingValue);
-			}
-			return new Uint8Array(this._buffer);
-		}
-
-		decodeBody(_buffer){
-			this._buffer=Array.from(_buffer);
-			initDecode(this);
-			var dhc5y1=this.readVaruint();
-			this.name=this.decodeString(this.readBytes(dhc5y1));
-			traceDecode('name');
-			this.type=this.readByte();
-			traceDecode('type');
-			if(type==1){
-				this.booleanValue=this.readBool();
-				traceDecode('booleanValue');
-			}
-			if(type==2){
-				this.integerValue=this.readVaruint();
-				traceDecode('integerValue');
-			}
-			if(type==3){
-				this.floatingValue=this.readLittleEndianFloat();
-				traceDecode('floatingValue');
-			}
-			return this;
-		}
-
-	}
-	,
-
 	Enum: class extends Buffer{
 
 		constructor(name="",valuesIndexes=new Uint16Array(0)){
@@ -834,6 +865,77 @@ const Types ={
 				this.valuesIndexes[dhc5yxzn]=this.readLittleEndianShort();
 			}
 			traceDecode('valuesIndexes');
+			return this;
+		}
+
+	}
+	,
+
+	Parameter: class extends Buffer{
+
+		constructor(name="",type=0,optional=false){
+			super();
+			this.name = name;
+			this.type = type;
+			this.optional = optional;
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			var dhc5y1=this.encodeString(this.name);
+			this.writeVaruint(dhc5y1.length);
+			this.writeBytes(dhc5y1);
+			this.writeLittleEndianInt(this.type);
+			this.writeBool(this.optional);
+			return new Uint8Array(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			var dhc5y1=this.readVaruint();
+			this.name=this.decodeString(this.readBytes(dhc5y1));
+			traceDecode('name');
+			this.type=this.readLittleEndianInt();
+			traceDecode('type');
+			this.optional=this.readBool();
+			traceDecode('optional');
+			return this;
+		}
+
+	}
+	,
+
+	Overload: class extends Buffer{
+
+		constructor(parameters=[]){
+			super();
+			this.parameters = parameters;
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVaruint(this.parameters.length);
+			for(var dhc5yjbv in this.parameters){
+				this.writeBytes(this.parameters[dhc5yjbv].encodeBody(true));
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			var aramcfy1=this.readVaruint();
+			this.parameters=[];
+			for(var dhc5yjbv=0;dhc5yjbv<aramcfy1;dhc5yjbv++){
+				this.parameters[dhc5yjbv]=new Types.Parameter().decodeBody(this._buffer);
+				this._buffer=this.parameters[dhc5yjbv]._buffer;
+			}
+			traceDecode('parameters');
 			return this;
 		}
 
@@ -894,77 +996,6 @@ const Types ={
 				this._buffer=this.overloads[dhc5dvb9]._buffer;
 			}
 			traceDecode('overloads');
-			return this;
-		}
-
-	}
-	,
-
-	Overload: class extends Buffer{
-
-		constructor(parameters=[]){
-			super();
-			this.parameters = parameters;
-		}
-
-		encodeBody(reset){
-			if(reset){
-				this.reset();
-			}
-			this.writeVaruint(this.parameters.length);
-			for(var dhc5yjbv in this.parameters){
-				this.writeBytes(this.parameters[dhc5yjbv].encodeBody(true));
-			}
-			return new Uint8Array(this._buffer);
-		}
-
-		decodeBody(_buffer){
-			this._buffer=Array.from(_buffer);
-			initDecode(this);
-			var aramcfy1=this.readVaruint();
-			this.parameters=[];
-			for(var dhc5yjbv=0;dhc5yjbv<aramcfy1;dhc5yjbv++){
-				this.parameters[dhc5yjbv]=new Types.Parameter().decodeBody(this._buffer);
-				this._buffer=this.parameters[dhc5yjbv]._buffer;
-			}
-			traceDecode('parameters');
-			return this;
-		}
-
-	}
-	,
-
-	Parameter: class extends Buffer{
-
-		constructor(name="",type=0,optional=false){
-			super();
-			this.name = name;
-			this.type = type;
-			this.optional = optional;
-		}
-
-		encodeBody(reset){
-			if(reset){
-				this.reset();
-			}
-			var dhc5y1=this.encodeString(this.name);
-			this.writeVaruint(dhc5y1.length);
-			this.writeBytes(dhc5y1);
-			this.writeLittleEndianInt(this.type);
-			this.writeBool(this.optional);
-			return new Uint8Array(this._buffer);
-		}
-
-		decodeBody(_buffer){
-			this._buffer=Array.from(_buffer);
-			initDecode(this);
-			var dhc5y1=this.readVaruint();
-			this.name=this.decodeString(this.readBytes(dhc5y1));
-			traceDecode('name');
-			this.type=this.readLittleEndianInt();
-			traceDecode('type');
-			this.optional=this.readBool();
-			traceDecode('optional');
 			return this;
 		}
 

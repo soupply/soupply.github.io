@@ -8,8 +8,6 @@ layout: default
 
 ⚠️️ This type is prefixed with its length encoded as **varuint** ⚠️️
 
-Chunk's blocks, lights and other immutable data.
-
 ## Fields
 
 Name | Type

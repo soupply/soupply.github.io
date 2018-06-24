@@ -6,8 +6,6 @@ layout: default
 
 # Section
 
-Section of a chunk with informations about blocks and lights. The array of bytes are always ordered `xzy`.
-
 ## Fields
 
 Name | Type | Default

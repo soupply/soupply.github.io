@@ -25,8 +25,12 @@ Sends a 16x16 chunk to the client with its blocks, lights and block entities (ti
 Name | Type
 ---|---
 [position](#position) | varint&lt;xz&gt;
-data | [chunkData](/protocol/bedrock261/types/chunk-data)
+[data](#data) | [chunkData](/protocol/bedrock261/types/chunk-data)
 
 ### position
 
 Coordinates of the chunk.
+
+### data
+
+Chunk's blocks, lights and other immutable data.

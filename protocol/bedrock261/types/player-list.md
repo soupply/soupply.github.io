@@ -6,8 +6,6 @@ layout: default
 
 # Player list
 
-Informations about a player that will be added to the player's list in the pause menu.
-
 ## Fields
 
 Name | Type
@@ -32,4 +30,4 @@ Player's display name, that can contain Minecraft's formatting codes. It shouldn
 
 ### skin
 
-Player's skin usually given in the [Login](#play_login)'s packet body.
+Player's [skin](http://minecraft.gamepedia.com/Skin) usually given in the [Login](#play_login)'s packet body.

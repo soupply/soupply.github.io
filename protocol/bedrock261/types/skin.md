@@ -6,8 +6,6 @@ layout: default
 
 # Skin
 
-Player's [skin](http://minecraft.gamepedia.com/Skin).
-
 ## Fields
 
 Name | Type

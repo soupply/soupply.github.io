@@ -39,7 +39,11 @@ Variant | Field | Value
 
 Name | Type
 ---|---
-players | [playerList](/protocol/bedrock261/types/player-list)[]
+[players](#add_players) | [playerList](/protocol/bedrock261/types/player-list)[]
+
+### players
+
+Informations about a player that will be added to the player's list in the pause menu.
 
 ### Remove
 
