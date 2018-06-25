@@ -316,37 +316,6 @@ const Types ={
 	}
 	,
 
-	Recipe: class extends Buffer{
-
-		constructor(type=0,data=new Types.Bytes()){
-			super();
-			this.type = type;
-			this.data = data;
-		}
-
-		encodeBody(reset){
-			if(reset){
-				this.reset();
-			}
-			this.writeVarint(this.type);
-			this.writeBytes(this.data);
-			return new Uint8Array(this._buffer);
-		}
-
-		decodeBody(_buffer){
-			this._buffer=Array.from(_buffer);
-			initDecode(this);
-			this.type=this.readVarint();
-			traceDecode('type');
-			this.data=Array.from(this._buffer);
-			this._buffer=[];
-			traceDecode('data');
-			return this;
-		}
-
-	}
-	,
-
 	Rule: class extends Buffer{
 
 		constructor(name="",type=0,booleanValue=false,integerValue=0,floatingValue=.0){
