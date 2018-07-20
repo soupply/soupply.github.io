@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+[home](/)  /  [java393](/protocol/java393)  /  [types](/protocol/java393/types)  /  list-add-player
+
+# List add player
+
+## Fields
+
+Name | Type | When
+---|---|:---:
+uuid | uuid | 
+name | string | 
+properties | [property](/protocol/java393/types/property)[] | 
+[gamemode](#gamemode) | varuint | 
+latency | varuint | 
+has display name | bool | 
+display name | string | <code>has display name</code> is <code><span style="color:#009688">true</span></code>
+
+### gamemode
+
+**Constants**:
+
+Name | Value
+---|:---:
+survival | 0
+creative | 1
+adventure | 2
+spectator | 3

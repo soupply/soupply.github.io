@@ -4,9 +4,9 @@ layout: default
 
 # Minecraft: Java Edition 340
 
-**Other protocols**: [210](./java340), [315](./java340), [316](./java340), [335](./java340), [338](./java340)
+**Other protocols**: [210](./java340), [315](./java340), [316](./java340), [335](./java340), [338](./java340), [393](./java340)
 
-**Compare changes**: [210](../diff/java/210-340), [315](../diff/java/315-340), [316](../diff/java/316-340), [335](../diff/java/335-340), [338](../diff/java/338-340)
+**Compare changes**: [210](../diff/java/210-340), [315](../diff/java/315-340), [316](../diff/java/316-340), [335](../diff/java/335-340), [338](../diff/java/338-340), [393](../diff/java/340-393)
 
 **Jump to**: [Encoding](#encoding), [Packets](#packets), [Types](java340/types), [Metadata](java340/metadata)
 

@@ -4,9 +4,9 @@ layout: default
 
 # Minecraft: Java Edition 316
 
-**Other protocols**: [210](./java316), [315](./java316), [335](./java316), [338](./java316), [340](./java316)
+**Other protocols**: [210](./java316), [315](./java316), [335](./java316), [338](./java316), [340](./java316), [393](./java316)
 
-**Compare changes**: [210](../diff/java/210-316), [315](../diff/java/315-316), [335](../diff/java/316-335), [338](../diff/java/316-338), [340](../diff/java/316-340)
+**Compare changes**: [210](../diff/java/210-316), [315](../diff/java/315-316), [335](../diff/java/316-335), [338](../diff/java/316-338), [340](../diff/java/316-340), [393](../diff/java/316-393)
 
 **Jump to**: [Encoding](#encoding), [Packets](#packets), [Types](java316/types), [Metadata](java316/metadata)
 
