@@ -8,11 +8,11 @@ layout: default
 
 Encode/decode this packet in [Sandbox](../../../sandbox/java393#PlayServerbound.UpdateSign)
 
-**Id**: 28
+**Id**: 38
 
-**Id** (hex): 1C
+**Id** (hex): 26
 
-**Id** (bin): 00011100
+**Id** (bin): 00100110
 
 **Clientbound**: ✖️
 

@@ -8,11 +8,11 @@ layout: default
 
 Encode/decode this packet in [Sandbox](../../../sandbox/java393#PlayServerbound.Spectate)
 
-**Id**: 30
+**Id**: 40
 
-**Id** (hex): 1E
+**Id** (hex): 28
 
-**Id** (bin): 00011110
+**Id** (bin): 00101000
 
 **Clientbound**: ✖️
 

@@ -8,11 +8,11 @@ layout: default
 
 Encode/decode this packet in [Sandbox](../../../sandbox/java393#PlayServerbound.CreativeInventoryAction)
 
-**Id**: 27
+**Id**: 36
 
-**Id** (hex): 1B
+**Id** (hex): 24
 
-**Id** (bin): 00011011
+**Id** (bin): 00100100
 
 **Clientbound**: ✖️
 

@@ -8,11 +8,11 @@ layout: default
 
 Encode/decode this packet in [Sandbox](../../../sandbox/java393#PlayServerbound.SteerVehicle)
 
-**Id**: 22
+**Id**: 26
 
-**Id** (hex): 16
+**Id** (hex): 1A
 
-**Id** (bin): 00010110
+**Id** (bin): 00011010
 
 **Clientbound**: ✖️
 

@@ -8,11 +8,11 @@ layout: default
 
 Encode/decode this packet in [Sandbox](../../../sandbox/java393#PlayServerbound.EnchantItem)
 
-**Id**: 6
+**Id**: 7
 
-**Id** (hex): 06
+**Id** (hex): 07
 
-**Id** (bin): 00000110
+**Id** (bin): 00000111
 
 **Clientbound**: ✖️
 

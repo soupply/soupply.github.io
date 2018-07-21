@@ -8,11 +8,11 @@ layout: default
 
 Encode/decode this packet in [Sandbox](../../../sandbox/java393#PlayServerbound.CraftRecipeRequest)
 
-**Id**: 18
+**Id**: 22
 
-**Id** (hex): 12
+**Id** (hex): 16
 
-**Id** (bin): 00010010
+**Id** (bin): 00010110
 
 **Clientbound**: ✖️
 

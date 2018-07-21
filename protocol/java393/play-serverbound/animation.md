@@ -8,11 +8,11 @@ layout: default
 
 Encode/decode this packet in [Sandbox](../../../sandbox/java393#PlayServerbound.Animation)
 
-**Id**: 29
+**Id**: 39
 
-**Id** (hex): 1D
+**Id** (hex): 27
 
-**Id** (bin): 00011101
+**Id** (bin): 00100111
 
 **Clientbound**: ✖️
 

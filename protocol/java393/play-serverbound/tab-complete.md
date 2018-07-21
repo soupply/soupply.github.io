@@ -8,11 +8,11 @@ layout: default
 
 Encode/decode this packet in [Sandbox](../../../sandbox/java393#PlayServerbound.TabComplete)
 
-**Id**: 1
+**Id**: 5
 
-**Id** (hex): 01
+**Id** (hex): 05
 
-**Id** (bin): 00000001
+**Id** (bin): 00000101
 
 **Clientbound**: ✖️
 
@@ -20,9 +20,7 @@ Encode/decode this packet in [Sandbox](../../../sandbox/java393#PlayServerbound.
 
 ## Fields
 
-Name | Type | When
----|---|:---:
-text | string | 
-command | bool | 
-has position | bool | 
-block | ulong | <code>has position</code> is <code><span style="color:#009688">true</span></code>
+Name | Type
+---|---
+transaction id | varuint
+text | string

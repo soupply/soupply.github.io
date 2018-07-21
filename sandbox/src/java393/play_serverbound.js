@@ -35,7 +35,7 @@ const PlayServerbound ={
 	}
 	,
 
-	TabComplete: class extends Packet{
+	QueryBlockNbt: class extends Packet{
 
 		static get ID(){return 1;};
 
@@ -46,43 +46,29 @@ const PlayServerbound ={
 			return 1;
 		}
 
-		constructor(text="",command=false,hasPosition=false,block=0){
+		constructor(transationId=0,location=new Types.Position()){
 			super();
-			this.text = text;
-			this.command = command;
-			this.hasPosition = hasPosition;
-			this.block = block;
+			this.transationId = transationId;
+			this.location = location;
 		}
 
 		encodeBody(reset){
 			if(reset){
 				this.reset();
 			}
-			var dhc5zh=this.encodeString(this.text);
-			this.writeVaruint(dhc5zh.length);
-			this.writeBytes(dhc5zh);
-			this.writeBool(this.command);
-			this.writeBool(this.hasPosition);
-			if(hasPosition==true){
-				this.writeBigEndianLong(this.block);
-			}
+			this.writeVaruint(this.transationId);
+			this.writeBytes(this.location.encodeBody(true));
 			return new Uint8Array(this._buffer);
 		}
 
 		decodeBody(_buffer){
 			this._buffer=Array.from(_buffer);
 			initDecode(this);
-			var dhc5zh=this.readVaruint();
-			this.text=this.decodeString(this.readBytes(dhc5zh));
-			traceDecode('text');
-			this.command=this.readBool();
-			traceDecode('command');
-			this.hasPosition=this.readBool();
-			traceDecode('hasPosition');
-			if(hasPosition==true){
-				this.block=this.readBigEndianLong();
-				traceDecode('block');
-			}
+			this.transationId=this.readVaruint();
+			traceDecode('transationId');
+			this.location=new Types.Position().decodeBody(this._buffer);
+			this._buffer=this.location._buffer;
+			traceDecode('location');
 			return this;
 		}
 
@@ -220,7 +206,7 @@ const PlayServerbound ={
 	}
 	,
 
-	ConfirmTransaction: class extends Packet{
+	TabComplete: class extends Packet{
 
 		static get ID(){return 5;};
 
@@ -229,6 +215,48 @@ const PlayServerbound ={
 
 		getId(){
 			return 5;
+		}
+
+		constructor(transactionId=0,text=""){
+			super();
+			this.transactionId = transactionId;
+			this.text = text;
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVaruint(this.transactionId);
+			var dhc5zh=this.encodeString(this.text);
+			this.writeVaruint(dhc5zh.length);
+			this.writeBytes(dhc5zh);
+			return new Uint8Array(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.transactionId=this.readVaruint();
+			traceDecode('transactionId');
+			var dhc5zh=this.readVaruint();
+			this.text=this.decodeString(this.readBytes(dhc5zh));
+			traceDecode('text');
+			return this;
+		}
+
+	}
+	,
+
+	ConfirmTransaction: class extends Packet{
+
+		static get ID(){return 6;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 6;
 		}
 
 		constructor(window=0,action=0,accepted=false){
@@ -265,13 +293,13 @@ const PlayServerbound ={
 
 	EnchantItem: class extends Packet{
 
-		static get ID(){return 6;};
+		static get ID(){return 7;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 6;
+			return 7;
 		}
 
 		constructor(window=0,enchantment=0){
@@ -304,13 +332,13 @@ const PlayServerbound ={
 
 	ClickWindow: class extends Packet{
 
-		static get ID(){return 7;};
+		static get ID(){return 8;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 7;
+			return 8;
 		}
 
 		constructor(window=0,slot=0,button=0,action=0,mode=0,clickedItem=new Types.Slot()){
@@ -360,13 +388,13 @@ const PlayServerbound ={
 
 	CloseWindow: class extends Packet{
 
-		static get ID(){return 8;};
+		static get ID(){return 9;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 8;
+			return 9;
 		}
 
 		constructor(window=0){
@@ -395,13 +423,13 @@ const PlayServerbound ={
 
 	PluginMessage: class extends Packet{
 
-		static get ID(){return 9;};
+		static get ID(){return 10;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 9;
+			return 10;
 		}
 
 		constructor(channel="",data=new Types.Bytes()){
@@ -436,15 +464,94 @@ const PlayServerbound ={
 	}
 	,
 
-	UseEntity: class extends Packet{
+	EditBook: class extends Packet{
 
-		static get ID(){return 10;};
+		static get ID(){return 11;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 10;
+			return 11;
+		}
+
+		constructor(newBook=new Types.Slot(),signing=false){
+			super();
+			this.newBook = newBook;
+			this.signing = signing;
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeBytes(this.newBook.encodeBody(true));
+			this.writeBool(this.signing);
+			return new Uint8Array(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.newBook=new Types.Slot().decodeBody(this._buffer);
+			this._buffer=this.newBook._buffer;
+			traceDecode('newBook');
+			this.signing=this.readBool();
+			traceDecode('signing');
+			return this;
+		}
+
+	}
+	,
+
+	QueryEntityNbt: class extends Packet{
+
+		static get ID(){return 12;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 12;
+		}
+
+		constructor(transactionId=0,entityId=0){
+			super();
+			this.transactionId = transactionId;
+			this.entityId = entityId;
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVaruint(this.transactionId);
+			this.writeVaruint(this.entityId);
+			return new Uint8Array(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.transactionId=this.readVaruint();
+			traceDecode('transactionId');
+			this.entityId=this.readVaruint();
+			traceDecode('entityId');
+			return this;
+		}
+
+	}
+	,
+
+	UseEntity: class extends Packet{
+
+		static get ID(){return 13;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 13;
 		}
 
 		constructor(target=0,type=0,targetPosition={x:0,y:0,z:0},hand=0){
@@ -498,13 +605,13 @@ const PlayServerbound ={
 
 	KeepAlive: class extends Packet{
 
-		static get ID(){return 11;};
+		static get ID(){return 14;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 11;
+			return 14;
 		}
 
 		constructor(id=0){
@@ -533,13 +640,13 @@ const PlayServerbound ={
 
 	Player: class extends Packet{
 
-		static get ID(){return 12;};
+		static get ID(){return 15;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 12;
+			return 15;
 		}
 
 		constructor(onGround=false){
@@ -568,13 +675,13 @@ const PlayServerbound ={
 
 	PlayerPosition: class extends Packet{
 
-		static get ID(){return 13;};
+		static get ID(){return 16;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 13;
+			return 16;
 		}
 
 		constructor(position={x:0,y:0,z:0},onGround=false){
@@ -612,13 +719,13 @@ const PlayServerbound ={
 
 	PlayerPositionAndLook: class extends Packet{
 
-		static get ID(){return 14;};
+		static get ID(){return 17;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 14;
+			return 17;
 		}
 
 		constructor(position={x:0,y:0,z:0},yaw=.0,pitch=.0,onGround=false){
@@ -664,13 +771,13 @@ const PlayServerbound ={
 
 	PlayerLook: class extends Packet{
 
-		static get ID(){return 15;};
+		static get ID(){return 18;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 15;
+			return 18;
 		}
 
 		constructor(yaw=.0,pitch=.0,onGround=false){
@@ -707,13 +814,13 @@ const PlayServerbound ={
 
 	VehicleMove: class extends Packet{
 
-		static get ID(){return 16;};
+		static get ID(){return 19;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 16;
+			return 19;
 		}
 
 		constructor(position={x:0,y:0,z:0},yaw=.0,pitch=.0){
@@ -755,13 +862,13 @@ const PlayServerbound ={
 
 	SteerBoat: class extends Packet{
 
-		static get ID(){return 17;};
+		static get ID(){return 20;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 17;
+			return 20;
 		}
 
 		constructor(rightPaddleTurning=false,leftPaddleTurning=false){
@@ -792,15 +899,50 @@ const PlayServerbound ={
 	}
 	,
 
-	CraftRecipeRequest: class extends Packet{
+	PickItem: class extends Packet{
 
-		static get ID(){return 18;};
+		static get ID(){return 21;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 18;
+			return 21;
+		}
+
+		constructor(slot=0){
+			super();
+			this.slot = slot;
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVaruint(this.slot);
+			return new Uint8Array(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.slot=this.readVaruint();
+			traceDecode('slot');
+			return this;
+		}
+
+	}
+	,
+
+	CraftRecipeRequest: class extends Packet{
+
+		static get ID(){return 22;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 22;
 		}
 
 		constructor(window=0,recipe=0,makeAll=false){
@@ -837,13 +979,13 @@ const PlayServerbound ={
 
 	PlayerAbilities: class extends Packet{
 
-		static get ID(){return 19;};
+		static get ID(){return 23;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 19;
+			return 23;
 		}
 
 		constructor(flags=0,flyingSpeed=.0,walkingSpeed=.0){
@@ -880,13 +1022,13 @@ const PlayServerbound ={
 
 	PlayerDigging: class extends Packet{
 
-		static get ID(){return 20;};
+		static get ID(){return 24;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 20;
+			return 24;
 		}
 
 		constructor(status=0,position=0,face=0){
@@ -923,13 +1065,13 @@ const PlayServerbound ={
 
 	EntityAction: class extends Packet{
 
-		static get ID(){return 21;};
+		static get ID(){return 25;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 21;
+			return 25;
 		}
 
 		constructor(entityId=0,action=0,jumpBoost=0){
@@ -966,13 +1108,13 @@ const PlayServerbound ={
 
 	SteerVehicle: class extends Packet{
 
-		static get ID(){return 22;};
+		static get ID(){return 26;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 22;
+			return 26;
 		}
 
 		constructor(sideways=.0,forward=.0,flags=0){
@@ -1007,15 +1149,15 @@ const PlayServerbound ={
 	}
 	,
 
-	CraftingBookData: class extends Packet{
+	RecipeBookData: class extends Packet{
 
-		static get ID(){return 23;};
+		static get ID(){return 27;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 23;
+			return 27;
 		}
 
 		static get DISPLAYED_RECIPE(){return 1;};
@@ -1053,8 +1195,10 @@ const PlayServerbound ={
 					this.id=this.readBigEndianInt();
 					break;
 				case 2:
-					this.bookOpened=this.readBool();
-					this.filtering=this.readBool();
+					this.craftingRecipeBookOpened=this.readBool();
+					this.craftingRecipeFilterActive=this.readBool();
+					this.smeltingRecipeBookOpened=this.readBool();
+					this.smeltingRecipeFilterActive=this.readBool();
 					break;
 				default: break;
 			}
@@ -1064,15 +1208,53 @@ const PlayServerbound ={
 	}
 	,
 
-	ResourcePackStatus: class extends Packet{
+	NameItem: class extends Packet{
 
-		static get ID(){return 24;};
+		static get ID(){return 28;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 24;
+			return 28;
+		}
+
+		constructor(itemName=""){
+			super();
+			this.itemName = itemName;
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			var dhc5dvtf=this.encodeString(this.itemName);
+			this.writeVaruint(dhc5dvtf.length);
+			this.writeBytes(dhc5dvtf);
+			return new Uint8Array(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			var dhc5dvtf=this.readVaruint();
+			this.itemName=this.decodeString(this.readBytes(dhc5dvtf));
+			traceDecode('itemName');
+			return this;
+		}
+
+	}
+	,
+
+	ResourcePackStatus: class extends Packet{
+
+		static get ID(){return 29;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 29;
 		}
 
 		constructor(result=0){
@@ -1101,13 +1283,13 @@ const PlayServerbound ={
 
 	AdvencementTab: class extends Packet{
 
-		static get ID(){return 25;};
+		static get ID(){return 30;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 25;
+			return 30;
 		}
 
 		constructor(action=0,tab=""){
@@ -1145,15 +1327,89 @@ const PlayServerbound ={
 	}
 	,
 
-	HeldItemChange: class extends Packet{
+	SelectTrade: class extends Packet{
 
-		static get ID(){return 26;};
+		static get ID(){return 31;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 26;
+			return 31;
+		}
+
+		constructor(selectedSlot=0){
+			super();
+			this.selectedSlot = selectedSlot;
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVaruint(this.selectedSlot);
+			return new Uint8Array(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.selectedSlot=this.readVaruint();
+			traceDecode('selectedSlot');
+			return this;
+		}
+
+	}
+	,
+
+	SetBeaconEffect: class extends Packet{
+
+		static get ID(){return 32;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 32;
+		}
+
+		constructor(primaryEffect=0,secondaryEffect=0){
+			super();
+			this.primaryEffect = primaryEffect;
+			this.secondaryEffect = secondaryEffect;
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVaruint(this.primaryEffect);
+			this.writeVaruint(this.secondaryEffect);
+			return new Uint8Array(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.primaryEffect=this.readVaruint();
+			traceDecode('primaryEffect');
+			this.secondaryEffect=this.readVaruint();
+			traceDecode('secondaryEffect');
+			return this;
+		}
+
+	}
+	,
+
+	HeldItemChange: class extends Packet{
+
+		static get ID(){return 33;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 33;
 		}
 
 		constructor(slot=0){
@@ -1180,15 +1436,112 @@ const PlayServerbound ={
 	}
 	,
 
-	CreativeInventoryAction: class extends Packet{
+	UpdateCommandBlock: class extends Packet{
 
-		static get ID(){return 27;};
+		static get ID(){return 34;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 27;
+			return 34;
+		}
+
+		constructor(location=new Types.Position(),command="",mode=0,flags=0){
+			super();
+			this.location = location;
+			this.command = command;
+			this.mode = mode;
+			this.flags = flags;
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeBytes(this.location.encodeBody(true));
+			var dhc5b1y5=this.encodeString(this.command);
+			this.writeVaruint(dhc5b1y5.length);
+			this.writeBytes(dhc5b1y5);
+			this.writeVaruint(this.mode);
+			this.writeByte(this.flags);
+			return new Uint8Array(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.location=new Types.Position().decodeBody(this._buffer);
+			this._buffer=this.location._buffer;
+			traceDecode('location');
+			var dhc5b1y5=this.readVaruint();
+			this.command=this.decodeString(this.readBytes(dhc5b1y5));
+			traceDecode('command');
+			this.mode=this.readVaruint();
+			traceDecode('mode');
+			this.flags=this.readByte();
+			traceDecode('flags');
+			return this;
+		}
+
+	}
+	,
+
+	UpdateCommandBlockMinecart: class extends Packet{
+
+		static get ID(){return 35;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 35;
+		}
+
+		constructor(entityId=0,command="",trackOutput=false){
+			super();
+			this.entityId = entityId;
+			this.command = command;
+			this.trackOutput = trackOutput;
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeVaruint(this.entityId);
+			var dhc5b1y5=this.encodeString(this.command);
+			this.writeVaruint(dhc5b1y5.length);
+			this.writeBytes(dhc5b1y5);
+			this.writeBool(this.trackOutput);
+			return new Uint8Array(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.entityId=this.readVaruint();
+			traceDecode('entityId');
+			var dhc5b1y5=this.readVaruint();
+			this.command=this.decodeString(this.readBytes(dhc5b1y5));
+			traceDecode('command');
+			this.trackOutput=this.readBool();
+			traceDecode('trackOutput');
+			return this;
+		}
+
+	}
+	,
+
+	CreativeInventoryAction: class extends Packet{
+
+		static get ID(){return 36;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 36;
 		}
 
 		constructor(slot=0,clickedItem=new Types.Slot()){
@@ -1220,15 +1573,104 @@ const PlayServerbound ={
 	}
 	,
 
-	UpdateSign: class extends Packet{
+	UpdateStructureBlock: class extends Packet{
 
-		static get ID(){return 28;};
+		static get ID(){return 37;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 28;
+			return 37;
+		}
+
+		constructor(location=new Types.Position(),action=0,mode=0,offset={x:0,y:0,z:0},size={x:0,y:0,z:0},mirror=0,rotation=0,metadata="",integrity=.0,speed=0,flags=0){
+			super();
+			this.location = location;
+			this.action = action;
+			this.mode = mode;
+			this.offset = offset;
+			this.size = size;
+			this.mirror = mirror;
+			this.rotation = rotation;
+			this.metadata = metadata;
+			this.integrity = integrity;
+			this.speed = speed;
+			this.flags = flags;
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeBytes(this.location.encodeBody(true));
+			this.writeVaruint(this.action);
+			this.writeVaruint(this.mode);
+			this.writeByte(this.offset.x);
+			this.writeByte(this.offset.y);
+			this.writeByte(this.offset.z);
+			this.writeByte(this.size.x);
+			this.writeByte(this.size.y);
+			this.writeByte(this.size.z);
+			this.writeVaruint(this.mirror);
+			this.writeVaruint(this.rotation);
+			var dhc5zrzf=this.encodeString(this.metadata);
+			this.writeVaruint(dhc5zrzf.length);
+			this.writeBytes(dhc5zrzf);
+			this.writeBigEndianFloat(this.integrity);
+			this.writeVarulong(this.speed);
+			this.writeByte(this.flags);
+			return new Uint8Array(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.location=new Types.Position().decodeBody(this._buffer);
+			this._buffer=this.location._buffer;
+			traceDecode('location');
+			this.action=this.readVaruint();
+			traceDecode('action');
+			this.mode=this.readVaruint();
+			traceDecode('mode');
+			this.offset={};
+			this.offset.x=this.readByte();
+			this.offset.y=this.readByte();
+			this.offset.z=this.readByte();
+			traceDecode('offset');
+			this.size={};
+			this.size.x=this.readByte();
+			this.size.y=this.readByte();
+			this.size.z=this.readByte();
+			traceDecode('size');
+			this.mirror=this.readVaruint();
+			traceDecode('mirror');
+			this.rotation=this.readVaruint();
+			traceDecode('rotation');
+			var dhc5zrzf=this.readVaruint();
+			this.metadata=this.decodeString(this.readBytes(dhc5zrzf));
+			traceDecode('metadata');
+			this.integrity=this.readBigEndianFloat();
+			traceDecode('integrity');
+			this.speed=this.readVarulong();
+			traceDecode('speed');
+			this.flags=this.readByte();
+			traceDecode('flags');
+			return this;
+		}
+
+	}
+	,
+
+	UpdateSign: class extends Packet{
+
+		static get ID(){return 38;};
+
+		static get CLIENTBOUND(){return false;};
+		static get SERVERBOUND(){return true;};
+
+		getId(){
+			return 38;
 		}
 
 		constructor(position=0,lines=[]){
@@ -1270,13 +1712,13 @@ const PlayServerbound ={
 
 	Animation: class extends Packet{
 
-		static get ID(){return 29;};
+		static get ID(){return 39;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 29;
+			return 39;
 		}
 
 		constructor(hand=0){
@@ -1305,13 +1747,13 @@ const PlayServerbound ={
 
 	Spectate: class extends Packet{
 
-		static get ID(){return 30;};
+		static get ID(){return 40;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 30;
+			return 40;
 		}
 
 		constructor(player=new Uint8Array(16)){
@@ -1340,13 +1782,13 @@ const PlayServerbound ={
 
 	PlayerBlockPlacement: class extends Packet{
 
-		static get ID(){return 31;};
+		static get ID(){return 41;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 31;
+			return 41;
 		}
 
 		constructor(position=0,face=0,hand=0,cursorPosition={x:0,y:0,z:0}){
@@ -1392,13 +1834,13 @@ const PlayServerbound ={
 
 	UseItem: class extends Packet{
 
-		static get ID(){return 32;};
+		static get ID(){return 42;};
 
 		static get CLIENTBOUND(){return false;};
 		static get SERVERBOUND(){return true;};
 
 		getId(){
-			return 32;
+			return 42;
 		}
 
 		constructor(hand=0){

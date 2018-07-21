@@ -8,11 +8,11 @@ layout: default
 
 Encode/decode this packet in [Sandbox](../../../sandbox/java393#PlayServerbound.PlayerPositionAndLook)
 
-**Id**: 14
+**Id**: 17
 
-**Id** (hex): 0E
+**Id** (hex): 11
 
-**Id** (bin): 00001110
+**Id** (bin): 00010001
 
 **Clientbound**: ✖️
 

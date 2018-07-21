@@ -8,11 +8,11 @@ layout: default
 
 Encode/decode this packet in [Sandbox](../../../sandbox/java393#PlayServerbound.AdvencementTab)
 
-**Id**: 25
+**Id**: 30
 
-**Id** (hex): 19
+**Id** (hex): 1E
 
-**Id** (bin): 00011001
+**Id** (bin): 00011110
 
 **Clientbound**: ✖️
 

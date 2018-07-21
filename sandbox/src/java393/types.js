@@ -668,7 +668,7 @@ const Types ={
 			if(flags&8){
 				this.writeVaruint(this.redirectNode);
 			}
-			if(flags&1||flags&2){
+			if(flags&1!=0||flags&2!=0){
 				var dhc5y1=this.encodeString(this.name);
 				this.writeVaruint(dhc5y1.length);
 				this.writeBytes(dhc5y1);
@@ -699,7 +699,7 @@ const Types ={
 				this.redirectNode=this.readVaruint();
 				traceDecode('redirectNode');
 			}
-			if(flags&1||flags&2){
+			if(flags&1!=0||flags&2!=0){
 				var dhc5y1=this.readVaruint();
 				this.name=this.decodeString(this.readBytes(dhc5y1));
 				traceDecode('name');

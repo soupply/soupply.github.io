@@ -8,11 +8,11 @@ layout: default
 
 Encode/decode this packet in [Sandbox](../../../sandbox/java393#PlayServerbound.KeepAlive)
 
-**Id**: 11
+**Id**: 14
 
-**Id** (hex): 0B
+**Id** (hex): 0E
 
-**Id** (bin): 00001011
+**Id** (bin): 00001110
 
 **Clientbound**: ✖️
 
