@@ -46,7 +46,7 @@ const PlayServerbound ={
 			return 1;
 		}
 
-		constructor(transationId=0,location=new Types.Position()){
+		constructor(transationId=0,location=0){
 			super();
 			this.transationId = transationId;
 			this.location = location;
@@ -57,7 +57,7 @@ const PlayServerbound ={
 				this.reset();
 			}
 			this.writeVaruint(this.transationId);
-			this.writeBytes(this.location.encodeBody(true));
+			this.writeBigEndianLong(this.location);
 			return new Uint8Array(this._buffer);
 		}
 
@@ -66,8 +66,7 @@ const PlayServerbound ={
 			initDecode(this);
 			this.transationId=this.readVaruint();
 			traceDecode('transationId');
-			this.location=new Types.Position().decodeBody(this._buffer);
-			this._buffer=this.location._buffer;
+			this.location=this.readBigEndianLong();
 			traceDecode('location');
 			return this;
 		}
@@ -1447,7 +1446,7 @@ const PlayServerbound ={
 			return 34;
 		}
 
-		constructor(location=new Types.Position(),command="",mode=0,flags=0){
+		constructor(location=0,command="",mode=0,flags=0){
 			super();
 			this.location = location;
 			this.command = command;
@@ -1459,7 +1458,7 @@ const PlayServerbound ={
 			if(reset){
 				this.reset();
 			}
-			this.writeBytes(this.location.encodeBody(true));
+			this.writeBigEndianLong(this.location);
 			var dhc5b1y5=this.encodeString(this.command);
 			this.writeVaruint(dhc5b1y5.length);
 			this.writeBytes(dhc5b1y5);
@@ -1471,8 +1470,7 @@ const PlayServerbound ={
 		decodeBody(_buffer){
 			this._buffer=Array.from(_buffer);
 			initDecode(this);
-			this.location=new Types.Position().decodeBody(this._buffer);
-			this._buffer=this.location._buffer;
+			this.location=this.readBigEndianLong();
 			traceDecode('location');
 			var dhc5b1y5=this.readVaruint();
 			this.command=this.decodeString(this.readBytes(dhc5b1y5));
@@ -1584,7 +1582,7 @@ const PlayServerbound ={
 			return 37;
 		}
 
-		constructor(location=new Types.Position(),action=0,mode=0,offset={x:0,y:0,z:0},size={x:0,y:0,z:0},mirror=0,rotation=0,metadata="",integrity=.0,speed=0,flags=0){
+		constructor(location=0,action=0,mode=0,offset={x:0,y:0,z:0},size={x:0,y:0,z:0},mirror=0,rotation=0,metadata="",integrity=.0,speed=0,flags=0){
 			super();
 			this.location = location;
 			this.action = action;
@@ -1603,7 +1601,7 @@ const PlayServerbound ={
 			if(reset){
 				this.reset();
 			}
-			this.writeBytes(this.location.encodeBody(true));
+			this.writeBigEndianLong(this.location);
 			this.writeVaruint(this.action);
 			this.writeVaruint(this.mode);
 			this.writeByte(this.offset.x);
@@ -1626,8 +1624,7 @@ const PlayServerbound ={
 		decodeBody(_buffer){
 			this._buffer=Array.from(_buffer);
 			initDecode(this);
-			this.location=new Types.Position().decodeBody(this._buffer);
-			this._buffer=this.location._buffer;
+			this.location=this.readBigEndianLong();
 			traceDecode('location');
 			this.action=this.readVaruint();
 			traceDecode('action');

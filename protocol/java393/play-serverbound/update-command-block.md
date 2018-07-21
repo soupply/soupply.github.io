@@ -22,7 +22,7 @@ Encode/decode this packet in [Sandbox](../../../sandbox/java393#PlayServerbound.
 
 Name | Type
 ---|---
-location | [position](/protocol/java393/types/position)
+location | ulong
 command | string
 [mode](#mode) | varuint
 [flags](#flags) | ubyte

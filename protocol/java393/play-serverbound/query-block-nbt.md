@@ -23,4 +23,4 @@ Encode/decode this packet in [Sandbox](../../../sandbox/java393#PlayServerbound.
 Name | Type
 ---|---
 transation id | varuint
-location | [position](/protocol/java393/types/position)
+location | ulong
