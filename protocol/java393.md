@@ -31,4 +31,4 @@ Section | Packets
 [Login Clientbound](java393/login-clientbound) | 5
 [Login Serverbound](java393/login-serverbound) | 3
 [Play Clientbound](java393/play-clientbound) | 86
-[Serverbound](java393/serverbound) | 33
+[Play Serverbound](java393/play-serverbound) | 33
