@@ -3925,10 +3925,10 @@ const PlayClientbound ={
 				this.reset();
 			}
 			this.writeByte(this.flags);
-			if(flags&1){
+			if((flags&1)!=0){
 				this.writeVaruint(this.source);
 			}
-			if(flags&2){
+			if((flags&2)!=0){
 				var dhc5bvz=this.encodeString(this.sound);
 				this.writeVaruint(dhc5bvz.length);
 				this.writeBytes(dhc5bvz);
@@ -3941,11 +3941,11 @@ const PlayClientbound ={
 			initDecode(this);
 			this.flags=this.readByte();
 			traceDecode('flags');
-			if(flags&1){
+			if((flags&1)!=0){
 				this.source=this.readVaruint();
 				traceDecode('source');
 			}
-			if(flags&2){
+			if((flags&2)!=0){
 				var dhc5bvz=this.readVaruint();
 				this.sound=this.decodeString(this.readBytes(dhc5bvz));
 				traceDecode('sound');

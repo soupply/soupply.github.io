@@ -14,11 +14,12 @@ Protocol | Packets | Released | From | To
 [315](protocol/java315) | 116 | 2016/11/14 | 1.11 | 1.11
 [210](protocol/java210) | 116 | 2016/6/8 | 1.10 | 1.10.2
 
-## [Minecraft (Bedrock Engine)](protocol/bedrock261)
+## [Minecraft (Bedrock Engine)](protocol/bedrock274)
 
 Protocol | Packets | Released | From | To
 :---:|:---:|:---:|:---:|:---:
-[261](protocol/bedrock261) | 110 | 2018/5/14 | 1.4.0 | 1.4.0
+[274](protocol/bedrock274) | 112 | 2018/7/10 | 1.5.0 | 
+[261](protocol/bedrock261) | 110 | 2018/5/14 | 1.4.0 | 1.4.5
 [201](protocol/bedrock201) | 104 | 2018/2/7 | 1.2.10 | 1.2.11
 [160](protocol/bedrock160) | 104 | 2017/12/14 | 1.2.7 | 1.2.9
 [150](protocol/bedrock150) | 104 | 2017/12/6 | 1.2.6 | 1.2.6

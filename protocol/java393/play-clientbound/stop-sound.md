@@ -23,8 +23,8 @@ Encode/decode this packet in [Sandbox](../../../sandbox/java393#PlayClientbound.
 Name | Type | When
 ---|---|:---:
 flags | ubyte | 
-[source](#source) | varuint | <code>flags & 1</code>
-sound | string | <code>flags & 2</code>
+[source](#source) | varuint | <code>(flags & 1)</code> is not equal to <code>0</code>
+sound | string | <code>(flags & 2)</code> is not equal to <code>0</code>
 
 ### source
 

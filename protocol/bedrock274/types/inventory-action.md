@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+[home](/)  /  [bedrock274](/protocol/bedrock274)  /  [types](/protocol/bedrock274/types)  /  inventory-action
+
+# Inventory action
+
+## Fields
+
+Name | Type | When | Default
+---|---|:---:|:---:
+[source](#source) | varuint |  | 
+container | varint | <code>source</code> is equal to <code>0</code> | -1
+? | varuint | <code>source</code> is equal to <code>2</code> | 
+slot | varuint |  | 
+old item | [slot](/protocol/bedrock274/types/slot) |  | 
+new item | [slot](/protocol/bedrock274/types/slot) |  | 
+
+### source
+
+**Constants**:
+
+Name | Value
+---|:---:
+container | 0
+world | 2
+creative | 3
