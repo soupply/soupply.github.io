@@ -8,7 +8,7 @@ layout: default
 
 ## Fields
 
-Name | Type
----|---
-has uuid | bool
-uuid | uuid
+Name | Type | When
+---|---|:---:
+has uuid | bool | 
+uuid | uuid | <code>has uuid</code> is <code><span style="color:#009688">true</span></code>

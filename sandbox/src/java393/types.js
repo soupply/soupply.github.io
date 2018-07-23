@@ -428,6 +428,43 @@ const Types ={
 	}
 	,
 
+	OptionalChat: class extends Buffer{
+
+		constructor(hasChat=false,chat=""){
+			super();
+			this.hasChat = hasChat;
+			this.chat = chat;
+		}
+
+		encodeBody(reset){
+			if(reset){
+				this.reset();
+			}
+			this.writeBool(this.hasChat);
+			if(hasChat==true){
+				var dhc5af=this.encodeString(this.chat);
+				this.writeVaruint(dhc5af.length);
+				this.writeBytes(dhc5af);
+			}
+			return new Uint8Array(this._buffer);
+		}
+
+		decodeBody(_buffer){
+			this._buffer=Array.from(_buffer);
+			initDecode(this);
+			this.hasChat=this.readBool();
+			traceDecode('hasChat');
+			if(hasChat==true){
+				var dhc5af=this.readVaruint();
+				this.chat=this.decodeString(this.readBytes(dhc5af));
+				traceDecode('chat');
+			}
+			return this;
+		}
+
+	}
+	,
+
 	OptionalPosition: class extends Buffer{
 
 		constructor(hasPosition=false,position=0){
@@ -475,7 +512,9 @@ const Types ={
 				this.reset();
 			}
 			this.writeBool(this.hasUuid);
-			this.writeBytes(this.uuid);
+			if(hasUuid==true){
+				this.writeBytes(this.uuid);
+			}
 			return new Uint8Array(this._buffer);
 		}
 
@@ -484,8 +523,10 @@ const Types ={
 			initDecode(this);
 			this.hasUuid=this.readBool();
 			traceDecode('hasUuid');
-			this.uuid=this.readBytes(16);
-			traceDecode('uuid');
+			if(hasUuid==true){
+				this.uuid=this.readBytes(16);
+				traceDecode('uuid');
+			}
 			return this;
 		}
 
@@ -668,7 +709,7 @@ const Types ={
 			if(flags&8){
 				this.writeVaruint(this.redirectNode);
 			}
-			if(flags&1!=0||flags&2!=0){
+			if((flags&1)!=0||(flags&2)!=0){
 				var dhc5y1=this.encodeString(this.name);
 				this.writeVaruint(dhc5y1.length);
 				this.writeBytes(dhc5y1);
@@ -699,7 +740,7 @@ const Types ={
 				this.redirectNode=this.readVaruint();
 				traceDecode('redirectNode');
 			}
-			if(flags&1!=0||flags&2!=0){
+			if((flags&1)!=0||(flags&2)!=0){
 				var dhc5y1=this.readVaruint();
 				this.name=this.decodeString(this.readBytes(dhc5y1));
 				traceDecode('name');

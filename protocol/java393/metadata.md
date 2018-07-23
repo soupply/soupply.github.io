@@ -19,33 +19,33 @@ int | varuint | 1
 float | float | 2
 string | string | 3
 chat | string | 4
-slot | [slot](/protocol/java393/types/slot) | 5
-bool | bool | 6
-rotation | float&lt;xyz&gt; | 7
-position | ulong | 8
-optionalPosition | [optionalPosition](/protocol/java393/types/optional-position) | 9
-direction | varuint | 10
-uuid | [optionalUuid](/protocol/java393/types/optional-uuid) | 11
-block | varuint | 12
-nbt | bytes | 13
+optionalChat | [optionalChat](/protocol/java393/types/optional-chat) | 5
+slot | [slot](/protocol/java393/types/slot) | 6
+bool | bool | 7
+rotation | float&lt;xyz&gt; | 8
+position | ulong | 9
+optionalPosition | [optionalPosition](/protocol/java393/types/optional-position) | 10
+direction | varuint | 11
+optionalUuid | [optionalUuid](/protocol/java393/types/optional-uuid) | 12
+block | varuint | 13
+nbt | bytes | 14
+particle | [particle](/protocol/java393/types/particle) | 15
 
 ## Data
 Name | Type | Id | Default | Required
 ---|---|---|---|---
 [Entity Flags](#entity-flags) | byte | 0 |  | ✓
 Air | int | 1 | 300 |  
-Nametag | string | 2 |  |  
-Show Nametag | bool | 3 |  |  
+Custom Name | [optionalChat](/protocol/java393/types/optional-chat) | 2 |  |  
+Custom Name Visible | bool | 3 |  |  
 Silent | bool | 4 |  |  
 No Gravity | bool | 5 |  |  
 Potion | [slot](/protocol/java393/types/slot) | 6 |  |  
 Spawn Position | [position](/protocol/java393/types/position) | 6 |  |  
 Radius | float | 6 | 0.5 |  
-Color | int | 7 | -1 |  
+Color | int | 7 | 0 |  
 Is Single Point | bool | 8 |  |  
-Particle Id | int | 9 |  |  
-Particle Parameter 1 | int | 10 |  |  
-Particle Parameter 2 | int | 11 |  |  
+Particle | [particle](/protocol/java393/types/particle) | 9 |  |  
 Hooked Entity | int | 6 |  |  
 [Arrow Flags](#arrow-flags) | byte | 6 |  |  
 Time Since Last Hit | int | 6 |  |  
@@ -54,12 +54,14 @@ Damage Taken | float | 8 | 0 |
 Boat Variant | int | 9 |  |  
 Right Paddle Turning | bool | 10 |  |  
 Left Paddle Turning | bool | 11 |  |  
+Splash Timer | int | 12 |  |  
 Beam Target | [optionalPosition](/protocol/java393/types/optional-position) | 6 |  |  
 Show Bottom | bool | 7 |  |  
 Firework | [slot](/protocol/java393/types/slot) | 6 |  |  
 Firework Thrower | int | 7 |  |  
 Item | [slot](/protocol/java393/types/slot) | 6 |  |  
 Rotation | int | 7 |  |  
+Loyalty Level | int | 7 |  |  
 [Living Flags](#living-flags) | byte | 6 |  |  
 Health | float | 7 | 1 |  
 Potion Color | int | 8 |  |  
@@ -139,6 +141,17 @@ Furnace Powered | bool | 12 |  |
 Command | string | 12 |  |  
 Last Output | [chat](/protocol/java393/types/chat) | 13 |  |  
 Fuse Time | int | 6 |  |  
+Phantom Size | int | 12 |  |  
+From Bucket | bool | 12 |  |  
+Puff State | int | 13 |  |  
+Tropical Fish Variant | int | 13 |  |  
+Home Position | [position](/protocol/java393/types/position) | 13 |  |  
+Has Egg | bool | 14 |  |  
+Laying Egg | bool | 15 |  |  
+Travel Pos | [position](/protocol/java393/types/position) | 16 |  |  
+Going Home | bool | 17 |  |  
+Traveling | bool | 18 |  |  
+Has Target | bool | 15 |  |  
 
 ### Entity Flags
 
