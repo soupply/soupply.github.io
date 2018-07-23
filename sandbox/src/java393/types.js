@@ -706,7 +706,7 @@ const Types ={
 			for(var dhc5alzj in this.children){
 				this.writeVaruint(this.children[dhc5alzj]);
 			}
-			if(flags&8){
+			if((flags&8)!=0){
 				this.writeVaruint(this.redirectNode);
 			}
 			if((flags&1)!=0||(flags&2)!=0){
@@ -714,12 +714,12 @@ const Types ={
 				this.writeVaruint(dhc5y1.length);
 				this.writeBytes(dhc5y1);
 			}
-			if(flags&2){
+			if((flags&2)!=0){
 				var dhc5yjzi=this.encodeString(this.parser);
 				this.writeVaruint(dhc5yjzi.length);
 				this.writeBytes(dhc5yjzi);
 			}
-			if(flags&2){
+			if((flags&2)!=0){
 				this.writeBytes(this.properties);
 			}
 			return new Uint8Array(this._buffer);
@@ -736,7 +736,7 @@ const Types ={
 				this.children[dhc5alzj]=this.readVaruint();
 			}
 			traceDecode('children');
-			if(flags&8){
+			if((flags&8)!=0){
 				this.redirectNode=this.readVaruint();
 				traceDecode('redirectNode');
 			}
@@ -745,12 +745,12 @@ const Types ={
 				this.name=this.decodeString(this.readBytes(dhc5y1));
 				traceDecode('name');
 			}
-			if(flags&2){
+			if((flags&2)!=0){
 				var dhc5yjzi=this.readVaruint();
 				this.parser=this.decodeString(this.readBytes(dhc5yjzi));
 				traceDecode('parser');
 			}
-			if(flags&2){
+			if((flags&2)!=0){
 				this.properties=Array.from(this._buffer);
 				this._buffer=[];
 				traceDecode('properties');
