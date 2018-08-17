@@ -84,7 +84,7 @@ Right Leg Rotation | [rotation](/protocol/java393/types/rotation) | 17 |  |
 Hanging | byte | 12 |  |  
 Baby | bool | 12 |  |  
 [Horse Flags](#horse-flags) | byte | 13 |  |  
-Owner Uuid | uuid | 14 |  |  
+Owner Uuid | [optionalUuid](/protocol/java393/types/optional-uuid) | 14 |  |  
 Horse Variant | int | 15 |  |  
 Horse Armor | int | 16 |  |  
 Chested | bool | 15 |  |  
