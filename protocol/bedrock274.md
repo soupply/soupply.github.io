@@ -4,15 +4,15 @@ layout: default
 
 # Minecraft (Bedrock Engine) 274
 
-**Other protocols**: [137](./bedrock274), [141](./bedrock274), [150](./bedrock274), [160](./bedrock274), [201](./bedrock274), [261](./bedrock274)
+**Other protocols**: [137](./bedrock274), [141](./bedrock274), [150](./bedrock274), [160](./bedrock274), [201](./bedrock274), [261](./bedrock274), [282](./bedrock274)
 
-**Compare changes**: [137](../diff/bedrock/137-274), [141](../diff/bedrock/141-274), [150](../diff/bedrock/150-274), [160](../diff/bedrock/160-274), [201](../diff/bedrock/201-274), [261](../diff/bedrock/261-274)
+**Compare changes**: [137](../diff/bedrock/137-274), [141](../diff/bedrock/141-274), [150](../diff/bedrock/150-274), [160](../diff/bedrock/160-274), [201](../diff/bedrock/201-274), [261](../diff/bedrock/261-274), [282](../diff/bedrock/274-282)
 
 **Jump to**: [Encoding](#encoding), [Packets](#packets), [Types](bedrock274/types), [Metadata](bedrock274/metadata)
 
 **Released**: July 10th, 2018
 
-In use since version **1.5.0**
+Used from version **1.5.0** to **1.5.3**
 
 -----
 Protocol used in Minecraft: Pocket Edition and variants. The network part of the protocol is managed by RakNet.

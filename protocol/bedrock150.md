@@ -4,9 +4,9 @@ layout: default
 
 # Minecraft (Bedrock Engine) 150
 
-**Other protocols**: [137](./bedrock150), [141](./bedrock150), [160](./bedrock150), [201](./bedrock150), [261](./bedrock150), [274](./bedrock150)
+**Other protocols**: [137](./bedrock150), [141](./bedrock150), [160](./bedrock150), [201](./bedrock150), [261](./bedrock150), [274](./bedrock150), [282](./bedrock150)
 
-**Compare changes**: [137](../diff/bedrock/137-150), [141](../diff/bedrock/141-150), [160](../diff/bedrock/150-160), [201](../diff/bedrock/150-201), [261](../diff/bedrock/150-261), [274](../diff/bedrock/150-274)
+**Compare changes**: [137](../diff/bedrock/137-150), [141](../diff/bedrock/141-150), [160](../diff/bedrock/150-160), [201](../diff/bedrock/150-201), [261](../diff/bedrock/150-261), [274](../diff/bedrock/150-274), [282](../diff/bedrock/150-282)
 
 **Jump to**: [Encoding](#encoding), [Packets](#packets), [Types](bedrock150/types), [Metadata](bedrock150/metadata)
 

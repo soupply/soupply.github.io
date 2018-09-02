@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+[home](/)  /  [bedrock282](/protocol/bedrock282)  /  [play](/protocol/bedrock282/play)  /  sub-client-login
+
+# Sub client login
+
+Encode/decode this packet in [Sandbox](../../../sandbox/bedrock282#Play.SubClientLogin)
+
+**Id**: 94
+
+**Id** (hex): 5E
+
+**Id** (bin): 01011110
+
+**Clientbound**: ✔️
+
+**Serverbound**: ✖️
